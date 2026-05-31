@@ -1,0 +1,58 @@
+{
+  "baselines": [
+    {
+      "id": "B2",
+      "model_id": "Qwen/Qwen2.5-Math-7B-Instruct",
+      "description": "Qwen2.5-Math-7B-Instruct (zero-shot)",
+      "accuracy_overall": 3.69,
+      "accuracy_physics": 0.0,
+      "accuracy_logic": 10.53,
+      "n_total": 217,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_correct": 8,
+      "elapsed_min": 30.3
+    },
+    {
+      "id": "B3",
+      "model_id": "EleutherAI/llemma_7b",
+      "description": "Llemma-7B (zero-shot)",
+      "accuracy_overall": 12.9,
+      "accuracy_physics": 5.67,
+      "accuracy_logic": 26.32,
+      "n_total": 217,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_correct": 28,
+      "elapsed_min": 32.6
+    },
+    {
+      "id": "B4",
+      "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+      "description": "Mistral-7B-Instruct-v0.3 (zero-shot)",
+      "accuracy_overall": 9.68,
+      "accuracy_physics": 6.38,
+      "accuracy_logic": 15.79,
+      "n_total": 217,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_correct": 21,
+      "elapsed_min": 18.6
+    },
+    {
+      "id": "B5",
+      "model_id": "internlm/internlm2-math-plus-7b",
+      "description": "InternLM2-Math-Plus-7B (zero-shot)",
+      "error": "The repository internlm/internlm2-math-plus-7b contains custom code which must be executed to correctly load the model. You can inspect the repository content at https://hf.co/internlm/internlm2-math-plus-7b .\n You can inspect the repository content at https://hf.co/internlm/internlm2-math-plus-7b.\nPlease pass the argument `trust_remote_code=True` to allow custom code to be run.",
+      "accuracy_overall": 0.0,
+      "accuracy_physics": 0.0,
+      "accuracy_logic": 0.0,
+      "n_total": 0,
+      "n_physics": 0,
+      "n_logic": 0,
+      "n_correct": 0,
+      "elapsed_min": 0.0
+    }
+  ],
+  "smoke_test": false
+}

@@ -1,0 +1,93 @@
+nohup: ignoring input
+Loaded cfg 4-5 from original: 2 entries
+[1] Loading evaluation dataset
+Run timestamp : 20260527_200902
+Result file   : /content/drive/MyDrive/TRA-SAE/logs/qwen35_ablation_v2_20260527_200902.json
+Stdout log    : /content/drive/MyDrive/TRA-SAE/logs/step1_rerun_20260527_200902.log
+    Eval samples: 217
+    Composition: {'physics': 141, 'logic': 76}
+[2] Loading base model
+Failed to load /usr/local/lib/python3.12/dist-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /usr/local/lib/python3.12/dist-packages/torchao/_C_cutlass_90a.abi3.so
+Failed to load /usr/local/lib/python3.12/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /usr/local/lib/python3.12/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 27776.85it/s]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:57,  3.62it/s]Loading weights:   6%|▌         | 26/426 [00:00<00:04, 87.58it/s]Loading weights:  11%|█         | 45/426 [00:00<00:03, 119.43it/s]Loading weights:  16%|█▌        | 67/426 [00:00<00:02, 148.26it/s]Loading weights:  22%|██▏       | 94/426 [00:00<00:01, 179.93it/s]Loading weights:  28%|██▊       | 118/426 [00:00<00:01, 194.95it/s]Loading weights:  33%|███▎      | 141/426 [00:00<00:01, 201.93it/s]Loading weights:  38%|███▊      | 163/426 [00:01<00:01, 205.64it/s]Loading weights:  44%|████▎     | 186/426 [00:01<00:01, 206.53it/s]Loading weights:  49%|████▉     | 208/426 [00:01<00:01, 203.03it/s]Loading weights:  55%|█████▌    | 236/426 [00:01<00:00, 221.43it/s]Loading weights:  61%|██████    | 259/426 [00:01<00:00, 203.74it/s]Loading weights:  68%|██████▊   | 288/426 [00:01<00:00, 225.86it/s]Loading weights:  73%|███████▎  | 312/426 [00:01<00:00, 206.17it/s]Loading weights:  81%|████████  | 343/426 [00:01<00:00, 230.88it/s]Loading weights:  86%|████████▌ | 367/426 [00:01<00:00, 212.78it/s]Loading weights:  93%|█████████▎| 396/426 [00:02<00:00, 230.05it/s]Loading weights:  99%|█████████▊| 420/426 [00:02<00:00, 209.63it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 191.75it/s]
+[base model loaded] VRAM  8.41 GB alloc  /  8.42 GB reserved  /  85.1 GB total
+[3] Loading retriever
+[Retriever] Built TF-IDF index: 1945 docs, 6166 features
+[Retriever] Subject distribution: {'physics': 1213, 'logic': 732}
+
+============================================================
+Config 0: Qwen3.5-4B zero-shot (no LoRA)
+============================================================
+[Config 0 model loaded] VRAM  8.41 GB alloc  /  8.42 GB reserved  /  85.1 GB total
+  Attempt 0: 217 pending
+  Attempt 0: correct=88/217 acc=40.55%
+  Attempt 1: 129 pending
+  Attempt 1: correct=94/217 acc=43.32%
+  Attempt 2: 123 pending
+  Attempt 2: correct=98/217 acc=45.16%
+
+  Config 0 DONE: overall=45.16%  phys=55.32%  logic=26.32%
+  n_phys=141, n_logic=76, n_total=217  [sum check: 217==217]
+  [checkpoint saved: step1_checkpoint_20260527_200902.json]
+
+============================================================
+Config 1: + SFT Phase 1
+============================================================
+[Config 1 model loaded] VRAM  8.60 GB alloc  /  8.79 GB reserved  /  85.1 GB total
+  Attempt 0: 217 pending
+  Attempt 0: correct=98/217 acc=45.16%
+  Attempt 1: 119 pending
+  Attempt 1: correct=104/217 acc=47.93%
+  Attempt 2: 113 pending
+  Attempt 2: correct=110/217 acc=50.69%
+
+  Config 1 DONE: overall=50.69%  phys=61.70%  logic=30.26%
+  n_phys=141, n_logic=76, n_total=217  [sum check: 217==217]
+  [checkpoint saved: step1_checkpoint_20260527_200902.json]
+
+============================================================
+Config 2: + Logic SFT Phase 1.5
+============================================================
+/usr/local/lib/python3.12/dist-packages/peft/tuners/tuners_utils.py:302: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+  warnings.warn(
+[Config 2 model loaded] VRAM  8.60 GB alloc  /  8.81 GB reserved  /  85.1 GB total
+  Attempt 0: 217 pending
+  Attempt 0: correct=101/217 acc=46.54%
+  Attempt 1: 116 pending
+  Attempt 1: correct=107/217 acc=49.31%
+  Attempt 2: 110 pending
+  Attempt 2: correct=116/217 acc=53.46%
+
+  Config 2 DONE: overall=53.46%  phys=68.09%  logic=26.32%
+  n_phys=141, n_logic=76, n_total=217  [sum check: 217==217]
+  [checkpoint saved: step1_checkpoint_20260527_200902.json]
+
+============================================================
+Config 3: + GRPO mixed Phase 2
+============================================================
+[Config 3 model loaded] VRAM  8.60 GB alloc  /  8.81 GB reserved  /  85.1 GB total
+  Attempt 0: 217 pending
+  Attempt 0: correct=99/217 acc=45.62%
+  Attempt 1: 118 pending
+  Attempt 1: correct=105/217 acc=48.39%
+  Attempt 2: 112 pending
+  Attempt 2: correct=114/217 acc=52.53%
+
+  Config 3 DONE: overall=52.53%  phys=67.38%  logic=25.00%
+  n_phys=141, n_logic=76, n_total=217  [sum check: 217==217]
+  [checkpoint saved: step1_checkpoint_20260527_200902.json]
+
+Saved (timestamped) : /content/drive/MyDrive/TRA-SAE/logs/qwen35_ablation_v2_20260527_200902.json
+Saved (latest copy) : /content/drive/MyDrive/TRA-SAE/logs/qwen35_ablation_v2_latest.json
+Saved per-sample    : /content/drive/MyDrive/TRA-SAE/logs/ablation_per_sample_20260527_200902.jsonl
+Saved per-sample lat: /content/drive/MyDrive/TRA-SAE/logs/ablation_per_sample_latest.jsonl
+SANITY CHECK:
+  cfg0 zero_shot: n_phys=141, n_logic=76, n_total=217 → OK
+  cfg1 sft_phase1: n_phys=141, n_logic=76, n_total=217 → OK
+  cfg2 sft_logic: n_phys=141, n_logic=76, n_total=217 → OK
+  cfg3 grpo_mixed: n_phys=141, n_logic=76, n_total=217 → OK
+  cfg4 dual_lora_router: n_phys=141, n_logic=76, n_total=217 → OK
+  cfg5 full_v2: n_phys=141, n_logic=76, n_total=217 → OK

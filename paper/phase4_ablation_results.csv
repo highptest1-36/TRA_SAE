@@ -1,0 +1,7 @@
+config_id,config_name,description,accuracy_overall,accuracy_physics,accuracy_logic,n_total,n_physics,n_logic,n_correct,elapsed_min,expected_acc
+0,zero_shot,Qwen3.5-4B zero-shot no LoRA,35.48,43.97,19.74,217,146,76,77,71.2,25-30%
+1,sft_phase1,+ SFT Phase 1,52.53,65.25,28.95,217,146,76,114,88.3,40-45%
+2,sft_logic,+ Logic SFT Phase 1.5,51.61,65.25,26.32,217,146,76,112,87.8,45-50%
+3,grpo_mixed,+ GRPO mixed Phase 2,53.92,67.38,28.95,217,146,76,117,86.2,50-55%
+4,dual_lora_router,+ Dual LoRA specialists + Router,49.77,60.28,30.26,217,141,76,108,90.2,55-60%
+5,full_v2,+ Self-consistency 5x full v2 agent,50.69,64.54,25.00,217,141,76,110,342.8,65-75%

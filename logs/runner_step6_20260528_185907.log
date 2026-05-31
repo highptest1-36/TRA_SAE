@@ -1,0 +1,76 @@
+[1] Loading base model
+Failed to load /usr/local/lib/python3.12/dist-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /usr/local/lib/python3.12/dist-packages/torchao/_C_cutlass_90a.abi3.so
+Failed to load /usr/local/lib/python3.12/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /usr/local/lib/python3.12/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+
+--- Profiling: zero_shot ---
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 32896.50it/s]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/426 [00:00<01:59,  3.56it/s]
+Loading weights:   6%|▌         | 26/426 [00:00<00:04, 86.13it/s]
+Loading weights:  11%|█         | 45/426 [00:00<00:03, 119.55it/s]
+Loading weights:  16%|█▌        | 67/426 [00:00<00:02, 146.72it/s]
+Loading weights:  22%|██▏       | 94/426 [00:00<00:01, 177.94it/s]
+Loading weights:  28%|██▊       | 118/426 [00:00<00:01, 190.84it/s]
+Loading weights:  33%|███▎      | 139/426 [00:00<00:01, 195.92it/s]
+Loading weights:  38%|███▊      | 160/426 [00:01<00:01, 195.97it/s]
+Loading weights:  44%|████▎     | 186/426 [00:01<00:01, 208.35it/s]
+Loading weights:  49%|████▉     | 208/426 [00:01<00:01, 203.63it/s]
+Loading weights:  56%|█████▌    | 237/426 [00:01<00:00, 225.04it/s]
+Loading weights:  61%|██████    | 260/426 [00:01<00:00, 204.85it/s]
+Loading weights:  68%|██████▊   | 290/426 [00:01<00:00, 227.72it/s]
+Loading weights:  74%|███████▎  | 314/426 [00:01<00:00, 210.22it/s]
+Loading weights:  80%|███████▉  | 340/426 [00:01<00:00, 220.46it/s]
+Loading weights:  85%|████████▌ | 363/426 [00:01<00:00, 215.33it/s]
+Loading weights:  90%|█████████ | 385/426 [00:02<00:00, 213.31it/s]
+Loading weights:  97%|█████████▋| 412/426 [00:02<00:00, 222.59it/s]
+Loading weights: 100%|██████████| 426/426 [00:02<00:00, 190.73it/s]
+[zero_shot loaded] VRAM  8.41 GB alloc  /  8.42 GB reserved  /  85.1 GB total
+  batch=1: 0.02 s/s, VRAM=8.00 GB
+  batch=4: 0.07 s/s, VRAM=8.50 GB
+  batch=8: 0.12 s/s, VRAM=9.14 GB
+
+--- Profiling: grpo_mixed ---
+
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 20460.02it/s]
+
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/426 [00:00<01:54,  3.70it/s]
+Loading weights:   6%|▌         | 26/426 [00:00<00:04, 88.50it/s]
+Loading weights:  11%|█         | 46/426 [00:00<00:03, 115.65it/s]
+Loading weights:  18%|█▊        | 76/426 [00:00<00:02, 171.06it/s]
+Loading weights:  23%|██▎       | 97/426 [00:00<00:01, 179.40it/s]
+Loading weights:  28%|██▊       | 119/426 [00:00<00:01, 180.16it/s]
+Loading weights:  34%|███▍      | 146/426 [00:00<00:01, 204.40it/s]
+Loading weights:  39%|███▉      | 168/426 [00:01<00:01, 205.13it/s]
+Loading weights:  45%|████▍     | 190/426 [00:01<00:01, 205.45it/s]
+Loading weights:  50%|████▉     | 212/426 [00:01<00:01, 198.35it/s]
+Loading weights:  56%|█████▌    | 238/426 [00:01<00:00, 206.91it/s]
+Loading weights:  61%|██████    | 260/426 [00:01<00:00, 200.01it/s]
+Loading weights:  68%|██████▊   | 288/426 [00:01<00:00, 221.24it/s]
+Loading weights:  73%|███████▎  | 311/426 [00:01<00:00, 198.53it/s]
+Loading weights:  80%|████████  | 342/426 [00:01<00:00, 227.71it/s]
+Loading weights:  86%|████████▌ | 366/426 [00:01<00:00, 206.70it/s]
+Loading weights:  92%|█████████▏| 393/426 [00:02<00:00, 222.80it/s]
+Loading weights:  98%|█████████▊| 417/426 [00:02<00:00, 208.52it/s]
+Loading weights: 100%|██████████| 426/426 [00:02<00:00, 189.30it/s]
+[grpo_mixed loaded] VRAM  8.59 GB alloc  /  16.95 GB reserved  /  85.1 GB total
+  batch=1: 0.02 s/s, VRAM=8.16 GB
+  batch=4: 0.06 s/s, VRAM=8.65 GB
+  batch=8: 0.11 s/s, VRAM=9.30 GB
+
+[2] Reading training elapsed times from logs
+
+--- Compute Cost (A100 80GB @ $3.67/hr) ---
+  Total training: 4.90 h  (294 min)
+  Total eval:     12.51 h  (751 min)
+  Grand total:    17.41 GPU-hours
+  Estimated cost: $63.89
+
+Saved (timestamped): /content/drive/MyDrive/TRA-SAE/logs/compute_profile_20260528_185908.json
+Saved (latest)     : /content/drive/MyDrive/TRA-SAE/logs/compute_profile_latest.json

@@ -1,0 +1,11 @@
+[18:34:39] INFO     ============================================================
+[18:34:39] INFO     Phase 1 SFT start | Model: unsloth/Qwen3-4B
+[18:34:39] INFO       LoRA r=32 alpha=16 | max_seq=1024
+[18:34:39] INFO       Steps=300 | LR=0.0002 | eff_batch=16
+[18:34:39] INFO     ============================================================
+[18:35:20] INFO     Base model loaded
+[18:35:25] INFO     LoRA applied
+[18:35:25] INFO     Dataset loaded — train=1945 val=217
+[18:35:29] INFO     Chat template applied | sample_len=873
+[18:36:28] INFO     SFT training started
+[19:02:48] INFO     Phase 1 done | loss=0.5382 steps=300 time=26.3min

@@ -1,0 +1,47 @@
+# ── Model checkpoints (multi-GB, not tracked) ─────────────────────────────────
+checkpoints/
+
+# ── HuggingFace / Unsloth cached downloads ────────────────────────────────────
+huggingface_tokenizers_cache/
+unsloth_compiled_cache/
+
+# ── Python cache ──────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# ── Virtual environments ───────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+
+# ── Jupyter ────────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ── LaTeX build artifacts ──────────────────────────────────────────────────────
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
+paper/missfont.log
+
+# ── OS / editor ───────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# ── Large/binary data (regeneratable) ────────────────────────────────────────
+# data/ — tracked (original dataset CSV/JSON)
+processed_data/         # HuggingFace Arrow binary files (~32 MB)
+
+# ── Temporary / misc ──────────────────────────────────────────────────────────
+=0.45.5
+*.tmp
+*.bak

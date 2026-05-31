@@ -1,0 +1,32 @@
+[13:50:57] INFO     ====================================================================
+[13:50:57] INFO     Phase 4 Evaluation + Ablation
+[13:50:57] INFO       smoke_test=False  config=0
+[13:50:57] INFO     ====================================================================
+
+[1] Loading evaluation dataset
+    Eval samples: 217
+[13:50:59] INFO     Eval dataset: 217 samples
+
+[2] Loading base model
+Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.10.0+cu128).
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 30393.51it/s]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:56,  3.64it/s]Loading weights:   6%|▋         | 27/426 [00:00<00:04, 88.37it/s]Loading weights:  11%|█         | 47/426 [00:00<00:03, 119.44it/s]Loading weights:  18%|█▊        | 76/426 [00:00<00:02, 170.84it/s]Loading weights:  23%|██▎       | 97/426 [00:00<00:01, 179.34it/s]Loading weights:  28%|██▊       | 119/426 [00:00<00:01, 180.99it/s]Loading weights:  35%|███▍      | 147/426 [00:00<00:01, 196.24it/s]Loading weights:  40%|████      | 171/426 [00:01<00:01, 204.93it/s]Loading weights:  47%|████▋     | 199/426 [00:01<00:01, 219.49it/s]Loading weights:  52%|█████▏    | 222/426 [00:01<00:00, 211.31it/s]Loading weights:  58%|█████▊    | 249/426 [00:01<00:00, 224.36it/s]Loading weights:  64%|██████▍   | 272/426 [00:01<00:00, 224.83it/s]Loading weights:  69%|██████▉   | 295/426 [00:01<00:00, 211.99it/s]Loading weights:  74%|███████▍  | 317/426 [00:01<00:00, 204.59it/s]Loading weights:  81%|████████  | 345/426 [00:01<00:00, 217.72it/s]Loading weights:  86%|████████▌ | 367/426 [00:01<00:00, 210.74it/s]Loading weights:  92%|█████████▏| 392/426 [00:02<00:00, 221.26it/s]Loading weights:  97%|█████████▋| 415/426 [00:02<00:00, 219.68it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 191.88it/s]
+[base model loaded] VRAM  8.41 GB alloc  /  8.42 GB reserved  /  85.1 GB total
+
+[3] Loading retriever
+[Retriever] Built TF-IDF index: 1945 docs, 6166 features
+[Retriever] Subject distribution: {'logic': 732, 'physics': 1213}
+
+[4] Loading router
+    Router loaded from /content/drive/MyDrive/TRA-SAE/checkpoints/router.pkl
+
+====================================================================
+Config 0: Qwen3.5-4B zero-shot (no LoRA)
+====================================================================
+[13:51:13] INFO     Starting ablation config 0: zero_shot
+[Config 0 model loaded] VRAM  8.41 GB alloc  /  8.42 GB reserved  /  85.1 GB total
+  Pre-gathered 217 samples + few-shots. Starting batched inference (batch=8)...
+  Attempt 0: 217 samples pending...
+    generated 40/217

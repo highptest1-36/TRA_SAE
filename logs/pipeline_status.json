@@ -1,0 +1,42 @@
+{
+  "pipeline_ts": "20260528_182905",
+  "steps": {
+    "step2": {
+      "status": "completed",
+      "started_at": "20260528_195518",
+      "log": "/content/drive/MyDrive/TRA-SAE/logs/runner_step2_20260528_195518.log",
+      "finished_at": "20260529_000957",
+      "elapsed_sec": 15278.4,
+      "returncode": 0
+    },
+    "step3": {
+      "status": "running",
+      "started_at": "20260529_000957",
+      "log": "/content/drive/MyDrive/TRA-SAE/logs/runner_step3_20260529_000957.log"
+    },
+    "step4": {
+      "status": "failed",
+      "started_at": "20260528_185838",
+      "log": "/content/drive/MyDrive/TRA-SAE/logs/runner_step4_20260528_185838.log",
+      "finished_at": "20260528_185839",
+      "elapsed_sec": 1.9,
+      "returncode": 1
+    },
+    "step5": {
+      "status": "failed",
+      "started_at": "20260528_185840",
+      "log": "/content/drive/MyDrive/TRA-SAE/logs/runner_step5_20260528_185840.log",
+      "finished_at": "20260528_185907",
+      "elapsed_sec": 27.1,
+      "returncode": 1
+    },
+    "step6": {
+      "status": "completed",
+      "started_at": "20260528_185907",
+      "log": "/content/drive/MyDrive/TRA-SAE/logs/runner_step6_20260528_185907.log",
+      "finished_at": "20260528_195455",
+      "elapsed_sec": 3348.0,
+      "returncode": 0
+    }
+  }
+}

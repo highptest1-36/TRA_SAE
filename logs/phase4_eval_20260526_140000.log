@@ -1,0 +1,14 @@
+[14:00:00] INFO     ====================================================================
+[14:00:00] INFO     Phase 4 Evaluation + Ablation
+[14:00:00] INFO       smoke_test=False  config=-1
+[14:00:00] INFO     ====================================================================
+[14:00:01] INFO     Eval dataset: 217 samples
+[14:00:15] INFO     Starting ablation config 0: zero_shot
+[15:11:26] INFO     Config 0 done | acc=35.48%  phys=43.97%  logic=19.74%  elapsed=71.2min
+[15:11:26] INFO     Starting ablation config 1: sft_phase1
+[16:40:00] INFO     Config 1 done | acc=52.53%  phys=65.25%  logic=28.95%  elapsed=88.3min
+[16:40:00] INFO     Starting ablation config 2: sft_logic
+[18:08:01] INFO     Config 2 done | acc=51.61%  phys=65.25%  logic=26.32%  elapsed=87.8min
+[18:08:01] INFO     Starting ablation config 3: grpo_mixed
+[19:34:30] INFO     Config 3 done | acc=53.92%  phys=67.38%  logic=28.95%  elapsed=86.2min
+[19:34:30] INFO     Starting ablation config 4: dual_lora_router

@@ -1,0 +1,33 @@
+[1] Loading per-sample results
+    Loaded 4 configs from ablation_per_sample_latest.jsonl
+[2] McNemar test
+    cfg3 vs cfg0: p=0.006170  SIGNIFICANT
+    cfg1 vs cfg0: p=0.024745  SIGNIFICANT
+[3] Error analysis
+    Wrong predictions in cfg3: 103
+    E1_unit_dimension: 26 (25.2%)
+    E2_wrong_formula: 0 (0.0%)
+    E3_arithmetic: 1 (1.0%)
+    E4_logical_fallacy: 57 (55.3%)
+    E5_misinterpretation: 1 (1.0%)
+    E0_unclassified: 18 (17.5%)
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/TRA-SAE/experiments/step4_stats_and_errors.py", line 242, in <module>
+    json.dump(stats_results, f, indent=2)
+  File "/usr/lib/python3.12/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+                 ^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.12/json/encoder.py", line 326, in _iterencode_list
+    yield from chunks
+  File "/usr/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.12/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bool is not JSON serializable

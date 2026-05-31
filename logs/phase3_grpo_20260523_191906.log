@@ -1,0 +1,11 @@
+[19:19:06] INFO     ============================================================
+[19:19:06] INFO     Phase 3 GRPO start
+[19:19:06] INFO       LoRA r=32 alpha=16 | max_seq=1024
+[19:19:06] INFO       Steps=200 | LR=5e-06 | num_gen=4
+[19:19:06] INFO       Reward weights: P1=1.0 P2=0.5 P3=0.3
+[19:19:06] INFO     ============================================================
+[19:19:06] INFO     GRPO base: Phase 1 checkpoint (Phase 2 not found)
+[19:19:37] INFO     Base model loaded
+[19:19:37] INFO     LoRA applied
+[19:19:37] INFO     Dataset loaded — train=1945
+[19:19:41] INFO     GRPO training started

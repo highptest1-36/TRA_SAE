@@ -1,0 +1,136 @@
+{
+  "ablation": [
+    {
+      "config_id": 0,
+      "config_name": "zero_shot",
+      "description": "Qwen3.5-4B zero-shot (no LoRA)",
+      "expected_acc": "25-30%",
+      "accuracy_overall": 35.48,
+      "accuracy_physics": 43.97,
+      "accuracy_logic": 19.74,
+      "n_total": 217,
+      "n_physics": 146,
+      "n_logic": 76,
+      "n_correct": 77,
+      "per_retry": {
+        "0": 65,
+        "1": 11,
+        "2": 1
+      },
+      "avg_confidence_correct": 0.0,
+      "avg_confidence_wrong": 0.0,
+      "elapsed_min": 71.2,
+      "smoke_test": false
+    },
+    {
+      "config_id": 1,
+      "config_name": "sft_phase1",
+      "description": "+ SFT Phase 1",
+      "expected_acc": "40-45%",
+      "accuracy_overall": 52.53,
+      "accuracy_physics": 65.25,
+      "accuracy_logic": 28.95,
+      "n_total": 217,
+      "n_physics": 146,
+      "n_logic": 76,
+      "n_correct": 114,
+      "per_retry": {
+        "0": 101,
+        "1": 7,
+        "2": 6
+      },
+      "avg_confidence_correct": 0.0,
+      "avg_confidence_wrong": 0.0,
+      "elapsed_min": 88.3,
+      "smoke_test": false
+    },
+    {
+      "config_id": 2,
+      "config_name": "sft_logic",
+      "description": "+ Logic SFT Phase 1.5",
+      "expected_acc": "45-50%",
+      "accuracy_overall": 51.61,
+      "accuracy_physics": 65.25,
+      "accuracy_logic": 26.32,
+      "n_total": 217,
+      "n_physics": 146,
+      "n_logic": 76,
+      "n_correct": 112,
+      "per_retry": {
+        "0": 100,
+        "1": 8,
+        "2": 4
+      },
+      "avg_confidence_correct": 0.0,
+      "avg_confidence_wrong": 0.0,
+      "elapsed_min": 87.8,
+      "smoke_test": false
+    },
+    {
+      "config_id": 3,
+      "config_name": "grpo_mixed",
+      "description": "+ GRPO mixed Phase 2",
+      "expected_acc": "50-55%",
+      "accuracy_overall": 53.92,
+      "accuracy_physics": 67.38,
+      "accuracy_logic": 28.95,
+      "n_total": 217,
+      "n_physics": 146,
+      "n_logic": 76,
+      "n_correct": 117,
+      "per_retry": {
+        "0": 106,
+        "1": 6,
+        "2": 5
+      },
+      "avg_confidence_correct": 0.0,
+      "avg_confidence_wrong": 0.0,
+      "elapsed_min": 86.2,
+      "smoke_test": false
+    },
+    {
+      "config_id": 4,
+      "config_name": "dual_lora_router",
+      "description": "+ Dual LoRA specialists + Router",
+      "expected_acc": "55-60%",
+      "accuracy_overall": 49.77,
+      "accuracy_physics": 60.28,
+      "accuracy_logic": 30.26,
+      "n_total": 217,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_correct": 108,
+      "per_retry": {
+        "0": 94,
+        "1": 10,
+        "2": 113
+      },
+      "avg_confidence_correct": 0.0,
+      "avg_confidence_wrong": 0.0,
+      "elapsed_min": 90.2,
+      "smoke_test": false
+    },
+    {
+      "config_id": 5,
+      "config_name": "full_v2",
+      "description": "+ Self-consistency 5x (full v2 agent)",
+      "expected_acc": "65-75%",
+      "accuracy_overall": 50.69,
+      "accuracy_physics": 64.54,
+      "accuracy_logic": 25.0,
+      "n_total": 217,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_correct": 110,
+      "per_retry": {
+        "0": 99,
+        "1": 7,
+        "2": 111
+      },
+      "avg_confidence_correct": 0.0,
+      "avg_confidence_wrong": 0.0,
+      "elapsed_min": 342.8,
+      "smoke_test": false
+    }
+  ]
+}

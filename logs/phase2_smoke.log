@@ -1,0 +1,53 @@
+[02:47:46] INFO     ====================================================================
+[02:47:46] INFO     Phase 2 GRPO  |  Base: qwen35_sft_logic/final
+[02:47:46] INFO       Steps=250 | LR=1e-06 | β=0.04
+[02:47:46] INFO       Batch=2 × GradAcc=2 | gen=4
+[02:47:46] INFO       Reference: disable_adapter() trick (saves ~10GB VRAM)
+[02:47:46] INFO       Smoke-test=True
+[02:47:46] INFO     ====================================================================
+[02:47:46] INFO     Using Phase 1.5 checkpoint: /content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_sft_logic/final
+Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.10.0+cu128).
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+[1/5] Loading base model + Phase 1.5 LoRA
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 31655.12it/s]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:49,  3.87it/s]Loading weights:   6%|▋         | 27/426 [00:00<00:04, 92.51it/s]Loading weights:  11%|█         | 46/426 [00:00<00:03, 120.58it/s]Loading weights:  18%|█▊        | 78/426 [00:00<00:01, 181.14it/s]Loading weights:  23%|██▎       | 100/426 [00:00<00:01, 175.16it/s]Loading weights:  31%|███       | 131/426 [00:00<00:01, 212.82it/s]Loading weights:  36%|███▋      | 155/426 [00:00<00:01, 202.77it/s]Loading weights:  43%|████▎     | 183/426 [00:01<00:01, 223.59it/s]Loading weights:  49%|████▊     | 207/426 [00:01<00:01, 209.44it/s]Loading weights:  56%|█████▌    | 237/426 [00:01<00:00, 224.95it/s]Loading weights:  61%|██████▏   | 261/426 [00:01<00:00, 215.38it/s]Loading weights:  68%|██████▊   | 289/426 [00:01<00:00, 231.45it/s]Loading weights:  73%|███████▎  | 313/426 [00:01<00:00, 214.48it/s]Loading weights:  81%|████████  | 343/426 [00:01<00:00, 236.79it/s]Loading weights:  86%|████████▋ | 368/426 [00:01<00:00, 218.89it/s]Loading weights:  93%|█████████▎| 396/426 [00:01<00:00, 234.53it/s]Loading weights:  99%|█████████▉| 421/426 [00:02<00:00, 219.39it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 199.30it/s]
+[02:47:58] INFO     PEFT checkpoint loaded
+[02:47:59] INFO     Datasets: train=1945 val=217
+[02:48:04] INFO     GRPO dataset prepared: train=1945 val=217
+[02:48:07] INFO     GRPO max_steps=3
+[transformers] `logging_dir` is deprecated and will be removed in v5.2. Please set `TENSORBOARD_LOGGING_DIR` instead.
+2026-05-25 02:48:08.589517: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-05-25 02:48:08.652254: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[transformers] The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 248046, 'pad_token_id': 248044}.
+trainable params: 42,467,328 || all params: 4,248,218,624 || trainable%: 0.9997
+[after model load] VRAM  8.59 GB alloc  /  8.77 GB reserved  /  42.4 GB total
+
+[2/5] Loading datasets
+      Train: 1,945  |  Val: 217
+
+[3/5] Formatting dataset for GRPO…
+
+[4/5] Building GRPOTrainer…
+[before GRPO training] VRAM  8.76 GB alloc  /  8.79 GB reserved  /  42.4 GB total
+
+[5/5] GRPO training  (steps=3  gen=4  LR=1e-06)
+====================================================================
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [01:47<03:35, 107.99s/it] 67%|██████▋   | 2/3 [02:50<01:21, 81.33s/it] 100%|██████████| 3/3 [04:37<00:00, 92.86s/it]                                             100%|██████████| 3/3 [04:39<00:00, 92.86s/it]100%|██████████| 3/3 [04:39<00:00, 93.16s/it]
+[02:52:53] INFO     Checkpoint saved → /content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_grpo/final
+[02:52:53] INFO     Phase 2 GRPO done | steps=3 time=4.7min
+{'train_runtime': '279.5', 'train_samples_per_second': '0.043', 'train_steps_per_second': '0.011', 'train_loss': '0.02099', 'num_tokens': '1.114e+04', 'completions/mean_length': '766.2', 'completions/min_length': '682.3', 'completions/max_length': '876.3', 'completions/clipped_ratio': '0.4167', 'completions/mean_terminated_length': '405.2', 'completions/min_terminated_length': '341', 'completions/max_terminated_length': '464.3', 'rewards/batch_compute_reward/mean': '0.5', 'rewards/batch_compute_reward/std': '0.1667', 'reward': '0.5', 'reward_std': '0.1667', 'frac_reward_zero_std': '0.3333', 'kl': '0.000806', 'entropy': '0.1292', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '92.32', 'epoch': '0.001542'}
+[after GRPO] VRAM  9.13 GB alloc  /  20.34 GB reserved  /  42.4 GB total
+
+  Saving → /content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_grpo/final
+====================================================================
+ PHASE 2 GRPO COMPLETE
+  Steps           : 3
+  Time elapsed    : 4.7 min
+  Checkpoint      : /content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_grpo/final
+  Results JSON    : /content/drive/MyDrive/TRA-SAE/logs/phase2_grpo_results.json
+  TensorBoard     : /content/drive/MyDrive/TRA-SAE/logs/phase2_tensorboard
+  Next steps      : run_phase2_grpo_physics.py  &  run_phase2_grpo_logic.py
+====================================================================

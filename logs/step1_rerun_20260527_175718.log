@@ -1,0 +1,6 @@
+Run timestamp : 20260527_175718
+Result file   : /content/drive/MyDrive/TRA-SAE/logs/qwen35_ablation_v2_20260527_175718.json
+Stdout log    : /content/drive/MyDrive/TRA-SAE/logs/step1_rerun_20260527_175718.log
+    Eval samples: 217
+    Composition: {'physics': 141, 'logic': 76}
+[2] Loading base model

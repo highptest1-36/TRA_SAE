@@ -1,0 +1,21 @@
+{
+  "mcnemar_tests": [
+    {
+      "comparison": "cfg3 vs cfg0",
+      "statistic": 7.5,
+      "p_value": 0.00617,
+      "b": 23,
+      "c": 7,
+      "significant_p05": true
+    },
+    {
+      "comparison": "cfg1 vs cfg0",
+      "statistic": 5.0417,
+      "p_value": 0.024745,
+      "b": 18,
+      "c": 6,
+      "significant_p05": true
+    }
+  ],
+  "n_val": 217
+}

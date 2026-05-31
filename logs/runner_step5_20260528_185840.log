@@ -1,0 +1,44 @@
+
+============================================================
+Reward variant R1: Full: format(0.30) + correct(0.60) + unit(0.10) + len_pen(-0.10)
+GRPO steps: 250
+============================================================
+Failed to load /usr/local/lib/python3.12/dist-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /usr/local/lib/python3.12/dist-packages/torchao/_C_cutlass_90a.abi3.so
+Failed to load /usr/local/lib/python3.12/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /usr/local/lib/python3.12/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 32768.00it/s]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/426 [00:00<01:53,  3.74it/s]
+Loading weights:   6%|▋         | 27/426 [00:00<00:04, 89.83it/s]
+Loading weights:  11%|█         | 47/426 [00:00<00:03, 120.96it/s]
+Loading weights:  18%|█▊        | 77/426 [00:00<00:02, 174.43it/s]
+Loading weights:  23%|██▎       | 99/426 [00:00<00:01, 170.16it/s]
+Loading weights:  31%|███       | 131/426 [00:00<00:01, 209.94it/s]
+Loading weights:  36%|███▋      | 155/426 [00:00<00:01, 197.81it/s]
+Loading weights:  43%|████▎     | 184/426 [00:01<00:01, 219.87it/s]
+Loading weights:  49%|████▉     | 208/426 [00:01<00:01, 204.83it/s]
+Loading weights:  56%|█████▌    | 237/426 [00:01<00:00, 225.01it/s]
+Loading weights:  61%|██████▏   | 261/426 [00:01<00:00, 208.27it/s]
+Loading weights:  68%|██████▊   | 290/426 [00:01<00:00, 226.76it/s]
+Loading weights:  74%|███████▎  | 314/426 [00:01<00:00, 209.71it/s]
+Loading weights:  81%|████████  | 343/426 [00:01<00:00, 228.64it/s]
+Loading weights:  86%|████████▌ | 367/426 [00:01<00:00, 210.81it/s]
+Loading weights:  93%|█████████▎| 395/426 [00:02<00:00, 226.71it/s]
+Loading weights:  98%|█████████▊| 419/426 [00:02<00:00, 210.56it/s]
+Loading weights: 100%|██████████| 426/426 [00:02<00:00, 194.59it/s]
+[R1 SFT loaded] VRAM  8.59 GB alloc  /  8.77 GB reserved  /  85.1 GB total
+
+Filter:   0%|          | 0/1945 [00:00<?, ? examples/s]
+Filter: 100%|██████████| 1945/1945 [00:00<00:00, 37175.58 examples/s]
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/TRA-SAE/experiments/step5_reward_ablation.py", line 289, in <module>
+    result = _run_grpo_variant(variant)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/drive/MyDrive/TRA-SAE/experiments/step5_reward_ablation.py", line 168, in _run_grpo_variant
+    trainer = GRPOTrainer(
+              ^^^^^^^^^^^^
+TypeError: GRPOTrainer.__init__() got an unexpected keyword argument 'tokenizer'

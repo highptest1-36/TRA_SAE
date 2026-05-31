@@ -1,0 +1,13 @@
+[23:05:54] INFO     ============================================================
+[23:05:54] INFO     Phase 3 GRPO start
+[23:05:54] INFO       LoRA r=32 alpha=16 | max_seq=2048
+[23:05:54] INFO       Steps=200 | LR=5e-06 | num_gen=4
+[23:05:54] INFO       Reward weights: P1=1.0 P2=0.5 P3=0.3
+[23:05:54] INFO     ============================================================
+[23:05:54] INFO     GRPO base: Phase 1 checkpoint (Phase 2 not found)
+[23:06:23] INFO     Base model loaded
+[23:06:29] INFO     Phase 1 LoRA warm-start PEFT: loaded=504/504
+[23:06:29] INFO     LoRA applied
+[23:06:29] INFO     Dataset loaded — train=1945
+[23:06:32] INFO     GRPO training started
+[23:06:32] INFO     Resume from checkpoint: /content/drive/MyDrive/TRA-SAE/checkpoints/phase3_grpo/checkpoint-50

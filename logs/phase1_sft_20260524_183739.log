@@ -1,0 +1,14 @@
+[18:37:39] INFO     ====================================================================
+[18:37:39] INFO     Phase 1 SFT  |  Model: Qwen/Qwen3.5-4B
+[18:37:39] INFO       LoRA r=32 alpha=64 dropout=0.05
+[18:37:39] INFO       Epochs=3 | LR=0.0002 | eff_batch=16
+[18:37:39] INFO       max_seq=2048 | BF16=True | Flash-Attn2 (if available)
+[18:37:39] INFO       Smoke-test=False
+[18:37:39] INFO     ====================================================================
+[18:37:49] INFO     Base model loaded — dtype=torch.bfloat16
+[18:37:50] INFO     LoRA applied — r=32
+[18:37:51] INFO     Datasets loaded — train=1945 val=217 physics=1213 logic=732
+[18:37:56] INFO     Chat template applied | sample_len=873
+[18:37:59] INFO     Training plan: 3 epoch(s) | ~366 total steps | warmup=50 | eff_batch=16
+[19:37:03] INFO     Checkpoint saved → /content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_sft/final
+[19:37:03] INFO     Phase 1 done | loss=0.3085 steps=366 time=58.8min

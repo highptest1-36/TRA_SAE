@@ -1,0 +1,18 @@
+{
+  "baselines": [
+    {
+      "id": "B2",
+      "model_id": "Qwen/Qwen2.5-Math-7B-Instruct",
+      "description": "Qwen2.5-Math-7B-Instruct (zero-shot)",
+      "accuracy_overall": 3.69,
+      "accuracy_physics": 0.0,
+      "accuracy_logic": 10.53,
+      "n_total": 217,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_correct": 8,
+      "elapsed_min": 30.3
+    }
+  ],
+  "smoke_test": false
+}

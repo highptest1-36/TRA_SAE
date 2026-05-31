@@ -1,0 +1,16 @@
+[1] Loading val dataset
+    Eval samples: 217
+    Resuming from latest — already done: {'B2'}
+
+Skipping B2 (already done)
+
+============================================================
+Running B3: Llemma-7B (zero-shot)
+============================================================
+
+  Loading EleutherAI/llemma_7b ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Failed to load /usr/local/lib/python3.12/dist-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /usr/local/lib/python3.12/dist-packages/torchao/_C_cutlass_90a.abi3.so
+Failed to load /usr/local/lib/python3.12/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /usr/local/lib/python3.12/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+

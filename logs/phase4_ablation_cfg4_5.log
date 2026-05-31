@@ -1,0 +1,157 @@
+[23:22:17] INFO     ====================================================================
+[23:22:17] INFO     Phase 4 Evaluation + Ablation
+[23:22:17] INFO       smoke_test=False  config=-1
+[23:22:17] INFO     ====================================================================
+
+[1] Loading evaluation dataset
+    Eval samples: 217
+[23:22:18] INFO     Eval dataset: 217 samples
+
+[2] Loading base model
+Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.10.0+cu128).
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 18436.50it/s]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<02:05,  3.39it/s]Loading weights:   6%|▌         | 26/426 [00:00<00:04, 83.19it/s]Loading weights:  11%|█         | 45/426 [00:00<00:03, 116.41it/s]Loading weights:  16%|█▌        | 67/426 [00:00<00:02, 144.69it/s]Loading weights:  22%|██▏       | 93/426 [00:00<00:01, 179.07it/s]Loading weights:  27%|██▋       | 115/426 [00:00<00:01, 186.20it/s]Loading weights:  32%|███▏      | 136/426 [00:00<00:01, 190.52it/s]Loading weights:  37%|███▋      | 157/426 [00:01<00:01, 191.97it/s]Loading weights:  43%|████▎     | 184/426 [00:01<00:01, 207.57it/s]Loading weights:  48%|████▊     | 206/426 [00:01<00:01, 196.46it/s]Loading weights:  55%|█████▍    | 234/426 [00:01<00:00, 218.15it/s]Loading weights:  60%|██████    | 257/426 [00:01<00:00, 210.19it/s]Loading weights:  65%|██████▌   | 279/426 [00:01<00:00, 208.52it/s]Loading weights:  72%|███████▏  | 306/426 [00:01<00:00, 218.65it/s]Loading weights:  77%|███████▋  | 329/426 [00:01<00:00, 217.20it/s]Loading weights:  83%|████████▎ | 353/426 [00:01<00:00, 221.04it/s]Loading weights:  88%|████████▊ | 376/426 [00:02<00:00, 215.87it/s]Loading weights:  93%|█████████▎| 398/426 [00:02<00:00, 199.64it/s]Loading weights:  98%|█████████▊| 419/426 [00:02<00:00, 201.31it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 186.42it/s]
+[base model loaded] VRAM  8.41 GB alloc  /  8.42 GB reserved  /  85.1 GB total
+
+[3] Loading retriever
+[Retriever] Built TF-IDF index: 1945 docs, 6166 features
+[Retriever] Subject distribution: {'physics': 1213, 'logic': 732}
+
+[4] Loading router
+    Router loaded from /content/drive/MyDrive/TRA-SAE/checkpoints/router.pkl
+[23:22:33] INFO     Resumed: loaded 4 previous config results from /content/drive/MyDrive/TRA-SAE/logs/qwen35_ablation.json
+  Resumed from /content/drive/MyDrive/TRA-SAE/logs/qwen35_ablation.json: 4 configs already done.
+
+====================================================================
+Config 4: + Dual LoRA specialists + Router
+====================================================================
+[23:22:33] INFO     Starting ablation config 4: dual_lora_router
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 5059.47it/s]
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:50,  3.86it/s]Loading weights:   6%|▌         | 26/426 [00:00<00:04, 89.47it/s]Loading weights:  11%|█         | 45/426 [00:00<00:03, 114.62it/s]Loading weights:  18%|█▊        | 75/426 [00:00<00:02, 162.62it/s]Loading weights:  22%|██▏       | 95/426 [00:00<00:01, 169.78it/s]Loading weights:  28%|██▊       | 119/426 [00:00<00:01, 186.25it/s]Loading weights:  34%|███▍      | 145/426 [00:00<00:01, 206.56it/s]Loading weights:  39%|███▉      | 167/426 [00:01<00:01, 200.85it/s]Loading weights:  44%|████▍     | 188/426 [00:01<00:01, 199.16it/s]Loading weights:  49%|████▉     | 209/426 [00:01<00:01, 200.20it/s]Loading weights:  55%|█████▌    | 235/426 [00:01<00:00, 217.11it/s]Loading weights:  61%|██████    | 258/426 [00:01<00:00, 192.54it/s]Loading weights:  66%|██████▋   | 283/426 [00:01<00:00, 206.75it/s]Loading weights:  72%|███████▏  | 307/426 [00:01<00:00, 211.45it/s]Loading weights:  78%|███████▊  | 331/426 [00:01<00:00, 214.11it/s]Loading weights:  83%|████████▎ | 354/426 [00:01<00:00, 216.21it/s]Loading weights:  88%|████████▊ | 376/426 [00:02<00:00, 212.75it/s]Loading weights:  93%|█████████▎| 398/426 [00:02<00:00, 207.17it/s]Loading weights:  98%|█████████▊| 419/426 [00:02<00:00, 200.03it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 187.13it/s]
+[Config 4 model loaded] VRAM  17.17 GB alloc  /  17.37 GB reserved  /  85.1 GB total
+  Pre-gathered 217 samples + few-shots. Starting batched inference (batch=8)...
+  Attempt 0: 217 samples pending...
+    generated 32/217
+    generated 64/217
+    generated 96/217
+    generated 128/217
+    generated 160/217
+    generated 192/217
+    generated 217/217
+  Attempt 0 done: resolved=94/217  correct=94/217  acc=43.32%
+  Attempt 1: 123 samples pending...
+    generated 32/123
+    generated 64/123
+    generated 96/123
+    generated 123/123
+  Attempt 1 done: resolved=104/217  correct=104/217  acc=47.93%
+  Attempt 2: 113 samples pending...
+    generated 32/113
+    generated 64/113
+    generated 96/113
+    generated 113/113
+  Attempt 2 done: resolved=217/217  correct=108/217  acc=49.77%
+  [  10/217]  acc=30.00%
+  [  20/217]  acc=25.00%
+  [  30/217]  acc=36.67%
+  [  40/217]  acc=37.50%
+  [  50/217]  acc=44.00%
+  [  60/217]  acc=48.33%
+  [  70/217]  acc=47.14%
+  [  80/217]  acc=45.00%
+  [  90/217]  acc=47.78%
+  [ 100/217]  acc=49.00%
+  [ 110/217]  acc=50.00%
+  [ 120/217]  acc=49.17%
+  [ 130/217]  acc=47.69%
+  [ 140/217]  acc=49.29%
+  [ 150/217]  acc=48.00%
+  [ 160/217]  acc=48.12%
+  [ 170/217]  acc=50.00%
+  [ 180/217]  acc=50.56%
+  [ 190/217]  acc=51.05%
+  [ 200/217]  acc=50.50%
+  [ 210/217]  acc=49.52%
+  [ 217/217]  acc=49.77%
+[00:52:54] INFO     Config 4 done | acc=49.77%  phys=60.28%  logic=30.26%  elapsed=90.2min
+
+  Config 4 result:
+    Overall   : 49.77%
+    Physics   : 60.28%
+    Logic     : 30.26%
+    Time      : 90.2 min
+
+====================================================================
+Config 5: + Self-consistency 5x (full v2 agent)
+====================================================================
+[00:52:54] INFO     Starting ablation config 5: full_v2
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 9903.91it/s]
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<02:00,  3.52it/s]Loading weights:   6%|▋         | 27/426 [00:00<00:04, 85.89it/s]Loading weights:  11%|█         | 46/426 [00:00<00:03, 117.24it/s]Loading weights:  18%|█▊        | 75/426 [00:00<00:02, 165.92it/s]Loading weights:  23%|██▎       | 96/426 [00:00<00:01, 170.19it/s]Loading weights:  28%|██▊       | 119/426 [00:00<00:01, 182.71it/s]Loading weights:  34%|███▍      | 145/426 [00:00<00:01, 202.44it/s]Loading weights:  39%|███▉      | 167/426 [00:01<00:01, 200.91it/s]Loading weights:  44%|████▍     | 188/426 [00:01<00:01, 195.75it/s]Loading weights:  49%|████▉     | 209/426 [00:01<00:01, 198.28it/s]Loading weights:  55%|█████▌    | 236/426 [00:01<00:00, 215.78it/s]Loading weights:  61%|██████    | 258/426 [00:01<00:00, 194.37it/s]Loading weights:  68%|██████▊   | 288/426 [00:01<00:00, 221.13it/s]Loading weights:  73%|███████▎  | 311/426 [00:01<00:00, 204.64it/s]Loading weights:  80%|███████▉  | 340/426 [00:01<00:00, 222.76it/s]Loading weights:  85%|████████▌ | 363/426 [00:01<00:00, 207.96it/s]Loading weights:  90%|█████████ | 385/426 [00:02<00:00, 207.12it/s]Loading weights:  97%|█████████▋| 412/426 [00:02<00:00, 216.29it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 186.83it/s]
+[Config 5 model loaded] VRAM  17.18 GB alloc  /  17.37 GB reserved  /  85.1 GB total
+  Pre-gathered 217 samples + few-shots. Starting batched inference (batch=8)...
+  Attempt 0: 217 samples pending...
+    generated 32/217
+    generated 64/217
+    generated 96/217
+    generated 128/217
+    generated 160/217
+    generated 192/217
+    generated 217/217
+  Attempt 0 done: resolved=99/217  correct=99/217  acc=45.62%
+  Attempt 1: 118 samples pending...
+  Attempt 1 done: resolved=106/217  correct=106/217  acc=48.85%
+  Attempt 2: 111 samples pending...
+  Attempt 2 done: resolved=217/217  correct=110/217  acc=50.69%
+  [  10/217]  acc=50.00%
+  [  20/217]  acc=45.00%
+  [  30/217]  acc=50.00%
+  [  40/217]  acc=47.50%
+  [  50/217]  acc=50.00%
+  [  60/217]  acc=53.33%
+  [  70/217]  acc=51.43%
+  [  80/217]  acc=50.00%
+  [  90/217]  acc=52.22%
+  [ 100/217]  acc=52.00%
+  [ 110/217]  acc=52.73%
+  [ 120/217]  acc=51.67%
+  [ 130/217]  acc=50.77%
+  [ 140/217]  acc=52.14%
+  [ 150/217]  acc=50.67%
+  [ 160/217]  acc=50.62%
+  [ 170/217]  acc=50.59%
+  [ 180/217]  acc=51.11%
+  [ 190/217]  acc=51.58%
+  [ 200/217]  acc=51.50%
+  [ 210/217]  acc=50.48%
+  [ 217/217]  acc=50.69%
+[06:35:51] INFO     Config 5 done | acc=50.69%  phys=64.54%  logic=25.00%  elapsed=342.8min
+
+  Config 5 result:
+    Overall   : 50.69%
+    Physics   : 64.54%
+    Logic     : 25.00%
+    Time      : 342.8 min
+[06:35:51] INFO     Per-sample JSONL saved → /content/drive/MyDrive/TRA-SAE/logs/qwen35_final_results.jsonl
+[06:35:51] INFO     Ablation matrix saved → /content/drive/MyDrive/TRA-SAE/logs/qwen35_ablation.json
+[06:35:51] INFO     Summary saved → /content/drive/MyDrive/TRA-SAE/logs/qwen35_final_summary.json
+
+====================================================================
+ PHASE 4 EVALUATION COMPLETE
+====================================================================
+
+CFG  NAME                        ACC     PHYS    LOGIC  EXPECTED
+--------------------------------------------------------------------
+  0  zero_shot                35.48%   43.97%   19.74%    25-30%
+  1  sft_phase1               52.53%   65.25%   28.95%    40-45%
+  2  sft_logic                51.61%   65.25%   26.32%    45-50%
+  3  grpo_mixed               53.92%   67.38%   28.95%    50-55%
+  4  dual_lora_router         49.77%   60.28%   30.26%    55-60%
+  5  full_v2                  50.69%   64.54%   25.00%    65-75%
+--------------------------------------------------------------------
+
+  Ablation JSON  : /content/drive/MyDrive/TRA-SAE/logs/qwen35_ablation.json
+  Per-sample JSONL: /content/drive/MyDrive/TRA-SAE/logs/qwen35_final_results.jsonl
+  Summary JSON   : /content/drive/MyDrive/TRA-SAE/logs/qwen35_final_summary.json
+====================================================================

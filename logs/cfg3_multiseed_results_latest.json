@@ -1,0 +1,49 @@
+{
+  "config": "grpo_mixed (cfg3)",
+  "seeds": [
+    42,
+    1337,
+    2024
+  ],
+  "per_seed": [
+    {
+      "seed": 42,
+      "accuracy_overall": 53.46,
+      "accuracy_physics": 66.67,
+      "accuracy_logic": 28.95,
+      "n_total": 217,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_correct": 116,
+      "elapsed_min": 83.9
+    },
+    {
+      "seed": 1337,
+      "accuracy_overall": 54.38,
+      "accuracy_physics": 69.5,
+      "accuracy_logic": 26.32,
+      "n_total": 217,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_correct": 118,
+      "elapsed_min": 84.5
+    },
+    {
+      "seed": 2024,
+      "accuracy_overall": 51.61,
+      "accuracy_physics": 64.54,
+      "accuracy_logic": 27.63,
+      "n_total": 217,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_correct": 112,
+      "elapsed_min": 85.9
+    }
+  ],
+  "mean_overall": 53.15,
+  "std_overall": 1.15,
+  "mean_physics": 66.9,
+  "std_physics": 2.03,
+  "mean_logic": 27.63,
+  "std_logic": 1.07
+}

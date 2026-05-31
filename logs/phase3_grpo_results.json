@@ -1,0 +1,16 @@
+{
+  "phase": "3_grpo",
+  "base_model": "/content/drive/MyDrive/TRA-SAE/checkpoints/phase1_sft_final",
+  "training_loss": 0.0004009791777934879,
+  "global_steps": 200,
+  "elapsed_min": 178.6,
+  "num_generations": 4,
+  "max_completion": 512,
+  "lora_r": 32,
+  "reward_weights": {
+    "P1": 1.0,
+    "P2": 0.5,
+    "P3": 0.3
+  },
+  "checkpoint": "/content/drive/MyDrive/TRA-SAE/checkpoints/phase3_grpo_final"
+}

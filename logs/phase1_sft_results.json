@@ -1,0 +1,32 @@
+{
+  "phase": "1_sft",
+  "model": "Qwen/Qwen3.5-4B",
+  "smoke_test": false,
+  "training_loss": 0.308529,
+  "global_steps": 366,
+  "elapsed_min": 58.8,
+  "epochs": 3,
+  "eff_batch_size": 16,
+  "learning_rate": 0.0002,
+  "lr_scheduler": "cosine",
+  "warmup_steps": 50,
+  "max_seq_len": 2048,
+  "lora_r": 32,
+  "lora_alpha": 64,
+  "lora_targets": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+  ],
+  "dtype": "bfloat16",
+  "train_size": 1945,
+  "val_size": 217,
+  "physics_train": 1213,
+  "logic_train": 732,
+  "checkpoint": "/content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_sft/final",
+  "tensorboard": "/content/drive/MyDrive/TRA-SAE/logs/phase1_tensorboard"
+}

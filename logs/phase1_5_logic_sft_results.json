@@ -1,0 +1,23 @@
+{
+  "phase": "1.5_logic_sft",
+  "model": "Qwen/Qwen3.5-4B",
+  "base_checkpoint": "/content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_sft/final",
+  "smoke_test": false,
+  "training_loss": 0.132642,
+  "global_steps": 92,
+  "elapsed_min": 15.7,
+  "epochs": 2,
+  "eff_batch_size": 16,
+  "learning_rate": 5e-05,
+  "lr_scheduler": "cosine",
+  "warmup_steps": 20,
+  "max_seq_len": 2048,
+  "lora_r": 32,
+  "lora_alpha": 64,
+  "dtype": "bfloat16",
+  "logic_train_size": 732,
+  "logic_val_size": 76,
+  "checkpoint": "/content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_sft_logic/final",
+  "tensorboard": "/content/drive/MyDrive/TRA-SAE/logs/phase1_5_tensorboard",
+  "fol_system_prompt": true
+}

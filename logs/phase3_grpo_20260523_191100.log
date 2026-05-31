@@ -1,0 +1,7 @@
+[19:11:00] INFO     ============================================================
+[19:11:00] INFO     Phase 3 GRPO start
+[19:11:00] INFO       LoRA r=32 alpha=16 | max_seq=1024
+[19:11:00] INFO       Steps=200 | LR=5e-06 | num_gen=4
+[19:11:00] INFO       Reward weights: P1=1.0 P2=0.5 P3=0.3
+[19:11:00] INFO     ============================================================
+[19:11:00] INFO     GRPO base: Phase 2 checkpoint

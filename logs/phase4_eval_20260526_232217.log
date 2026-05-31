@@ -1,0 +1,13 @@
+[23:22:17] INFO     ====================================================================
+[23:22:17] INFO     Phase 4 Evaluation + Ablation
+[23:22:17] INFO       smoke_test=False  config=-1
+[23:22:17] INFO     ====================================================================
+[23:22:18] INFO     Eval dataset: 217 samples
+[23:22:33] INFO     Resumed: loaded 4 previous config results from /content/drive/MyDrive/TRA-SAE/logs/qwen35_ablation.json
+[23:22:33] INFO     Starting ablation config 4: dual_lora_router
+[00:52:54] INFO     Config 4 done | acc=49.77%  phys=60.28%  logic=30.26%  elapsed=90.2min
+[00:52:54] INFO     Starting ablation config 5: full_v2
+[06:35:51] INFO     Config 5 done | acc=50.69%  phys=64.54%  logic=25.00%  elapsed=342.8min
+[06:35:51] INFO     Per-sample JSONL saved → /content/drive/MyDrive/TRA-SAE/logs/qwen35_final_results.jsonl
+[06:35:51] INFO     Ablation matrix saved → /content/drive/MyDrive/TRA-SAE/logs/qwen35_ablation.json
+[06:35:51] INFO     Summary saved → /content/drive/MyDrive/TRA-SAE/logs/qwen35_final_summary.json

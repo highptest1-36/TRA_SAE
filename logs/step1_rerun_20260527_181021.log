@@ -1,0 +1,18 @@
+Run timestamp : 20260527_181021
+Result file   : /content/drive/MyDrive/TRA-SAE/logs/qwen35_ablation_v2_20260527_181021.json
+Stdout log    : /content/drive/MyDrive/TRA-SAE/logs/step1_rerun_20260527_181021.log
+    Eval samples: 217
+    Composition: {'physics': 141, 'logic': 76}
+[2] Loading base model
+[base model loaded] VRAM  8.41 GB alloc  /  8.42 GB reserved  /  85.1 GB total
+[3] Loading retriever
+[Retriever] Built TF-IDF index: 1945 docs, 6166 features
+[Retriever] Subject distribution: {'logic': 732, 'physics': 1213}
+
+============================================================
+Config 0: Qwen3.5-4B zero-shot (no LoRA)
+============================================================
+[Config 0 model loaded] VRAM  8.41 GB alloc  /  8.42 GB reserved  /  85.1 GB total
+  Attempt 0: 217 pending
+  Attempt 0: correct=88/217 acc=40.55%
+  Attempt 1: 129 pending

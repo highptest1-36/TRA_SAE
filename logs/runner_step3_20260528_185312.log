@@ -1,0 +1,66 @@
+[1] Loading val dataset
+    Eval samples: 217
+
+============================================================
+Running B2: Qwen2.5-Math-7B-Instruct (zero-shot)
+============================================================
+
+  Loading Qwen/Qwen2.5-Math-7B-Instruct ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Failed to load /usr/local/lib/python3.12/dist-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /usr/local/lib/python3.12/dist-packages/torchao/_C_cutlass_90a.abi3.so
+Failed to load /usr/local/lib/python3.12/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /usr/local/lib/python3.12/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/339 [00:00<01:27,  3.85it/s]
+Loading weights:   1%|          | 2/339 [00:00<01:33,  3.59it/s]
+Loading weights:   2%|▏         | 6/339 [00:00<00:28, 11.72it/s]
+Loading weights:   5%|▌         | 18/339 [00:00<00:09, 35.39it/s]
+Loading weights:   9%|▉         | 30/339 [00:00<00:05, 52.23it/s]
+Loading weights:  12%|█▏        | 42/339 [00:01<00:04, 64.74it/s]
+Loading weights:  16%|█▌        | 54/339 [00:01<00:03, 73.87it/s]
+Loading weights:  19%|█▉        | 66/339 [00:01<00:03, 80.27it/s]
+Loading weights:  23%|██▎       | 78/339 [00:01<00:03, 84.66it/s]
+Loading weights:  27%|██▋       | 90/339 [00:01<00:02, 87.64it/s]
+Loading weights:  30%|███       | 102/339 [00:01<00:02, 89.88it/s]
+Loading weights:  34%|███▎      | 114/339 [00:01<00:02, 91.76it/s]
+Loading weights:  37%|███▋      | 126/339 [00:01<00:02, 92.25it/s]
+Loading weights:  41%|████      | 138/339 [00:02<00:02, 93.20it/s]
+Loading weights:  44%|████▍     | 150/339 [00:02<00:02, 93.11it/s]
+Loading weights:  48%|████▊     | 162/339 [00:02<00:01, 92.28it/s]
+Loading weights:  51%|█████▏    | 174/339 [00:02<00:01, 92.48it/s]
+Loading weights:  55%|█████▍    | 186/339 [00:02<00:01, 92.99it/s]
+Loading weights:  58%|█████▊    | 198/339 [00:02<00:01, 93.60it/s]
+Loading weights:  62%|██████▏   | 210/339 [00:02<00:01, 93.60it/s]
+Loading weights:  65%|██████▌   | 222/339 [00:02<00:01, 93.75it/s]
+Loading weights:  69%|██████▉   | 234/339 [00:03<00:01, 93.16it/s]
+Loading weights:  73%|███████▎  | 246/339 [00:03<00:01, 92.80it/s]
+Loading weights:  76%|███████▌  | 258/339 [00:03<00:00, 93.19it/s]
+Loading weights:  80%|███████▉  | 270/339 [00:03<00:00, 92.53it/s]
+Loading weights:  83%|████████▎ | 282/339 [00:03<00:00, 92.36it/s]
+Loading weights:  87%|████████▋ | 294/339 [00:03<00:00, 92.78it/s]
+Loading weights:  90%|█████████ | 306/339 [00:03<00:00, 93.69it/s]
+Loading weights:  94%|█████████▍| 318/339 [00:03<00:00, 93.79it/s]
+Loading weights:  97%|█████████▋| 330/339 [00:04<00:00, 93.23it/s]
+Loading weights: 100%|██████████| 339/339 [00:04<00:00, 81.89it/s]
+[B2 loaded] VRAM  15.23 GB alloc  /  15.26 GB reserved  /  85.1 GB total
+    4/217  acc=0.0%
+    24/217  acc=0.0%
+    44/217  acc=0.0%
+    64/217  acc=0.0%
+    84/217  acc=1.2%
+    104/217  acc=1.9%
+    124/217  acc=1.6%
+    144/217  acc=2.8%
+    164/217  acc=2.4%
+    184/217  acc=3.3%
+    204/217  acc=3.4%
+  Saved to /content/drive/MyDrive/TRA-SAE/logs/baselines_20260528_185314.json
+  B2: overall=3.69%
+
+============================================================
+Running B3: Llemma-7B (zero-shot)
+============================================================
+
+  Loading EleutherAI/llemma_7b ...
+

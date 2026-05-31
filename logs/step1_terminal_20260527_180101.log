@@ -1,0 +1,14 @@
+Loaded cfg 4-5 from original: 2 entries
+[1] Loading evaluation dataset
+Run timestamp : 20260527_180103
+Result file   : /content/drive/MyDrive/TRA-SAE/logs/qwen35_ablation_v2_20260527_180103.json
+Stdout log    : /content/drive/MyDrive/TRA-SAE/logs/step1_rerun_20260527_180103.log
+    Eval samples: 217
+    Composition: {'physics': 141, 'logic': 76}
+[2] Loading base model
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:20<00:20, 20.86s/it]Fetching 2 files: 100%|██████████| 2/2 [00:20<00:00, 10.43s/it]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:53,  3.73it/s]Loading weights:   6%|▋         | 27/426 [00:00<00:04, 89.42it/s]Loading weights:  11%|█         | 46/426 [00:00<00:03, 115.66it/s]Loading weights:  18%|█▊        | 75/426 [00:00<00:02, 168.57it/s]Loading weights:  23%|██▎       | 96/426 [00:00<00:01, 171.47it/s]Loading weights:  28%|██▊       | 119/426 [00:00<00:01, 184.66it/s]Loading weights:  34%|███▍      | 146/426 [00:00<00:01, 201.91it/s]Loading weights:  40%|███▉      | 170/426 [00:01<00:01, 209.50it/s]Loading weights:  46%|████▌     | 194/426 [00:01<00:01, 218.07it/s]Loading weights:  51%|█████     | 217/426 [00:01<00:00, 210.84it/s]Loading weights:  56%|█████▌    | 239/426 [00:01<00:00, 205.87it/s]Loading weights:  61%|██████    | 260/426 [00:01<00:00, 200.56it/s]Loading weights:  67%|██████▋   | 285/426 [00:01<00:00, 214.17it/s]Loading weights:  72%|███████▏  | 307/426 [00:01<00:00, 212.73it/s]Loading weights:  78%|███████▊  | 331/426 [00:01<00:00, 216.34it/s]Loading weights:  84%|████████▍ | 358/426 [00:01<00:00, 223.89it/s]Loading weights:  89%|████████▉ | 381/426 [00:02<00:00, 225.27it/s]Loading weights:  95%|█████████▍| 404/426 [00:02<00:00, 222.79it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 190.91it/s]
+[base model loaded] VRAM  8.41 GB alloc  /  8.42 GB reserved  /  85.1 GB total
+[3] Loading retriever

@@ -1,0 +1,102 @@
+{
+  "project": "TRA-SAE EXACT 2026",
+  "archived_at": "2026-05-27",
+  "entries": [
+    {
+      "path": "run_phase4_v2_agent.py",
+      "exists": true,
+      "size_bytes": 30194,
+      "sha256": "5624c78e53d9cc9977efe171ea7cc5080b5304ef43ed602326fadef7b5b4f9d0"
+    },
+    {
+      "path": "src/config.py",
+      "exists": true,
+      "size_bytes": 7484,
+      "sha256": "6330bca4dd82e101b4755e12ed78b62f4927c521b4f49a1ac25c9837e62c4588"
+    },
+    {
+      "path": "logs/qwen35_ablation.json",
+      "exists": true,
+      "size_bytes": 3292,
+      "sha256": "0228dbd3fae97c820979f1a80d948c41a8c80240490784dedc948570cdbe02a5"
+    },
+    {
+      "path": "logs/qwen35_final_summary.json",
+      "exists": true,
+      "size_bytes": 1052,
+      "sha256": "cc1eb2cafcb980cc2c8031edf38999f6d8d05c204af95ffefb958e1c7e893157"
+    },
+    {
+      "path": "logs/qwen35_final_results.jsonl",
+      "exists": true,
+      "size_bytes": 82876,
+      "sha256": "a745162f022b9cbce1c1b06770235683adfc36a489dae7cfa74b28dee89b61e6"
+    },
+    {
+      "path": "logs/phase4_ablation_stdout.log",
+      "exists": true,
+      "size_bytes": 12534,
+      "sha256": "2dcc766b94a3cdce716ab98765872a9eb7a61ba491c39b1a7efb5df400bee02b"
+    },
+    {
+      "path": "logs/phase4_ablation_cfg4_5.log",
+      "exists": true,
+      "size_bytes": 11497,
+      "sha256": "1475d28ee26d90e7f5cd25d266abea0269fb51f1bee08dc70f81a767fb808d0b"
+    },
+    {
+      "path": "logs/phase1_sft_results.json",
+      "exists": true,
+      "size_bytes": 719,
+      "sha256": "eeeb1daf48bd4bbd521bee21fba1de068bec2329edff8bd7937d3348ced99bf3"
+    },
+    {
+      "path": "logs/phase1_5_logic_sft_results.json",
+      "exists": true,
+      "size_bytes": 680,
+      "sha256": "91f96a1241822a38441f09df9d3923d94f9a6a45ebe99b4e7041af84b3f13f6f"
+    },
+    {
+      "path": "logs/phase2_grpo_results.json",
+      "exists": true,
+      "size_bytes": 631,
+      "sha256": "24b3e5d9e9c0a48f3adfeb222b4dd36a6ba328100f7595a4dae76dd75d8a9b83"
+    },
+    {
+      "path": "logs/phase2p_grpo_physics_results.json",
+      "exists": true,
+      "size_bytes": 403,
+      "sha256": "5533bc1537b17a38a9551808fbc491dc8a22380a6c8d5b315276729c5a003dd3"
+    },
+    {
+      "path": "logs/phase2l_grpo_logic_results.json",
+      "exists": true,
+      "size_bytes": 430,
+      "sha256": "745b24f85f20d3f17ac3d5f6f2258a2c76674fe4744258d9ec7075075f0722dc"
+    },
+    {
+      "path": "paper/EXACT2026_experiment_record.md",
+      "exists": true,
+      "size_bytes": 4107,
+      "sha256": "7fbf58c70c00e331f0519041e984362ff8fd238c3b6a4c44b8a4520695a0d0f7"
+    },
+    {
+      "path": "paper/phase4_ablation_results.csv",
+      "exists": true,
+      "size_bytes": 648,
+      "sha256": "4269218e5f46d8bd2ba66025da8555cf435b0f3b0f4db2c5d2f248447f8c7657"
+    },
+    {
+      "path": "paper/reproducibility_checklist.md",
+      "exists": true,
+      "size_bytes": 1636,
+      "sha256": "ff5ee6a4482ef2700cdbb6479cd94ada6504d028eebb9011c759d4387c73a1f7"
+    },
+    {
+      "path": "paper/data_quality_checks.md",
+      "exists": true,
+      "size_bytes": 1352,
+      "sha256": "45cfb660fb1a697282b9408726167fab875345e5a232b5d49c43a8af3f2956c3"
+    }
+  ]
+}

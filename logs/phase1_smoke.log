@@ -1,0 +1,97 @@
+[18:33:11] INFO     ====================================================================
+[18:33:11] INFO     Phase 1 SFT  |  Model: Qwen/Qwen3.5-4B
+[18:33:11] INFO       LoRA r=32 alpha=64 dropout=0.05
+[18:33:11] INFO       Epochs=3 | LR=0.0002 | eff_batch=16
+[18:33:11] INFO       max_seq=2048 | BF16=True | Flash-Attn2 (if available)
+[18:33:11] INFO       Smoke-test=True
+[18:33:11] INFO     ====================================================================
+Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.10.0+cu128).
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+[1/6] Loading base model: Qwen/Qwen3.5-4B
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 25575.02it/s]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:49,  3.87it/s]Loading weights:   6%|▋         | 27/426 [00:00<00:04, 89.35it/s]Loading weights:  12%|█▏        | 51/426 [00:00<00:02, 132.82it/s]Loading weights:  19%|█▉        | 80/426 [00:00<00:01, 176.74it/s]Loading weights:  24%|██▎       | 101/426 [00:00<00:01, 182.56it/s]Loading weights:  31%|███       | 131/426 [00:00<00:01, 217.14it/s]Loading weights:  36%|███▋      | 155/426 [00:00<00:01, 204.32it/s]Loading weights:  43%|████▎     | 183/426 [00:01<00:01, 225.23it/s]Loading weights:  49%|████▊     | 207/426 [00:01<00:01, 210.87it/s]Loading weights:  56%|█████▌    | 237/426 [00:01<00:00, 234.45it/s]Loading weights:  62%|██████▏   | 262/426 [00:01<00:00, 218.76it/s]Loading weights:  68%|██████▊   | 291/426 [00:01<00:00, 231.71it/s]Loading weights:  74%|███████▍  | 315/426 [00:01<00:00, 221.83it/s]Loading weights:  81%|████████  | 344/426 [00:01<00:00, 233.85it/s]Loading weights:  86%|████████▋ | 368/426 [00:01<00:00, 223.50it/s]Loading weights:  93%|█████████▎| 397/426 [00:01<00:00, 235.02it/s]Loading weights:  99%|█████████▉| 421/426 [00:02<00:00, 223.90it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 201.92it/s]
+[18:33:22] INFO     Base model loaded — dtype=torch.bfloat16
+[18:33:23] INFO     LoRA applied — r=32
+[18:33:24] INFO     Datasets loaded — train=1945 val=217 physics=1213 logic=732
+[18:33:29] INFO     Chat template applied | sample_len=873
+[18:33:32] INFO     Training plan: 1 epoch(s) | ~366 total steps | warmup=0 | eff_batch=16
+[transformers] `logging_dir` is deprecated and will be removed in v5.2. Please set `TENSORBOARD_LOGGING_DIR` instead.
+[after base model load] VRAM  8.41 GB alloc  /  8.42 GB reserved  /  42.4 GB total
+
+[2/6] Applying LoRA  (r=32, alpha=64)
+trainable params: 42,467,328 || all params: 4,248,218,624 || trainable%: 0.9997
+trainable params: 42,467,328 || all params: 4,248,218,624 || trainable%: 0.9997
+[after LoRA] VRAM  8.59 GB alloc  /  8.63 GB reserved  /  42.4 GB total
+
+[3/6] Loading datasets
+      Physics: 1213  Logic: 732
+
+[4/6] Formatting datasets with chat template…
+      Sample[0] length: 873 chars
+
+  *** SMOKE TEST: only 5 steps ***
+
+[5/6] Building SFTTrainer…
+Adding EOS to train dataset:   0%|          | 0/1945 [00:00<?, ? examples/s]Adding EOS to train dataset:  94%|█████████▎| 1823/1945 [00:00<00:00, 18055.33 examples/s]Adding EOS to train dataset: 100%|██████████| 1945/1945 [00:00<00:00, 13849.57 examples/s]
+Tokenizing train dataset:   0%|          | 0/1945 [00:00<?, ? examples/s]Tokenizing train dataset:   6%|▌         | 116/1945 [00:00<00:01, 1147.50 examples/s]Tokenizing train dataset:  13%|█▎        | 259/1945 [00:00<00:01, 1305.79 examples/s]Tokenizing train dataset:  21%|██        | 408/1945 [00:00<00:01, 1385.86 examples/s]Tokenizing train dataset:  32%|███▏      | 618/1945 [00:00<00:00, 1389.44 examples/s]Tokenizing train dataset:  43%|████▎     | 827/1945 [00:00<00:00, 1388.60 examples/s]Tokenizing train dataset:  50%|████▉     | 967/1945 [00:00<00:00, 1390.47 examples/s]Tokenizing train dataset:  59%|█████▊    | 1138/1945 [00:00<00:00, 1144.08 examples/s]Tokenizing train dataset:  65%|██████▌   | 1272/1945 [00:01<00:00, 1191.05 examples/s]Tokenizing train dataset:  72%|███████▏  | 1403/1945 [00:01<00:00, 1219.91 examples/s]Tokenizing train dataset:  79%|███████▉  | 1539/1945 [00:01<00:00, 1254.89 examples/s]Tokenizing train dataset:  87%|████████▋ | 1684/1945 [00:01<00:00, 1306.79 examples/s]Tokenizing train dataset:  97%|█████████▋| 1885/1945 [00:01<00:00, 1315.52 examples/s]Tokenizing train dataset: 100%|██████████| 1945/1945 [00:01<00:00, 1258.34 examples/s]
+Adding EOS to eval dataset:   0%|          | 0/217 [00:00<?, ? examples/s]Adding EOS to eval dataset: 100%|██████████| 217/217 [00:00<00:00, 6649.60 examples/s]
+Tokenizing eval dataset:   0%|          | 0/217 [00:00<?, ? examples/s]Tokenizing eval dataset:  56%|█████▌    | 122/217 [00:00<00:00, 1207.83 examples/s]Tokenizing eval dataset: 100%|██████████| 217/217 [00:00<00:00, 1110.43 examples/s]
+2026-05-24 18:33:45.798002: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-05-24 18:33:45.860538: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[transformers] The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 248046, 'pad_token_id': 248044}.
+[before training] VRAM  8.59 GB alloc  /  8.63 GB reserved  /  42.4 GB total
+
+[6/6] Training  (eff_batch=16  epochs=1  lr=0.0002)
+====================================================================
+  0%|          | 0/5 [00:00<?, ?it/s] 20%|██        | 1/5 [00:10<00:41, 10.29s/it] 40%|████      | 2/5 [00:20<00:30, 10.01s/it] 60%|██████    | 3/5 [00:29<00:19,  9.77s/it] 80%|████████  | 4/5 [00:39<00:09,  9.89s/it]100%|██████████| 5/5 [00:48<00:00,  9.63s/it]
+  0%|          | 0/28 [00:00<?, ?it/s][A
+  7%|▋         | 2/28 [00:00<00:07,  3.34it/s][A
+ 11%|█         | 3/28 [00:00<00:08,  3.01it/s][A
+ 14%|█▍        | 4/28 [00:01<00:08,  2.75it/s][A
+ 18%|█▊        | 5/28 [00:02<00:11,  2.01it/s][A
+ 21%|██▏       | 6/28 [00:02<00:11,  1.91it/s][A
+ 25%|██▌       | 7/28 [00:03<00:11,  1.76it/s][A
+ 29%|██▊       | 8/28 [00:03<00:10,  1.91it/s][A
+ 32%|███▏      | 9/28 [00:05<00:15,  1.22it/s][A
+ 36%|███▌      | 10/28 [00:06<00:14,  1.24it/s][A
+ 39%|███▉      | 11/28 [00:06<00:11,  1.46it/s][A
+ 43%|████▎     | 12/28 [00:07<00:10,  1.47it/s][A
+ 46%|████▋     | 13/28 [00:07<00:10,  1.47it/s][A
+ 50%|█████     | 14/28 [00:08<00:08,  1.64it/s][A
+ 54%|█████▎    | 15/28 [00:08<00:07,  1.82it/s][A
+ 57%|█████▋    | 16/28 [00:09<00:06,  1.97it/s][A
+ 61%|██████    | 17/28 [00:09<00:05,  2.12it/s][A
+ 64%|██████▍   | 18/28 [00:09<00:04,  2.06it/s][A
+ 68%|██████▊   | 19/28 [00:10<00:04,  2.13it/s][A
+ 71%|███████▏  | 20/28 [00:10<00:03,  2.13it/s][A
+ 75%|███████▌  | 21/28 [00:11<00:04,  1.74it/s][A
+ 79%|███████▊  | 22/28 [00:12<00:03,  1.81it/s][A
+ 82%|████████▏ | 23/28 [00:12<00:02,  1.92it/s][A
+ 86%|████████▌ | 24/28 [00:13<00:02,  1.92it/s][A
+ 89%|████████▉ | 25/28 [00:13<00:01,  1.95it/s][A
+ 93%|█████████▎| 26/28 [00:14<00:01,  1.62it/s][A
+ 96%|█████████▋| 27/28 [00:15<00:00,  1.58it/s][A
+100%|██████████| 28/28 [00:15<00:00,  1.75it/s][A                                             
+                                               [A100%|██████████| 5/5 [01:05<00:00,  9.63s/it]
+100%|██████████| 28/28 [00:15<00:00,  1.75it/s][A
+                                               [A                                             100%|██████████| 5/5 [01:07<00:00,  9.63s/it]100%|██████████| 5/5 [01:07<00:00, 13.54s/it]
+[18:34:57] INFO     Checkpoint saved → /content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_sft/final
+[18:34:57] INFO     Phase 1 done | loss=0.9695 steps=5 time=1.1min
+{'eval_loss': '0.5874', 'eval_runtime': '16.94', 'eval_samples_per_second': '12.81', 'eval_steps_per_second': '1.653', 'eval_entropy': '0.6626', 'eval_num_tokens': '1.926e+04', 'eval_mean_token_accuracy': '0.8516', 'epoch': '0.04107'}
+{'train_runtime': '67.5', 'train_samples_per_second': '1.185', 'train_steps_per_second': '0.074', 'train_loss': '0.9695', 'epoch': '0.04107'}
+[after training] VRAM  8.96 GB alloc  /  32.17 GB reserved  /  42.4 GB total
+
+  Saving → /content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_sft/final
+====================================================================
+ PHASE 1 SFT COMPLETE
+  Training loss   : 0.9695
+  Global steps    : 5
+  Time elapsed    : 1.1 min
+  Checkpoint      : /content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_sft/final
+  Results JSON    : /content/drive/MyDrive/TRA-SAE/logs/phase1_sft_results.json
+  TensorBoard     : /content/drive/MyDrive/TRA-SAE/logs/phase1_tensorboard
+  Next step       : python run_phase1_5_logic_sft.py
+====================================================================

@@ -1,0 +1,82 @@
+Run timestamp : 20260527_200902
+Result file   : /content/drive/MyDrive/TRA-SAE/logs/qwen35_ablation_v2_20260527_200902.json
+Stdout log    : /content/drive/MyDrive/TRA-SAE/logs/step1_rerun_20260527_200902.log
+    Eval samples: 217
+    Composition: {'physics': 141, 'logic': 76}
+[2] Loading base model
+[base model loaded] VRAM  8.41 GB alloc  /  8.42 GB reserved  /  85.1 GB total
+[3] Loading retriever
+[Retriever] Built TF-IDF index: 1945 docs, 6166 features
+[Retriever] Subject distribution: {'physics': 1213, 'logic': 732}
+
+============================================================
+Config 0: Qwen3.5-4B zero-shot (no LoRA)
+============================================================
+[Config 0 model loaded] VRAM  8.41 GB alloc  /  8.42 GB reserved  /  85.1 GB total
+  Attempt 0: 217 pending
+  Attempt 0: correct=88/217 acc=40.55%
+  Attempt 1: 129 pending
+  Attempt 1: correct=94/217 acc=43.32%
+  Attempt 2: 123 pending
+  Attempt 2: correct=98/217 acc=45.16%
+
+  Config 0 DONE: overall=45.16%  phys=55.32%  logic=26.32%
+  n_phys=141, n_logic=76, n_total=217  [sum check: 217==217]
+  [checkpoint saved: step1_checkpoint_20260527_200902.json]
+
+============================================================
+Config 1: + SFT Phase 1
+============================================================
+[Config 1 model loaded] VRAM  8.60 GB alloc  /  8.79 GB reserved  /  85.1 GB total
+  Attempt 0: 217 pending
+  Attempt 0: correct=98/217 acc=45.16%
+  Attempt 1: 119 pending
+  Attempt 1: correct=104/217 acc=47.93%
+  Attempt 2: 113 pending
+  Attempt 2: correct=110/217 acc=50.69%
+
+  Config 1 DONE: overall=50.69%  phys=61.70%  logic=30.26%
+  n_phys=141, n_logic=76, n_total=217  [sum check: 217==217]
+  [checkpoint saved: step1_checkpoint_20260527_200902.json]
+
+============================================================
+Config 2: + Logic SFT Phase 1.5
+============================================================
+[Config 2 model loaded] VRAM  8.60 GB alloc  /  8.81 GB reserved  /  85.1 GB total
+  Attempt 0: 217 pending
+  Attempt 0: correct=101/217 acc=46.54%
+  Attempt 1: 116 pending
+  Attempt 1: correct=107/217 acc=49.31%
+  Attempt 2: 110 pending
+  Attempt 2: correct=116/217 acc=53.46%
+
+  Config 2 DONE: overall=53.46%  phys=68.09%  logic=26.32%
+  n_phys=141, n_logic=76, n_total=217  [sum check: 217==217]
+  [checkpoint saved: step1_checkpoint_20260527_200902.json]
+
+============================================================
+Config 3: + GRPO mixed Phase 2
+============================================================
+[Config 3 model loaded] VRAM  8.60 GB alloc  /  8.81 GB reserved  /  85.1 GB total
+  Attempt 0: 217 pending
+  Attempt 0: correct=99/217 acc=45.62%
+  Attempt 1: 118 pending
+  Attempt 1: correct=105/217 acc=48.39%
+  Attempt 2: 112 pending
+  Attempt 2: correct=114/217 acc=52.53%
+
+  Config 3 DONE: overall=52.53%  phys=67.38%  logic=25.00%
+  n_phys=141, n_logic=76, n_total=217  [sum check: 217==217]
+  [checkpoint saved: step1_checkpoint_20260527_200902.json]
+
+Saved (timestamped) : /content/drive/MyDrive/TRA-SAE/logs/qwen35_ablation_v2_20260527_200902.json
+Saved (latest copy) : /content/drive/MyDrive/TRA-SAE/logs/qwen35_ablation_v2_latest.json
+Saved per-sample    : /content/drive/MyDrive/TRA-SAE/logs/ablation_per_sample_20260527_200902.jsonl
+Saved per-sample lat: /content/drive/MyDrive/TRA-SAE/logs/ablation_per_sample_latest.jsonl
+SANITY CHECK:
+  cfg0 zero_shot: n_phys=141, n_logic=76, n_total=217 → OK
+  cfg1 sft_phase1: n_phys=141, n_logic=76, n_total=217 → OK
+  cfg2 sft_logic: n_phys=141, n_logic=76, n_total=217 → OK
+  cfg3 grpo_mixed: n_phys=141, n_logic=76, n_total=217 → OK
+  cfg4 dual_lora_router: n_phys=141, n_logic=76, n_total=217 → OK
+  cfg5 full_v2: n_phys=141, n_logic=76, n_total=217 → OK

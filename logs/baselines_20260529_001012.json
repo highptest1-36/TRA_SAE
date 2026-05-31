@@ -1,0 +1,62 @@
+{
+  "baselines": [
+    {
+      "id": "B2",
+      "model_id": "Qwen/Qwen2.5-Math-7B-Instruct",
+      "description": "Qwen2.5-Math-7B-Instruct (zero-shot)",
+      "accuracy_overall": 3.69,
+      "accuracy_physics": 0.0,
+      "accuracy_logic": 10.53,
+      "n_total": 217,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_correct": 8,
+      "elapsed_min": 30.3
+    },
+    {
+      "id": "B3",
+      "model_id": "EleutherAI/llemma_7b",
+      "description": "Llemma-7B (zero-shot)",
+      "accuracy_overall": 12.9,
+      "accuracy_physics": 5.67,
+      "accuracy_logic": 26.32,
+      "n_total": 217,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_correct": 28,
+      "elapsed_min": 32.6
+    },
+    {
+      "id": "B4",
+      "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+      "description": "Mistral-7B-Instruct-v0.3 (zero-shot)",
+      "accuracy_overall": 9.68,
+      "accuracy_physics": 6.38,
+      "accuracy_logic": 15.79,
+      "n_total": 217,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_correct": 21,
+      "elapsed_min": 18.6
+    },
+    {
+      "id": "B5",
+      "model_id": "internlm/internlm2_5-math-7b-chat",
+      "description": "InternLM2.5-Math-7B-chat (zero-shot)",
+      "error": "internlm/internlm2_5-math-7b-chat is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'\nIf this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=<your_token>`",
+      "accuracy_overall": 0.0,
+      "accuracy_physics": 0.0,
+      "accuracy_logic": 0.0,
+      "n_total": 0,
+      "n_physics": 0,
+      "n_logic": 0,
+      "n_correct": 0,
+      "elapsed_min": 0.0
+    },
+    {
+      "id": "B6",
+      "error": "no OPENAI_API_KEY"
+    }
+  ],
+  "smoke_test": false
+}

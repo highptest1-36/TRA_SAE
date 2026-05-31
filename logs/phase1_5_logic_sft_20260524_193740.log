@@ -1,0 +1,13 @@
+[19:37:40] INFO     ====================================================================
+[19:37:40] INFO     Phase 1.5 Logic SFT  |  Base: /content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_sft/final
+[19:37:40] INFO       LoRA r=32 alpha=64 | LR=5e-05
+[19:37:40] INFO       Epochs=2 | eff_batch=16
+[19:37:40] INFO       Logic-only curriculum + FOL CoT augmentation
+[19:37:40] INFO       Smoke-test=False
+[19:37:40] INFO     ====================================================================
+[19:37:52] INFO     Phase 1 checkpoint loaded successfully
+[19:37:53] INFO     Logic subsets — train=732 val=76
+[19:37:58] INFO     Chat template applied | sample_len=991
+[19:38:01] INFO     Training plan: 2 epoch(s) | ~92 total steps | warmup=20 | LR=5e-05 | eff_batch=16
+[19:53:58] INFO     Checkpoint saved → /content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_sft_logic/final
+[19:53:58] INFO     Phase 1.5 done | loss=0.1326 steps=92 time=15.7min

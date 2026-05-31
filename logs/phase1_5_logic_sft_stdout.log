@@ -1,0 +1,95 @@
+[19:37:40] INFO     ====================================================================
+[19:37:40] INFO     Phase 1.5 Logic SFT  |  Base: /content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_sft/final
+[19:37:40] INFO       LoRA r=32 alpha=64 | LR=5e-05
+[19:37:40] INFO       Epochs=2 | eff_batch=16
+[19:37:40] INFO       Logic-only curriculum + FOL CoT augmentation
+[19:37:40] INFO       Smoke-test=False
+[19:37:40] INFO     ====================================================================
+Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.10.0+cu128).
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+[1/6] Loading Phase 1 checkpoint: /content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_sft/final
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 10578.32it/s]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:52,  3.77it/s]Loading weights:   6%|▌         | 26/426 [00:00<00:04, 84.48it/s]Loading weights:  12%|█▏        | 51/426 [00:00<00:02, 136.66it/s]Loading weights:  19%|█▊        | 79/426 [00:00<00:01, 176.72it/s]Loading weights:  24%|██▎       | 101/426 [00:00<00:01, 177.89it/s]Loading weights:  31%|███       | 131/426 [00:00<00:01, 203.57it/s]Loading weights:  36%|███▌      | 153/426 [00:00<00:01, 195.40it/s]Loading weights:  43%|████▎     | 182/426 [00:01<00:01, 219.95it/s]Loading weights:  48%|████▊     | 206/426 [00:01<00:01, 206.27it/s]Loading weights:  55%|█████▌    | 236/426 [00:01<00:00, 230.41it/s]Loading weights:  61%|██████    | 260/426 [00:01<00:00, 212.38it/s]Loading weights:  68%|██████▊   | 291/426 [00:01<00:00, 231.14it/s]Loading weights:  74%|███████▍  | 315/426 [00:01<00:00, 220.21it/s]Loading weights:  80%|████████  | 341/426 [00:01<00:00, 228.94it/s]Loading weights:  86%|████████▌ | 365/426 [00:01<00:00, 212.55it/s]Loading weights:  93%|█████████▎| 396/426 [00:02<00:00, 237.44it/s]Loading weights:  99%|█████████▉| 421/426 [00:02<00:00, 221.23it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 198.14it/s]
+[19:37:52] INFO     Phase 1 checkpoint loaded successfully
+      Loading PEFT adapters from /content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_sft/final…
+trainable params: 42,467,328 || all params: 4,248,218,624 || trainable%: 0.9997
+[after Phase 1 checkpoint load] VRAM  8.59 GB alloc  /  8.77 GB reserved  /  42.4 GB total
+
+[2/6] Loading and filtering logic examples
+Filter:   0%|          | 0/1945 [00:00<?, ? examples/s]Filter: 100%|██████████| 1945/1945 [00:00<00:00, 35005.03 examples/s]
+Filter:   0%|          | 0/217 [00:00<?, ? examples/s]Filter: 100%|██████████| 217/217 [00:00<00:00, 11281.30 examples/s]
+[19:37:53] INFO     Logic subsets — train=732 val=76
+      Logic train: 732  |  Logic val: 76
+
+[3/6] Applying FOL-augmented chat template…
+logic_train:   0%|          | 0/732 [00:00<?, ? examples/s]logic_train: 100%|██████████| 732/732 [00:00<00:00, 4989.14 examples/s]logic_train: 100%|██████████| 732/732 [00:00<00:00, 4762.62 examples/s]
+logic_val:   0%|          | 0/76 [00:00<?, ? examples/s]logic_val: 100%|██████████| 76/76 [00:00<00:00, 2246.52 examples/s]
+[19:37:58] INFO     Chat template applied | sample_len=991
+[19:38:01] INFO     Training plan: 2 epoch(s) | ~92 total steps | warmup=20 | LR=5e-05 | eff_batch=16
+[transformers] `logging_dir` is deprecated and will be removed in v5.2. Please set `TENSORBOARD_LOGGING_DIR` instead.
+      Sample[0] length: 991 chars
+
+[4/6] Building SFTTrainer (logic curriculum)…
+Adding EOS to train dataset:   0%|          | 0/732 [00:00<?, ? examples/s]Adding EOS to train dataset: 100%|██████████| 732/732 [00:00<00:00, 11652.30 examples/s]
+Tokenizing train dataset:   0%|          | 0/732 [00:00<?, ? examples/s]Tokenizing train dataset:  10%|▉         | 73/732 [00:00<00:00, 703.20 examples/s]Tokenizing train dataset:  22%|██▏       | 163/732 [00:00<00:00, 808.42 examples/s]Tokenizing train dataset:  38%|███▊      | 280/732 [00:00<00:00, 780.46 examples/s]Tokenizing train dataset:  51%|█████     | 371/732 [00:00<00:00, 823.62 examples/s]Tokenizing train dataset:  63%|██████▎   | 461/732 [00:00<00:00, 841.56 examples/s]Tokenizing train dataset:  75%|███████▌  | 552/732 [00:00<00:00, 859.72 examples/s]Tokenizing train dataset:  87%|████████▋ | 640/732 [00:00<00:00, 862.65 examples/s]Tokenizing train dataset: 100%|██████████| 732/732 [00:00<00:00, 874.07 examples/s]Tokenizing train dataset: 100%|██████████| 732/732 [00:00<00:00, 747.05 examples/s]
+Adding EOS to eval dataset:   0%|          | 0/76 [00:00<?, ? examples/s]Adding EOS to eval dataset: 100%|██████████| 76/76 [00:00<00:00, 3027.43 examples/s]
+Tokenizing eval dataset:   0%|          | 0/76 [00:00<?, ? examples/s]Tokenizing eval dataset:  99%|█████████▊| 75/76 [00:00<00:00, 737.36 examples/s]Tokenizing eval dataset: 100%|██████████| 76/76 [00:00<00:00, 629.97 examples/s]
+2026-05-24 19:38:14.158250: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-05-24 19:38:14.223969: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[transformers] The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 248046, 'pad_token_id': 248044}.
+[before training] VRAM  8.59 GB alloc  /  8.77 GB reserved  /  42.4 GB total
+
+[5/6] Training  (LR=5e-05  epochs=2  logic-only)
+====================================================================
+  0%|          | 0/92 [00:00<?, ?it/s]  1%|          | 1/92 [00:10<16:05, 10.61s/it]  2%|▏         | 2/92 [00:20<15:14, 10.17s/it]  3%|▎         | 3/92 [00:30<14:49, 10.00s/it]  4%|▍         | 4/92 [00:40<14:48, 10.09s/it]  5%|▌         | 5/92 [00:50<14:23,  9.92s/it]                                                5%|▌         | 5/92 [00:50<14:23,  9.92s/it]  7%|▋         | 6/92 [01:01<15:01, 10.48s/it]  8%|▊         | 7/92 [01:10<14:16, 10.08s/it]  9%|▊         | 8/92 [01:21<14:19, 10.23s/it] 10%|▉         | 9/92 [01:31<13:55, 10.07s/it] 11%|█         | 10/92 [01:40<13:35,  9.94s/it]                                                11%|█         | 10/92 [01:40<13:35,  9.94s/it] 12%|█▏        | 11/92 [01:50<13:18,  9.86s/it] 13%|█▎        | 12/92 [02:00<13:04,  9.81s/it] 14%|█▍        | 13/92 [02:10<13:09,  9.99s/it] 15%|█▌        | 14/92 [02:20<12:57,  9.97s/it] 16%|█▋        | 15/92 [02:30<12:46,  9.96s/it]                                                16%|█▋        | 15/92 [02:30<12:46,  9.96s/it] 17%|█▋        | 16/92 [02:40<12:28,  9.85s/it] 18%|█▊        | 17/92 [02:50<12:38, 10.12s/it] 20%|█▉        | 18/92 [03:00<12:23, 10.04s/it] 21%|██        | 19/92 [03:10<12:13, 10.05s/it] 22%|██▏       | 20/92 [03:20<11:58,  9.97s/it]                                                22%|██▏       | 20/92 [03:20<11:58,  9.97s/it] 23%|██▎       | 21/92 [03:30<11:45,  9.93s/it] 24%|██▍       | 22/92 [03:40<11:40, 10.01s/it] 25%|██▌       | 23/92 [03:50<11:33, 10.05s/it] 26%|██▌       | 24/92 [04:00<11:19,  9.99s/it] 27%|██▋       | 25/92 [04:10<11:06,  9.95s/it]                                                27%|██▋       | 25/92 [04:10<11:06,  9.95s/it] 28%|██▊       | 26/92 [04:20<11:06, 10.11s/it] 29%|██▉       | 27/92 [04:31<11:08, 10.28s/it] 30%|███       | 28/92 [04:41<10:49, 10.15s/it] 32%|███▏      | 29/92 [04:51<10:30, 10.01s/it] 33%|███▎      | 30/92 [05:01<10:22, 10.04s/it]                                                33%|███▎      | 30/92 [05:01<10:22, 10.04s/it] 34%|███▎      | 31/92 [05:10<09:59,  9.83s/it] 35%|███▍      | 32/92 [05:20<09:55,  9.92s/it] 36%|███▌      | 33/92 [05:31<09:55, 10.09s/it] 37%|███▋      | 34/92 [05:42<09:58, 10.31s/it] 38%|███▊      | 35/92 [05:52<09:42, 10.22s/it]                                                38%|███▊      | 35/92 [05:52<09:42, 10.22s/it] 39%|███▉      | 36/92 [06:01<09:26, 10.12s/it] 40%|████      | 37/92 [06:13<09:34, 10.44s/it] 41%|████▏     | 38/92 [06:23<09:18, 10.35s/it] 42%|████▏     | 39/92 [06:33<09:10, 10.39s/it] 43%|████▎     | 40/92 [06:43<08:48, 10.16s/it]                                                43%|████▎     | 40/92 [06:43<08:48, 10.16s/it] 45%|████▍     | 41/92 [06:53<08:44, 10.29s/it] 46%|████▌     | 42/92 [07:03<08:29, 10.19s/it] 47%|████▋     | 43/92 [07:13<08:15, 10.10s/it] 48%|████▊     | 44/92 [07:24<08:07, 10.15s/it] 49%|████▉     | 45/92 [07:34<07:55, 10.12s/it]                                                49%|████▉     | 45/92 [07:34<07:55, 10.12s/it] 50%|█████     | 46/92 [07:41<07:10,  9.35s/it]{'loss': '0.7374', 'grad_norm': '3.003', 'learning_rate': '1e-05', 'entropy': '0.4341', 'num_tokens': '3.164e+04', 'mean_token_accuracy': '0.8489', 'epoch': '0.1093'}
+{'loss': '0.4013', 'grad_norm': '2.326', 'learning_rate': '2.25e-05', 'entropy': '0.4491', 'num_tokens': '6.287e+04', 'mean_token_accuracy': '0.8907', 'epoch': '0.2186'}
+{'loss': '0.1378', 'grad_norm': '0.6253', 'learning_rate': '3.5e-05', 'entropy': '0.1729', 'num_tokens': '9.493e+04', 'mean_token_accuracy': '0.9574', 'epoch': '0.3279'}
+{'loss': '0.1059', 'grad_norm': '0.5792', 'learning_rate': '4.75e-05', 'entropy': '0.1293', 'num_tokens': '1.258e+05', 'mean_token_accuracy': '0.9657', 'epoch': '0.4372'}
+{'loss': '0.09786', 'grad_norm': '0.554', 'learning_rate': '4.962e-05', 'entropy': '0.1222', 'num_tokens': '1.585e+05', 'mean_token_accuracy': '0.97', 'epoch': '0.5464'}
+{'loss': '0.08463', 'grad_norm': '0.496', 'learning_rate': '4.81e-05', 'entropy': '0.1066', 'num_tokens': '1.909e+05', 'mean_token_accuracy': '0.9743', 'epoch': '0.6557'}
+{'loss': '0.09121', 'grad_norm': '0.6333', 'learning_rate': '4.548e-05', 'entropy': '0.09965', 'num_tokens': '2.233e+05', 'mean_token_accuracy': '0.9699', 'epoch': '0.765'}
+{'loss': '0.1014', 'grad_norm': '0.5581', 'learning_rate': '4.189e-05', 'entropy': '0.1126', 'num_tokens': '2.556e+05', 'mean_token_accuracy': '0.9687', 'epoch': '0.8743'}
+{'loss': '0.0917', 'grad_norm': '0.4666', 'learning_rate': '3.75e-05', 'entropy': '0.1064', 'num_tokens': '2.881e+05', 'mean_token_accuracy': '0.9708', 'epoch': '0.9836'}
+ 51%|█████     | 47/92 [07:52<07:18,  9.74s/it] 52%|█████▏    | 48/92 [08:02<07:08,  9.73s/it] 53%|█████▎    | 49/92 [08:11<07:01,  9.80s/it] 54%|█████▍    | 50/92 [08:23<07:15, 10.38s/it]                                                54%|█████▍    | 50/92 [08:23<07:15, 10.38s/it] 55%|█████▌    | 51/92 [08:33<06:59, 10.23s/it] 57%|█████▋    | 52/92 [08:43<06:49, 10.24s/it] 58%|█████▊    | 53/92 [08:53<06:35, 10.15s/it] 59%|█████▊    | 54/92 [09:03<06:23, 10.08s/it] 60%|█████▉    | 55/92 [09:14<06:18, 10.24s/it]                                                60%|█████▉    | 55/92 [09:14<06:18, 10.24s/it] 61%|██████    | 56/92 [09:23<05:59,  9.99s/it] 62%|██████▏   | 57/92 [09:35<06:05, 10.44s/it] 63%|██████▎   | 58/92 [09:45<05:48, 10.26s/it] 64%|██████▍   | 59/92 [09:55<05:39, 10.28s/it] 65%|██████▌   | 60/92 [10:05<05:24, 10.15s/it]                                                65%|██████▌   | 60/92 [10:05<05:24, 10.15s/it] 66%|██████▋   | 61/92 [10:15<05:15, 10.18s/it] 67%|██████▋   | 62/92 [10:25<05:05, 10.19s/it] 68%|██████▊   | 63/92 [10:36<05:02, 10.43s/it] 70%|██████▉   | 64/92 [10:46<04:50, 10.36s/it] 71%|███████   | 65/92 [10:57<04:38, 10.30s/it]                                                71%|███████   | 65/92 [10:57<04:38, 10.30s/it] 72%|███████▏  | 66/92 [11:07<04:31, 10.42s/it] 73%|███████▎  | 67/92 [11:17<04:18, 10.35s/it] 74%|███████▍  | 68/92 [11:28<04:07, 10.31s/it] 75%|███████▌  | 69/92 [11:39<04:03, 10.58s/it] 76%|███████▌  | 70/92 [11:49<03:51, 10.51s/it]                                                76%|███████▌  | 70/92 [11:49<03:51, 10.51s/it] 77%|███████▋  | 71/92 [11:59<03:37, 10.37s/it] 78%|███████▊  | 72/92 [12:09<03:26, 10.33s/it] 79%|███████▉  | 73/92 [12:20<03:15, 10.29s/it] 80%|████████  | 74/92 [12:30<03:05, 10.30s/it] 82%|████████▏ | 75/92 [12:40<02:53, 10.23s/it]                                                82%|████████▏ | 75/92 [12:40<02:53, 10.23s/it] 83%|████████▎ | 76/92 [12:50<02:42, 10.18s/it] 84%|████████▎ | 77/92 [13:00<02:30, 10.06s/it] 85%|████████▍ | 78/92 [13:10<02:19, 10.00s/it] 86%|████████▌ | 79/92 [13:20<02:12, 10.21s/it] 87%|████████▋ | 80/92 [13:31<02:01, 10.15s/it]                                                87%|████████▋ | 80/92 [13:31<02:01, 10.15s/it] 88%|████████▊ | 81/92 [13:40<01:48,  9.86s/it] 89%|████████▉ | 82/92 [13:50<01:39,  9.94s/it] 90%|█████████ | 83/92 [14:01<01:31, 10.20s/it] 91%|█████████▏| 84/92 [14:10<01:20, 10.07s/it] 92%|█████████▏| 85/92 [14:21<01:11, 10.15s/it]                                                92%|█████████▏| 85/92 [14:21<01:11, 10.15s/it] 93%|█████████▎| 86/92 [14:31<01:00, 10.11s/it] 95%|█████████▍| 87/92 [14:41<00:50, 10.09s/it] 96%|█████████▌| 88/92 [14:51<00:40, 10.09s/it] 97%|█████████▋| 89/92 [15:02<00:30, 10.27s/it] 98%|█████████▊| 90/92 [15:12<00:20, 10.33s/it]                                                98%|█████████▊| 90/92 [15:12<00:20, 10.33s/it] 99%|█████████▉| 91/92 [15:22<00:10, 10.10s/it]100%|██████████| 92/92 [15:29<00:00,  9.43s/it]{'loss': '0.07296', 'grad_norm': '0.4438', 'learning_rate': '3.252e-05', 'entropy': '0.09233', 'num_tokens': '3.183e+05', 'mean_token_accuracy': '0.9784', 'epoch': '1.087'}
+{'loss': '0.06565', 'grad_norm': '0.6623', 'learning_rate': '2.718e-05', 'entropy': '0.08003', 'num_tokens': '3.501e+05', 'mean_token_accuracy': '0.9801', 'epoch': '1.197'}
+{'loss': '0.06438', 'grad_norm': '0.4713', 'learning_rate': '2.174e-05', 'entropy': '0.08178', 'num_tokens': '3.816e+05', 'mean_token_accuracy': '0.9802', 'epoch': '1.306'}
+{'loss': '0.06387', 'grad_norm': '0.4481', 'learning_rate': '1.645e-05', 'entropy': '0.07982', 'num_tokens': '4.16e+05', 'mean_token_accuracy': '0.9807', 'epoch': '1.415'}
+{'loss': '0.05185', 'grad_norm': '0.4503', 'learning_rate': '1.157e-05', 'entropy': '0.06415', 'num_tokens': '4.487e+05', 'mean_token_accuracy': '0.9836', 'epoch': '1.525'}
+{'loss': '0.06781', 'grad_norm': '0.488', 'learning_rate': '7.322e-06', 'entropy': '0.07851', 'num_tokens': '4.807e+05', 'mean_token_accuracy': '0.9788', 'epoch': '1.634'}
+{'loss': '0.05925', 'grad_norm': '0.3793', 'learning_rate': '3.915e-06', 'entropy': '0.07401', 'num_tokens': '5.116e+05', 'mean_token_accuracy': '0.9805', 'epoch': '1.743'}
+{'loss': '0.05887', 'grad_norm': '0.4369', 'learning_rate': '1.508e-06', 'entropy': '0.07385', 'num_tokens': '5.428e+05', 'mean_token_accuracy': '0.9818', 'epoch': '1.852'}
+{'loss': '0.06056', 'grad_norm': '0.5277', 'learning_rate': '2.139e-07', 'entropy': '0.07598', 'num_tokens': '5.76e+05', 'mean_token_accuracy': '0.9819', 'epoch': '1.962'}
+
+  0%|          | 0/10 [00:00<?, ?it/s][A
+ 20%|██        | 2/10 [00:00<00:03,  2.53it/s][A
+ 30%|███       | 3/10 [00:01<00:03,  1.95it/s][A
+ 40%|████      | 4/10 [00:03<00:05,  1.10it/s][A
+ 50%|█████     | 5/10 [00:03<00:04,  1.19it/s][A
+ 60%|██████    | 6/10 [00:04<00:02,  1.35it/s][A
+ 70%|███████   | 7/10 [00:05<00:02,  1.28it/s][A
+ 80%|████████  | 8/10 [00:05<00:01,  1.43it/s][A
+ 90%|█████████ | 9/10 [00:06<00:00,  1.32it/s][A
+100%|██████████| 10/10 [00:07<00:00,  1.47it/s][A                                               
+                                               [A100%|██████████| 92/92 [15:38<00:00,  9.43s/it]
+100%|██████████| 10/10 [00:07<00:00,  1.47it/s][A
+                                               [A                                               100%|██████████| 92/92 [15:39<00:00,  9.43s/it]100%|██████████| 92/92 [15:40<00:00, 10.22s/it]
+[19:53:58] INFO     Checkpoint saved → /content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_sft_logic/final
+[19:53:58] INFO     Phase 1.5 done | loss=0.1326 steps=92 time=15.7min
+{'eval_loss': '0.2082', 'eval_runtime': '8.273', 'eval_samples_per_second': '9.186', 'eval_steps_per_second': '1.209', 'eval_entropy': '0.1539', 'eval_num_tokens': '5.855e+05', 'eval_mean_token_accuracy': '0.9458', 'epoch': '2'}
+{'train_runtime': '939.9', 'train_samples_per_second': '1.558', 'train_steps_per_second': '0.098', 'train_loss': '0.1326', 'epoch': '2'}
+[after training] VRAM  8.95 GB alloc  /  33.76 GB reserved  /  42.4 GB total
+
+[6/6] Saving → /content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_sft_logic/final
+====================================================================
+ PHASE 1.5 LOGIC SFT COMPLETE
+  Training loss   : 0.1326
+  Global steps    : 92
+  Time elapsed    : 15.7 min
+  Checkpoint      : /content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_sft_logic/final
+  Results JSON    : /content/drive/MyDrive/TRA-SAE/logs/phase1_5_logic_sft_results.json
+  TensorBoard     : /content/drive/MyDrive/TRA-SAE/logs/phase1_5_tensorboard
+  Next step       : python run_phase2_grpo.py
+====================================================================

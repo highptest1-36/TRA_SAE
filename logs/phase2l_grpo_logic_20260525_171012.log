@@ -1,0 +1,7 @@
+[17:10:12] INFO     ====================================================================
+[17:10:12] INFO     Phase 2L Logic GRPO  |  Base: qwen35_sft_logic/final
+[17:10:12] INFO       Steps=150 | LR=1e-06 | gen=4
+[17:10:12] INFO       Logic-only subset | Z3 reward hook active
+[17:10:12] INFO     ====================================================================
+[17:10:18] INFO     Logic subsets: train=732 val=76
+[18:13:16] INFO     Phase 2L done | steps=150 time=62.9min

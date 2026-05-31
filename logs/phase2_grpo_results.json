@@ -1,0 +1,21 @@
+{
+  "phase": "2_grpo",
+  "model": "Qwen/Qwen3.5-4B",
+  "base_checkpoint": "/content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_sft_logic/final",
+  "smoke_test": false,
+  "training_loss": 0.029465,
+  "global_steps": 250,
+  "elapsed_min": 79.8,
+  "grpo_steps": 250,
+  "grpo_lr": 1e-06,
+  "grpo_beta": 0.04,
+  "grpo_num_gen": 4,
+  "grpo_max_comp": 1024,
+  "eff_batch": 4,
+  "dtype": "bfloat16",
+  "vram_trick": "disable_adapter_reference",
+  "train_size": 1945,
+  "val_size": 217,
+  "checkpoint": "/content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_grpo/final",
+  "tensorboard": "/content/drive/MyDrive/TRA-SAE/logs/phase2_tensorboard"
+}

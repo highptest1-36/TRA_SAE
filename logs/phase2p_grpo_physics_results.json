@@ -1,0 +1,13 @@
+{
+  "phase": "2P_grpo_physics",
+  "model": "Qwen/Qwen3.5-4B",
+  "base_checkpoint": "/content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_sft/final",
+  "smoke_test": false,
+  "training_loss": 0.018171,
+  "global_steps": 200,
+  "elapsed_min": 76.6,
+  "grpo_steps": 200,
+  "grpo_lr": 1e-06,
+  "physics_train_size": 1213,
+  "checkpoint": "/content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_grpo_physics/final"
+}

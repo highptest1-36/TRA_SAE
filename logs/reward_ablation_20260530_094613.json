@@ -1,0 +1,24 @@
+{
+  "reward_ablation": [
+    {
+      "variant_id": "R1",
+      "variant_name": "full_reward",
+      "description": "Full: format(0.30) + correct(0.60) + unit(0.10) + len_pen(-0.10)",
+      "reward_weights": {
+        "format_w": 0.3,
+        "correct_w": 0.6,
+        "unit_w": 0.1,
+        "len_pen": -0.1
+      },
+      "accuracy_overall": 18.75,
+      "accuracy_physics": 30.0,
+      "accuracy_logic": 0.0,
+      "n_total": 16,
+      "training_loss": 0.001752,
+      "grpo_steps": 10,
+      "train_elapsed_min": 19.1,
+      "smoke": true
+    }
+  ],
+  "run_ts": "20260530_094613"
+}

@@ -1,0 +1,14 @@
+{
+  "phase": "2L_grpo_logic",
+  "model": "Qwen/Qwen3.5-4B",
+  "base_checkpoint": "/content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_sft_logic/final",
+  "smoke_test": false,
+  "training_loss": 0.070274,
+  "global_steps": 150,
+  "elapsed_min": 62.9,
+  "grpo_steps": 150,
+  "grpo_lr": 1e-06,
+  "z3_reward_active": true,
+  "logic_train_size": 732,
+  "checkpoint": "/content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_grpo_logic/final"
+}

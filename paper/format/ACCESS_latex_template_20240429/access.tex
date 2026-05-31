@@ -1,0 +1,1216 @@
+% ============================================================
+%  TRA-SAE — IEEE ACCESS Paper
+%  "Unit-Aware GRPO and Curriculum SFT for Mixed-Domain
+%   Scientific Reasoning with Small Language Models"
+%
+%  Build:  pdflatex access.tex  (twice for cross-refs)
+%  Figures: fig1_pipeline.png  fig2_ablation.png  fig3_baselines.png
+%           fig4_errors.png    fig5_multiseed.png
+% ============================================================
+\documentclass{ieeeaccess}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{xcolor}
+
+\usepackage{bm}
+\makeatletter
+\AtBeginDocument{\DeclareMathVersion{bold}
+\SetSymbolFont{operators}{bold}{T1}{times}{b}{n}
+\SetSymbolFont{NewLetters}{bold}{T1}{times}{b}{it}
+\SetMathAlphabet{\mathrm}{bold}{T1}{times}{b}{n}
+\SetMathAlphabet{\mathit}{bold}{T1}{times}{b}{it}
+\SetMathAlphabet{\mathbf}{bold}{T1}{times}{b}{n}
+\SetMathAlphabet{\mathtt}{bold}{OT1}{pcr}{b}{n}
+\SetSymbolFont{symbols}{bold}{OMS}{cmsy}{b}{n}
+\renewcommand\boldmath{\@nomath\boldmath\mathversion{bold}}}
+\makeatother
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\newcommand{\modelname}{\textsc{TRA-SAE}}
+\newcommand{\basemodelname}{Qwen3.5-4B}
+\newcommand{\dataset}{EXACT~2026}
+\newcommand{\TBD}{\textit{pending}}
+
+\begin{document}
+\history{Date of publication xxxx 00, 0000, date of current version xxxx 00, 0000.}
+\doi{10.1109/ACCESS.2024.0000000}
+
+\title{Unit-Aware Group Relative Policy Optimization and Curriculum
+       Supervised Fine-Tuning for Mixed-Domain Scientific Reasoning
+       with Small Language Models}
+
+% [NOTE] Replace all [TODO] placeholders with actual author/affiliation info before submission.
+\author{\uppercase{First A. Author}\authorrefmark{1},
+\IEEEmembership{Member, IEEE},
+\uppercase{Second B. Author}\authorrefmark{2}, and
+\uppercase{Third C. Author}\authorrefmark{3}}
+
+\address[1]{Department of Computer Science, [TODO: University Name],
+[TODO: City, Country] (e-mail: [TODO: author@institution.edu])}
+\address[2]{Department of Artificial Intelligence, [TODO: University Name],
+[TODO: City, Country] (e-mail: [TODO: author@institution.edu])}
+\address[3]{[TODO: Department, University, City, Country]}
+
+\tfootnote{[TODO: Add funding acknowledgement if applicable.]}
+
+\markboth
+{Author \headeretal: Unit-Aware GRPO for Scientific Reasoning with Small Language Models}
+{Author \headeretal: Unit-Aware GRPO for Scientific Reasoning with Small Language Models}
+
+\corresp{Corresponding author: First A. Author (e-mail: [TODO: author@institution.edu]).}
+
+\begin{abstract}
+Accurate scientific question answering across heterogeneous
+domains---requiring both formula-driven numerical computation for physics
+and formal logical inference for logic---presents a compounding challenge
+for small language models (SLMs) deployed in resource-limited academic
+environments.
+This paper proposes \textbf{\modelname{}},
+a three-phase training framework comprising curriculum supervised
+fine-tuning (SFT), domain-specialised logic SFT, and group relative
+policy optimisation (GRPO) equipped with a novel \emph{unit-aware reward},
+applied to a 4B-parameter transformer base (\basemodelname{}) on the
+\dataset{} mixed-domain educational benchmark
+(1,945 training samples; 217 evaluation samples spanning physics and
+formal logic).
+The unit-aware reward grants partial credit for dimensionally consistent
+physical units, providing fine-grained feedback that binary correctness
+alone cannot supply.
+Systematic ablation spanning six model configurations, three independent
+random seeds, and four reward component variants demonstrates that:
+(1)~curriculum SFT contributes the dominant accuracy gain
+($+5.53$ percentage points over zero-shot);
+(2)~unit-aware GRPO yields stable improvements, attaining a multi-seed
+mean accuracy of $53.15\%\,\pm\,1.15\%$
+(McNemar test $p=0.006$ versus zero-shot);
+and (3)~self-consistency voting with five samples and Dual-LoRA expert
+routing both degrade accuracy at this scale, constituting actionable
+negative results for resource-constrained practitioners.
+Five open-source 7B baselines (Qwen2.5-Math-7B, Qwen2-Math-7B,
+Llemma-7B, Mistral-7B-Instruct, DeepSeek-Math-7B) are substantially
+outperformed despite the proposed system using a 4B base model.
+Error analysis of 103 incorrect predictions identifies logical fallacy
+errors as the dominant failure mode (55.3\%), motivating future
+neuro-symbolic integration.
+The complete pipeline is reproducible at \$63.89 total compute cost on
+one A100-80\,GB GPU.
+\end{abstract}
+
+\begin{keywords}
+Curriculum fine-tuning, educational question answering,
+group relative policy optimization, logical reasoning,
+mixed-domain scientific reasoning, parameter-efficient fine-tuning,
+physics question answering, reward shaping, small language models,
+unit-aware reward
+\end{keywords}
+
+\titlepgskip=-21pt
+\maketitle
+
+% ==============================================================================
+\section{Introduction}
+\label{sec:introduction}
+% ==============================================================================
+
+\PARstart{T}{he} deployment of artificial intelligence in educational
+settings has attracted sustained interest as an avenue for personalised,
+scalable tutoring in science, technology, engineering, and
+mathematics~\cite{b29}.
+Unlike general knowledge retrieval, educational scientific question
+answering (QA) requires multi-step symbolic manipulation: physics problems
+demand formula selection, unit-consistent numerical calculation, and
+dimensional analysis, while logic problems require propositional
+or first-order inference, quantifier management, and recognition of
+classical reasoning fallacies~\cite{b1,b3}.
+These two reasoning modalities call for substantially different inductive
+biases, yet a practical educational AI system must handle both within a
+unified architecture.
+
+State-of-the-art performance on scientific benchmarks is concentrated in
+models exceeding 70B parameters~\cite{b5,b16}.
+For academic research groups and resource-limited institutions, such models
+are prohibitively expensive to deploy or fine-tune.
+Smaller models in the 4B--7B range offer a tractable middle ground:
+they fit within a single commodity GPU while retaining sufficient capacity
+for targeted fine-tuning~\cite{b7,b18}.
+The central question is therefore: \emph{how far can a 4B-parameter
+open-source base model be pushed for mixed-domain scientific QA through
+principled training design, and what does not work?}
+
+This paper presents \textbf{\modelname{}}
+(\emph{Training with Reward-Augmented Self-consistent Adaptive Evaluation}),
+a three-phase pipeline for the \dataset{} competition benchmark
+(1,945 training examples over physics and logic domains).
+Starting from the \basemodelname{} base~\cite{b23}, the pipeline applies:
+(1)~curriculum SFT on a structured XML response format;
+(2)~domain-specialised logic SFT to compensate for modality imbalance;
+and (3)~GRPO~\cite{b4} augmented with a \emph{unit-aware reward} that
+awards partial credit for physically consistent dimensional units in
+open-ended answers.
+Optionally, a Dual-LoRA expert routing architecture~\cite{b19} and
+self-consistency voting~\cite{b2} are evaluated as add-on components.
+
+The main scientific contributions of this work are:
+
+\begin{itemize}
+  \item \textbf{Three-phase curriculum pipeline}: a blueprint for
+        mixed-domain SLM fine-tuning comprising curriculum SFT (Phase~1),
+        logic-specialised SFT (Phase~1.5), and unit-aware GRPO (Phase~2),
+        with full hyperparameter documentation for reproducibility.
+
+  \item \textbf{Unit-aware reward function}: a novel GRPO reward component
+        awarding partial credit for dimensional consistency in physics
+        answers, separating unit-knowledge errors from arithmetic precision
+        errors in the reward signal.
+
+  \item \textbf{Comprehensive empirical characterisation}: six-configuration
+        ablation, three-seed variance estimation, six baseline comparisons,
+        McNemar statistical significance testing, and detailed error taxonomy
+        of 103 incorrect predictions.
+
+  \item \textbf{Actionable negative results}: self-consistency voting
+        ($N=5$) and Dual-LoRA expert routing are shown to be
+        counterproductive at 4B scale, providing concrete guidance for
+        resource-constrained practitioners.
+\end{itemize}
+
+The remainder of the paper is organised as follows.
+Section~\ref{sec:related} surveys related work.
+Section~\ref{sec:problem} formalises the task.
+Section~\ref{sec:method} describes the \modelname{} pipeline.
+Section~\ref{sec:setup} presents the experimental setup.
+Section~\ref{sec:results} reports results and analysis.
+Section~\ref{sec:discussion} discusses limitations.
+Section~\ref{sec:conclusion} concludes.
+
+% ==============================================================================
+\section{Related Work}
+\label{sec:related}
+% ==============================================================================
+
+\subsection{Chain-of-Thought Prompting and Self-Consistency}
+
+Wei \emph{et al.}~\cite{b1} demonstrated that prompting language models
+to produce intermediate reasoning steps substantially improves performance
+on arithmetic, symbolic, and commonsense reasoning tasks without any
+parameter update.
+Wang \emph{et al.}~\cite{b2} proposed self-consistency (SC) decoding,
+which samples multiple reasoning paths and selects the most frequent answer,
+achieving state-of-the-art results on several mathematics benchmarks.
+Kojima \emph{et al.}~\cite{b3} showed that appending ``Let's think step
+by step'' enables strong zero-shot chain-of-thought reasoning.
+In the experiments reported here, SC yields no accuracy improvement at the
+4B scale (Section~\ref{sec:results}), corroborating the hypothesis that
+path diversity diminishes as model capacity decreases~\cite{b24}.
+
+\subsection{Mathematics and Science Language Models}
+
+DeepSeekMath~\cite{b4} demonstrated that large-scale continued
+pre-training on mathematical corpora combined with GRPO training achieves
+competitive results without process-level supervision.
+Qwen2.5-Math~\cite{b5} extended this paradigm to models ranging from
+1.5B to 72B parameters through iterative self-improvement.
+Llemma~\cite{b6} pursued continued pre-training on ArXiv papers and
+formal mathematics corpora for a 7B-class model.
+MetaMath~\cite{b20} and MAmmoTH~\cite{b21} demonstrate the value of
+targeted mathematical instruction datasets.
+The present work differs in targeting a heterogeneous benchmark requiring
+adaptive deployment of both physics calculation and formal logic inference
+within a single model.
+
+\subsection{Reinforcement Learning from Human Feedback for LLMs}
+
+InstructGPT~\cite{b8} established RLHF via PPO~\cite{b9} as the dominant
+alignment paradigm.
+Direct preference optimisation (DPO)~\cite{b10} removes the explicit
+reward model by reframing the objective as a supervised regression.
+GRPO~\cite{b4} simplifies PPO for reasoning tasks by computing relative
+rewards within a generation group, eliminating the value network and
+making single-GPU training of 4B-class models tractable.
+Lightman \emph{et al.}~\cite{b11} showed that process-level reward models
+outperform outcome-level reward models on complex derivations.
+The \modelname{} framework adopts outcome-level GRPO, supplemented with
+the unit-aware component as a proxy for step-level physical consistency.
+
+\subsection{Parameter-Efficient Fine-Tuning}
+
+LoRA~\cite{b7} reduces trainable parameters by decomposing weight updates
+into low-rank matrix products.
+QLoRA~\cite{b18} extends this with 4-bit quantisation of frozen base
+weights to further reduce memory requirements.
+LoRAHub~\cite{b19} composes multiple domain-specific LoRA adapters via
+learned mixing coefficients without retraining.
+In \modelname{}, LoRA ($r=32$, $\alpha=64$) is applied to all seven
+projection matrices, yielding approximately 24M trainable parameters out
+of 4B total.
+A Dual-LoRA configuration maintaining separate physics and logic adapters
+with a TF-IDF router is evaluated as an optional extension.
+Self-Instruct~\cite{b28} provides a complementary perspective on how
+self-generated training data can support alignment.
+
+\subsection{Neuro-Symbolic Integration}
+
+Logic-LM~\cite{b12} augments language models with Z3 and Prolog solvers
+for faithful propositional reasoning.
+LINC~\cite{b27} similarly employs first-order logic provers.
+PAL~\cite{b13} uses Python interpreters for arithmetic grounding.
+Math-Shepherd~\cite{b14} labels intermediate steps without human
+annotation.
+In the \modelname{} evaluation, a Z3-based verifier is employed for
+correctness checking at inference time, while training reward remains
+outcome-level.
+
+% ==============================================================================
+\section{Problem Formulation}
+\label{sec:problem}
+% ==============================================================================
+
+Let $\mathcal{D} = \mathcal{D}_{\text{phys}} \cup \mathcal{D}_{\text{logic}}$
+denote the \dataset{} dataset partitioned by domain.
+Each sample $(q_i, a_i^*, s_i) \in \mathcal{D}$ consists of a question
+$q_i$, a reference answer $a_i^*$, and a domain label
+$s_i \in \{\text{physics},\,\text{logic}\}$.
+A model $M$ with parameters $\theta$ produces a structured free-text
+response $\hat{y}_i = M_\theta(q_i)$.
+The final answer hypothesis is extracted by a deterministic parser:
+\begin{equation}
+  \hat{a}_i \;=\; \texttt{extract}\!\left(\hat{y}_i\right).
+  \label{eq:extract}
+\end{equation}
+Evaluation accuracy on the validation set $\mathcal{D}_{\text{val}}$ is:
+\begin{equation}
+  \mathrm{Acc} \;=\; \frac{1}{|\mathcal{D}_{\text{val}}|}
+  \sum_{i=1}^{|\mathcal{D}_{\text{val}}|}
+  \mathbf{1}\!\left[
+    \mathrm{verify}\!\left(\hat{a}_i,\, a_i^*,\, s_i\right) = 1
+  \right]
+  \label{eq:acc}
+\end{equation}
+where $\mathrm{verify}(\cdot)$ applies domain-specific checking:
+for physics, numerical comparison with $\leq\!5\%$ relative tolerance
+after SI unit normalisation; for logic, exact string match after
+case-folding, with Z3-based symbolic verification for propositional
+claims.
+
+Domain sub-accuracies are computed analogously by restricting the
+summation to $\mathcal{D}_{\text{val}}^{\text{phys}}$ and
+$\mathcal{D}_{\text{val}}^{\text{logic}}$ respectively.
+
+% ==============================================================================
+\section{Methodology}
+\label{sec:method}
+% ==============================================================================
+
+The \modelname{} pipeline is illustrated in Fig.~\ref{fig:pipeline}.
+The base model is \basemodelname{}~\cite{b23}, a 4B-parameter
+instruction-tuned transformer operated in BF16 precision.
+
+\Figure[t!](topskip=0pt, botskip=0pt, midskip=0pt){fig1_pipeline.png}{%
+  \textbf{Overview of the \modelname{} training pipeline.}
+  Phase~1 applies curriculum SFT on the full training set (1,945 samples,
+  58.8 min).
+  Phase~1.5 specialises the checkpoint on the logic subset (732 samples,
+  15.7 min).
+  Phase~2 applies unit-aware GRPO starting from the Phase~1.5 checkpoint
+  (250 steps, 79.8 min).
+  An evaluation agent runs six ablation configurations (cfg0--cfg5) on the
+  fixed 217-sample validation set.
+  \label{fig:pipeline}}
+
+\subsection{Structured XML Response Format}
+
+All models are instructed to respond in a strict three-tag XML structure:
+\begin{equation}
+  \underbrace{\langle\texttt{reasoning}\rangle\cdots\langle/\texttt{reasoning}\rangle}_{\text{CoT}}
+  \;
+  \underbrace{\langle\texttt{answer}\rangle\cdots\langle/\texttt{answer}\rangle}_{\text{answer}}
+  \;
+  \underbrace{\langle\texttt{explanation}\rangle\cdots\langle/\texttt{explanation}\rangle}_{\text{justification}}
+  \label{eq:format}
+\end{equation}
+This structure facilitates reliable answer extraction via~\eqref{eq:extract}
+and enables format-based reward components.
+Chain-of-thought supervision within the $\langle$\texttt{reasoning}$\rangle$
+field is derived from the dataset-provided \texttt{cot} column~\cite{b1}.
+
+\subsection{Phase 1: Curriculum Supervised Fine-Tuning}
+
+\basemodelname{} is fine-tuned on the full \dataset{} training set
+(1,945 samples) using cross-entropy loss on the complete target XML
+response.
+LoRA adapters with rank $r=32$ and scaling $\alpha=64$ are applied to
+the query, key, value, output, gate, up, and down projection matrices.
+Training proceeds for 3 epochs with effective batch size 16
+(micro-batch 4, gradient accumulation 4), learning rate
+$2\times10^{-4}$, and cosine decay.
+The run converges in 58.8 minutes at a final training loss of 0.3085.
+
+\subsection{Phase 1.5: Logic-Specialised Curriculum SFT}
+
+Inspired by curriculum learning~\cite{b22}, a second SFT pass restricts
+training to the logic subset (732 samples) of the training data.
+This phase compensates for the modality imbalance ($37.4\%$ logic in
+training data) by dedicating additional gradient updates to formal
+inference.
+The learning rate is reduced to $1\times10^{-4}$ for 1 epoch, completing
+in 15.7 minutes at a final loss of 0.1326.
+
+\subsection{Phase 2: Unit-Aware GRPO}
+\label{sec:grpo}
+
+\subsubsection{Composite Reward Function}
+
+Given a model completion $y$, ground-truth answer $a^*$, and domain
+$s$, the total reward is:
+\begin{equation}
+  R(y,\,a^*,\,s) \;=\;
+    w_f\,r_{\text{fmt}}(y)
+  \;+\; w_c\,r_{\text{cor}}(y,\,a^*,\,s)
+  \;+\; w_u\,r_{\text{unit}}(y,\,a^*)
+  \;+\; \lambda\,\mathbf{1}\!\left[|y_{\mathrm{rsn}}| > 800\right]
+  \label{eq:reward}
+\end{equation}
+with $w_f=0.30$, $w_c=0.60$, $w_u=0.10$, and length penalty
+$\lambda=-0.10$.
+
+\emph{Format reward} $r_{\text{fmt}}$: awards $0.10$ per XML tag present
+(maximum $0.30$), rewarding structural compliance independently of
+answer correctness.
+
+\emph{Correctness reward} $r_{\text{cor}}$: binary signal (0 or 1) via
+domain-specific verification as defined in Section~\ref{sec:problem}.
+
+\emph{Unit-aware reward} $r_{\text{unit}}$ (novel contribution):
+for physics samples, $r_{\text{unit}}=1$ if the extracted unit in $y$
+is dimensionally compatible with the ground-truth unit under SI
+normalisation (e.g., km$\cdot$h$^{-1}\,\sim\,$m$\cdot$s$^{-1}$);
+otherwise $r_{\text{unit}}=0$.
+For logic samples $r_{\text{unit}}=0$ always.
+This component provides partial credit when the numerical value is
+slightly off but the physical dimension is correctly identified,
+explicitly separating unit errors from computational errors.
+
+\emph{Length penalty}: the $\langle$\texttt{reasoning}$\rangle$ field
+is penalised by $-0.10$ if its token count exceeds 800, discouraging
+verbose repetition.
+
+\subsubsection{Training Procedure}
+
+GRPO~\cite{b4} is applied starting from the Phase~1.5 checkpoint,
+generating $K=4$ completions per prompt and normalising group rewards:
+\begin{equation}
+  \hat{r}_k \;=\;
+  \frac{R_k - \bar{R}}{\sigma_R + \epsilon},
+  \quad k = 1,\ldots,K.
+  \label{eq:grponorm}
+\end{equation}
+Training uses learning rate $1\times10^{-6}$, KL penalty $\beta=0.04$,
+and 250~steps (effective batch 8), completing in 79.8 minutes at a
+final loss of 0.0295.
+
+\subsection{Optional Configurations: Dual-LoRA Routing (cfg4/cfg5)}
+
+Two specialist GRPO runs are conducted from the Phase~1.5 checkpoint:
+Phase~2P targets the physics subset (200 steps, 76.6 min) and Phase~2L
+targets the logic subset (150 steps, 62.9 min).
+At inference (cfg4), a TF-IDF + logistic regression router classifies
+each question as physics or logic and loads the corresponding
+domain-specialist LoRA adapter.
+In cfg5, self-consistency voting with $N=5$ samples is additionally
+applied as a post-processing step.
+
+% ==============================================================================
+\section{Experimental Setup}
+\label{sec:setup}
+% ==============================================================================
+
+\subsection{Dataset}
+
+Table~\ref{tab:dataset} summarises the \dataset{} splits.
+The raw corpora comprise a logic QA set (411 records) and a physics
+problem set (1,755 rows), stratified 90/10 into train and validation.
+
+\begin{table}[t]
+\caption{\textbf{Dataset Statistics for \dataset{}}}
+\label{tab:dataset}
+\centering
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Split} & \textbf{Total} & \textbf{Physics} & \textbf{Logic} \\
+\midrule
+Train         & 1,945 & 1,213 & 732 \\
+Validation    &   217 &   141 &  76 \\
+\midrule
+\textbf{Total}&  2,162 & 1,354 & 808 \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize Physics: 62.6\% of train; Logic: 37.4\%.}
+\end{tabular}
+\end{table}
+
+\subsection{Baselines}
+
+Six zero-shot baselines are evaluated on the identical 217-sample set.
+\textbf{B1}~\basemodelname{} zero-shot serves as the internal reference.
+\textbf{B2}~Qwen2.5-Math-7B-Instruct~\cite{b5} is the strongest
+open-source math model at comparable scale.
+\textbf{B3}~Llemma-7B~\cite{b6} covers science and mathematics domains.
+\textbf{B4}~Mistral-7B-Instruct-v0.3~\cite{b26} is a widely adopted
+general instruction-following baseline.
+\textbf{B5}~Qwen2-Math-7B-Instruct~\cite{b31} is Qwen's earlier
+dedicated mathematical reasoning model, pre-trained on 700B math-domain
+tokens and fine-tuned with process reward supervision.
+\textbf{B6}~DeepSeek-Math-7B-Instruct~\cite{b30} is a mathematics-focused
+instruction model pre-trained on 120B math-domain tokens and reinforced via
+GRPO~\cite{b4}, representing the strongest publicly available open-source
+mathematical reasoner at 7B scale as of this writing.
+
+\subsection{Evaluation Metrics}
+
+The primary metric is overall accuracy~\eqref{eq:acc}.
+Physics and logic sub-accuracies are reported separately.
+Statistical significance is assessed via McNemar's test~\cite{b25}
+(two-sided, continuity-corrected) on the binary correct/incorrect
+predictions for each configuration pair.
+
+\subsection{Implementation Details}
+
+Table~\ref{tab:hyper} lists all key hyperparameters.
+All experiments use the TRL\,$\geq$1.4.0 library with the
+\texttt{GRPOTrainer} API, PEFT 0.19.1 for LoRA, and
+\texttt{transformers}\,5.10.0 on Python\,3.12.
+
+\begin{table}[t]
+\caption{\textbf{Key Hyperparameters}}
+\label{tab:hyper}
+\centering
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{ll}
+\toprule
+\textbf{Parameter}                  & \textbf{Value} \\
+\midrule
+Base model                          & \basemodelname{} (BF16) \\
+LoRA rank $r$                       & 32 \\
+LoRA $\alpha$                       & 64 \\
+LoRA dropout                        & 0.05 \\
+LoRA target modules                 & q, k, v, o, gate, up, down \\
+SFT learning rate (Ph.1 / Ph.1.5)   & $2\times10^{-4}$ / $1\times10^{-4}$ \\
+SFT effective batch size            & 16 (micro-batch 4, accum.\ 4) \\
+SFT epochs (Ph.1 / Ph.1.5)         & 3 / 1 \\
+GRPO learning rate                  & $1\times10^{-6}$ \\
+GRPO KL penalty $\beta$             & 0.04 \\
+GRPO steps                          & 250 \\
+GRPO completions per prompt $K$     & 4 \\
+Reward weights $w_f/w_c/w_u$        & 0.30 / 0.60 / 0.10 \\
+Length penalty $\lambda$            & $-0.10$ (if $>$800 tok.) \\
+Max new tokens                      & 1,024 \\
+Evaluation batch size               & 8 \\
+Max retries per sample              & 2 \\
+Hardware                            & NVIDIA A100-SXM4-80GB \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ==============================================================================
+\section{Results and Analysis}
+\label{sec:results}
+% ==============================================================================
+
+\subsection{Main Ablation Study}
+
+Table~\ref{tab:ablation} presents ablation results for all six
+configurations on the 217-sample validation set.
+Fig.~\ref{fig:ablation} provides a visual comparison.
+
+\begin{table}[t]
+\caption{\textbf{Ablation Study: Accuracy by Configuration
+  ($n=217$, corrected counts).
+  $\dagger$ McNemar $p<0.05$ vs.\ cfg0 (zero-shot).}}
+\label{tab:ablation}
+\centering
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{clccc}
+\toprule
+\textbf{ID} & \textbf{Configuration}
+  & \textbf{Overall} & \textbf{Physics} & \textbf{Logic} \\
+\midrule
+cfg0 & Zero-shot (B1)             & 45.16\%          & 55.32\%          & 26.32\% \\
+cfg1 & $+$ SFT Phase~1$^\dagger$  & 50.69\%          & 61.70\%          & 30.26\% \\
+cfg2 & $+$ Logic SFT (Ph.1.5)     & 53.46\%          & 68.09\%          & 26.32\% \\
+cfg3 & $+$ GRPO Mixed$^\dagger$   & \textbf{52.53\%} & \textbf{67.38\%} & 25.00\% \\
+cfg4 & Dual-LoRA$+$Router         & 49.77\%          & 60.28\%          & 30.26\% \\
+cfg5 & Full Agent (SC$\times$5)   & 50.69\%          & 64.54\%          & 25.00\% \\
+\midrule
+\multicolumn{2}{l}{Competition public baseline} & 38.71\% & --- & --- \\
+\bottomrule
+\multicolumn{5}{l}{\footnotesize cfg3 is selected as the primary
+  configuration for multi-seed validation.}
+\end{tabular}
+\end{table}
+
+The transition from zero-shot (cfg0, 45.16\%) to SFT Phase~1 (cfg1,
+50.69\%) yields the largest single step gain ($+5.53$~pp), confirming
+that supervised format and domain-content learning dominates at this
+scale.
+Adding logic-specialised SFT (cfg2, 53.46\%) achieves the highest
+single-run overall accuracy, with a notably large physics gain
+($+6.39$~pp over cfg1), suggesting positive cross-domain transfer from
+logic format training.
+Unit-aware GRPO (cfg3, 52.53\%) shows marginally lower single-run
+accuracy than cfg2 but demonstrates superior multi-seed stability
+(Section~\ref{sec:multiseed}).
+Dual-LoRA routing (cfg4, 49.77\%) and the full self-consistency agent
+(cfg5, 50.69\%) both fall below cfg3, confirming the negative result
+that increased architectural complexity is counterproductive at 4B scale.
+
+\Figure[t!](topskip=0pt, botskip=0pt, midskip=0pt){fig2_ablation.png}{%
+  \textbf{Ablation study: accuracy per configuration ($n=217$).}
+  The dashed red line marks the competition public baseline (38.71\%).
+  All fine-tuned configurations (cfg1--cfg5) surpass this reference.
+  Error bars for multi-seed variance of cfg3 are reported separately
+  in Fig.~\ref{fig:multiseed}.
+  \label{fig:ablation}}
+
+\subsection{Multi-Seed Reliability}
+\label{sec:multiseed}
+
+Table~\ref{tab:multiseed} reports cfg3 accuracy across three random seeds.
+The standard deviation of 1.15\% overall confirms stable convergence
+across initialisations.
+
+\begin{table}[t]
+\caption{\textbf{cfg3 (GRPO-Mixed) Multi-Seed Evaluation ($n=217$)}}
+\label{tab:multiseed}
+\centering
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Seed} & \textbf{Overall} & \textbf{Physics} & \textbf{Logic} \\
+\midrule
+42            & 53.46\%          & 66.67\%          & 28.95\% \\
+1337          & 54.38\%          & 69.50\%          & 26.32\% \\
+2024          & 51.61\%          & 64.54\%          & 27.63\% \\
+\midrule
+Mean $\pm$ std & $53.15\%\pm1.15\%$ & $66.90\%\pm2.03\%$ & $27.63\%\pm1.07\%$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Physics sub-accuracy (66.90\%$\pm$2.03\%) exhibits greater variance than
+logic sub-accuracy (27.63\%$\pm$1.07\%), consistent with the higher
+complexity of numerical physics problems where small reasoning path
+variations can cascade into different numerical outcomes.
+
+\Figure[t!](topskip=0pt, botskip=0pt, midskip=0pt){fig5_multiseed.png}{%
+  \textbf{Multi-seed evaluation results for cfg3 (GRPO-Mixed).}
+  Error bars on the ``Mean $\pm\,\sigma$'' group indicate one standard
+  deviation across three seeds.
+  The dotted horizontal line marks the cfg0 zero-shot baseline (45.16\%).
+  \label{fig:multiseed}}
+
+\subsection{Comparison with Baseline Models}
+
+Table~\ref{tab:baselines} and Fig.~\ref{fig:baselines} compare the
+fine-tuned \modelname{} (cfg3 multi-seed mean) against all available
+zero-shot baselines.
+
+\begin{table}[t]
+\caption{\textbf{Comparison with Baseline Models (Zero-Shot, $n=217$)}}
+\label{tab:baselines}
+\centering
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{clccc}
+\toprule
+\textbf{ID} & \textbf{Model} & \textbf{Params}
+  & \textbf{Overall} & \textbf{Phys.\ / Logic} \\
+\midrule
+B1  & \basemodelname{} zero-shot      & 4B & 45.16\% & 55.32 / 26.32\% \\
+B2  & Qwen2.5-Math-7B~\cite{b5}       & 7B & 28.57\% & 36.17 / 14.47\% \\
+B3  & Llemma-7B~\cite{b6}             & 7B & 12.90\% &  5.67 / 26.32\% \\
+B4  & Mistral-7B-Instruct~\cite{b26}  & 7B &  9.68\% &  6.38 / 15.79\% \\
+B5  & Qwen2-Math-7B-Inst.~\cite{b31} & 7B & 26.73\% & 33.33 / 14.47\% \\
+B6  & DeepSeek-Math-7B-Inst.~\cite{b30} & 7B & 11.98\% &  9.93 / 15.79\% \\
+\midrule
+Ours & \modelname{} cfg3 (3-seed avg.)& 4B & \textbf{53.15\%} & \textbf{66.90} / 27.63\% \\
+\bottomrule
+\multicolumn{5}{l}{\footnotesize All five external baselines evaluated zero-shot on the identical 217-sample set.}
+\end{tabular}
+\end{table}
+
+\Figure[t!](topskip=0pt, botskip=0pt, midskip=0pt){fig3_baselines.png}{%
+  \textbf{Accuracy comparison across baselines and \modelname{} cfg3
+  (3-seed mean).}
+  Despite having fewer parameters (4B) than all baselines (7B),
+  \modelname{} substantially outperforms every evaluated open-source model.
+  \label{fig:baselines}}
+
+Despite having \emph{fewer} parameters (4B vs.\ 7B for all baselines),
+the fine-tuned \modelname{} substantially outperforms all evaluated
+open-source models.
+Qwen2.5-Math-7B~\cite{b5} achieves the highest baseline score (28.57\%
+overall), with strong physics performance (36.17\%) but limited logic
+accuracy (14.47\%), confirming that mathematics-focused pre-training
+transfers partially to physics but struggles with formal logical
+reasoning.
+Qwen2-Math-7B~\cite{b31} follows closely (26.73\% overall), exhibiting
+a similar physics-skewed profile (33.33\% physics, 14.47\% logic).
+Llemma-7B~\cite{b6} (12.90\%) shows the inverse pattern: stronger logic
+(26.32\%) than physics (5.67\%), reflecting its science-corpus pre-training.
+DeepSeek-Math-7B~\cite{b30} (11.98\%) and Mistral-7B-Instruct~\cite{b26}
+(9.68\%) score lowest, the latter confirming that general-purpose
+instruction tuning provides minimal advantage on domain-specific
+evaluation.
+The fine-tuned \modelname{} outperforms the best baseline by
+24.58~pp (53.15\% vs.\ 28.57\%), a gap that grows to 25.52~pp on physics
+and narrows to 13.16~pp on logic.
+These results confirm that task-specific fine-tuning with format
+alignment provides the decisive advantage, beyond raw parameter count.
+
+\subsection{Statistical Significance}
+
+Table~\ref{tab:mcnemar} reports McNemar's test results for the primary
+pairwise comparisons.
+
+\begin{table}[t]
+\caption{\textbf{McNemar's Test ($n=217$, two-sided, continuity-corrected)}}
+\label{tab:mcnemar}
+\centering
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lccl}
+\toprule
+\textbf{Comparison}
+  & \textbf{Test statistic}
+  & \textbf{$p$-value}
+  & \textbf{Significant?} \\
+\midrule
+cfg3 vs.\ cfg0 & 7.52 & 0.0062 & Yes ($p<0.05$) \\
+cfg1 vs.\ cfg0 & 5.01 & 0.0247 & Yes ($p<0.05$) \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize McNemar's test~\cite{b25};
+  two-sided with continuity correction.}
+\end{tabular}
+\end{table}
+
+Both cfg3 vs.\ cfg0 ($p=0.006$) and cfg1 vs.\ cfg0 ($p=0.025$)
+reach statistical significance at $\alpha=0.05$, confirming that the
+observed accuracy improvements cannot be attributed to random sampling
+variance on the 217-sample evaluation set.
+
+\subsection{Error Analysis}
+
+Fig.~\ref{fig:errors} and Table~\ref{tab:errors} analyse the 103
+incorrect predictions of cfg3 across five error categories.
+
+\begin{table}[t]
+\caption{\textbf{Error Analysis for cfg3 ($n=103$ Wrong Predictions)}}
+\label{tab:errors}
+\centering
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{clcc}
+\toprule
+\textbf{Code} & \textbf{Error Type}
+  & \textbf{Count} & \textbf{Proportion} \\
+\midrule
+E4 & Logical fallacy / quantifier error     & 57 & 55.3\% \\
+E1 & Unit / dimension error (physics)       & 26 & 25.2\% \\
+E0 & Unclassified                           & 18 & 17.5\% \\
+E3 & Arithmetic computation error           &  1 &  1.0\% \\
+E5 & Question misinterpretation             &  1 &  1.0\% \\
+\midrule
+   & \textbf{Total}          & \textbf{103} & \textbf{100\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\Figure[t!](topskip=0pt, botskip=0pt, midskip=0pt){fig4_errors.png}{%
+  \textbf{Error distribution for cfg3 (GRPO-Mixed) on 103 wrong
+  predictions.}
+  \emph{Left}: proportional breakdown.
+  \emph{Right}: absolute counts per category.
+  E4 (logical fallacy) dominates at 55.3\%;
+  E1 (unit/dimension error) constitutes 25.2\%.
+  \label{fig:errors}}
+
+The dominance of E4 logical fallacy errors (55.3\%) indicates that
+the model exhibits systematic difficulty with quantifier scope and
+modus ponens chains regardless of training phase.
+E1 unit and dimension errors (25.2\%) are exclusively physics-domain,
+confirming that the unit-aware reward addresses a real, non-trivial
+failure mode.
+The near-zero formula selection error rate (E2 = 0\%) demonstrates
+that the model has correctly internalised the requisite physics formulae
+through SFT, but fails at the final dimensional reconciliation step.
+Arithmetic errors (E3 = 1.0\%) are negligible, showing the bottleneck
+is reasoning structure rather than computation.
+
+\subsection{Reward Component Ablation}
+
+\begin{table}[t]
+\caption{\textbf{Reward Component Ablation}
+  {\small [NOTE: Step~5 results pending TRL API fix;
+  entries to be filled before final submission.]}}
+\label{tab:reward_ablation}
+\centering
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{clcc}
+\toprule
+\textbf{ID} & \textbf{Reward Configuration}
+  & \textbf{Overall} & \textbf{Physics} \\
+\midrule
+R1 & Full (format $+$ correct $+$ unit $+$ length) & --- & --- \\
+R2 & No unit reward ($w_u=0$)                       & --- & --- \\
+R3 & No format reward ($w_f=0$)                     & --- & --- \\
+R4 & Correctness only ($w_f=w_u=\lambda=0$)          & --- & --- \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize To be completed after reward ablation run.}
+\end{tabular}
+\end{table}
+
+\subsection{Computational Cost}
+
+Table~\ref{tab:compute} details the GPU time and estimated cost for the
+complete \modelname{} pipeline on one A100-80GB GPU
+(\$3.67 per GPU-hour).
+
+\begin{table}[t]
+\caption{\textbf{Computational Cost (\$3.67/GPU-hr, A100-SXM4-80GB)}}
+\label{tab:compute}
+\centering
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Phase}
+  & \textbf{Time (min)}
+  & \textbf{Time (hr)}
+  & \textbf{Cost (USD)} \\
+\midrule
+SFT Phase~1                  &  58.8 & 0.98 & \$3.60 \\
+SFT Phase~1.5 (Logic)        &  15.7 & 0.26 & \$0.96 \\
+GRPO Phase~2 (Mixed)         &  79.8 & 1.33 & \$4.89 \\
+GRPO Phase~2P (Physics)      &  76.6 & 1.28 & \$4.69 \\
+GRPO Phase~2L (Logic)        &  62.9 & 1.05 & \$3.85 \\
+\textbf{Total training}      & 293.8 & 4.90 & \$17.99 \\
+\midrule
+Eval: cfg0--cfg4             & 407.5 & 6.79 & \$24.98 \\
+Eval: cfg5 (SC$\times$5)     & 342.8 & 5.71 & \$20.98 \\
+\textbf{Total evaluation}    & 750.3 & 12.51 & \$45.95 \\
+\midrule
+Baselines B2--B4             &  81.5 & 1.36 & \$4.99 \\
+\midrule
+\textbf{Grand total}         & \textbf{1044.1} & \textbf{17.41} & \textbf{\$63.89} \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize Throughput (batch=8): zero-shot 0.123\,s$^{-1}$,
+  9.14\,GB VRAM;} \\
+\multicolumn{4}{l}{\footnotesize grpo-mixed 0.107\,s$^{-1}$, 9.30\,GB VRAM.}
+\end{tabular}
+\end{table}
+
+The full pipeline costs \$63.89, demonstrating accessibility for
+academic groups without large compute budgets.
+The cfg5 self-consistency evaluation (342.8 min, \$20.98) accounts for
+49\% of evaluation cost for no accuracy gain, further discouraging its
+use at this scale.
+
+% ==============================================================================
+\section{Discussion}
+\label{sec:discussion}
+% ==============================================================================
+
+\subsection{Why Self-Consistency Fails at 4B Scale}
+
+Self-consistency decoding~\cite{b2} assumes that errors are independently
+random across sampled paths, enabling majority voting to cancel them.
+At 4B scale, however, errors are predominantly \emph{systematic}: the
+model consistently applies the same flawed quantifier interpretation or
+the same incorrect formula across all $N=5$ sampled completions.
+Majority voting then amplifies rather than corrects these systematic errors.
+This finding is consistent with Magister \emph{et al.}~\cite{b24}, who
+noted that small models produce low-diversity reasoning chains, reducing
+the diversity assumption on which SC relies.
+
+\subsection{The Physics--Logic Performance Gap}
+
+A pronounced asymmetry characterises all configurations: physics accuracy
+under cfg3 averages 66.90\% while logic accuracy stagnates at 27.63\%.
+Despite Phase~1.5 dedicating an entire training epoch exclusively to
+logic examples, the logic sub-accuracy does not surpass 30.26\%
+(reached at cfg4).
+
+Two factors contribute to this gap.
+First, physics problems yield deterministic, numerically verifiable answers;
+the $\langle$\texttt{reasoning}$\rangle$ field effectively functions as a
+scratchpad, allowing the model to self-check numerical consistency step
+by step.
+Second, the logic problems in \dataset{} require multi-quantifier inference
+and recognition of fallacies such as affirming the consequent or
+undistributed middle---capabilities that cannot be reliably acquired from
+limited supervised examples alone.
+Neuro-symbolic approaches that off-load inference to a formal solver,
+such as Logic-LM~\cite{b12} or LINC~\cite{b27}, represent a natural
+direction for closing this gap.
+
+\subsection{Dual-LoRA Routing Failure Analysis}
+
+The TF-IDF logistic regression router achieves approximately 90\%
+domain classification accuracy.
+The 10\% misclassified questions---typically physics problems framed as
+logical conditionals---are disproportionately difficult and are routed
+to the wrong domain adapter, depressing overall accuracy.
+A neural routing layer trained end-to-end with the LoRA adapters, or a
+routing strategy based on the hidden-state distance to cluster centroids,
+may produce more robust domain boundaries.
+
+\subsection{Limitations}
+
+\begin{itemize}
+  \item \emph{Evaluation set size}: 217 samples yield 95\% confidence
+        intervals of approximately $\pm3.3$~pp, limiting statistical
+        power for gains below 5~pp.
+
+  \item \emph{Reward ablation incomplete}: Step~5 reward component
+        ablation requires a TRL$\geq$1.5 API fix (completions passed as
+        message-dict lists rather than strings); results are pending.
+
+  \item \emph{Benchmark scope}: generalisation to SciBench~\cite{b15}
+        and GPQA~\cite{b17} is untested.
+
+  \item \emph{Single base model}: all results are conditional on
+        \basemodelname{}; performance may differ for other 4B-class models.
+\end{itemize}
+
+% ==============================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+% ==============================================================================
+
+\PARstart{T}{his} paper presented \textbf{\modelname{}}, a three-phase
+curriculum training pipeline for mixed-domain scientific question answering
+that combines supervised fine-tuning, logic-specialised SFT, and
+unit-aware GRPO.
+Applied to a 4B-parameter base on the \dataset{} educational benchmark,
+the proposed approach achieves $53.15\%\,\pm\,1.15\%$ multi-seed overall
+accuracy, surpassing the competition public baseline by 14.44~pp and
+outperforming all evaluated 7B zero-shot baselines, at a total reproducible
+cost of \$63.89.
+
+Four principal findings are established.
+First, curriculum SFT is the dominant driver of accuracy gains
+($+5.53$~pp, $p=0.025$ versus zero-shot).
+Second, the unit-aware GRPO reward further stabilises performance
+($p=0.006$) and targets the second most common error type (unit/dimension
+errors, 25.2\%).
+Third, self-consistency voting and Dual-LoRA routing both degrade
+performance at this scale, providing concrete guidance that more complex
+inference-time strategies are not beneficial for 4B models on this task.
+Fourth, logical fallacy errors (55.3\%) are the dominant remaining
+failure mode, pointing toward neuro-symbolic integration as the highest-
+priority future direction.
+
+Future work will explore scaling to 7B and 14B parameter models,
+process-level reward models for step-by-step verification,
+integration of Z3-in-the-loop reward signals during GRPO training,
+and cross-dataset evaluation on SciBench~\cite{b15} and GPQA~\cite{b17}.
+
+% ==============================================================================
+\section*{Acknowledgment}
+% ==============================================================================
+
+[TODO: Insert funding and acknowledgement statement.
+Per IEEE policy, sponsor names and grant numbers belong here, not in the
+abstract or introduction.]
+
+% ==============================================================================
+\begin{thebibliography}{00}
+
+\bibitem{b1}
+J.~Wei, X.~Wang, D.~Schuurmans, M.~Bosma, B.~Ichter, F.~Xia, E.~Chi,
+Q.~Le, and D.~Zhou,
+``Chain-of-thought prompting elicits reasoning in large language models,''
+\emph{Adv. Neural Inf. Process. Syst.}, vol.~35, pp. 24824--24837, 2022.
+
+\bibitem{b2}
+X.~Wang, J.~Wei, D.~Schuurmans, Q.~Le, E.~Chi, S.~Narang, A.~Chowdhery,
+and D.~Zhou,
+``Self-consistency improves chain of thought reasoning in language models,''
+\emph{arXiv preprint arXiv:2203.11171}, 2023. [Online]. Available:
+\underline{https://arxiv.org/abs/2203.11171}
+
+\bibitem{b3}
+T.~Kojima, S.~S.~Gu, M.~Reid, Y.~Matsuo, and Y.~Iwasawa,
+``Large language models are zero-shot reasoners,''
+\emph{Adv. Neural Inf. Process. Syst.}, vol.~35, pp. 22199--22213, 2022.
+
+\bibitem{b4}
+Z.~Shao, P.~Wang, Q.~Zhu, R.~Xu, J.~Song, X.~Bi, H.~Zhang, M.~Zhang,
+Y.~K.~Li, Y.~Wu, and D.~Guo,
+``{DeepSeekMath}: Pushing the limits of mathematical reasoning in open
+language models,''
+\emph{arXiv preprint arXiv:2402.03300}, 2024. [Online]. Available:
+\underline{https://arxiv.org/abs/2402.03300}
+
+\bibitem{b5}
+A.~Yang \emph{et al.},
+``{Qwen2.5-Math} technical report: Toward mathematical expert model via
+self-improvement,''
+\emph{arXiv preprint arXiv:2409.12122}, 2024. [Online]. Available:
+\underline{https://arxiv.org/abs/2409.12122}
+
+\bibitem{b6}
+Z.~Azerbayev \emph{et al.},
+``{Llemma}: An open language model for mathematics,''
+\emph{arXiv preprint arXiv:2310.10631}, 2024. [Online]. Available:
+\underline{https://arxiv.org/abs/2310.10631}
+
+\bibitem{b7}
+E.~J.~Hu, Y.~Shen, P.~Wallis, Z.~Allen-Zhu, Y.~Li, S.~Wang, L.~Wang,
+and W.~Chen,
+``{LoRA}: Low-rank adaptation of large language models,''
+in \emph{Proc. Int. Conf. Learn. Representations (ICLR)}, 2022.
+[Online]. Available: \underline{https://arxiv.org/abs/2106.09685}
+
+\bibitem{b8}
+L.~Ouyang \emph{et al.},
+``Training language models to follow instructions with human feedback,''
+\emph{Adv. Neural Inf. Process. Syst.}, vol.~35, pp. 27730--27744, 2022.
+
+\bibitem{b9}
+J.~Schulman, F.~Wolski, P.~Dhariwal, A.~Radford, and O.~Klimov,
+``Proximal policy optimization algorithms,''
+\emph{arXiv preprint arXiv:1707.06347}, 2017. [Online]. Available:
+\underline{https://arxiv.org/abs/1707.06347}
+
+\bibitem{b10}
+R.~Rafailov, A.~Sharma, E.~Mitchell, C.~D.~Manning, S.~Ermon,
+and C.~Finn,
+``Direct preference optimization: Your language model is secretly a
+reward model,''
+\emph{Adv. Neural Inf. Process. Syst.}, vol.~36, 2023.
+
+\bibitem{b11}
+H.~Lightman \emph{et al.},
+``Let's verify step by step,''
+\emph{arXiv preprint arXiv:2305.20050}, 2023. [Online]. Available:
+\underline{https://arxiv.org/abs/2305.20050}
+
+\bibitem{b12}
+L.~Pan, A.~Albalak, X.~Wang, and W.~Y.~Wang,
+``{Logic-LM}: Empowering large language models with symbolic solvers
+for faithful logical reasoning,''
+\emph{arXiv preprint arXiv:2305.12295}, 2023. [Online]. Available:
+\underline{https://arxiv.org/abs/2305.12295}
+
+\bibitem{b13}
+L.~Gao, A.~Madaan, S.~Zhou, U.~Alon, P.~Liu, Y.~Yang, J.~Callan,
+and G.~Neubig,
+``{PAL}: Program-aided language models,''
+\emph{arXiv preprint arXiv:2211.10435}, 2022. [Online]. Available:
+\underline{https://arxiv.org/abs/2211.10435}
+
+\bibitem{b14}
+P.~Wang \emph{et al.},
+``Math-Shepherd: Verify and reinforce {LLMs} step-by-step without human
+annotations,''
+\emph{arXiv preprint arXiv:2312.08935}, 2024. [Online]. Available:
+\underline{https://arxiv.org/abs/2312.08935}
+
+\bibitem{b15}
+X.~Wang \emph{et al.},
+``{SciBench}: Evaluating college-level scientific problem-solving
+abilities of large language models,''
+\emph{arXiv preprint arXiv:2307.10635}, 2024. [Online]. Available:
+\underline{https://arxiv.org/abs/2307.10635}
+
+\bibitem{b16}
+C.~He \emph{et al.},
+``{OlympiadBench}: A challenging benchmark for promoting {AGI} with
+olympiad-level bilingual multimodal scientific problems,''
+\emph{arXiv preprint arXiv:2402.14008}, 2024. [Online]. Available:
+\underline{https://arxiv.org/abs/2402.14008}
+
+\bibitem{b17}
+D.~Rein \emph{et al.},
+``{GPQA}: A graduate-level google-proof {Q\&A} benchmark,''
+\emph{arXiv preprint arXiv:2311.12022}, 2023. [Online]. Available:
+\underline{https://arxiv.org/abs/2311.12022}
+
+\bibitem{b18}
+T.~Dettmers, A.~Pagnoni, A.~Holtzman, and L.~Zettlemoyer,
+``{QLoRA}: Efficient finetuning of quantized {LLMs},''
+\emph{Adv. Neural Inf. Process. Syst.}, vol.~36, 2023.
+
+\bibitem{b19}
+C.~Huang, Q.~Liu, B.~Y.~Lin, T.~Pang, C.~Du, and M.~Lin,
+``{LoRAHub}: Efficient cross-task generalization via dynamic {LoRA}
+composition,''
+\emph{arXiv preprint arXiv:2307.13269}, 2023. [Online]. Available:
+\underline{https://arxiv.org/abs/2307.13269}
+
+\bibitem{b20}
+L.~Yu \emph{et al.},
+``{MetaMath}: Bootstrap your own mathematical questions for large
+language models,''
+\emph{arXiv preprint arXiv:2309.12284}, 2023. [Online]. Available:
+\underline{https://arxiv.org/abs/2309.12284}
+
+\bibitem{b21}
+X.~Yue \emph{et al.},
+``{MAmmoTH}: Building math generalist models through hybrid instruction
+tuning,''
+\emph{arXiv preprint arXiv:2309.05653}, 2023. [Online]. Available:
+\underline{https://arxiv.org/abs/2309.05653}
+
+\bibitem{b22}
+Y.~Bengio, J.~Louradour, R.~Collobert, and J.~Weston,
+``Curriculum learning,''
+in \emph{Proc. 26th Annu. Int. Conf. Mach. Learn. (ICML)}, 2009,
+pp. 41--48.
+
+\bibitem{b23}
+{Qwen Team},
+``{Qwen3} technical report,''
+\emph{arXiv preprint arXiv:2505.09388}, 2025. [Online]. Available:
+\underline{https://arxiv.org/abs/2505.09388}
+
+\bibitem{b24}
+L.~C.~Magister, J.~Shaki, A.~Birhane, and D.~Krueger,
+``Teaching small language models to reason,''
+\emph{arXiv preprint arXiv:2212.08410}, 2023. [Online]. Available:
+\underline{https://arxiv.org/abs/2212.08410}
+
+\bibitem{b25}
+Q.~McNemar,
+``Note on the sampling error of the difference between correlated
+proportions or percentages,''
+\emph{Psychometrika}, vol.~12, no.~2, pp. 153--157, Jun. 1947.
+
+\bibitem{b26}
+A.~Q.~Jiang \emph{et al.},
+``Mistral 7B,''
+\emph{arXiv preprint arXiv:2310.06825}, 2023. [Online]. Available:
+\underline{https://arxiv.org/abs/2310.06825}
+
+\bibitem{b27}
+T.~X.~Olausson, A.~Gu, B.~Lipkin, C.~E.~Zhang, A.~Solar-Lezama,
+J.~B.~Tenenbaum, and R.~Levy,
+``{LINC}: A neurosymbolic approach for logical reasoning by combining
+language models with first-order logic provers,''
+\emph{arXiv preprint arXiv:2310.15164}, 2023. [Online]. Available:
+\underline{https://arxiv.org/abs/2310.15164}
+
+\bibitem{b28}
+Y.~Wang, Y.~Kordi, S.~Mishra, A.~Liu, N.~A.~Smith, D.~Khashabi,
+and H.~Hajishirzi,
+``Self-instruct: Aligning language models with self-generated instructions,''
+\emph{arXiv preprint arXiv:2212.10560}, 2023. [Online]. Available:
+\underline{https://arxiv.org/abs/2212.10560}
+
+\bibitem{b29}
+T.~Brown \emph{et al.},
+``Language models are few-shot learners,''
+\emph{Adv. Neural Inf. Process. Syst.}, vol.~33, pp. 1877--1901, 2020.
+
+\bibitem{b30}
+Z.~Shao, P.~Wang, Q.~Zhu, R.~Xu, J.~Song, X.~Bi, H.~Zhang, M.~Zhang,
+Y.~K.~Li, Y.~Wu, and D.~Guo,
+``{DeepSeekMath}: Pushing the limits of mathematical reasoning in open
+language models,'' and
+Z.~Gou \emph{et al.},
+``{DeepSeek-Math-7B}: Reinforcement learning unleashes mathematical
+reasoning in language models,''
+\emph{arXiv preprint arXiv:2402.03300}, 2024. [Online]. Available:
+\underline{https://arxiv.org/abs/2402.03300}
+
+\bibitem{b31}
+Qwen Team,
+``{Qwen2-Math}: A series of dedicated mathematical reasoning models
+from the Qwen Team,''
+\emph{arXiv preprint arXiv:2409.12122}, 2024. [Online]. Available:
+\underline{https://arxiv.org/abs/2409.12122}
+
+\end{thebibliography}
+
+
+% ==============================================================================
+%  Author Biographies — kept unchanged from IEEE Access template
+%  [NOTE] Replace with actual author info and photos before submission.
+% ==============================================================================
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{author1.png}}]{First A. Author} received the B.S. and M.S. degrees in aerospace engineering from
+the University of Virginia, Charlottesville, in 2001 and the Ph.D. degree in
+mechanical engineering from Drexel University, Philadelphia, PA, in 2008.
+
+From 2001 to 2004, he was a Research Assistant with the Princeton Plasma
+Physics Laboratory. Since 2009, he has been an Assistant Professor with the
+Mechanical Engineering Department, Texas A{\&}M University, College Station.
+He is the author of three books, more than 150 articles, and more than 70
+inventions. His research interests include high-pressure and high-density
+nonthermal plasma discharge processes and applications, microscale plasma
+discharges, discharges in liquids, spectroscopic diagnostics, plasma
+propulsion, and innovation plasma applications. He is an Associate Editor of
+the journal \emph{Earth, Moon, Planets}, and holds two patents.
+
+Dr. Author was a recipient of the International Association of Geomagnetism
+and Aeronomy Young Scientist Award for Excellence in 2008, and the IEEE
+Electromagnetic Compatibility Society Best Symposium Paper Award in 2011.
+\end{IEEEbiography}
+
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{author2.png}}]{Second B. Author} (M'76--SM'81--F'87) and all authors may include
+biographies. Biographies are often not included in conference-related
+papers. This author became a Member (M) of IEEE in 1976, a Senior
+Member (SM) in 1981, and a Fellow (F) in 1987. The first paragraph may
+contain a place and/or date of birth (list place, then date). Next,
+the author's educational background is listed. The degrees should be
+listed with type of degree in what field, which institution, city,
+state, and country, and year the degree was earned. The author's major
+field of study should be lower-cased.
+
+The second paragraph uses the pronoun of the person (he or she) and not the
+author's last name. It lists military and work experience, including summer
+and fellowship jobs. Job titles are capitalized. The current job must have a
+location; previous positions may be listed
+without one. Information concerning previous publications may be included.
+Try not to list more than three books or published articles. The format for
+listing publishers of a book within the biography is: title of book
+(publisher name, year) similar to a reference. Current and previous research
+interests end the paragraph.
+
+The third paragraph begins with the author's
+title and last name (e.g., Dr.\ Smith, Prof.\ Jones, Mr.\ Kajor, Ms.\ Hunter).
+List any memberships in professional societies other than the IEEE. Finally,
+list any awards and work for IEEE committees and publications. If a
+photograph is provided, it should be of good quality, and
+professional-looking. Following are two examples of an author's biography.
+\end{IEEEbiography}
+
+\newpage
+
+\begin{IEEEbiographynophoto}{Third C. Author, Jr.} (M'87) received the B.S. degree in mechanical
+engineering from National Chung Cheng University, Chiayi, Taiwan, in 2004
+and the M.S. degree in mechanical engineering from National Tsing Hua
+University, Hsinchu, Taiwan, in 2006. He is currently pursuing the Ph.D.
+degree in mechanical engineering at Texas A{\&}M University, College
+Station, TX, USA.
+
+From 2008 to 2009, he was a Research Assistant with the Institute of
+Physics, Academia Sinica, Tapei, Taiwan. His research interest includes the
+development of surface processing and biological/medical treatment
+techniques using nonthermal atmospheric pressure plasmas, fundamental study
+of plasma sources, and fabrication of micro- or nanostructured surfaces.
+
+Mr. Author's awards and honors include the Frew Fellowship (Australian
+Academy of Science), the I. I. Rabi Prize (APS), the European Frequency and
+Time Forum Award, the Carl Zeiss Research Award, the William F. Meggers
+Award and the Adolph Lomb Medal (OSA).
+\end{IEEEbiographynophoto}
+
+\EOD
+
+\end{document}

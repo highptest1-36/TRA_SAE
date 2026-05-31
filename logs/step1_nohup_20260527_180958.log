@@ -1,0 +1,26 @@
+nohup: ignoring input
+Loaded cfg 4-5 from original: 2 entries
+[1] Loading evaluation dataset
+Run timestamp : 20260527_181000
+Result file   : /content/drive/MyDrive/TRA-SAE/logs/qwen35_ablation_v2_20260527_181000.json
+Stdout log    : /content/drive/MyDrive/TRA-SAE/logs/step1_rerun_20260527_181000.log
+    Eval samples: 217
+    Composition: {'physics': 141, 'logic': 76}
+[2] Loading base model
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 31300.78it/s]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<02:03,  3.45it/s]Loading weights:   6%|▌         | 26/426 [00:00<00:04, 82.38it/s]Loading weights:  11%|█         | 46/426 [00:00<00:03, 115.22it/s]Loading weights:  18%|█▊        | 78/426 [00:00<00:01, 174.75it/s]Loading weights:  23%|██▎       | 100/426 [00:00<00:01, 170.07it/s]Loading weights:  31%|███       | 130/426 [00:00<00:01, 204.31it/s]Loading weights:  36%|███▌      | 153/426 [00:00<00:01, 191.72it/s]Loading weights:  43%|████▎     | 184/426 [00:01<00:01, 221.57it/s]Loading weights:  49%|████▉     | 208/426 [00:01<00:01, 205.06it/s]Loading weights:  56%|█████▌    | 237/426 [00:01<00:00, 224.71it/s]Loading weights:  61%|██████▏   | 261/426 [00:01<00:00, 208.56it/s]Loading weights:  68%|██████▊   | 289/426 [00:01<00:00, 225.09it/s]Loading weights:  73%|███████▎  | 313/426 [00:01<00:00, 209.11it/s]Loading weights:  81%|████████  | 343/426 [00:01<00:00, 229.89it/s]Loading weights:  86%|████████▌ | 367/426 [00:01<00:00, 211.92it/s]Loading weights:  93%|█████████▎| 396/426 [00:02<00:00, 221.64it/s]Loading weights:  98%|█████████▊| 419/426 [00:02<00:00, 208.03it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 191.97it/s]
+[base model loaded] VRAM  8.41 GB alloc  /  8.42 GB reserved  /  85.1 GB total
+[3] Loading retriever
+[Retriever] Built TF-IDF index: 1945 docs, 6166 features
+[Retriever] Subject distribution: {'logic': 732, 'physics': 1213}
+
+============================================================
+Config 0: Qwen3.5-4B zero-shot (no LoRA)
+============================================================
+[Config 0 model loaded] VRAM  8.41 GB alloc  /  8.42 GB reserved  /  85.1 GB total
+  Attempt 0: 217 pending
+[z3_engine] z3-solver not installed — Z3Engine.verify() always returns None
+  Attempt 0: correct=86/217 acc=39.63%
+  Attempt 1: 131 pending

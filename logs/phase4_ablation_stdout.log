@@ -1,0 +1,267 @@
+[14:00:00] INFO     ====================================================================
+[14:00:00] INFO     Phase 4 Evaluation + Ablation
+[14:00:00] INFO       smoke_test=False  config=-1
+[14:00:00] INFO     ====================================================================
+
+[1] Loading evaluation dataset
+    Eval samples: 217
+[14:00:01] INFO     Eval dataset: 217 samples
+
+[2] Loading base model
+Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.10.0+cu128).
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 8338.58it/s]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:56,  3.65it/s]Loading weights:   6%|▌         | 26/426 [00:00<00:04, 87.12it/s]Loading weights:  11%|█         | 45/426 [00:00<00:03, 120.39it/s]Loading weights:  16%|█▌        | 67/426 [00:00<00:02, 148.37it/s]Loading weights:  22%|██▏       | 93/426 [00:00<00:01, 181.76it/s]Loading weights:  27%|██▋       | 114/426 [00:00<00:01, 188.96it/s]Loading weights:  32%|███▏      | 135/426 [00:00<00:01, 190.68it/s]Loading weights:  37%|███▋      | 156/426 [00:01<00:01, 194.63it/s]Loading weights:  42%|████▏     | 181/426 [00:01<00:01, 210.89it/s]Loading weights:  48%|████▊     | 203/426 [00:01<00:01, 208.64it/s]Loading weights:  53%|█████▎    | 225/426 [00:01<00:00, 208.22it/s]Loading weights:  59%|█████▉    | 251/426 [00:01<00:00, 215.68it/s]Loading weights:  64%|██████▍   | 274/426 [00:01<00:00, 218.96it/s]Loading weights:  70%|██████▉   | 297/426 [00:01<00:00, 216.73it/s]Loading weights:  75%|███████▍  | 319/426 [00:01<00:00, 204.14it/s]Loading weights:  81%|████████  | 344/426 [00:01<00:00, 216.64it/s]Loading weights:  86%|████████▌ | 366/426 [00:01<00:00, 200.05it/s]Loading weights:  92%|█████████▏| 394/426 [00:02<00:00, 220.15it/s]Loading weights:  98%|█████████▊| 417/426 [00:02<00:00, 203.96it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 188.46it/s]
+[base model loaded] VRAM  8.41 GB alloc  /  8.42 GB reserved  /  85.1 GB total
+
+[3] Loading retriever
+[Retriever] Built TF-IDF index: 1945 docs, 6166 features
+[Retriever] Subject distribution: {'physics': 1213, 'logic': 732}
+
+[4] Loading router
+    Router loaded from /content/drive/MyDrive/TRA-SAE/checkpoints/router.pkl
+
+====================================================================
+Config 0: Qwen3.5-4B zero-shot (no LoRA)
+====================================================================
+[14:00:15] INFO     Starting ablation config 0: zero_shot
+[Config 0 model loaded] VRAM  8.41 GB alloc  /  8.42 GB reserved  /  85.1 GB total
+  Pre-gathered 217 samples + few-shots. Starting batched inference (batch=8)...
+  Attempt 0: 217 samples pending...
+    generated 32/217
+    generated 64/217
+    generated 96/217
+    generated 128/217
+    generated 160/217
+    generated 192/217
+    generated 217/217
+  Attempt 0 done: resolved=65/217  correct=65/217  acc=29.95%
+  Attempt 1: 152 samples pending...
+    generated 32/152
+    generated 64/152
+    generated 96/152
+    generated 128/152
+    generated 152/152
+  Attempt 1 done: resolved=76/217  correct=76/217  acc=35.02%
+  Attempt 2: 141 samples pending...
+    generated 32/141
+    generated 64/141
+    generated 96/141
+    generated 128/141
+    generated 141/141
+  Attempt 2 done: resolved=217/217  correct=77/217  acc=35.48%
+  [  10/217]  acc=30.00%
+  [  20/217]  acc=20.00%
+  [  30/217]  acc=26.67%
+  [  40/217]  acc=25.00%
+  [  50/217]  acc=30.00%
+  [  60/217]  acc=33.33%
+  [  70/217]  acc=31.43%
+  [  80/217]  acc=30.00%
+  [  90/217]  acc=30.00%
+  [ 100/217]  acc=33.00%
+  [ 110/217]  acc=33.64%
+  [ 120/217]  acc=31.67%
+  [ 130/217]  acc=32.31%
+  [ 140/217]  acc=34.29%
+  [ 150/217]  acc=34.00%
+  [ 160/217]  acc=34.38%
+  [ 170/217]  acc=35.88%
+  [ 180/217]  acc=36.11%
+  [ 190/217]  acc=36.84%
+  [ 200/217]  acc=36.00%
+  [ 210/217]  acc=36.19%
+  [ 217/217]  acc=35.48%
+[15:11:26] INFO     Config 0 done | acc=35.48%  phys=43.97%  logic=19.74%  elapsed=71.2min
+
+  Config 0 result:
+    Overall   : 35.48%
+    Physics   : 43.97%
+    Logic     : 19.74%
+    Time      : 71.2 min
+
+====================================================================
+Config 1: + SFT Phase 1
+====================================================================
+[15:11:26] INFO     Starting ablation config 1: sft_phase1
+[Config 1 model loaded] VRAM  8.60 GB alloc  /  8.79 GB reserved  /  85.1 GB total
+  Pre-gathered 217 samples + few-shots. Starting batched inference (batch=8)...
+  Attempt 0: 217 samples pending...
+    generated 32/217
+    generated 64/217
+    generated 96/217
+    generated 128/217
+    generated 160/217
+    generated 192/217
+    generated 217/217
+  Attempt 0 done: resolved=101/217  correct=101/217  acc=46.54%
+  Attempt 1: 116 samples pending...
+    generated 32/116
+    generated 64/116
+    generated 96/116
+    generated 116/116
+  Attempt 1 done: resolved=108/217  correct=108/217  acc=49.77%
+  Attempt 2: 109 samples pending...
+    generated 32/109
+    generated 64/109
+    generated 96/109
+    generated 109/109
+  Attempt 2 done: resolved=217/217  correct=114/217  acc=52.53%
+  [  10/217]  acc=50.00%
+  [  20/217]  acc=45.00%
+  [  30/217]  acc=53.33%
+  [  40/217]  acc=52.50%
+  [  50/217]  acc=54.00%
+  [  60/217]  acc=56.67%
+  [  70/217]  acc=54.29%
+  [  80/217]  acc=52.50%
+  [  90/217]  acc=54.44%
+  [ 100/217]  acc=54.00%
+  [ 110/217]  acc=55.45%
+  [ 120/217]  acc=54.17%
+  [ 130/217]  acc=53.08%
+  [ 140/217]  acc=54.29%
+  [ 150/217]  acc=52.00%
+  [ 160/217]  acc=51.88%
+  [ 170/217]  acc=52.35%
+  [ 180/217]  acc=52.78%
+  [ 190/217]  acc=53.16%
+  [ 200/217]  acc=53.50%
+  [ 210/217]  acc=52.38%
+  [ 217/217]  acc=52.53%
+[16:40:00] INFO     Config 1 done | acc=52.53%  phys=65.25%  logic=28.95%  elapsed=88.3min
+
+  Config 1 result:
+    Overall   : 52.53%
+    Physics   : 65.25%
+    Logic     : 28.95%
+    Time      : 88.3 min
+
+====================================================================
+Config 2: + Logic SFT Phase 1.5
+====================================================================
+[16:40:00] INFO     Starting ablation config 2: sft_logic
+/usr/local/lib/python3.12/dist-packages/peft/tuners/tuners_utils.py:302: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+  warnings.warn(
+[Config 2 model loaded] VRAM  8.60 GB alloc  /  8.81 GB reserved  /  85.1 GB total
+  Pre-gathered 217 samples + few-shots. Starting batched inference (batch=8)...
+  Attempt 0: 217 samples pending...
+    generated 32/217
+    generated 64/217
+    generated 96/217
+    generated 128/217
+    generated 160/217
+    generated 192/217
+    generated 217/217
+  Attempt 0 done: resolved=100/217  correct=100/217  acc=46.08%
+  Attempt 1: 117 samples pending...
+    generated 32/117
+    generated 64/117
+    generated 96/117
+    generated 117/117
+  Attempt 1 done: resolved=108/217  correct=108/217  acc=49.77%
+  Attempt 2: 109 samples pending...
+    generated 32/109
+    generated 64/109
+    generated 96/109
+    generated 109/109
+  Attempt 2 done: resolved=217/217  correct=112/217  acc=51.61%
+  [  10/217]  acc=50.00%
+  [  20/217]  acc=40.00%
+  [  30/217]  acc=46.67%
+  [  40/217]  acc=45.00%
+  [  50/217]  acc=48.00%
+  [  60/217]  acc=51.67%
+  [  70/217]  acc=50.00%
+  [  80/217]  acc=48.75%
+  [  90/217]  acc=51.11%
+  [ 100/217]  acc=52.00%
+  [ 110/217]  acc=53.64%
+  [ 120/217]  acc=54.17%
+  [ 130/217]  acc=52.31%
+  [ 140/217]  acc=53.57%
+  [ 150/217]  acc=52.00%
+  [ 160/217]  acc=52.50%
+  [ 170/217]  acc=52.94%
+  [ 180/217]  acc=53.89%
+  [ 190/217]  acc=54.21%
+  [ 200/217]  acc=53.00%
+  [ 210/217]  acc=51.90%
+  [ 217/217]  acc=51.61%
+[18:08:01] INFO     Config 2 done | acc=51.61%  phys=65.25%  logic=26.32%  elapsed=87.8min
+
+  Config 2 result:
+    Overall   : 51.61%
+    Physics   : 65.25%
+    Logic     : 26.32%
+    Time      : 87.8 min
+
+====================================================================
+Config 3: + GRPO mixed Phase 2
+====================================================================
+[18:08:01] INFO     Starting ablation config 3: grpo_mixed
+[Config 3 model loaded] VRAM  8.60 GB alloc  /  8.81 GB reserved  /  85.1 GB total
+  Pre-gathered 217 samples + few-shots. Starting batched inference (batch=8)...
+  Attempt 0: 217 samples pending...
+    generated 32/217
+    generated 64/217
+    generated 96/217
+    generated 128/217
+    generated 160/217
+    generated 192/217
+    generated 217/217
+  Attempt 0 done: resolved=106/217  correct=106/217  acc=48.85%
+  Attempt 1: 111 samples pending...
+    generated 32/111
+    generated 64/111
+    generated 96/111
+    generated 111/111
+  Attempt 1 done: resolved=112/217  correct=112/217  acc=51.61%
+  Attempt 2: 105 samples pending...
+    generated 32/105
+    generated 64/105
+    generated 96/105
+    generated 105/105
+  Attempt 2 done: resolved=217/217  correct=117/217  acc=53.92%
+  [  10/217]  acc=30.00%
+  [  20/217]  acc=30.00%
+  [  30/217]  acc=46.67%
+  [  40/217]  acc=45.00%
+  [  50/217]  acc=48.00%
+  [  60/217]  acc=51.67%
+  [  70/217]  acc=51.43%
+  [  80/217]  acc=50.00%
+  [  90/217]  acc=52.22%
+  [ 100/217]  acc=53.00%
+  [ 110/217]  acc=54.55%
+  [ 120/217]  acc=55.00%
+  [ 130/217]  acc=53.85%
+  [ 140/217]  acc=55.00%
+  [ 150/217]  acc=53.33%
+  [ 160/217]  acc=53.75%
+  [ 170/217]  acc=54.71%
+  [ 180/217]  acc=55.56%
+  [ 190/217]  acc=55.79%
+  [ 200/217]  acc=55.50%
+  [ 210/217]  acc=54.29%
+  [ 217/217]  acc=53.92%
+[19:34:30] INFO     Config 3 done | acc=53.92%  phys=67.38%  logic=28.95%  elapsed=86.2min
+
+  Config 3 result:
+    Overall   : 53.92%
+    Physics   : 67.38%
+    Logic     : 28.95%
+    Time      : 86.2 min
+
+====================================================================
+Config 4: + Dual LoRA specialists + Router
+====================================================================
+[19:34:30] INFO     Starting ablation config 4: dual_lora_router
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 10538.45it/s]
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<02:00,  3.53it/s]Loading weights:   6%|▋         | 27/426 [00:00<00:04, 86.46it/s]Loading weights:  11%|█         | 46/426 [00:00<00:03, 118.40it/s]Loading weights:  18%|█▊        | 75/426 [00:00<00:02, 167.40it/s]Loading weights:  23%|██▎       | 96/426 [00:00<00:01, 172.60it/s]Loading weights:  28%|██▊       | 119/426 [00:00<00:01, 185.36it/s]Loading weights:  34%|███▍      | 145/426 [00:00<00:01, 206.25it/s]Loading weights:  39%|███▉      | 168/426 [00:01<00:01, 194.15it/s]Loading weights:  46%|████▌     | 195/426 [00:01<00:01, 214.46it/s]Loading weights:  51%|█████     | 218/426 [00:01<00:00, 213.29it/s]Loading weights:  57%|█████▋    | 241/426 [00:01<00:00, 203.85it/s]Loading weights:  62%|██████▏   | 262/426 [00:01<00:00, 204.12it/s]Loading weights:  68%|██████▊   | 288/426 [00:01<00:00, 215.96it/s]Loading weights:  73%|███████▎  | 310/426 [00:01<00:00, 209.30it/s]Loading weights:  78%|███████▊  | 332/426 [00:01<00:00, 208.08it/s]Loading weights:  84%|████████▍ | 358/426 [00:01<00:00, 222.21it/s]Loading weights:  89%|████████▉ | 381/426 [00:02<00:00, 223.60it/s]Loading weights:  95%|█████████▍| 404/426 [00:02<00:00, 220.75it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 188.93it/s]
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/TRA-SAE/run_phase4_v2_agent.py", line 447, in <module>
+    model.eval()
+    ^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'eval'

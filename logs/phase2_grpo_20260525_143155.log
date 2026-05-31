@@ -1,0 +1,14 @@
+[14:31:55] INFO     ====================================================================
+[14:31:55] INFO     Phase 2 GRPO  |  Base: qwen35_sft_logic/final
+[14:31:55] INFO       Steps=250 | LR=1e-06 | β=0.04
+[14:31:55] INFO       Batch=2 × GradAcc=2 | gen=4
+[14:31:55] INFO       Reference: disable_adapter() trick (saves ~10GB VRAM)
+[14:31:55] INFO       Smoke-test=False
+[14:31:55] INFO     ====================================================================
+[14:31:55] INFO     Using Phase 1.5 checkpoint: /content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_sft_logic/final
+[14:32:42] INFO     PEFT checkpoint loaded
+[14:32:45] INFO     Datasets: train=1945 val=217
+[14:32:49] INFO     GRPO dataset prepared: train=1945 val=217
+[14:32:51] INFO     GRPO max_steps=250
+[15:53:03] INFO     Checkpoint saved → /content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_grpo/final
+[15:53:03] INFO     Phase 2 GRPO done | steps=250 time=79.8min

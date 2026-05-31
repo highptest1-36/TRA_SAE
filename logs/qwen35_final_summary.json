@@ -1,0 +1,61 @@
+{
+  "model": "Qwen/Qwen3.5-4B",
+  "eval_n": 217,
+  "smoke_test": false,
+  "accuracy_overall": 50.69,
+  "accuracy_physics": 64.54,
+  "accuracy_logic": 25.0,
+  "per_retry_distribution": {
+    "0": 99,
+    "1": 7,
+    "2": 111
+  },
+  "confidence_analysis": {
+    "avg_when_correct": 0.0,
+    "avg_when_wrong": 0.0
+  },
+  "ablation_summary": [
+    {
+      "id": 0,
+      "name": "zero_shot",
+      "acc": 35.48,
+      "phys": 43.97,
+      "logic": 19.74
+    },
+    {
+      "id": 1,
+      "name": "sft_phase1",
+      "acc": 52.53,
+      "phys": 65.25,
+      "logic": 28.95
+    },
+    {
+      "id": 2,
+      "name": "sft_logic",
+      "acc": 51.61,
+      "phys": 65.25,
+      "logic": 26.32
+    },
+    {
+      "id": 3,
+      "name": "grpo_mixed",
+      "acc": 53.92,
+      "phys": 67.38,
+      "logic": 28.95
+    },
+    {
+      "id": 4,
+      "name": "dual_lora_router",
+      "acc": 49.77,
+      "phys": 60.28,
+      "logic": 30.26
+    },
+    {
+      "id": 5,
+      "name": "full_v2",
+      "acc": 50.69,
+      "phys": 64.54,
+      "logic": 25.0
+    }
+  ]
+}

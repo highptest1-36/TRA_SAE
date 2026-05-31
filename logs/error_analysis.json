@@ -1,0 +1,381 @@
+{
+  "source_config": "cfg3_grpo_mixed",
+  "total_evaluated": 217,
+  "total_wrong": 103,
+  "error_types": {
+    "E1_unit_dimension": "Unit or dimension error (physics)",
+    "E2_wrong_formula": "Wrong formula / law selected (physics)",
+    "E3_arithmetic": "Numerical arithmetic computation error",
+    "E4_logical_fallacy": "Logical fallacy or quantifier error (logic)",
+    "E5_misinterpretation": "Question misinterpretation or missing context",
+    "E0_unclassified": "Could not classify from output alone"
+  },
+  "error_counts": {
+    "E1_unit_dimension": 26,
+    "E2_wrong_formula": 0,
+    "E3_arithmetic": 1,
+    "E4_logical_fallacy": 57,
+    "E5_misinterpretation": 1,
+    "E0_unclassified": 18
+  },
+  "error_pct": {
+    "E1_unit_dimension": 25.2,
+    "E2_wrong_formula": 0.0,
+    "E3_arithmetic": 1.0,
+    "E4_logical_fallacy": 55.3,
+    "E5_misinterpretation": 1.0,
+    "E0_unclassified": 17.5
+  },
+  "error_samples": [
+    {
+      "etype": "E0_unclassified",
+      "subject": "physics",
+      "question_snippet": "Question: A capacitor with a capacitance of 5 \u03bcF is charged to a voltage of 20 V and then disconnected from the power so",
+      "prediction": "100 \u03bcC",
+      "ground_truth": "Do not change"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. If a student does not follow the school rules, the student will be disciplined.\n  2. Every student must a",
+      "prediction": "A",
+      "ground_truth": "Unknown"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. In Calculus 2 for engineering students, if an object x does not have property P then it also does not hav",
+      "prediction": "Yes",
+      "ground_truth": "No"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. All students engage in self-study.\n  2. If a student participates in research, then they publish papers.\n",
+      "prediction": "Thus, all premises are consistent, and we can infer that all students engage in ",
+      "ground_truth": "Unknown"
+    },
+    {
+      "etype": "E0_unclassified",
+      "subject": "physics",
+      "question_snippet": "Question: Two electric charges, q1 = 4.10^\u201310 C and q2 = \u20134.10^\u201310 C, are placed at points A and B in air, with AB = 2 c",
+      "prediction": "Since $q_1$ is positive, $\\vec{E_1}$ at M points away from A (towards M's",
+      "ground_truth": "32000 V/m"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. If students engage in problem-based learning, they develop stronger analytical skills.\n  2. If students h",
+      "prediction": "D",
+      "ground_truth": "Unknown"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. If x does not use online documents from the library, then x does not gain more knowledge\n  2. There exist",
+      "prediction": "A",
+      "ground_truth": "Unknown"
+    },
+    {
+      "etype": "E1_unit_dimension",
+      "subject": "physics",
+      "question_snippet": "Question: Two electric charges q1 = +7 \u00d7 10^-6 C and q2 = -7 \u00d7 10^-6 C are placed at points A and B, separated by 6 cm. ",
+      "prediction": "*   $E_1",
+      "ground_truth": "0.495 N"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. At least one student has received a Scholarship.\n  2. All students are required to submit a Research proj",
+      "prediction": "*   Premise 20: \"",
+      "ground_truth": "Unknown"
+    },
+    {
+      "etype": "E0_unclassified",
+      "subject": "physics",
+      "question_snippet": "Question: When the voltage across the capacitor doubles, how will the electric field energy change?",
+      "prediction": "4 times",
+      "ground_truth": "Increase by 4 times"
+    },
+    {
+      "etype": "E0_unclassified",
+      "subject": "physics",
+      "question_snippet": "Question: What is the shape of the graph representing the energy stored in a capacitor as a function of the voltage U?",
+      "prediction": "Parabola (vertex at the origin)",
+      "ground_truth": "upward parabola"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. All online students have logged into the online learning platform\n  2. There exists at least one online s",
+      "prediction": "Yes",
+      "ground_truth": "No"
+    },
+    {
+      "etype": "E1_unit_dimension",
+      "subject": "physics",
+      "question_snippet": "Question: When the electric field energy equals the magnetic field energy in an ideal LC circuit, what is the ratio of t",
+      "prediction": "\\sqrt{\\frac{L}{C}}",
+      "ground_truth": "1 / (\u03c9C) \u03a9"
+    },
+    {
+      "etype": "E1_unit_dimension",
+      "subject": "physics",
+      "question_snippet": "Question: Two electric charges q\u2081 = +2 \u00d7 10^-8 C and q\u2082 = +2 \u00d7 10^-8 C are placed at two points A and B, separated by 8 ",
+      "prediction": "*   $E_{net} = \\frac{1440}{\\sqrt{52} \\times 52 \\times 10^{-",
+      "ground_truth": "5.76 x 10^4 N/C"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. If a student gives a seminar, then they receive a recommendation.\n  2. If a student participates in a pro",
+      "prediction": "Premises 4: No Certification \u2192 No Project (which is just the contrapositive of P",
+      "ground_truth": "Unknown"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. All students complete fundamental courses.\n  2. All students submit research papers.\n  3. At least one st",
+      "prediction": "- Therefore, the implication (\u00acF(x",
+      "ground_truth": "D"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. If a Raspberry Pi system is simple to use, then it is cost-effective.\n  2. There exists at least one Rasp",
+      "prediction": "A",
+      "ground_truth": "Unknown"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. All students in the digital literacy program take standardized assessments.\n  2. All students participate",
+      "prediction": "Actually, if we know from Premise 2 that $\\forall x P(x)$ is true, then the stat",
+      "ground_truth": "Unknown"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. If a student does not submit the exam, then they fail.\n  2. All students who study regularly pass the exa",
+      "prediction": "Yes",
+      "ground_truth": "No"
+    },
+    {
+      "etype": "E1_unit_dimension",
+      "subject": "physics",
+      "question_snippet": "Question: In an ideal LC circuit, when the magnetic energy is half of the total energy, what is the electric energy?",
+      "prediction": "\\frac{1}{2}E_{total}",
+      "ground_truth": "Half of the total energy J"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. If a person does not have a university degree, then they are not eligible for a senior job.\n  2. Everyone",
+      "prediction": "Unknown",
+      "ground_truth": "No"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. If a person has not complied with the new attendance rule, then they are not allowed to attend class.\n  2",
+      "prediction": "Actually, let's reconsider the premises. If \u00acComply(x) \u2192 \u00acAllowed(x) and \u2200x Allo",
+      "ground_truth": "Unknown"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. Every student completes the fundamental courses.\n  2. If a student submits their assignments on time, the",
+      "prediction": "A",
+      "ground_truth": "Unknown"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. If a student does not practice solving math problems, they will not be able to solve them correctly.\n  2.",
+      "prediction": "A",
+      "ground_truth": "Unknown"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. If a student participates in a class, they will register for it.\n  2. Every student is enrolled in at lea",
+      "prediction": "Yes",
+      "ground_truth": "No"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. If a student does not pass the exam, then they do not receive an award.\n  2. If a student is diligent, th",
+      "prediction": "C",
+      "ground_truth": "Unknown"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. BK students can participate in the lab of a lecturer to gain guidance to do a science article.\n  2. If th",
+      "prediction": "Yes",
+      "ground_truth": "No"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. If a student attends classes regularly, then they will understand the material better.\n  2. If a student ",
+      "prediction": "D",
+      "ground_truth": "Unknown"
+    },
+    {
+      "etype": "E1_unit_dimension",
+      "subject": "physics",
+      "question_snippet": "Question: There are two charges, q1 = 2\u00d710^-6 C and q2 = -2\u00d710^-6 C, placed at points A and B respectively in a vacuum, ",
+      "prediction": "$\\cos(\\theta_y) = \\",
+      "ground_truth": "34.56 N"
+    },
+    {
+      "etype": "E0_unclassified",
+      "subject": "physics",
+      "question_snippet": "Question: A parallel plate capacitor has a charge of 80 \u03bcC and a voltage of 400 V. Calculate the attractive force betwee",
+      "prediction": "*   $S = 50 \\times 10^{-4} \\, \\text{m}^",
+      "ground_truth": "7.23*10^4 mN"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. Full-time students must take at least 14 credits per semester, but in special cases (e.g., weak academic ",
+      "prediction": "Yes",
+      "ground_truth": "No"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. All students have knowledge.\n  2. At least one student conducts research.\n  3. If a student conducts rese",
+      "prediction": "C",
+      "ground_truth": "Unknown"
+    },
+    {
+      "etype": "E0_unclassified",
+      "subject": "physics",
+      "question_snippet": "Question: Two capacitors, C1 = 3\u03bcF and C2 = 6\u03bcF, are connected in series across a circuit segment AB with a total voltag",
+      "prediction": "3.33 V",
+      "ground_truth": "10/3 V"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. If a student is not studying, then they are not revising.\n  2. If a student is not understanding the mate",
+      "prediction": "Yes",
+      "ground_truth": "No"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. If a student x is enrolled in Research Methods (R), then they have passed the Philosophy prerequisite (P)",
+      "prediction": "A",
+      "ground_truth": "Unknown"
+    },
+    {
+      "etype": "E0_unclassified",
+      "subject": "physics",
+      "question_snippet": "Question: Three electric charges are placed at three fixed points, forming a right-angled triangle ABC, where AB = 4 m a",
+      "prediction": "*   **Wait, let's reconsider the position of the right angle based on typical pr",
+      "ground_truth": "24.45 \u00d7 10^-3 N"
+    },
+    {
+      "etype": "E1_unit_dimension",
+      "subject": "physics",
+      "question_snippet": "Question: There are two point charges q1 = 0.5 nC and q2 = \u22120.5 nC, respectively placed at points A and B, separated by ",
+      "prediction": "*   The total electric field $E = E_{net} = E_1 \\cos(\\alpha",
+      "ground_truth": "2160 V/m"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. If someone is not a library user, then they cannot borrow books.\n  2. Everyone has a library card.\n  3. I",
+      "prediction": "Yes",
+      "ground_truth": "No"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. Every committee member agrees that the thesis is acceptable.\n  2. At least one professor has raised a con",
+      "prediction": "Yes",
+      "ground_truth": "No"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. Students who do not apply for Scholarships (\u00acS) cannot enroll in Thesis Writing (\u00acT).\n  2. Passing Philos",
+      "prediction": "Yes",
+      "ground_truth": "No"
+    },
+    {
+      "etype": "E0_unclassified",
+      "subject": "physics",
+      "question_snippet": "Question: Three positive charges, q1 = q2 = q3 = q = 5 \u00d7 10^-9 C, are placed at three consecutive vertices of a square w",
+      "prediction": "Magnitude: $E_A = \\frac{kq}{a^2}$. (Note: distance AD is $a$, not $a\\sqrt{2}$. M",
+      "ground_truth": "9.6 \u00d7 10^2 V/m"
+    },
+    {
+      "etype": "E0_unclassified",
+      "subject": "physics",
+      "question_snippet": "Question: Three equal positive point charges, q = 5 \u00d7 10^-9 C, are placed at three vertices of a square with side length",
+      "prediction": "$E_{net} = \\frac{kq}{a^2} \\left(1 + \\frac{1}{2\\sqrt{2}}\\right)",
+      "ground_truth": "538 N/C"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. There exists at least one object x that has property R.\n  2. If an object x does not have property U, the",
+      "prediction": "Let's re-read D carefully: \"If it is true that if an object x does not",
+      "ground_truth": "Unknown"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. All students have knowledge.\n  2. At least one student conducts research.\n  3. If a student conducts rese",
+      "prediction": "Yes",
+      "ground_truth": "No"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. To build a website, a strong understanding of web development technologies like HTML, CSS, and JavaScript",
+      "prediction": "Yes",
+      "ground_truth": "No"
+    },
+    {
+      "etype": "E1_unit_dimension",
+      "subject": "physics",
+      "question_snippet": "Question: What is the expression for the energy of oscillation in an LC circuit?",
+      "prediction": "\\frac{1}{2}CV^2 + \\frac{1}{2}LI^2",
+      "ground_truth": "U = 0.5*L*I_max\u00b2 J"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. There exists at least one student who participates in extracurricular activities.\n  2. All students parti",
+      "prediction": "Yes",
+      "ground_truth": "No"
+    },
+    {
+      "etype": "E4_logical_fallacy",
+      "subject": "logic",
+      "question_snippet": "Premises:\n  1. If students engage in active learning, they retain information more effectively.\n  2. If students have ac",
+      "prediction": "A",
+      "ground_truth": "Unknown"
+    },
+    {
+      "etype": "E1_unit_dimension",
+      "subject": "physics",
+      "question_snippet": "Question: Circuit AB consists of segment AM, which has resistor R1 = 10 \u03a9 in series with capacitor C, and segment MB, wh",
+      "prediction": "*   The voltage $u_{MB}$ is at an",
+      "ground_truth": "100.0 W"
+    },
+    {
+      "etype": "E1_unit_dimension",
+      "subject": "physics",
+      "question_snippet": "Question: Two electric charges q1 = +2 \u00d7 10^-8 C and q2 = -2 \u00d7 10^-8 C are placed at two points A and B, 8 cm apart. A t",
+      "prediction": "*   Direction: Towards point B (or specifically, from the position of $q_3$ towa",
+      "ground_truth": "4.495*10^-3 N"
+    }
+  ]
+}

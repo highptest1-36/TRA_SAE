@@ -1,0 +1,6 @@
+[13:50:57] INFO     ====================================================================
+[13:50:57] INFO     Phase 4 Evaluation + Ablation
+[13:50:57] INFO       smoke_test=False  config=0
+[13:50:57] INFO     ====================================================================
+[13:50:59] INFO     Eval dataset: 217 samples
+[13:51:13] INFO     Starting ablation config 0: zero_shot

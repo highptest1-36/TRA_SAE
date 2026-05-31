@@ -1,0 +1,385 @@
+nohup: ignoring input
+[20:33:03] Chờ step2 (PID 51047) hoàn thành...
+[00:10:08] Step2 DONE.
+[00:10:08] Killed pipeline runner 51046
+[00:10:10] ====== BẮT ĐẦU STEP 3 ======
+[1] Loading val dataset
+    Eval samples: 217
+    Resuming from latest — already done: {'B2'}
+
+Skipping B2 (already done)
+
+============================================================
+Running B3: Llemma-7B (zero-shot)
+============================================================
+
+  Loading EleutherAI/llemma_7b ...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[B3 loaded] VRAM  13.48 GB alloc  /  13.51 GB reserved  /  85.1 GB total
+    batch 1/55  4/217 samples  acc=0.0%
+    batch 2/55  8/217 samples  acc=12.5%
+    batch 3/55  12/217 samples  acc=25.0%
+    batch 4/55  16/217 samples  acc=18.8%
+    batch 5/55  20/217 samples  acc=15.0%
+    batch 6/55  24/217 samples  acc=12.5%
+    batch 7/55  28/217 samples  acc=10.7%
+    batch 8/55  32/217 samples  acc=9.4%
+    batch 9/55  36/217 samples  acc=13.9%
+    batch 10/55  40/217 samples  acc=12.5%
+    batch 11/55  44/217 samples  acc=13.6%
+    batch 12/55  48/217 samples  acc=16.7%
+    batch 13/55  52/217 samples  acc=17.3%
+    batch 14/55  56/217 samples  acc=16.1%
+    batch 15/55  60/217 samples  acc=16.7%
+    batch 16/55  64/217 samples  acc=17.2%
+    batch 17/55  68/217 samples  acc=16.2%
+    batch 18/55  72/217 samples  acc=16.7%
+    batch 19/55  76/217 samples  acc=15.8%
+    batch 20/55  80/217 samples  acc=15.0%
+    batch 21/55  84/217 samples  acc=14.3%
+    batch 22/55  88/217 samples  acc=13.6%
+    batch 23/55  92/217 samples  acc=14.1%
+    batch 24/55  96/217 samples  acc=13.5%
+    batch 25/55  100/217 samples  acc=14.0%
+    batch 26/55  104/217 samples  acc=13.5%
+    batch 27/55  108/217 samples  acc=13.0%
+    batch 28/55  112/217 samples  acc=12.5%
+    batch 29/55  116/217 samples  acc=12.1%
+    batch 30/55  120/217 samples  acc=11.7%
+    batch 31/55  124/217 samples  acc=12.9%
+    batch 32/55  128/217 samples  acc=12.5%
+    batch 33/55  132/217 samples  acc=12.1%
+    batch 34/55  136/217 samples  acc=12.5%
+    batch 35/55  140/217 samples  acc=12.1%
+    batch 36/55  144/217 samples  acc=11.8%
+    batch 37/55  148/217 samples  acc=11.5%
+    batch 38/55  152/217 samples  acc=11.2%
+    batch 39/55  156/217 samples  acc=12.2%
+    batch 40/55  160/217 samples  acc=12.5%
+    batch 41/55  164/217 samples  acc=12.8%
+    batch 42/55  168/217 samples  acc=12.5%
+    batch 43/55  172/217 samples  acc=12.2%
+    batch 44/55  176/217 samples  acc=11.9%
+    batch 45/55  180/217 samples  acc=11.7%
+    batch 46/55  184/217 samples  acc=12.0%
+    batch 47/55  188/217 samples  acc=12.8%
+    batch 48/55  192/217 samples  acc=12.5%
+    batch 49/55  196/217 samples  acc=12.2%
+    batch 50/55  200/217 samples  acc=12.5%
+    batch 51/55  204/217 samples  acc=13.2%
+    batch 52/55  208/217 samples  acc=13.5%
+    batch 53/55  212/217 samples  acc=13.2%
+    batch 54/55  216/217 samples  acc=13.0%
+    batch 55/55  217/217 samples  acc=12.9%
+  Saved to /content/drive/MyDrive/TRA-SAE/logs/baselines_20260529_001012.json
+  B3: overall=12.9%
+
+============================================================
+Running B4: Mistral-7B-Instruct-v0.3 (zero-shot)
+============================================================
+
+  Loading mistralai/Mistral-7B-Instruct-v0.3 ...
+[B4 loaded] VRAM  14.50 GB alloc  /  14.53 GB reserved  /  85.1 GB total
+    batch 1/55  4/217 samples  acc=0.0%
+    batch 2/55  8/217 samples  acc=0.0%
+    batch 3/55  12/217 samples  acc=0.0%
+    batch 4/55  16/217 samples  acc=0.0%
+    batch 5/55  20/217 samples  acc=0.0%
+    batch 6/55  24/217 samples  acc=0.0%
+    batch 7/55  28/217 samples  acc=0.0%
+    batch 8/55  32/217 samples  acc=3.1%
+    batch 9/55  36/217 samples  acc=2.8%
+    batch 10/55  40/217 samples  acc=2.5%
+    batch 11/55  44/217 samples  acc=2.3%
+    batch 12/55  48/217 samples  acc=2.1%
+    batch 13/55  52/217 samples  acc=1.9%
+    batch 14/55  56/217 samples  acc=3.6%
+    batch 15/55  60/217 samples  acc=5.0%
+    batch 16/55  64/217 samples  acc=4.7%
+    batch 17/55  68/217 samples  acc=4.4%
+    batch 18/55  72/217 samples  acc=4.2%
+    batch 19/55  76/217 samples  acc=3.9%
+    batch 20/55  80/217 samples  acc=3.8%
+    batch 21/55  84/217 samples  acc=3.6%
+    batch 22/55  88/217 samples  acc=4.5%
+    batch 23/55  92/217 samples  acc=4.3%
+    batch 24/55  96/217 samples  acc=4.2%
+    batch 25/55  100/217 samples  acc=5.0%
+    batch 26/55  104/217 samples  acc=5.8%
+    batch 27/55  108/217 samples  acc=5.6%
+    batch 28/55  112/217 samples  acc=5.4%
+    batch 29/55  116/217 samples  acc=5.2%
+    batch 30/55  120/217 samples  acc=5.0%
+    batch 31/55  124/217 samples  acc=5.6%
+    batch 32/55  128/217 samples  acc=5.5%
+    batch 33/55  132/217 samples  acc=6.1%
+    batch 34/55  136/217 samples  acc=7.4%
+    batch 35/55  140/217 samples  acc=7.1%
+    batch 36/55  144/217 samples  acc=7.6%
+    batch 37/55  148/217 samples  acc=7.4%
+    batch 38/55  152/217 samples  acc=7.9%
+    batch 39/55  156/217 samples  acc=7.7%
+    batch 40/55  160/217 samples  acc=7.5%
+    batch 41/55  164/217 samples  acc=7.9%
+    batch 42/55  168/217 samples  acc=8.9%
+    batch 43/55  172/217 samples  acc=9.3%
+    batch 44/55  176/217 samples  acc=9.1%
+    batch 45/55  180/217 samples  acc=8.9%
+    batch 46/55  184/217 samples  acc=8.7%
+    batch 47/55  188/217 samples  acc=9.0%
+    batch 48/55  192/217 samples  acc=9.4%
+    batch 49/55  196/217 samples  acc=9.2%
+    batch 50/55  200/217 samples  acc=9.0%
+    batch 51/55  204/217 samples  acc=9.3%
+    batch 52/55  208/217 samples  acc=9.6%
+    batch 53/55  212/217 samples  acc=9.9%
+    batch 54/55  216/217 samples  acc=9.7%
+    batch 55/55  217/217 samples  acc=9.7%
+  Saved to /content/drive/MyDrive/TRA-SAE/logs/baselines_20260529_001012.json
+  B4: overall=9.68%
+
+============================================================
+Running B5: InternLM2.5-Math-7B-chat (zero-shot)
+============================================================
+
+  Loading internlm/internlm2_5-math-7b-chat ...
+  ERROR running B5: internlm/internlm2_5-math-7b-chat is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=<your_token>`
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+  File "/usr/local/lib/python3.12/dist-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://huggingface.co/internlm/internlm2_5-math-7b-chat/resolve/main/config.json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py", line 422, in cached_files
+    hf_hub_download(
+  File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py", line 1010, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py", line 1161, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py", line 1795, in _raise_on_head_call_error
+    raise head_call_error
+  File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py", line 1682, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py", line 1604, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+    hf_raise_for_status(response)
+  File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py", line 835, in hf_raise_for_status
+    raise _format(RepositoryNotFoundError, message, response, repo_type=repo_type, repo_id=repo_id) from e
+huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-6a18e5d3-18a724075d71a0b06ed1c415;33bc2db7-c260-452a-98e0-d4f547385f50)
+
+Repository Not Found for url: https://huggingface.co/internlm/internlm2_5-math-7b-chat/resolve/main/config.json.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated and your token has the required permissions.
+For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+Invalid username or password.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/auto/tokenization_auto.py", line 694, in from_pretrained
+    config = AutoConfig.from_pretrained(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/auto/configuration_auto.py", line 374, in from_pretrained
+    config_dict, unused_kwargs = PreTrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py", line 685, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py", line 740, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py", line 278, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py", line 454, in cached_files
+    raise OSError(
+OSError: internlm/internlm2_5-math-7b-chat is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=<your_token>`
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+  File "/usr/local/lib/python3.12/dist-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://huggingface.co/internlm/internlm2_5-math-7b-chat/resolve/main/config.json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py", line 422, in cached_files
+    hf_hub_download(
+  File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py", line 1010, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py", line 1161, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py", line 1795, in _raise_on_head_call_error
+    raise head_call_error
+  File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py", line 1682, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py", line 1604, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py", line 692, in _httpx_follow_relative_redirects_with_backoff
+    hf_raise_for_status(response)
+  File "/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py", line 835, in hf_raise_for_status
+    raise _format(RepositoryNotFoundError, message, response, repo_type=repo_type, repo_id=repo_id) from e
+huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-6a18e5d4-3c577cff5aebf79347b95b5e;b2ac3206-3b34-451b-a990-d9e7b1a245cf)
+
+Repository Not Found for url: https://huggingface.co/internlm/internlm2_5-math-7b-chat/resolve/main/config.json.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated and your token has the required permissions.
+For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+Invalid username or password.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/TRA-SAE/experiments/step3_baselines.py", line 273, in <module>
+    result = _run_hf_baseline(baseline, samples)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/drive/MyDrive/TRA-SAE/experiments/step3_baselines.py", line 100, in _run_hf_baseline
+    tokenizer = AutoTokenizer.from_pretrained(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/auto/tokenization_auto.py", line 698, in from_pretrained
+    config = PreTrainedConfig.from_pretrained(pretrained_model_name_or_path, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py", line 644, in from_pretrained
+    config_dict, kwargs = cls.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py", line 685, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py", line 740, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py", line 278, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py", line 454, in cached_files
+    raise OSError(
+OSError: internlm/internlm2_5-math-7b-chat is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=<your_token>`
+  Saved to /content/drive/MyDrive/TRA-SAE/logs/baselines_20260529_001012.json
+  B5: overall=0.0%
+
+============================================================
+Running B6: GPT-4o-mini (zero-shot)
+============================================================
+  WARNING: OPENAI_API_KEY not set — skipping B6
+  Saved to /content/drive/MyDrive/TRA-SAE/logs/baselines_20260529_001012.json
+  B6: overall=ERR%
+
+============================================================
+BASELINE SUMMARY
+============================================================
+ID   Model                                     Overall    Phys   Logic
+----------------------------------------------------------------------
+B3   EleutherAI/llemma_7b                       12.90%   5.67%  26.32%
+B4   mistralai/Mistral-7B-Instruct-v0.3          9.68%   6.38%  15.79%
+B2   Qwen/Qwen2.5-Math-7B-Instruct               3.69%   0.00%  10.53%
+B5   internlm/internlm2_5-math-7b-chat           0.00%   0.00%   0.00%
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/TRA-SAE/experiments/step3_baselines.py", line 316, in <module>
+    print(f"{r['id']:<4} {r['model_id']:<40} "
+                          ~^^^^^^^^^^^^
+KeyError: 'model_id'
+[01:03:18] Step3 exit=1  log=logs/direct_step3_20260529_001010.log
+[01:03:18] ====== BẮT ĐẦU STEP 4 ======
+[1] Loading per-sample results
+    Loaded 4 configs from ablation_per_sample_latest.jsonl
+[2] McNemar test
+    cfg3 vs cfg0: p=0.006170  SIGNIFICANT
+    cfg1 vs cfg0: p=0.024745  SIGNIFICANT
+[3] Error analysis
+    Wrong predictions in cfg3: 103
+    E1_unit_dimension: 26 (25.2%)
+    E2_wrong_formula: 0 (0.0%)
+    E3_arithmetic: 1 (1.0%)
+    E4_logical_fallacy: 57 (55.3%)
+    E5_misinterpretation: 1 (1.0%)
+    E0_unclassified: 18 (17.5%)
+
+Saved stats: /content/drive/MyDrive/TRA-SAE/logs/stats_results.json
+Saved error analysis: /content/drive/MyDrive/TRA-SAE/logs/error_analysis.json
+
+=== Error Analysis Summary ===
+  E1_unit_dimension:  26 (25.2%)  — Unit or dimension error (physics)
+  E2_wrong_formula:   0 (0.0%)  — Wrong formula / law selected (physics)
+  E3_arithmetic:   1 (1.0%)  — Numerical arithmetic computation error
+  E4_logical_fallacy:  57 (55.3%)  — Logical fallacy or quantifier error (logic)
+  E5_misinterpretation:   1 (1.0%)  — Question misinterpretation or missing context
+  E0_unclassified:  18 (17.5%)  — Could not classify from output alone
+[01:03:19] Step4 exit=0  log=logs/direct_step4_20260529_010318.log
+[01:03:19] ====== BẮT ĐẦU STEP 5 ======
+
+============================================================
+Reward variant R1: Full: format(0.30) + correct(0.60) + unit(0.10) + len_pen(-0.10)
+GRPO steps: 250
+============================================================
+[R1 SFT loaded] VRAM  8.59 GB alloc  /  8.77 GB reserved  /  85.1 GB total
+[transformers] The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 248046, 'pad_token_id': 248044}.
+  File "/content/drive/MyDrive/TRA-SAE/experiments/step5_reward_ablation.py", line 289, in <module>
+    result = _run_grpo_variant(variant)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/drive/MyDrive/TRA-SAE/experiments/step5_reward_ablation.py", line 177, in _run_grpo_variant
+    train_result = trainer.train()
+                   ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/trainer.py", line 1432, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/trainer.py", line 1514, in _inner_training_loop
+    self._run_epoch(
+  File "/usr/local/lib/python3.12/dist-packages/transformers/trainer.py", line 1742, in _run_epoch
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/trl/trainer/grpo_trainer.py", line 1129, in training_step
+    output = super().training_step(model, inputs, num_items_in_batch)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/trainer.py", line 1908, in training_step
+    inputs = self._prepare_inputs(inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/trl/extras/profiling.py", line 202, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/trl/trainer/grpo_trainer.py", line 1158, in _prepare_inputs
+    generation_batch = self._generate_and_score_completions(generation_batch)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/trl/trainer/grpo_trainer.py", line 2139, in _generate_and_score_completions
+    rewards_per_func = self._calculate_rewards(inputs, prompts, completions, completion_ids_list)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/trl/extras/profiling.py", line 202, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/trl/trainer/grpo_trainer.py", line 1241, in _calculate_rewards
+    output_reward_func = reward_func(
+                         ^^^^^^^^^^^^
+TypeError: _make_reward_fn.<locals>.reward_fn() missing 1 required positional argument: 'answers'
+[01:05:24] Step5 exit=1  log=logs/direct_step5_20260529_010319.log
+[01:05:24] ====== TẤT CẢ XONG ======

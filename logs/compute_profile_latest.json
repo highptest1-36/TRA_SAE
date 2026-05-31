@@ -1,0 +1,83 @@
+{
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "gpu_cost_per_hr_usd": 3.67,
+  "training_times_min": {
+    "phase1_sft": 58.8,
+    "phase1_5_logic": 15.7,
+    "phase2_grpo_mixed": 79.8,
+    "phase2p_grpo_phys": 76.6,
+    "phase2l_grpo_logic": 62.9
+  },
+  "eval_times_min": {
+    "zero_shot": 63.9,
+    "sft_phase1": 85.6,
+    "sft_logic": 84.0,
+    "grpo_mixed": 84.3,
+    "dual_lora_router": 90.2,
+    "full_v2": 342.8
+  },
+  "total_train_hr": 4.9,
+  "total_eval_hr": 12.51,
+  "total_gpu_hr": 17.41,
+  "estimated_cost_usd": 63.89,
+  "throughput_profiles": [
+    {
+      "config": "zero_shot",
+      "throughputs": [
+        {
+          "batch_size": 1,
+          "n_samples": 20,
+          "elapsed_sec": 901.958,
+          "samples_per_sec": 0.022,
+          "sec_per_sample": 45.098,
+          "vram_peak_gb": 8.0
+        },
+        {
+          "batch_size": 4,
+          "n_samples": 20,
+          "elapsed_sec": 294.035,
+          "samples_per_sec": 0.068,
+          "sec_per_sample": 14.702,
+          "vram_peak_gb": 8.5
+        },
+        {
+          "batch_size": 8,
+          "n_samples": 24,
+          "elapsed_sec": 195.533,
+          "samples_per_sec": 0.123,
+          "sec_per_sample": 8.147,
+          "vram_peak_gb": 9.14
+        }
+      ]
+    },
+    {
+      "config": "grpo_mixed",
+      "throughputs": [
+        {
+          "batch_size": 1,
+          "n_samples": 20,
+          "elapsed_sec": 1011.584,
+          "samples_per_sec": 0.02,
+          "sec_per_sample": 50.579,
+          "vram_peak_gb": 8.16
+        },
+        {
+          "batch_size": 4,
+          "n_samples": 20,
+          "elapsed_sec": 340.364,
+          "samples_per_sec": 0.059,
+          "sec_per_sample": 17.018,
+          "vram_peak_gb": 8.65
+        },
+        {
+          "batch_size": 8,
+          "n_samples": 24,
+          "elapsed_sec": 224.585,
+          "samples_per_sec": 0.107,
+          "sec_per_sample": 9.358,
+          "vram_peak_gb": 9.3
+        }
+      ]
+    }
+  ]
+}

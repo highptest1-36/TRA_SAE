@@ -1,0 +1,68 @@
+[1] Loading base + LoRA model
+Failed to load /usr/local/lib/python3.12/dist-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /usr/local/lib/python3.12/dist-packages/torchao/_C_cutlass_90a.abi3.so
+Failed to load /usr/local/lib/python3.12/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /usr/local/lib/python3.12/dist-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 32513.98it/s]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/426 [00:00<01:58,  3.59it/s]
+Loading weights:   6%|▋         | 27/426 [00:00<00:04, 87.91it/s]
+Loading weights:  11%|█         | 47/426 [00:00<00:03, 119.20it/s]
+Loading weights:  18%|█▊        | 75/426 [00:00<00:02, 166.13it/s]
+Loading weights:  23%|██▎       | 98/426 [00:00<00:01, 179.03it/s]
+Loading weights:  28%|██▊       | 120/426 [00:00<00:01, 188.41it/s]
+Loading weights:  35%|███▍      | 147/426 [00:00<00:01, 199.44it/s]
+Loading weights:  40%|████      | 172/426 [00:01<00:01, 210.47it/s]
+Loading weights:  47%|████▋     | 199/426 [00:01<00:01, 221.47it/s]
+Loading weights:  52%|█████▏    | 223/426 [00:01<00:00, 223.61it/s]
+Loading weights:  58%|█████▊    | 247/426 [00:01<00:00, 228.27it/s]
+Loading weights:  64%|██████▎   | 271/426 [00:01<00:00, 220.69it/s]
+Loading weights:  69%|██████▉   | 294/426 [00:01<00:00, 211.00it/s]
+Loading weights:  74%|███████▍  | 316/426 [00:01<00:00, 209.87it/s]
+Loading weights:  81%|████████  | 344/426 [00:01<00:00, 222.92it/s]
+Loading weights:  86%|████████▌ | 367/426 [00:01<00:00, 211.15it/s]
+Loading weights:  93%|█████████▎| 395/426 [00:02<00:00, 227.92it/s]
+Loading weights:  98%|█████████▊| 419/426 [00:02<00:00, 209.95it/s]
+Loading weights: 100%|██████████| 426/426 [00:02<00:00, 193.77it/s]
+[grpo_mixed loaded] VRAM  8.59 GB alloc  /  8.77 GB reserved  /  85.1 GB total
+[2] Loading dataset
+[3] Loading retriever
+[Retriever] Built TF-IDF index: 1945 docs, 6166 features
+[Retriever] Subject distribution: {'physics': 1213, 'logic': 732}
+
+=======================================================
+Seed 42
+=======================================================
+  Attempt 0: acc=47.47%
+  Attempt 1: acc=51.61%
+  Attempt 2: acc=53.46%
+  Seed 42: overall=53.46%  phys=66.67%  logic=28.95%
+
+=======================================================
+Seed 1337
+=======================================================
+  Attempt 0: acc=47.47%
+  Attempt 1: acc=51.61%
+  Attempt 2: acc=54.38%
+  Seed 1337: overall=54.38%  phys=69.50%  logic=26.32%
+
+=======================================================
+Seed 2024
+=======================================================
+  Attempt 0: acc=45.16%
+  Attempt 1: acc=49.77%
+  Attempt 2: acc=51.61%
+  Seed 2024: overall=51.61%  phys=64.54%  logic=27.63%
+
+=======================================================
+MULTI-SEED SUMMARY (cfg3 grpo_mixed)
+=======================================================
+  Overall : 53.15 ± 1.15%
+  Physics : 66.90 ± 2.03%
+  Logic   : 27.63 ± 1.07%
+
+Saved (timestamped): /content/drive/MyDrive/TRA-SAE/logs/cfg3_multiseed_20260528_195520.json
+Saved (latest)     : /content/drive/MyDrive/TRA-SAE/logs/cfg3_multiseed_results_latest.json

@@ -1,0 +1,7 @@
+[15:53:07] INFO     ====================================================================
+[15:53:07] INFO     Phase 2P Physics GRPO  |  Base: qwen35_sft/final
+[15:53:07] INFO       Steps=200 | LR=1e-06 | gen=4
+[15:53:07] INFO       Physics-only subset
+[15:53:07] INFO     ====================================================================
+[15:53:26] INFO     Physics subsets: train=1213 val=141
+[17:10:08] INFO     Phase 2P done | steps=200 time=76.6min

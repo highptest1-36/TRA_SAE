@@ -1,0 +1,63 @@
+nohup: ignoring input
+Loaded cfg 4-5 from original: 2 entries
+[1] Loading evaluation dataset
+Run timestamp : 20260527_185913
+Result file   : /content/drive/MyDrive/TRA-SAE/logs/qwen35_ablation_v2_20260527_185913.json
+Stdout log    : /content/drive/MyDrive/TRA-SAE/logs/step1_rerun_20260527_185913.log
+    Eval samples: 217
+    Composition: {'physics': 141, 'logic': 76}
+[2] Loading base model
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 28728.11it/s]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:54,  3.72it/s]Loading weights:   6%|▌         | 26/426 [00:00<00:04, 85.90it/s]Loading weights:  11%|█         | 46/426 [00:00<00:03, 118.31it/s]Loading weights:  18%|█▊        | 78/426 [00:00<00:01, 177.80it/s]Loading weights:  23%|██▎       | 100/426 [00:00<00:01, 170.67it/s]Loading weights:  30%|███       | 129/426 [00:00<00:01, 202.58it/s]Loading weights:  36%|███▌      | 152/426 [00:00<00:01, 183.31it/s]Loading weights:  43%|████▎     | 182/426 [00:01<00:01, 211.52it/s]Loading weights:  48%|████▊     | 205/426 [00:01<00:01, 193.63it/s]Loading weights:  56%|█████▌    | 237/426 [00:01<00:00, 223.30it/s]Loading weights:  61%|██████▏   | 261/426 [00:01<00:00, 207.89it/s]Loading weights:  68%|██████▊   | 290/426 [00:01<00:00, 227.31it/s]Loading weights:  74%|███████▎  | 314/426 [00:01<00:00, 210.37it/s]Loading weights:  81%|████████  | 343/426 [00:01<00:00, 228.53it/s]Loading weights:  86%|████████▌ | 367/426 [00:01<00:00, 210.85it/s]Loading weights:  93%|█████████▎| 396/426 [00:02<00:00, 229.07it/s]Loading weights:  99%|█████████▊| 420/426 [00:02<00:00, 211.76it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 192.17it/s]
+[base model loaded] VRAM  8.41 GB alloc  /  8.42 GB reserved  /  85.1 GB total
+[3] Loading retriever
+[Retriever] Built TF-IDF index: 1945 docs, 6166 features
+[Retriever] Subject distribution: {'physics': 1213, 'logic': 732}
+
+============================================================
+Config 0: Qwen3.5-4B zero-shot (no LoRA)
+============================================================
+[Config 0 model loaded] VRAM  8.41 GB alloc  /  8.42 GB reserved  /  85.1 GB total
+  Attempt 0: 217 pending
+  Attempt 0: correct=84/217 acc=38.71%
+  Attempt 1: 133 pending
+  Attempt 1: correct=92/217 acc=42.40%
+  Attempt 2: 125 pending
+  Attempt 2: correct=92/217 acc=42.40%
+
+  Config 0 DONE: overall=42.40%  phys=54.61%  logic=19.74%
+  n_phys=141, n_logic=76, n_total=217  [sum check: 217==217]
+
+============================================================
+Config 1: + SFT Phase 1
+============================================================
+Traceback (most recent call last):
+  File "/content/drive/MyDrive/TRA-SAE/experiments/step1_rerun_cfg0_3.py", line 177, in <module>
+    model = PeftModel.from_pretrained(base_model, cfg["lora_ckpt"], is_trainable=False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/peft/peft_model.py", line 574, in from_pretrained
+    model = MODEL_TYPE_TO_PEFT_MODEL_MAPPING[config.task_type](
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/peft/peft_model.py", line 1955, in __init__
+    super().__init__(model, peft_config, adapter_name, **kwargs)
+  File "/usr/local/lib/python3.12/dist-packages/peft/peft_model.py", line 129, in __init__
+    self.base_model = cls(model, {adapter_name: peft_config}, adapter_name)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/peft/tuners/tuners_utils.py", line 315, in __init__
+    self.inject_adapter(self.model, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage, state_dict=state_dict)
+  File "/usr/local/lib/python3.12/dist-packages/peft/tuners/tuners_utils.py", line 913, in inject_adapter
+    self._create_and_replace(
+  File "/usr/local/lib/python3.12/dist-packages/peft/tuners/lora/model.py", line 269, in _create_and_replace
+    new_module = self._create_new_module(lora_config, adapter_name, target, device_map=device_map, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/peft/tuners/lora/model.py", line 418, in _create_new_module
+    new_module = dispatcher(target, adapter_name, config=lora_config, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/peft/tuners/lora/torchao.py", line 142, in dispatch_torchao
+    if not is_torchao_available():
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/peft/import_utils.py", line 143, in is_torchao_available
+    raise ImportError(
+ImportError: Found an incompatible version of torchao. Found version 0.10.0, but only versions above 0.16.0 are supported
