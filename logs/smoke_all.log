@@ -1,0 +1,134 @@
+===== experiments/step0_canonical_eval.py --smoke-test =====
+[1] Loading val set | seed=42 | ts=20260607_194146
+    Eval samples: 10  composition={'physics': 7, 'logic': 3}
+[2] Loading base model
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 34807.50it/s]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:57,  3.61it/s]Loading weights:   6%|▋         | 27/426 [00:00<00:04, 88.86it/s]Loading weights:  11%|█         | 47/426 [00:00<00:03, 122.17it/s]Loading weights:  18%|█▊        | 78/426 [00:00<00:01, 180.26it/s]Loading weights:  24%|██▎       | 101/426 [00:00<00:01, 178.58it/s]Loading weights:  31%|███       | 132/426 [00:00<00:01, 209.15it/s]Loading weights:  36%|███▋      | 155/426 [00:00<00:01, 202.94it/s]Loading weights:  43%|████▎     | 184/426 [00:01<00:01, 226.56it/s]Loading weights:  49%|████▉     | 208/426 [00:01<00:01, 211.02it/s]Loading weights:  56%|█████▌    | 238/426 [00:01<00:00, 227.80it/s]Loading weights:  62%|██████▏   | 262/426 [00:01<00:00, 218.50it/s]Loading weights:  68%|██████▊   | 291/426 [00:01<00:00, 231.15it/s]Loading weights:  74%|███████▍  | 315/426 [00:01<00:00, 218.68it/s]Loading weights:  81%|████████  | 344/426 [00:01<00:00, 234.59it/s]Loading weights:  86%|████████▋ | 368/426 [00:01<00:00, 220.38it/s]Loading weights:  92%|█████████▏| 393/426 [00:01<00:00, 224.05it/s]Loading weights:  98%|█████████▊| 416/426 [00:02<00:00, 216.65it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 197.58it/s]
+[base model loaded] VRAM  8.41 GB alloc  /  8.42 GB reserved  /  42.4 GB total
+[3] Loading retriever
+[Retriever] Built TF-IDF index: 1945 docs, 6166 features
+[Retriever] Subject distribution: {'logic': 732, 'physics': 1213}
+[4] Loading router
+    Router loaded from /content/drive/MyDrive/TRA-SAE/checkpoints/router.pkl
+
+================================================================
+Config 0: Qwen3.5-4B zero-shot (no LoRA)
+================================================================
+[cfg0 model loaded] VRAM  8.41 GB alloc  /  8.42 GB reserved  /  42.4 GB total
+  attempt 0: 10 pending
+  attempt 0: correct=3/10
+  attempt 1: 7 pending
+  attempt 1: correct=3/10
+  attempt 2: 7 pending
+  attempt 2: correct=3/10
+  cfg0 DONE: overall=30.0%  phys=42.86%  logic=0.0%  [7+3=10]  4.2min
+  [checkpoint saved → qwen35_ablation_canonical.json]
+
+================================================================
+Config 1: + SFT Phase 1
+================================================================
+[cfg1 model loaded] VRAM  8.59 GB alloc  /  11.86 GB reserved  /  42.4 GB total
+  attempt 0: 10 pending
+  attempt 0: correct=3/10
+  attempt 1: 7 pending
+  attempt 1: correct=3/10
+  attempt 2: 7 pending
+  attempt 2: correct=4/10
+  cfg1 DONE: overall=40.0%  phys=57.14%  logic=0.0%  [7+3=10]  6.0min
+  [checkpoint saved → qwen35_ablation_canonical.json]
+
+================================================================
+Config 2: + Logic SFT Phase 1.5
+================================================================
+/usr/local/lib/python3.12/dist-packages/peft/tuners/tuners_utils.py:302: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+  warnings.warn(
+[cfg2 model loaded] VRAM  8.59 GB alloc  /  8.81 GB reserved  /  42.4 GB total
+  attempt 0: 10 pending
+  attempt 0: correct=4/10
+  attempt 1: 6 pending
+  attempt 1: correct=5/10
+  attempt 2: 5 pending
+  attempt 2: correct=5/10
+  cfg2 DONE: overall=50.0%  phys=71.43%  logic=0.0%  [7+3=10]  6.1min
+  [checkpoint saved → qwen35_ablation_canonical.json]
+
+================================================================
+Config 3: + GRPO mixed Phase 2
+================================================================
+[cfg3 model loaded] VRAM  8.59 GB alloc  /  8.81 GB reserved  /  42.4 GB total
+  attempt 0: 10 pending
+  attempt 0: correct=4/10
+  attempt 1: 6 pending
+  attempt 1: correct=4/10
+  attempt 2: 6 pending
+  attempt 2: correct=5/10
+  cfg3 DONE: overall=50.0%  phys=71.43%  logic=0.0%  [7+3=10]  6.0min
+  [checkpoint saved → qwen35_ablation_canonical.json]
+
+================================================================
+Config 4: + Dual LoRA specialists + Router
+================================================================
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 38304.15it/s]
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:50,  3.86it/s]Loading weights:   6%|▋         | 27/426 [00:00<00:04, 93.01it/s]Loading weights:  11%|█         | 47/426 [00:00<00:03, 125.00it/s]Loading weights:  18%|█▊        | 78/426 [00:00<00:01, 182.15it/s]Loading weights:  23%|██▎       | 100/426 [00:00<00:01, 176.15it/s]Loading weights:  31%|███       | 131/426 [00:00<00:01, 214.01it/s]Loading weights:  36%|███▋      | 155/426 [00:00<00:01, 202.59it/s]Loading weights:  43%|████▎     | 182/426 [00:01<00:01, 221.01it/s]Loading weights:  48%|████▊     | 206/426 [00:01<00:01, 207.70it/s]Loading weights:  56%|█████▌    | 237/426 [00:01<00:00, 232.44it/s]Loading weights:  62%|██████▏   | 262/426 [00:01<00:00, 215.90it/s]Loading weights:  68%|██████▊   | 289/426 [00:01<00:00, 229.69it/s]Loading weights:  73%|███████▎  | 313/426 [00:01<00:00, 213.97it/s]Loading weights:  81%|████████  | 344/426 [00:01<00:00, 232.26it/s]Loading weights:  86%|████████▋ | 368/426 [00:01<00:00, 219.13it/s]Loading weights:  93%|█████████▎| 397/426 [00:02<00:00, 227.54it/s]Loading weights:  99%|█████████▉| 421/426 [00:02<00:00, 224.50it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 199.91it/s]
+[cfg4 model loaded] VRAM  17.36 GB alloc  /  17.56 GB reserved  /  42.4 GB total
+  attempt 0: 10 pending
+  attempt 0: correct=3/10
+  attempt 1: 7 pending
+  attempt 1: correct=5/10
+  attempt 2: 5 pending
+  attempt 2: correct=5/10
+  cfg4 DONE: overall=50.0%  phys=71.43%  logic=0.0%  [7+3=10]  6.1min
+  [checkpoint saved → qwen35_ablation_canonical.json]
+
+================================================================
+Config 5: + Self-consistency 5x (full v2 agent)
+================================================================
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 38836.15it/s]
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:53,  3.73it/s]Loading weights:   6%|▋         | 27/426 [00:00<00:04, 91.06it/s]Loading weights:  11%|█         | 47/426 [00:00<00:03, 123.13it/s]Loading weights:  18%|█▊        | 77/426 [00:00<00:01, 177.52it/s]Loading weights:  23%|██▎       | 99/426 [00:00<00:01, 178.75it/s]Loading weights:  30%|██▉       | 127/426 [00:00<00:01, 206.58it/s]Loading weights:  35%|███▌      | 150/426 [00:00<00:01, 209.43it/s]Loading weights:  41%|████      | 173/426 [00:01<00:01, 206.16it/s]Loading weights:  47%|████▋     | 200/426 [00:01<00:01, 219.59it/s]Loading weights:  53%|█████▎    | 224/426 [00:01<00:00, 215.66it/s]Loading weights:  59%|█████▉    | 252/426 [00:01<00:00, 226.71it/s]Loading weights:  65%|██████▍   | 276/426 [00:01<00:00, 226.48it/s]Loading weights:  71%|███████   | 301/426 [00:01<00:00, 227.19it/s]Loading weights:  76%|███████▌  | 324/426 [00:01<00:00, 219.25it/s]Loading weights:  81%|████████▏ | 347/426 [00:01<00:00, 218.42it/s]Loading weights:  87%|████████▋ | 369/426 [00:01<00:00, 216.30it/s]Loading weights:  93%|█████████▎| 397/426 [00:02<00:00, 230.73it/s]Loading weights:  99%|█████████▉| 421/426 [00:02<00:00, 218.41it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 197.87it/s]
+[cfg5 model loaded] VRAM  17.36 GB alloc  /  17.56 GB reserved  /  42.4 GB total
+  attempt 0: 10 pending
+  attempt 0: correct=4/10
+  attempt 1: 6 pending
+  attempt 1: correct=4/10
+  attempt 2: 6 pending
+  attempt 2: correct=4/10
+  cfg5 DONE: overall=40.0%  phys=57.14%  logic=0.0%  [7+3=10]  16.5min
+  [checkpoint saved → qwen35_ablation_canonical.json]
+
+Saved: /content/drive/MyDrive/TRA-SAE/logs/qwen35_ablation_canonical.json
+Saved per-sample: /content/drive/MyDrive/TRA-SAE/logs/ablation_per_sample_canonical.jsonl
+
+SANITY CHECK (n_phys + n_logic == n_total):
+  cfg0 zero_shot          acc= 30.00%  7+3=10  OK
+  cfg1 sft_phase1         acc= 40.00%  7+3=10  OK
+  cfg2 sft_logic          acc= 50.00%  7+3=10  OK
+  cfg3 grpo_mixed         acc= 50.00%  7+3=10  OK
+  cfg4 dual_lora_router   acc= 50.00%  7+3=10  OK
+  cfg5 full_v2            acc= 40.00%  7+3=10  OK
+
+NOTE: rebuild ALL paper tables from this file. Do not mix with old qwen35_ablation.json.
+EXIT[experiments/step0_canonical_eval.py]=0
+
+===== experiments/step13_tool_baselines.py --smoke-test =====
+[1] Loading val + model (ckpt=/content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_grpo/final)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 23899.17it/s]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:49,  3.88it/s]Loading weights:   6%|▋         | 27/426 [00:00<00:04, 88.59it/s]Loading weights:  12%|█▏        | 51/426 [00:00<00:02, 136.32it/s]Loading weights:  19%|█▊        | 79/426 [00:00<00:01, 177.98it/s]Loading weights:  24%|██▎       | 101/426 [00:00<00:01, 180.57it/s]Loading weights:  31%|███       | 130/426 [00:00<00:01, 212.46it/s]Loading weights:  36%|███▌      | 154/426 [00:00<00:01, 202.83it/s]Loading weights:  43%|████▎     | 185/426 [00:01<00:01, 225.96it/s]Loading weights:  49%|████▉     | 209/426 [00:01<00:01, 216.02it/s]Loading weights:  56%|█████▌    | 238/426 [00:01<00:00, 229.37it/s]Loading weights:  62%|██████▏   | 262/426 [00:01<00:00, 220.41it/s]Loading weights:  68%|██████▊   | 291/426 [00:01<00:00, 232.24it/s]Loading weights:  74%|███████▍  | 315/426 [00:01<00:00, 221.62it/s]Loading weights:  81%|████████  | 343/426 [00:01<00:00, 236.65it/s]Loading weights:  86%|████████▋ | 368/426 [00:01<00:00, 220.41it/s]Loading weights:  93%|█████████▎| 397/426 [00:02<00:00, 218.18it/s]Loading weights:  99%|█████████▉| 422/426 [00:02<00:00, 218.21it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 201.21it/s]
+[2] Arm A — LLM direct
+    8/10
+    10/10
+[3] Arm B — LLM + tools (Z3 logic / Python calc physics)
+    8/10  tools={'calc': 4, 'none': 4}
+    10/10  tools={'calc': 5, 'none': 5}
+
+============================================================
+TOOL-AUGMENTED BASELINE
+============================================================
+Arm                 Overall  Physics    Logic
+A: LLM direct        30.00%   42.86%    0.00%
+B: LLM + tools       40.00%   57.14%    0.00%
+Δ overall = +10.00 pp   tool activations: {'calc': 5, 'none': 5}
+Saved → /content/drive/MyDrive/TRA-SAE/logs/tool_baselines_results_latest.json

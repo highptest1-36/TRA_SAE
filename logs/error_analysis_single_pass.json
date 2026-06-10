@@ -1,0 +1,23 @@
+{
+  "source": "cfg3_single_pass_partB",
+  "total_evaluated": 217,
+  "total_wrong": 117,
+  "error_counts": {
+    "E1_unit_dimension": 2,
+    "E2_wrong_formula": 0,
+    "E3_arithmetic": 0,
+    "E4_logical_fallacy": 21,
+    "E5_misinterpretation": 0,
+    "E6_extraction": 85,
+    "E0_unclassified": 9
+  },
+  "error_pct": {
+    "E1_unit_dimension": 1.7,
+    "E2_wrong_formula": 0.0,
+    "E3_arithmetic": 0.0,
+    "E4_logical_fallacy": 17.9,
+    "E5_misinterpretation": 0.0,
+    "E6_extraction": 72.6,
+    "E0_unclassified": 7.7
+  }
+}

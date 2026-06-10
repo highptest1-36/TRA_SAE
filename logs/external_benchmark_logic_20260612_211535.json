@@ -1,0 +1,1850 @@
+{
+  "run_ts": "20260612_211535",
+  "smoke": false,
+  "benchmark": "logic",
+  "dataset": "FOLIO validation (first-order-logic entailment)",
+  "n_samples": 203,
+  "results": [
+    {
+      "config": "cfg3",
+      "name": "cfg3_grpo_mixed",
+      "desc": "cfg3: SFT Ph1 + Logic SFT + GRPO-mixed",
+      "n_total": 203,
+      "n_correct": 95,
+      "accuracy_overall": 46.8,
+      "per_subject": {
+        "folio": 46.8
+      },
+      "elapsed_min": 15.0,
+      "per_sample": [
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nPeople in this club who perform in school talent shows often attend and are very engaged w",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "\n            *   This is a tautological structure: $(A \\land B) \\lor \\neg((A \\land B) \\land \\neg B)$? No.\n            *   Let $X$ be the property \"att"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nPeople in this club who perform in school talent shows often attend and are very engaged w",
+          "pred": "yes",
+          "gt": "yes",
+          "correct": true,
+          "raw_end": "e club.\n\nFrom premise 4, we know: I(x) \u2192 C(x) for all x in the club.\n\nFrom premise 3, we know: C(x) \u2192 \u00acS(x) for all x in the club.\n\nFrom premise 2, we"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nPeople in this club who perform in school talent shows often attend and are very engaged w",
+          "pred": "yes",
+          "gt": "no",
+          "correct": false,
+          "raw_end": "(B)) by premise 4.\nIf she chaperones dances (C(B)), then she's not a student (\u00acS(B)) by premise 3.\nIf she's not a student (\u00acS(B)), then she can't be a"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll employees who schedule a meeting with their customers will go to the company building ",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": " Not necessarily, unless we know everyone goes to the building.\n    - But wait, premise 1 says \"All employees who schedule a meeting... will go to the"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll employees who schedule a meeting with their customers will go to the company building ",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "f $R(J)$ is true, does it imply $H(J)$? Not necessarily from the premises given. But if $R(J)$ is true, then $J(J)$ must be false (if we assume remote"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll employees who schedule a meeting with their customers will go to the company building ",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "s true, then $H(J)$ is false (P3).\nIf $H(J)$ is false, then $R(J)$ is false (P4: $H \\to R$).\nIf $R(J)$ is false, then $C(J)$ is false (P5: $C \\to R$)."
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nWhen the Monkeypox virus occurs in a being, it may get Monkeypox. \nMonkeypox virus can occ",
+          "pred": "unknown",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "It's a very weak conclusion. Usually, logical reasoning tasks ask for something more specific like \"Humans are animals.\" However, if the conclusion is"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nWhen the Monkeypox virus occurs in a being, it may get Monkeypox. \nMonkeypox virus can occ",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "eople feel tired when they get the flu\" problematic (if no one gets it, people don't feel tired from it).\n    *   So the conclusion is contradicted by"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nWhen the Monkeypox virus occurs in a being, it may get Monkeypox. \nMonkeypox virus can occ",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "nnot be determined from the premises\".\nThis is a specific classification scheme.\n1. Entailed: Premises prove the conclusion.\n2. Contradicted: Premises"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nThere are six types of wild turkeys: Eastern wild turkey, Osceola wild turkey, Gould\u2019s wil",
+          "pred": "yes",
+          "gt": "yes",
+          "correct": true,
+          "raw_end": "six possible types, he must belong to the remaining type.\n5. The only remaining type is the Ocellated wild turkey.\n</reasoning>\n<answer>\nYes\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nThere are six types of wild turkeys: Eastern wild turkey, Osceola wild turkey, Gould\u2019s wil",
+          "pred": "",
+          "gt": "no",
+          "correct": false,
+          "raw_end": "ctions.\n4. Therefore, the conclusion cannot be true if the premises are true, meaning it does not logically follow.\n</reasoning>\n<answer>\nNo\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nThere are six types of wild turkeys: Eastern wild turkey, Osceola wild turkey, Gould\u2019s wil",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": " Therefore, it is impossible to determine whether Joey is a wild turkey based solely on the provided premises.\n</reasoning>\n<answer>\nUnknown\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nA Japanese game company created the game the Legend of Zelda.\nAll games on the Top 10 list",
+          "pred": "yes",
+          "gt": "yes",
+          "correct": true,
+          "raw_end": "op 10 list. Premises 1 and 2 provide additional context but are not necessary for this specific logical deduction.\n</reasoning>\n<answer>\nYes\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nA Japanese game company created the game the Legend of Zelda.\nAll games on the Top 10 list",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "ity. Therefore, we cannot determine whether FIFA 22 is made by a Japanese company based on the given premises.\n</reasoning>\n<answer>\nUnknown\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nA Japanese game company created the game the Legend of Zelda.\nAll games on the Top 10 list",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "The Legend of Zelda is not on the Top 10 list.\n4. This contradicts the logical deduction derived from the premises.\n</reasoning>\n<answer>\nNo\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll squares are four-sided.\nAll four-sided things are shapes. \n\nConclusion: All squares ar",
+          "pred": "unknown",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "are must be a shape.\n4. Therefore, the conclusion that all squares are shapes logically follows from the premises.\n</reasoning>\n<answer>\nYes\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll rabbits that can be spotted near the campus are cute. \nSome turtles can be spotted nea",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "nly rabbits and squirrels are spotted near campus (Premises 3).\n3. Therefore, Rockie is a rabbit or squirrel.\n4. Rockie is calm (Premises 6).\n5. If sk"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll rabbits that can be spotted near the campus are cute. \nSome turtles can be spotted nea",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "irrels are spotted there, then Rockie is a rabbit or squirrel. If Rockie is a rabbit or squirrel, it cannot be a turtle. Thus, Rockie is not a turtle."
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll rabbits that can be spotted near the campus are cute. \nSome turtles can be spotted nea",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": " about Rockie. We derived Rockie's properties without using Premises 2.\nIf we ignore the contradiction (treating it as a background inconsistency that"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll rabbits that can be spotted near the campus are cute. \nSome turtles can be spotted nea",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "e inconsistent, unless the inconsistency directly invalidates the specific deduction path.\n    *   The deduction path for Rockie relies on Premises 3,"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll rabbits that can be spotted near the campus are cute. \nSome turtles can be spotted nea",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": " is cute and calm, then Rockie is a skittish turtle.\"\n    *   We know the antecedent (Rockie is cute and calm) is true.\n    *   We know the consequent"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\n\"Stranger Things\" is a popular Netflix show.\nIf a Netflix show is popular, Karen will bing",
+          "pred": "yes",
+          "gt": "yes",
+          "correct": true,
+          "raw_end": "tflix show, she will share it with Lisa. Since Karen binge-watches \"Stranger Things\", she will share it with Lisa.\n</reasoning>\n<answer>\nYes\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\n\"Stranger Things\" is a popular Netflix show.\nIf a Netflix show is popular, Karen will bing",
+          "pred": "unknown",
+          "gt": "no",
+          "correct": false,
+          "raw_end": " and clear.\n    *   Check constraints: \"If and only if Karen binge-watches a Netflix show, she will download it.\" This means $B(x) \\leftrightarrow D(x"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\n\"Stranger Things\" is a popular Netflix show.\nIf a Netflix show is popular, Karen will bing",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "re, Karen did not binge-watch \"Black Mirror.\"\n4. The premise \"If Karen binge-watches a Netflix show, she will share it with Lisa\" implies that sharing"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nBeijing is the capital of the People's Republic of China. \nBeijing is the capital city of ",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "r, or implying the 2022 one).\nPremises 4 confirms the 2008 Summer Olympics part.\nPremises 5 confirms the Winter Olympics part (general statement).\nSo,"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nBeijing is the capital of the People's Republic of China. \nBeijing is the capital city of ",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "a simultaneously. Therefore, the conclusion does not follow from the premises; it is directly refuted by Premise 3.\n</reasoning>\n<answer>\nNo\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nBeijing is the capital of the People's Republic of China. \nBeijing is the capital city of ",
+          "pred": "",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "cation (Northern China), international events hosted (Olympics), and educational institutions (universities). None of the premises contain information"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll aliens are extraterrestrials.\nIf someone is from Mars, then they are an alien.\nNo extr",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "extraterrestrial (not human). If he is from Earth, he is human.\n- If he is from both Earth and Mars, he is human (from Earth) and not human (from Mars"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll aliens are extraterrestrials.\nIf someone is from Mars, then they are an alien.\nNo extr",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "positive: If not alien \u2192 not from Mars.\n- Since Marvin is an extraterrestrial (from Premises 7), he is an alien (Premises 1).\n- So Marvin is an alien."
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll aliens are extraterrestrials.\nIf someone is from Mars, then they are an alien.\nNo extr",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "6 says he is (Earth & Mars) or (Not Earth & Not Mars).\nIf he is (Earth & Mars), he must be human (from Earth) AND not human (from Mars). Contradiction"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nEveryone at the mixer is a Grand Slam champion or an Oscar-nominated actor.\nEvery Grand Sl",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "     - If x is a celebrity (C(x)), then x is well-paid (W(x)) [Premise 5].\n     - If x is a professional tennis player (T(x)), then x is an athlete (A"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nEveryone at the mixer is a Grand Slam champion or an Oscar-nominated actor.\nEvery Grand Sl",
+          "pred": "",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": ", premises are universal statements or specific facts.\n      - Let's interpret it as: We are given that Djokovic is a famous athlete. And we are given"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nEveryone at the mixer is a Grand Slam champion or an Oscar-nominated actor.\nEvery Grand Sl",
+          "pred": "",
+          "gt": "no",
+          "correct": false,
+          "raw_end": "If he is an athlete, he is famous (Premises 6).\n     4. To be well-paid, a person must be a celebrity (Premises 5). To be a celebrity, they must be an"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nDiamond Mine is a professional wrestling stable formed in WWE.\nRoderick Strong leads Diamo",
+          "pred": "yes",
+          "gt": "yes",
+          "correct": true,
+          "raw_end": "onal wrestling stable. Therefore, it logically follows that Roderick Strong leads a professional wrestling stable.\n</reasoning>\n<answer>\nYes\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nDiamond Mine is a professional wrestling stable formed in WWE.\nRoderick Strong leads Diamo",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": ", he leads them.\nI will go with Yes.\n\nWait, I need to be careful. Sometimes these datasets are tricky.\nPremises:\n- Roderick Strong leads Diamond Mine."
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nDiamond Mine is a professional wrestling stable formed in WWE.\nRoderick Strong leads Diamo",
+          "pred": "unknown",
+          "gt": "no",
+          "correct": false,
+          "raw_end": "ts the logical deduction derived from the premises.\n6. Therefore, the conclusion does not follow from the premises.\n</reasoning>\n<answer>\nNo\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nSymphony No. 9 is a music piece.\nComposers write music pieces.\nBeethoven wrote Symphony No",
+          "pred": "unknown",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": " Beethoven wrote Symphony No. 9 (which is a music piece).\n    Strictly, \u2200x (IsComposer(x) \u2192 WritesMusicPiece(x)) does not imply \u2200x (WritesMusicPiece(x"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nSymphony No. 9 is a music piece.\nComposers write music pieces.\nBeethoven wrote Symphony No",
+          "pred": "unknown",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "chestra that premiered a music piece.\n6. This supports the conclusion that some orchestras premiered music pieces.\n</reasoning>\n<answer>\nYes\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nSymphony No. 9 is a music piece.\nComposers write music pieces.\nBeethoven wrote Symphony No",
+          "pred": "unknown",
+          "gt": "no",
+          "correct": false,
+          "raw_end": "chestra as a conductor.\n5. Therefore, the conclusion does not follow from the premises; it is contradicted by them.\n</reasoning>\n<answer>\nNo\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll of Zaha Hadid's design styles that Max adores have interesting geometries.\nNo brutalis",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "talist building.\n\n   Let's check for consistency.\n   If $x$ is a Zaha style Max adores:\n   By P1, $G(x)$ is true.\n   By P6, if $G(x)$ is true, then $B"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll of Zaha Hadid's design styles that Max adores have interesting geometries.\nNo brutalis",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "$ is not empty, the premises are contradictory.\n   If the premises are contradictory, then any conclusion follows (principle of explosion).\n   However"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll of Zaha Hadid's design styles that Max adores have interesting geometries.\nNo brutalis",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "esign has interesting geometries, then it is a brutalist building and evocative.\n\u2200x (I(x) \u2192 (B(x) \u2227 E(x)))\nIf I(x) is true, then B(x) is true.\nIf B(x)"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf someone is ranked highly by the Women's Tennis Association, then they are one of the mo",
+          "pred": "unknown",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "it, is there a contradiction if we assume she is female?\n    - If $F(C)$ is true, then $L_I(C)$ is true (Premise 3).\n    - If $L_I(C)$ is true, then $"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf someone is ranked highly by the Women's Tennis Association, then they are one of the mo",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": ".\n\nWait, I need to check if the premises are consistent.\nPremises 2 and 3 imply that if a player lost to Iga \u015awi\u0105tek, they are ranked highly.\nPremises"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf someone is ranked highly by the Women's Tennis Association, then they are one of the mo",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "st to Iga.\nPremises 3 says \"All female tennis players... lost to Iga\".\nPremises 6 says \"If Coco is ranked highly... then Coco is not male\".\nPremises 7"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll cats are mammals.\nSome pets are not mammals.\n\nConclusion: No pets are cats.\n\nDoes the ",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "nstruct a model where premises are true but the conclusion is false?\n        *   Model:\n            *   Universe: {a, b}\n            *   Pets (P): {a,"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nThere are four seasons in a year: Spring, Summer, Fall, and Winter.\nAll students who want ",
+          "pred": "yes",
+          "gt": "yes",
+          "correct": true,
+          "raw_end": "his favorite season.\n4. The conclusion states: \"James's favorite season is summer.\"\n5. This matches our deduction.\n</reasoning>\n<answer>\nYes\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nThere are four seasons in a year: Spring, Summer, Fall, and Winter.\nAll students who want ",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "re, we cannot conclude that Mia's favorite season is Spring; it remains uncertain based on the given premises.\n</reasoning>\n<answer>\nUnknown\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nNo digital media are analog.\nEvery printed text is analog media.\nAll streaming services ar",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "s a hardcover book, then it is printed text.\n   5. If 1984 is a streaming service, then 1984 is a hardcover book.\n\n   Conclusion: 1984 is printed text"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nNo digital media are analog.\nEvery printed text is analog media.\nAll streaming services ar",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "eaming service\" is false.\nSo the conclusion does not follow.\nThe answer should be No.\n\nLet's double check the logic.\nPremises:\n1. $\\forall x (D(x) \\to"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nNo digital media are analog.\nEvery printed text is analog media.\nAll streaming services ar",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "4)$ is true.\nBut from P3: $S(1984) \\rightarrow D(1984)$.\nSince we assumed $S(1984)$, then $D(1984)$ must be true.\nSo we have $D(1984)$ and $\\neg D(198"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll Romance languages are Indo-European languages.\nRomance languages are a language family",
+          "pred": "unknown",
+          "gt": "no",
+          "correct": false,
+          "raw_end": "ance (because Romance languages would be related to each other). So there is a contradiction between P6 and the definition of Romance languages (if we"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll Romance languages are Indo-European languages.\nRomance languages are a language family",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "on is 'Unknown'.\n    *   Wait, let's look at the premises again. \"German is related to Spanish.\" \"French and Spanish are both Romance languages.\" \"All"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll Romance languages are Indo-European languages.\nRomance languages are a language family",
+          "pred": "yes",
+          "gt": "yes",
+          "correct": true,
+          "raw_end": "n languages (Premises 1).\n3. By combining these two facts, we can deduce that French is an Indo-European language.\n</reasoning>\n<answer>\nYes\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nRobert Lewandowski is a striker.\nStrikers are soccer players.\nRobert Lewandowski left Baye",
+          "pred": "yes",
+          "gt": "yes",
+          "correct": true,
+          "raw_end": "layer. Premises 3 and 4 regarding his departure from Bayern Munchen do not affect this specific logical deduction.\n</reasoning>\n<answer>\nYes\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nRobert Lewandowski is a striker.\nStrikers are soccer players.\nRobert Lewandowski left Baye",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "e does play for Bayern Munchen, which directly contradicts the premises. Therefore, the conclusion does not follow.\n</reasoning>\n<answer>\nNo\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nRobert Lewandowski is a striker.\nStrikers are soccer players.\nRobert Lewandowski left Baye",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": " options: Yes (entailed), No (contradicted), Unknown (cannot be determined).\nSince it's not contradicted (he could be a star or not), and it's not ent"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nBillings is a city in the state of Montana in U.S.\nThe state of Montana includes the citie",
+          "pred": "unknown",
+          "gt": "no",
+          "correct": false,
+          "raw_end": "a) != St Pierre (Not Montana). They are not in the same state.\n    Conclusion says they are.\n    So the conclusion is false.\n\n    Answer: No.\n</think>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nBillings is a city in the state of Montana in U.S.\nThe state of Montana includes the citie",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "ame state. So it's Unknown.\n\n    *Wait, is there a trick regarding the exceptions?*\n    *   Exception cities: Bristol, Texarkana, Texhoma, Union City."
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nBillings is a city in the state of Montana in U.S.\nThe state of Montana includes the citie",
+          "pred": "unknown",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "y *only* those cities? Usually, \"includes\" means at least those. Even if it meant \"consists of\", Billings is mentioned in P1. But regardless, Missoula"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nInternational students in the US have either an F1 visa or a J1 visa.\nAn international stu",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "nd Mike happens to fit that description).\n    *   Wait, let's look at standard logical reasoning tasks. Usually, if a rule is stated as \"X needs to do"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nInternational students in the US have either an F1 visa or a J1 visa.\nAn international stu",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "gic was: Mike needs CPT -> Mike has F1 visa. Then \"Mike has a J1 visa\" is False.\n    *   If the logic was: We don't know Mike's visa type based on CPT"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll Brown Swiss cattle are cows.\nSome pets are Brown Swiss Cattle.\nAll cows are domesticat",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "), then Ted cannot be a pet because he is an alligator (not domesticated).\n    *   Let's look for a direct contradiction. Is there any rule saying All"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll Brown Swiss cattle are cows.\nSome pets are Brown Swiss Cattle.\nAll cows are domesticat",
+          "pred": "unknown",
+          "gt": "no",
+          "correct": false,
+          "raw_end": " pet and Ted is a Brown Swiss cattle\".\n    Regardless of the \"pet\" part, the \"Brown Swiss cattle\" part is false. So the conjunction is false.\n    Does"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll Brown Swiss cattle are cows.\nSome pets are Brown Swiss Cattle.\nAll cows are domesticat",
+          "pred": "unknown",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "wever, often in these datasets (like RuleTaker), if the conclusion is a conditional, they want to know if the rule holds. But here the rule depends on"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nYale University is a private Ivy League research university.\nYale University moved to New ",
+          "pred": "unknown",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "e research university (Yale) moved to New Haven. Therefore, the conclusion is logically supported by the premises.\n</reasoning>\n<answer>\nYes\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nYale University is a private Ivy League research university.\nYale University moved to New ",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "n is not provided in the premises, we cannot determine if the conclusion is true based solely on the premises.\n</reasoning>\n<answer>\nUnknown\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nYale University is a private Ivy League research university.\nYale University moved to New ",
+          "pred": "yes",
+          "gt": "yes",
+          "correct": true,
+          "raw_end": " includes \"Pierson College\". Therefore, it follows directly that Pierson College is a residential college at Yale.\n</reasoning>\n<answer>\nYes\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nBadults is a British Sitcom series starring members of Pappy's.\nBadults was piloted in Jul",
+          "pred": "yes",
+          "gt": "yes",
+          "correct": true,
+          "raw_end": "onclude that Andrew Collins was the script editor for the series with the working title \"The Secret Dude Society\".\n</reasoning>\n<answer>\nYes\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nBadults is a British Sitcom series starring members of Pappy's.\nBadults was piloted in Jul",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "ar in a show piloted on BBC Three).\n6. Since the conclusion contradicts the premises, it does not logically follow.\n</reasoning>\n<answer>\nNo\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll growth stocks are bought to earn profits from rapid price appreciation.\nIf the stock p",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "hey presuppose these are types of stocks.\n    *   If we treat \"stock\" in the conclusion as the universal set, then any instance of a mature stock is a"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll growth stocks are bought to earn profits from rapid price appreciation.\nIf the stock p",
+          "pred": "unknown",
+          "gt": "no",
+          "correct": false,
+          "raw_end": "ms KO is a growth stock.\n    *   Result: No.\n\n7.  **Format Output:**\n    *   `<reasoning>...`\n    *   `<answer>No</answer>`\n\n    Wait, I need to check"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll growth stocks are bought to earn profits from rapid price appreciation.\nIf the stock p",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "O)$.\nThis implies that if KO is a growth stock (or bought for profit), it is not a stock.\nBut we know $M(KO)$ is true. Does $M(KO)$ imply $S(KO)$? Yes"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll vehicle registration plates in Istanbul begin with the number 34.\nPlates that do not b",
+          "pred": "unknown",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "e are told that Joe's vehicle registration plate is from Istanbul.\n    2. We are also told that all vehicle registration plates in Istanbul begin with"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll vehicle registration plates in Istanbul begin with the number 34.\nPlates that do not b",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "from Istanbul.\n6. The conclusion states that Tom's license plate is from Istanbul, which contradicts our deduction.\n</reasoning>\n<answer>\nNo\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf people at Mary's school work in student jobs on campus, then they need to earn money to",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "w \\neg P$\n   5. $D \\rightarrow F$\n   \n   From 1 and 2: If someone orders takeout ($O$), they work ($W$), so they need money ($T$).\n   From 3: Everyone"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf people at Mary's school work in student jobs on campus, then they need to earn money to",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "general people:\nO \u2192 W (Premises 2)\nW \u2192 T (Premises 1)\nSo O \u2192 T.\n\u00acE \u2192 \u00acO (from O \u2228 E, if not E then not O).\nE \u2192 \u00acP (Premises 4)\nE \u2192 S (Premises 5)\n\nNow"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf people at Mary's school work in student jobs on campus, then they need to earn money to",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "ney].\"\n   - This implies the condition \"if she needs to earn money\" leads to a contradiction ($T \\to \\neg T$).\n   - In logic, if a statement implies a"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nNo baked sweets are spicy.\nAll cupcakes are baked sweets.\nAll mala hotpots are spicy.\nAll ",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": ") \u2228 M(T) \u2228 \u00acB(T).\n   - If T is a mala hotpot, then S(T) is true (premise 3), so the disjunction is true.\n   - But we don't know if T is a mala hotpot."
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nNo baked sweets are spicy.\nAll cupcakes are baked sweets.\nAll mala hotpots are spicy.\nAll ",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "t a product of Baked by Melissa, does it follow?\n- We need to know if Dried Thai chilies are products of Baked by Melissa.\n- If they were, then T(x) \u2192"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nNo baked sweets are spicy.\nAll cupcakes are baked sweets.\nAll mala hotpots are spicy.\nAll ",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "forces all Dried Thai chilies to be baked sweets? No.\n    *   The premise \"Dried Thai chilies are spicy or mala hotpots or not baked sweets\" is a taut"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nNo baked sweets are spicy.\nAll cupcakes are baked sweets.\nAll mala hotpots are spicy.\nAll ",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "t(x) \u2192 \u00acSpicy(x)). This is equivalent to \u2200x (Spicy(x) \u2192 \u00acBakedSweet(x)).\nFrom premise 3: \u2200x (MalaHotpot(x) \u2192 Spicy(x)).\nCombining 1 and 3: \u2200x (MalaHot"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nNo baked sweets are spicy.\nAll cupcakes are baked sweets.\nAll mala hotpots are spicy.\nAll ",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "$ is a cupcake, we need $M(T)$ to be true for Premise 5 to hold.\nBut if $T$ is a cupcake, it is not spicy ($\\neg S(T)$).\nIf $T$ is a mala hotpot ($M(T"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf a restaurant is listed in Yelp\u2019s recommendations, then the restaurant has not received ",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": " this implication to be true.\n- But an implication $X \\to Y$ is only true if $X$ is false or $Y$ is true.\n- Here $Y = R(h) \\land \\neg T(h)$. If $X = T"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf a restaurant is listed in Yelp\u2019s recommendations, then the restaurant has not received ",
+          "pred": "unknown",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "is necessarily true:\n        *   $Yelp(Hamden)$ is true (from P2).\n        *   $\\neg NegativeReviews(Hamden)$ is true (from P1).\n        *   Therefore"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf a restaurant is listed in Yelp\u2019s recommendations, then the restaurant has not received ",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "n Negative Reviews), it doesn't help us prove Hamden doesn't provide take-out. We would need to know if Hamden has negative reviews.\n        *   Do we"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIn superhero movies, the good guys always win.\nThe Surprising Adventures of Sir Digby Chic",
+          "pred": "unknown",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "uy in a superhero movie), then the nemesis does not win.\n    Yes, it follows.\n\n    Let's write down the steps clearly.\n    1. The movie is named after"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nBooks contain tons of knowledge.\nWhen a person reads a book, that person gains knowledge. ",
+          "pred": "unknown",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "ok \"Walden\".\n    3. Since \"Walden\" is identified as a book, and all books contain knowledge, it follows that \"Walden\" contains knowledge.\n</reasoning>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nBooks contain tons of knowledge.\nWhen a person reads a book, that person gains knowledge. ",
+          "pred": "yes",
+          "gt": "yes",
+          "correct": true,
+          "raw_end": " Harry becomes smarter.\n5. The conclusion \"Harry is smarter than before\" follows directly from this logical chain.\n</reasoning>\n<answer>\nYes\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nBooks contain tons of knowledge.\nWhen a person reads a book, that person gains knowledge. ",
+          "pred": "",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "ways for everyone.\n\n    So, the conclusion is a generalization that doesn't follow from the specific rule provided.\n\n    Answer: No.\n</think>\n\n<reason"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nA natural language processing task can be categorized as either a language generation task",
+          "pred": "yes",
+          "gt": "yes",
+          "correct": true,
+          "raw_end": " generation task.\n4. This directly supports the conclusion that machine translation is a language generation task.\n</reasoning>\n<answer>\nYes\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nA natural language processing task can be categorized as either a language generation task",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": " machine translation is a language generation task.\n6. Therefore, the conclusion does not follow from the premises.\n</reasoning>\n<answer>\nNo\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nPets are allowed in some managed buildings.\nA deposit is required to rent an apartment in ",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "lusion is false.\nSo the answer is No.\n\nLet's double check.\nPremises:\n- Rent = $2000.\n- Deposit >= Rent (Premises 3: \"can be either equal to... or more"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nPets are allowed in some managed buildings.\nA deposit is required to rent an apartment in ",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "nting/moving in, but it's phrased as Tom's willingness. \"Tom will rent... if... allowed... and deposit \u2264 1500\". This suggests that if the deposit is >"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nPets are allowed in some managed buildings.\nA deposit is required to rent an apartment in ",
+          "pred": "unknown",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "anaged buildings, Deposit $\\in$ {Rent, >Rent}.\n    *   Premise 6: Olive Garden is a managed building.\n    *   Premise 7: Rent at Olive Garden = $2000."
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll business organizations are legal entities.\nAll companies are business organizations.\nA",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "out the Book Club is: If (Book Club created under law) \u2192 (Book Club not a private company).\n   This does not tell us if the Book Club is created under"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll business organizations are legal entities.\nAll companies are business organizations.\nA",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "ctually suggest a contradiction if we assume it has legal obligations), the conclusion does not follow.\n\nLet's refine the logic.\nPremises:\nP1: \u2200x (B(x"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll business organizations are legal entities.\nAll companies are business organizations.\nA",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "ises 6), then $P \\rightarrow \\neg P$, which means $\\neg P$ (It is not a private company).\nIf we know $\\neg P$, then the conclusion $P \\rightarrow (O \\"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAnimals are either invertebrates or vertebrates.\nAll animals with backbones reproduce by m",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": " is correct.\n\nFormat:\n<reasoning>\n[Step-by-step]\n</reasoning>\n<answer>\n[Yes/No/Unknown]\n</answer>\n</think>\n\n<reasoning>\n1. We are told that Harry is a"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAnimals are either invertebrates or vertebrates.\nAll animals with backbones reproduce by m",
+          "pred": "yes",
+          "gt": "yes",
+          "correct": true,
+          "raw_end": "   7.  \u00acV(H) (From 5 & 6: If V(H) then R(H), but \u00acR(H), so \u00acV(H))\n        8.  \u2200x (I(x) \u2228 V(x)) (Premises)\n        9.  I(H) \u2228 V(H) (From 8)\n        10."
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAnimals are either invertebrates or vertebrates.\nAll animals with backbones reproduce by m",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "ackbone) OR (Harry is NOT vertebrate AND NOT HasBackbone).\n  - We know Harry is a bee.\n  - Bees don't reproduce by mating (P3).\n  - If an animal has a"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nPeople who are born in a multiple birth with siblings spend a lot of time hanging out with",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "oesn't live with strangers, he wasn't born in a multiple birth.\n   But does this tell us if he *was* born in a multiple birth? No. It's a tautology if"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nPeople who are born in a multiple birth with siblings spend a lot of time hanging out with",
+          "pred": "yes",
+          "gt": "no",
+          "correct": false,
+          "raw_end": "s born in a multiple birth, they do not live with strangers.\n\n    Now apply this to Luke's options in Premises 6:\n    Option 1: Luke is $(M \\land T)$."
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nPeople who are born in a multiple birth with siblings spend a lot of time hanging out with",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "rmine Luke's other attributes:**\n    Since $\\neg M$:\n    From Premises 6: If $\\neg M$, then $\\neg T$ (Does not live with strangers).\n    From Premises"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIt costs $205 to take the GRE test, which is cheaper than $300.\nETS provides financial aid",
+          "pred": "unknown",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "s the description, does he receive aid? The chain is: Tom is in single-parent family -> Tom can prove hardship -> Tom applies for GRE -> If Tom proves"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIt costs $205 to take the GRE test, which is cheaper than $300.\nETS provides financial aid",
+          "pred": "yes",
+          "gt": "yes",
+          "correct": true,
+          "raw_end": "remises regarding Tom and financial aid are not relevant to the specific cost conclusion but do not contradict it.\n</reasoning>\n<answer>\nYes\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIt costs $205 to take the GRE test, which is cheaper than $300.\nETS provides financial aid",
+          "pred": "unknown",
+          "gt": "no",
+          "correct": false,
+          "raw_end": "ing him eligible to prove economic hardship.\n3. Therefore, Tom (and others meeting the criteria) can receive financial aid from ETS.\n4. The conclusion"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf people spill a lot of food on their clothing, then they are not notably tidy.\nAll clums",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "ibility allowed by Premise 6, provided Case 1 is impossible.\nSo we know: $\\neg S(\\text{Peter}) \\land \\neg C(\\text{Peter})$.\n\nNow, does this mean Peter"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf people spill a lot of food on their clothing, then they are not notably tidy.\nAll clums",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": " lot of food on his clothing and is cleanly, or a person who does not spill a lot of food on his clothing and is not cleanly.\n\n   Conclusion: Peter is"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf people spill a lot of food on their clothing, then they are not notably tidy.\nAll clums",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "nly.\nAll people whose families prioritize order and spotlessness themselves value order and spotlessness.\nPeter is either a person who spills a lot of"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll fir trees are evergreens.\nSome objects of worship are fir trees.\n\nConclusion: Some eve",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "one fir tree that is an object of worship.\nFrom premise 1, we know all fir trees are evergreens. Therefore, there is at least one evergreen that is an"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nThe Picuris Mountains are a mountain range in New Mexico or Texas.\nJuan de Onate visited t",
+          "pred": "yes",
+          "gt": "yes",
+          "correct": true,
+          "raw_end": " are not in Texas, they must be in New Mexico.\n4. Therefore, Juan de Onate visited a mountain range in New Mexico.\n</reasoning>\n<answer>\nYes\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nThe Picuris Mountains are a mountain range in New Mexico or Texas.\nJuan de Onate visited t",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": " 2 state the Picuris Mountains are in New Mexico or Texas, and Juan de Onate visited them. Since they are not in Texas, they must be in New Mexico.\n3."
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nThe Picuris Mountains are a mountain range in New Mexico or Texas.\nJuan de Onate visited t",
+          "pred": "unknown",
+          "gt": "no",
+          "correct": false,
+          "raw_end": " be in Texas.\n4. The first premise states that the Picuris Mountains are in New Mexico or Texas.\n5. Since they are not in Texas, the Picuris Mountains"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf a man is taller than another man, the taller one can block the other's shooting.\nMichae",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": " everyone in the class.\n5. Therefore, the conclusion does not follow from the premises; it is contradicted by them.\n</reasoning>\n<answer>\nNo\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf a man is taller than another man, the taller one can block the other's shooting.\nMichae",
+          "pred": "unknown",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "Therefore, GreatShooter(Windy) is true.\n\n7.  **Final Conclusion Formulation:**\n    *   The conclusion follows logically.\n\n8.  **Drafting the Output:**"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf a man is taller than another man, the taller one can block the other's shooting.\nMichae",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "ore, Peter can block Windy's shooting (according to premise 1).\n- Is there any reason to doubt this? Premises 5 and 6 might imply that jumping invalid"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nBarutin Cove is a cove named after the Bulgarian settlement of Barutin.\nBarutin Cove is on",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "The name origin is explicitly stated in P1.\n\nTherefore, the conclusion does not follow.\n\nFormat:\n<reasoning>\n[Step-by-step]\n</reasoning>\n<answer>\n[Yes"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nBarutin Cove is a cove named after the Bulgarian settlement of Barutin.\nBarutin Cove is on",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "the South Shetland Islands are in Antarctica, then Snow Island is in Antarctica.\n- If Snow Island is in Antarctica, then Barutin Cove is in Antarctica"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nBarutin Cove is a cove named after the Bulgarian settlement of Barutin.\nBarutin Cove is on",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": " 3: Snow Island is in South Shetland Islands.\n   - Premises 4: Antarctica is located on the South Shetland Islands. (This is the problematic premise)."
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nSome affection is love.\nSome love is positive.\n\nConclusion: Some affection is positive.\n\nD",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "    *   Some affection is love? Yes, 'a' is in Affection and Love.\n        *   Some love is positive? Yes, 'b' is in Love and Positive.\n        *   Is"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf something can transport multiple passengers, then they are not one-seaters.\nAll Tesla M",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "sarily true given the premises, then it does not follow.\nThe conclusion is \"John's car is a Tesla Model 3.\"\nThe premises do not state this. They state"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf something can transport multiple passengers, then they are not one-seaters.\nAll Tesla M",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "\nIt does not imply that John's car is a Solo EV.\nThere is no premise linking John's car to Solo EVs.\nThere is no premise stating John's car is a Tesla"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf something can transport multiple passengers, then they are not one-seaters.\nAll Tesla M",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "nything about John's car?\nPremises 1-4 are general rules. Premise 5 is a specific statement about John's car.\nPremise 5: $\\neg Tesla(J) \\rightarrow (\\"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll of Peter's pets that are mammals are also animals.\nAll monkeys are mammals. \nPeter's p",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": " a bird it must fly according to premise 8).\n    So Rock can fly.\n    Does Rock being able to fly mean it's a monkey? No. Birds fly too.\n    Does Rock"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll of Peter's pets that are mammals are also animals.\nAll monkeys are mammals. \nPeter's p",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "since it can breathe). If Rock can fly, then by Premise 6, Rock has wings.\n   - In both cases where the disjunction holds (which it must), if Rock can"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll of Peter's pets that are mammals are also animals.\nAll monkeys are mammals. \nPeter's p",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": " 2, monkeys are mammals.\nFrom premise 1, mammals are animals.\nFrom premise 5, animals that are pets can breathe. So Rock can breathe (R(Rock)).\nDoes a"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll people who make wedding plans are people who are engaged.\nAll people who invite others",
+          "pred": "unknown",
+          "gt": "no",
+          "correct": false,
+          "raw_end": "y don't establish the specific facts about John other than the conditional rules involving him.\n    *   Specifically, P6 says \"If John is engaged...\"."
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll people who make wedding plans are people who are engaged.\nAll people who invite others",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "t directly tell us about John's family size\n\nTherefore, the conclusion does not logically follow from the premises.\n</reasoning>\n<answer>\nNo\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll people who make wedding plans are people who are engaged.\nAll people who invite others",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "  If $I$, then by P2, $W$. If $W$, then by P1, $E$.\n        *   So $F \\rightarrow (A \\lor I) \\rightarrow (A \\lor W) \\rightarrow (A \\lor E)$.\n        *"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll people who make wedding plans are people who are engaged.\nAll people who invite others",
+          "pred": "unknown",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "*   Wait, is this a trick question where the premises imply John *must* invite others or *must not*?\n    *   Let's check for contradictions.\n        *"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nSome mammals have teeth.\nPlatypuses have no teeth.\nPlatypuses are mammals. \nHumans have te",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "onal context about other mammals and humans but do not affect the validity of the conclusion regarding platypuses.\n</reasoning>\n<answer>\nYes\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nSome mammals have teeth.\nPlatypuses have no teeth.\nPlatypuses are mammals. \nHumans have te",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "e premises don't mention reptiles, we don't know if they are reptiles or not, unless we bring in external knowledge.\n  - Usually, these prompts expect"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nSome mammals have teeth.\nPlatypuses have no teeth.\nPlatypuses are mammals. \nHumans have te",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "\nIf we knew \"Humans are not platypuses\" and \"If not a platypus and has teeth -> mammal\", then Yes.\nBut we don't have those rules.\nWe have:\n1. $\\exists"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nPlungers suck.\nVacuums suck.\nVampires suck.\nSpace is a vacuum.\nA duster is a household app",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "ore, combining these two premises, Space sucks.\n- The other premises (about plungers, vampires, and dusters) do not affect this logical chain.\n\nAnswer"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nPlungers suck.\nVacuums suck.\nVampires suck.\nSpace is a vacuum.\nA duster is a household app",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "are not stated to be vampires). Therefore, we cannot deduce that Space is a vampire based on the premises provided.\n</reasoning>\n<answer>\nNo\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nPlungers suck.\nVacuums suck.\nVampires suck.\nSpace is a vacuum.\nA duster is a household app",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "mple to the conclusion.\n4. Therefore, the conclusion is contradicted by the premises and does not logically follow.\n</reasoning>\n<answer>\nNo\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nMachine Learning algorithms can be categorized as supervised learning, unsupervised learni",
+          "pred": "unknown",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": " ML algorithms are categorized into these three types, it must be supervised learning.\n    Step 8: Therefore, supervised learning is used to train the"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nMachine Learning algorithms can be categorized as supervised learning, unsupervised learni",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "unsupervised learning is used to train the model contradicts the premises that the algorithm requires labeled data.\n</reasoning>\n<answer>\nNo\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf a film is appropriate for people of all ages, then children can watch it without guidan",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "i is animated family-friendly. We only know it's either that OR appropriate for all ages.\n    *   Wait, is there information missing? Let's re-read P7"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf a film is appropriate for people of all ages, then children can watch it without guidan",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "rozen series?\nPremises 5 says all movies in the Frozen series are family-friendly animated films.\nIt does not say Hachi is in the Frozen series.\nThere"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf a film is appropriate for people of all ages, then children can watch it without guidan",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "ent (X \u2227 Y) \u2228 (\u00acX \u2227 \u00acY) is true or false.\nThe conclusion asserts a specific logical relationship between X and Y for Hachi. Since we don't know X or Y"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nBreeding back is a form of artificial selection by the deliberate selective breeding of do",
+          "pred": "yes",
+          "gt": "yes",
+          "correct": true,
+          "raw_end": "to this breed are the product of that selection.\n6. Therefore, the conclusion logically follows from the premises.\n</reasoning>\n<answer>\nYes\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nBreeding back is a form of artificial selection by the deliberate selective breeding of do",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "t's look for a more direct link. Is there a premise stating aurochs are extinct? No.\n    *   Is there a premise stating that breeding back implies the"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nEveryone who can register to vote in the United States can participate in the 2024 United ",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "have Taiwanese citizenship, he must have US citizenship (assuming the disjunction holds for him). So USCitizen(Vladimir).\n    From (2), USCitizen(Vlad"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nEveryone who can register to vote in the United States can participate in the 2024 United ",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "ules and specific facts about Vladimir and Ekaterina.\n    *   The conclusion is specifically about Vladimir.\n    *   We know Vladimir is not a Gazprom"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nEveryone who can register to vote in the United States can participate in the 2024 United ",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "might not have US citizenship).\nWait, Premises 3 says everyone has US or Taiwanese citizenship.\nPremises 4 says Russian officials don't have Taiwanese"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nEveryone who can register to vote in the United States can participate in the 2024 United ",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "izenship, she can register to vote (Premise 2).\n        *   If she can register to vote, she can participate in the election (Premise 1).\n    *   Wait"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nEveryone who can register to vote in the United States can participate in the 2024 United ",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "ssian official, she might or might not be able to register (the premise is a disjunction, not a biconditional).\nWait, let's re-read Premise 6: \"Ekater"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nNew Vessel Press is a publishing house specializing in translating foreign literature into",
+          "pred": "unknown",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": " Chronicles must be in English. This is a direct logical application of the universal rule to a specific instance.\n</reasoning>\n<answer>\nYes\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nNew Vessel Press is a publishing house specializing in translating foreign literature into",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": " *Neapolitan Chronicles* and *Palace of Flies* are books published by New Vessel Press. However, there is no mention of the book *Harry Potter* in the"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nNew Vessel Press is a publishing house specializing in translating foreign literature into",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "e from Italian? No. The specific source language for *Neapolitan Chronicles* is given, but not for *Palace of Flies*.\n    *   Conclusion: Palace of Fl"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll hydrocarbons are organic compounds .\nAll alkanes are hydrocarbons\nAll organic compound",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "contains carbon.\n    - Is the mixture an organic compound? The premises don't state that.\n    - Premises 5 & 6 talk about the mixture being a chemical"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll hydrocarbons are organic compounds .\nAll alkanes are hydrocarbons\nAll organic compound",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "ic compound or a hydrocarbon.\n        *   Therefore, we cannot deduce that the mixture is an alkane.\n        *   The premises about chemical compounds"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll hydrocarbons are organic compounds .\nAll alkanes are hydrocarbons\nAll organic compound",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "This contradicts the premises (specifically 3 and 4, and the implication that alkanes are organic/hydrocarbons/chemical).\nIf a substance is an alkane,"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll humans are mortal.\nAll Greeks are humans.\n\nConclusion: Some Greeks are mortal.\n\nDoes t",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "mortal. If all Greeks are mortal, then it is true that some Greeks are mortal (assuming existence).\nIs there a case for Unknown? Only if we don't know"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nNone of the students who currently work in the library are from the computer science depar",
+          "pred": "unknown",
+          "gt": "no",
+          "correct": false,
+          "raw_end": "reaks down.\n   Let's reconsider the interpretation of premise 7.\n   \"James doesn't work in the lab or have a part-time job offered by the university.\""
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nNone of the students who currently work in the library are from the computer science depar",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "d on the premises provided.\n   However, if the premises contradict, the system is inconsistent.\n   Let's check if I misread premise 7.\n   \"James doesn"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nNone of the students who currently work in the library are from the computer science depar",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "the lab, they take the database course, are not in the library, and don't have a part-time job.\n   \n   Now apply to James:\n   We know $L(\\text{James})"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nNone of the students who currently work in the library are from the computer science depar",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "...\" might be a distractor or a typo for someone else, or perhaps it means \"James doesn't work in the library...\").\n    Let's re-read P7: \"James doesn"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf George likes music, he wants to compose.\nIf George has access to a program, he can comp",
+          "pred": "yes",
+          "gt": "yes",
+          "correct": true,
+          "raw_end": "compose and can compose, he will compose ($T$).\n4.  Therefore, the conclusion follows logically from the premises.\n</reasoning>\n<answer>\nYes\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf George likes music, he wants to compose.\nIf George has access to a program, he can comp",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "remises allow for a situation where George can compose but doesn't want to, and thus doesn't compose, meaning \u00acT does not imply \u00acC.\n\n4.  **Final check"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nA hawk never swims. \nSome birds are hawks.\n\nConclusion: All birds swim.\n\nDoes the conclusi",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "that does not swim, the statement that all birds swim is false.\n   - Thus, the conclusion contradicts the premises.\n</reasoning>\n<answer>\nNo\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nSome show airing at 8 pm on Monday gives out roses on TV.\nIf a show gives out roses on TV,",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "or)\n        3.  (Bachelor \u2192 PortraysReal) [Implicit in \"The Bachelor portrays...\"]\n        4.  (PortraysReal \u2192 RealityTV)\n        5.  BreakingBad is a"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nSome show airing at 8 pm on Monday gives out roses on TV.\nIf a show gives out roses on TV,",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "oses are given out on Monday at 8 pm.\n10. This contradicts the deduction that Breaking Bad does not give out roses.\n</reasoning>\n<answer>\nNo\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nSome show airing at 8 pm on Monday gives out roses on TV.\nIf a show gives out roses on TV,",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "ng Bad airs on Monday at 8 pm).\n   \n   Let's check the premises again.\n   Premises provided:\n   1. \"Some show airing at 8 pm on Monday gives out roses"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nHeinrich Schmidt was a German politician. \nHeinrich Schmidt was also a member of the Pruss",
+          "pred": "yes",
+          "gt": "yes",
+          "correct": true,
+          "raw_end": " Russian connection (which is not supported by the premises). Therefore, the conclusion follows from the premises.\n</reasoning>\n<answer>\nYes\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nHeinrich Schmidt was a German politician. \nHeinrich Schmidt was also a member of the Pruss",
+          "pred": "yes",
+          "gt": "yes",
+          "correct": true,
+          "raw_end": "lizes this specific fact to \"Some German politician,\" which is a direct existential instantiation of the premises.\n</reasoning>\n<answer>\nYes\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nHeinrich Schmidt was a German politician. \nHeinrich Schmidt was also a member of the Pruss",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "tag. This directly contradicts the information provided in the premises. Therefore, the conclusion does not follow.\n</reasoning>\n<answer>\nNo\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf something is a deadly disease, then it comes with a low survival rate. \nSevere cancers ",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "(CF)$ is true.\n   If we knew $D(CF)$, then $S(CF)$ would follow from the contrapositive of (2)? No, (2) is $S \\rightarrow D$. The contrapositive is $\\"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf something is a deadly disease, then it comes with a low survival rate. \nSevere cancers ",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "$\\neg (K(\\text{Colorectal}) \\land L(\\text{Colorectal}))$ where $K$ means bile duct cancer.\n\nWait, premise 6 says \"Colorectal cancer is not both a bile"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nIf something is a deadly disease, then it comes with a low survival rate. \nSevere cancers ",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "(Colorectal) \u2227 HasLowSurvival(Colorectal)).\nSince we know (IsBileDuct(Colorectal) \u2192 HasLowSurvival(Colorectal)) is true (based on the chain from 1, 2,"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll people who eat salads regularly are very conscious about their health and eating habit",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "pInHealthHome \u2194 DisregardedWellBeing).\n        *   Does this help? We need to know if she eats salads.\n        *   We know Nutrition \u2192 Salads (from P2"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll people who eat salads regularly are very conscious about their health and eating habit",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "cal well-being (i.e., she is conscious about it).\n\nNow check the Gym/Nutrition link.\nPremises: Gym \u2192 Fulfills nutrition.\nWe know \u00acA.\nFrom the chain: F"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll people who eat salads regularly are very conscious about their health and eating habit",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "C$.\nWe also have $W \\rightarrow \\neg C$.\nIf we assume someone disregards well-being ($W$), then $\\neg C$.\nIf $\\neg C$, then $\\neg S$ (from Premise 1)."
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nThe summer Olympic games is a sporting event. \nThe last summer Olympic games was in Tokyo.",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "s the world championships as a sporting event. Therefore, the conclusion cannot be inferred from the premises.\n</reasoning>\n<answer>\nUnknown\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nThe summer Olympic games is a sporting event. \nThe last summer Olympic games was in Tokyo.",
+          "pred": "unknown",
+          "gt": "no",
+          "correct": false,
+          "raw_end": " contradictory. If a statement is directly contradicted by a premise, it cannot logically follow from the premises.\n</reasoning>\n<answer>\nNo\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nThe summer Olympic games is a sporting event. \nThe last summer Olympic games was in Tokyo.",
+          "pred": "yes",
+          "gt": "yes",
+          "correct": true,
+          "raw_end": "nited States won the most medals in Tokyo, the United States won the most medals in the last summer Olympic games.\n</reasoning>\n<answer>\nYes\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAll horses have hooves.\nNo humans have hooves.\n\nConclusion: Some humans are horses.\n\nDoes ",
+          "pred": "",
+          "gt": "no",
+          "correct": false,
+          "raw_end": "orses.\n   - This contradicts the deduction that no humans are horses.\n   - Therefore, the conclusion does not follow from the premises.\n</reasoning>\n<"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nSusan flies to LGA airport.\nThe departure and arrival can not be at the same airport.\nJohn",
+          "pred": "unknown",
+          "gt": "no",
+          "correct": false,
+          "raw_end": "flight path.\n- Therefore, we cannot determine if Susan flies from LGA based on the fact that she flies to LGA.\n</reasoning>\n<answer>\nUnknown\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nSusan flies to LGA airport.\nThe departure and arrival can not be at the same airport.\nJohn",
+          "pred": "unknown",
+          "gt": "no",
+          "correct": false,
+          "raw_end": "'s flight relative to LGA. Therefore, the conclusion does not follow from the premises; it is contradicted by them.\n</reasoning>\n<answer>\nNo\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nNo one nice to animals is also mean to animals.\nSome grumpy people are mean to animals.\nAl",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "ning step-by-step.\n    *   Provide exact answer tag.\n\n    *   Step 1: Tom is a pet owner.\n    *   Step 2: Since all pet owners love animals, Tom loves"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nNo one nice to animals is also mean to animals.\nSome grumpy people are mean to animals.\nAl",
+          "pred": "unknown",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "e.\n    *   Conclusion matches the deduction.\n\n6.  **Final Check:**\n    *   Does the conclusion require knowing if Tom is grumpy? No. Even if Tom is gr"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nNo one nice to animals is also mean to animals.\nSome grumpy people are mean to animals.\nAl",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": " based on the premises, the implication is False.\nSo the answer should be No.\n\nLet me double check the logic.\nPremises:\nP1: \u00ac(Nice(x) \u2227 Mean(x))\nP2: \ufffd"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nA podcast is not a novel.\nIf a person is born in American City, the person is American.\nIf",
+          "pred": "unknown",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "on, then that person is a novel writer.\n5. Since Dani Shapiro wrote the novel \"Family History\", she meets the criteria to be considered a novel writer"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nA podcast is not a novel.\nIf a person is born in American City, the person is American.\nIf",
+          "pred": "unknown",
+          "gt": "no",
+          "correct": false,
+          "raw_end": "a novel.\n    5. This contradicts the deduction from the premises.\n    6. Thus, the conclusion does not follow.\n\n    Answer: No.cw\n</think>\n\n<reasoning"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nA podcast is not a novel.\nIf a person is born in American City, the person is American.\nIf",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "ssed?\n    \"If a person is born in American City, the person is American.\" (Universal quantifier: All people born in American City are American).\n    \""
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nSome professional basketball players are not American nationals.\nAll professional basketba",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "h a rule for non-professionals regarding nationality.\n    Step 7: Therefore, Yuri's nationality cannot be determined.\n\n    Answer: Unknown.\n\n    Wait,"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nSome professional basketball players are not American nationals.\nAll professional basketba",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "tball player\", and we know \"Yuri is not a professional basketball player\", the conclusion follows.\n\nLet's check if there's a trick regarding \"American"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nSome professional basketball players are not American nationals.\nAll professional basketba",
+          "pred": "unknown",
+          "gt": "no",
+          "correct": false,
+          "raw_end": "n professional basketball player\". Even if we didn't prove he wasn't a pro, proving he isn't a pro makes the statement false regardless of nationality"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nSome professional basketball players are not American nationals.\nAll professional basketba",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "cles.\n    *   Yuri does not activate his leg muscles.\n    *   Therefore, Yuri is not a professional basketball player.\n    *   The conclusion says: If"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nSome professional basketball players are not American nationals.\nAll professional basketba",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "onclusion is a specific implication derived from premises.\nLet's re-read the conclusion carefully: \"If Yuri is not an American professional basketball"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nEvents are either happy or sad.\nAt least one event is happy. \n\nConclusion: All events are ",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "s at least one event that is happy.\n4. Since the conclusion contradicts the premises, it does not logically follow.\n</reasoning>\n<answer>\nNo\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nThe winner of the 1992 du Maurier Classic was Steinhauer.\nSteinhauer participated in the 1",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "ot the winner. These two statements are contradictory. Therefore, the conclusion does not follow from the premises.\n</reasoning>\n<answer>\nNo\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nThe winner of the 1992 du Maurier Classic was Steinhauer.\nSteinhauer participated in the 1",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": ", only that *someone* in the tie is Belgian.\nDoes the combination of facts force Descampe to be that someone?\nIf we assume the premises are exhaustive"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nJane does not like any animals that bark.\nAll dogs are animals that bark.\nJane likes all a",
+          "pred": "no",
+          "gt": "unknown",
+          "correct": false,
+          "raw_end": "KiKi is a dog or has specific properties regarding legs/jumping that contradict the general rules.\n\nPremises 4, 5:\n4. \u2200x (Legs(x) \u2192 Jumps(x))\n5. \u2200x (T"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nJane does not like any animals that bark.\nAll dogs are animals that bark.\nJane likes all a",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "\u2192 Jumps(x)). Contrapositive: \u00acJumps(x) \u2192 \u00acLegs(x).\nPremises 5: \u2200x (Tericolous(x) \u2192 Legs(x)).\nPremises 7: (\u00acJumps(KiKi) \u2227 \u00acLegs(KiKi)) \u2192 (Tericolous(Ki"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nJane does not like any animals that bark.\nAll dogs are animals that bark.\nJane likes all a",
+          "pred": "no",
+          "gt": "yes",
+          "correct": false,
+          "raw_end": "K)) \u2192 (T(K) \u2228 L(K)).\nIf we assume \u00acL(K), then \u00acJ(K) is true. So the antecedent (\u00acJ(K) \u2227 \u00acL(K)) is true.\nThen the consequent (T(K) \u2228 L(K)) must be true"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAilton Silva, born in 1995, is commonly known as Ailton.\nAilton is a football player who w",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": "s explicitly stated to be Brazilian and plays for N\u00e1utico, the conclusion is directly contradicted by the premises.\n</reasoning>\n<answer>\nNo\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAilton Silva, born in 1995, is commonly known as Ailton.\nAilton is a football player who w",
+          "pred": "",
+          "gt": "no",
+          "correct": false,
+          "raw_end": "The conclusion states that Ailton Silva does not play for a football club, which directly contradicts the premises.\n</reasoning>\n<answer>\nNo\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAilton Silva, born in 1995, is commonly known as Ailton.\nAilton is a football player who w",
+          "pred": "no",
+          "gt": "no",
+          "correct": true,
+          "raw_end": ". The conclusion states that Ailton was not loaned out to a football club, which directly contradicts the premises.\n</reasoning>\n<answer>\nNo\n</answer>"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAilton Silva, born in 1995, is commonly known as Ailton.\nAilton is a football player who w",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": "inense in the premises.\n    *   Result: Unknown.\n\n    *   *Alternative interpretation:* Is it a contradiction? If he plays for N\u00e1utico, does that mean"
+        },
+        {
+          "config": "cfg3",
+          "subj_label": "folio",
+          "question": "Premises:\nAilton Silva, born in 1995, is commonly known as Ailton.\nAilton is a football player who w",
+          "pred": "unknown",
+          "gt": "unknown",
+          "correct": true,
+          "raw_end": " to Braga, and Braga is a football club, it logically follows that Ailton Silva was loaned out to a football club.\n</reasoning>\n<answer>\nYes\n</answer>"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+ETHICS AND RELATED DECLARATIONS
+
+Manuscript: TRA-SAE: A Low-Cost Retrieval-Augmented Expert Reasoning System for
+Mixed Physics-Logic Question Answering with a 4B Language Model
+Journal: Expert Systems (Wiley)
+
+Ethics Approval Statement
+    Not applicable. This study does not involve human participants or animal
+    subjects. It uses publicly released educational/scientific question-answering
+    datasets and open-weight language models only.
+
+Patient Consent Statement
+    Not applicable. No patients or human subjects were involved in this study.
+
+Permission to Reproduce Material from Other Sources
+    Not applicable. All figures and tables were produced by the authors. No
+    copyrighted material from third parties is reproduced in this manuscript.
+
+Clinical Trial Registration
+    Not applicable. This study is not a clinical trial.

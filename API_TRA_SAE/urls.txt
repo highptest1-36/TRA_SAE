@@ -1,0 +1,10 @@
+Prediction URL:
+https://alibi-aneurism-dupe.ngrok-free.dev/predict
+
+vLLM model URL:
+https://alibi-aneurism-dupe.ngrok-free.dev/v1/models
+
+# Both endpoints are served by the same OpenAI-compatible host (one ngrok tunnel,
+# fixed domain). /v1/models reports the served model identity for verification.
+# Base model: Qwen/Qwen3.5-4B (open-source) + 2 LoRA adapters (physics, logic);
+# total active parameters ~4B (< 8B limit).

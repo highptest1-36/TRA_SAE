@@ -1,0 +1,29 @@
+{
+  "ablation": [
+    {
+      "config_id": 3,
+      "config_name": "grpo_mixed",
+      "description": "+ GRPO mixed Phase 2",
+      "accuracy_overall": 51.15,
+      "accuracy_physics": 65.25,
+      "accuracy_logic": 25.0,
+      "n_total": 217,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_correct": 111,
+      "per_retry": {
+        "0": 100,
+        "1": 10,
+        "2": 107
+      },
+      "elapsed_min": 82.5,
+      "seed": 1337,
+      "smoke_test": false,
+      "canonical": true
+    }
+  ],
+  "version": "canonical",
+  "seed": 1337,
+  "run_timestamp": "20260609_112059",
+  "smoke_test": false
+}

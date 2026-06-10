@@ -1,0 +1,6 @@
+[resume] waiting for C2 (step9 logic) to release the GPU...
+[resume] C2 finished at 20:14:20; resuming missing C1 runs
+[resume] B6 done at 20:44:25
+[resume] B5 cot_plain done at 20:58:33
+[merge] final runs = 15 : ['B2-cot_boxed', 'B2-cot_plain', 'B2-xml', 'B3-cot_boxed', 'B3-cot_plain', 'B3-xml', 'B4-cot_boxed', 'B4-cot_plain', 'B4-xml', 'B5-cot_boxed', 'B5-cot_plain', 'B5-xml', 'B6-cot_boxed', 'B6-cot_plain', 'B6-xml']
+[resume] ALL DONE at 20:58:33

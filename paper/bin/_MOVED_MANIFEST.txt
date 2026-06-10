@@ -1,0 +1,47 @@
+Files moved to bin/ on 2026-06-10 05:02:17 — chuyển sang format elsarticle (Elsevier).
+Lý do: dọn 2 format cũ (IEEE Access + CMC/TSP) + build artifacts. KHÔNG xóa, chỉ di chuyển.
+
+  MOVED: ieeeaccess.cls   — IEEE Access class (format cũ)
+  MOVED: ieeeaccess.cls.bak   — backup IEEE Access class
+  MOVED: IEEEtran.bst   — IEEE bib style (format cũ)
+  MOVED: spotcolor.sty   — IEEE Access style
+  MOVED: logo.png   — IEEE Access logo asset
+  MOVED: notaglinelogo.png   — IEEE Access logo asset
+  MOVED: bullet.png   — IEEE Access bullet asset
+  MOVED: Definitions   — CMC/TSP template folder (tsp.cls, vancouver.bst, logos)
+  MOVED: TRA_SAE_CMC_paper.tex   — bản paper CMC (format cũ)
+  MOVED: TRA_SAE_EXACT2026_paper.tex   — IEEE Access draft/artifact
+  MOVED: TRA_SAE_EXACT2026_paper.aux   — IEEE Access draft/artifact
+  MOVED: TRA_SAE_EXACT2026_paper.bbl   — IEEE Access draft/artifact
+  MOVED: TRA_SAE_EXACT2026_paper.blg   — IEEE Access draft/artifact
+  MOVED: TRA_SAE_EXACT2026_paper.log   — IEEE Access draft/artifact
+  MOVED: TRA_SAE_EXACT2026_paper.out   — IEEE Access draft/artifact
+  MOVED: TRA_SAE_EXACT2026_paper.pdf   — IEEE Access draft/artifact
+  MOVED: TRA_SAE_final_paper.aux   — orphan artifact (không có source)
+  MOVED: TRA_SAE_final_paper.bbl   — orphan artifact (không có source)
+  MOVED: TRA_SAE_final_paper.blg   — orphan artifact (không có source)
+  MOVED: TRA_SAE_final_paper.log   — orphan artifact (không có source)
+  MOVED: TRA_SAE_final_paper.out   — orphan artifact (không có source)
+  MOVED: TRA_SAE_final_paper.pdf   — orphan artifact (không có source)
+  MOVED: missfont.log   — log lỗi font (junk)
+
+Files moved to bin/ on 2026-06-11 18:55:31 — dọn dẹp trước khi submit Expert Systems (Wiley).
+Lý do: chỉ giữ bộ Wiley/Expert Systems đang dùng ở paper/ gốc. KHÔNG xóa, chỉ di chuyển.
+
+  MOVED: TRA_SAE_paper.tex   — bản CŨ Neurocomputing (elsarticle, số liệu multi-attempt — bỏ qua)
+  MOVED: elsarticle-num.bst   — bib style của bản Neurocomputing cũ
+  MOVED: _thebib_block.tex   — block thebibliography trung gian (đã thay bằng BibTeX + references.bib)
+  MOVED: fig_decomposition.png   — figure mồ côi (không bản nào còn dùng)
+  MOVED: fig_decomposition.pdf   — figure mồ côi (không bản nào còn dùng)
+  MOVED: fig_stage_accuracy.png   — bản root CŨ; bản MỚI nằm trong format/WileyDesign/Optimal-Design-layout/
+  MOVED: fig_vs_baselines.png   — duplicate; bản dùng nằm trong format/WileyDesign/Optimal-Design-layout/
+  MOVED: artifact_manifest.json   — ghi chú experiment cũ (2026-05-27)
+  MOVED: data_quality_checks.md   — ghi chú experiment cũ (2026-05-27)
+  MOVED: EXACT2026_experiment_record.md   — ghi chú experiment cũ (2026-05-27)
+  MOVED: PAPER_PLAN.md   — kế hoạch viết paper cũ (2026-05-27)
+  MOVED: phase4_ablation_results.csv   — số liệu ablation cũ (2026-05-27)
+  MOVED: reproducibility_checklist.md   — checklist cũ (2026-05-27)
+
+GIỮ LẠI ở paper/: TRA_SAE_Wiley.tex (bản sao master), TRA_SAE_Wiley.pdf, references.bib,
+TRA_SAE_ExpertSystems_overleaf.zip (gói nộp Overleaf), cover_letter_ExpertSystems.txt,
+format/WileyDesign/Optimal-Design-layout/ (MASTER + USG.cls + .bst + figures + fonts), bin/.

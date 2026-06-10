@@ -1,0 +1,766 @@
+%% ============================================================
+%%  TRA-SAE — Mixed-domain scientific reasoning with a 4B LLM
+%%  Elsevier elsarticle format (numbered references)
+%%  Build (Overleaf or local with elsarticle installed):
+%%    pdflatex TRA_SAE_paper ; bibtex TRA_SAE_paper ; pdflatex ; pdflatex
+%% ============================================================
+\documentclass[preprint,12pt]{elsarticle}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{url}
+
+%% ---- Convenience macros ----
+\newcommand{\modelname}{\textsc{TRA-SAE}}
+\newcommand{\basemodelname}{Qwen3.5-4B}
+\newcommand{\dataset}{EXACT~2026}
+
+\journal{Neurocomputing}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{\modelname{}: A Reproducible Low-Cost Curriculum and
+       Reward-Shaping Study for Mixed-Domain Scientific Reasoning
+       with a 4B Language Model}
+
+\author[inst1]{Anonymous Author(s)}
+\affiliation[inst1]{organization={Affiliation withheld for review},
+            addressline={},
+            city={},
+            postcode={},
+            state={},
+            country={}}
+
+\begin{abstract}
+Scientific question answering couples numerical physical reasoning with
+symbolic logical inference, and resource-constrained settings frequently
+preclude large proprietary models or extensive reinforcement learning.
+This paper reports \modelname{}, a low-cost curriculum training pipeline
+for the \dataset{} mixed-domain scientific question answering task built
+on a 4B-parameter open model. The pipeline combines general supervised
+fine-tuning (SFT), a logic-focused curriculum adaptation stage, and Group
+Relative Policy Optimization (GRPO) with lightweight format, correctness,
+and unit-consistency reward terms; total training cost is \$18 and the full
+pipeline including all evaluations is below \$64 on a single
+A100-SXM4-80GB. On a 217-sample validation split, the strongest single
+configuration raises overall accuracy from $36.41\%$ (zero-shot) to
+$54.84\%$ ($69.50\%$ physics, $27.63\%$ logic); the largest single-stage
+contribution is $+12.44$ percentage points (pp) from the first SFT stage.
+McNemar tests confirm that the zero-shot-to-SFT and zero-shot-to-GRPO
+transitions are statistically significant ($p<10^{-4}$ and $p<10^{-7}$),
+whereas the GRPO-over-SFT margin is not ($p=0.21$); a three-seed evaluation
+yields $52.69\pm1.92\%$ overall accuracy. Under a fair multi-prompt
+re-evaluation, five 7B-class zero-shot baselines reach $11.5$--$29.0\%$,
+confirming that the low baseline scores are not an artifact of prompt
+formatting. On the external MMLU physics benchmark the fine-tuned model
+generalizes ($48.62\%$ versus $42.29\%$ zero-shot), and a tool-augmented
+variant (Python evaluation, Z3) yields a marginal $+0.46$~pp change. A
+structured error analysis indicates that $69.4\%$ of residual errors are
+answer-format extraction mismatches and $22.4\%$ are logical-fallacy
+errors, which implies that reported accuracies are conservative and that
+formal logic remains the principal reasoning bottleneck at this scale.
+All code, checkpoints, and evaluation scripts are released.
+\end{abstract}
+
+\begin{highlights}
+\item A three-stage curriculum (SFT, logic SFT, GRPO) raises a 4B model
+      from $36.41\%$ to $54.84\%$ on mixed-domain scientific QA for under
+      \$64 of total compute.
+\item The first (general) SFT stage accounts for the largest single-stage
+      gain ($+12.44$~pp); the GRPO-over-SFT increment is not statistically
+      significant under the validation-set size.
+\item A fair multi-prompt re-evaluation shows that 7B-class baselines
+      remain at $11.5$--$29.0\%$, ruling out prompt formatting as the cause
+      of their low scores.
+\item Fine-tuning on \dataset{} transfers to the external MMLU physics
+      benchmark ($+6.33$~pp over zero-shot).
+\item Self-consistency voting and Dual-LoRA expert routing do not improve
+      accuracy at 4B scale; most residual errors are answer-format
+      extraction mismatches.
+\end{highlights}
+
+\begin{keyword}
+large language models \sep scientific reasoning \sep
+group relative policy optimization \sep curriculum fine-tuning \sep
+physics question answering \sep logical reasoning \sep
+parameter-efficient fine-tuning
+\end{keyword}
+
+\end{frontmatter}
+
+%% ============================================================
+\section{Introduction}
+\label{sec:intro}
+%% ============================================================
+
+Large language models (LLMs) achieve strong results on mathematical and
+logical reasoning benchmarks~\cite{Wei2022,Wang2023sc,Kojima2022}.
+Deploying capable models under resource constraints, where larger
+proprietary systems are unavailable, requires the joint design of the
+training data curriculum, the reward specification, and the
+parameter-efficient adaptation strategy.
+
+Scientific reasoning presents a combined challenge. Physics problems
+require formula selection, symbolic manipulation, and unit-consistent
+numerical computation, whereas logic problems require quantifier handling,
+propositional inference, and the detection of common fallacies. The two
+modalities favor different inductive biases, yet a single model is expected
+to address both.
+
+The \dataset{} task provides a controlled testbed with $1{,}945$ training
+examples ($1{,}213$ physics, $732$ logic) and a held-out evaluation set,
+with a reported public baseline of $38.71\%$. This study treats the task
+as a proxy for mixed-domain scientific question answering and quantifies
+how far a \basemodelname{} model can be advanced using publicly available
+fine-tuning techniques under a fixed compute budget.
+
+The contributions of this paper are the following.
+\begin{itemize}
+  \item A low-cost three-stage curriculum pipeline (general SFT
+        $\rightarrow$ logic curriculum SFT $\rightarrow$ GRPO reward
+        shaping) for mixed-domain scientific question answering with a 4B
+        open model, with a full end-to-end cost below \$64 on a single
+        A100-80GB.
+  \item An attribution of accuracy gains across pipeline stages: the first
+        SFT stage contributes the largest single-stage gain
+        ($+12.44$~pp over zero-shot, $p<10^{-4}$), the logic curriculum
+        stage adds $+3.22$~pp, and GRPO adds $+2.77$~pp; the latter two
+        increments are not individually significant under the validation
+        set size, and this uncertainty is reported explicitly.
+  \item A fair multi-prompt baseline re-evaluation in which each 7B-class
+        model is evaluated under its native answer format, establishing
+        that the observed baseline scores reflect task difficulty rather
+        than prompt-format non-compliance.
+  \item An external-benchmark evaluation on MMLU physics that quantifies
+        the transfer of in-domain fine-tuning to an unseen test
+        distribution, and a tool-augmented evaluation that quantifies the
+        effect of Python and Z3 assistance on the best checkpoint.
+  \item A characterization of negative results (self-consistency voting and
+        Dual-LoRA expert routing) and a structured error taxonomy that
+        separates answer-format extraction mismatches from genuine
+        reasoning errors.
+\end{itemize}
+
+The remainder of the paper is organized as follows.
+Section~\ref{sec:related} reviews related work.
+Section~\ref{sec:problem} formalizes the task.
+Section~\ref{sec:method} describes the \modelname{} pipeline.
+Section~\ref{sec:setup} presents the experimental setup.
+Section~\ref{sec:results} reports the results and analysis.
+Section~\ref{sec:discussion} discusses limitations.
+Section~\ref{sec:conclusion} concludes.
+
+%% ============================================================
+\section{Related Work}
+\label{sec:related}
+%% ============================================================
+
+\subsection{Chain-of-Thought and Self-Consistency}
+Wei et al.~\cite{Wei2022} showed that step-by-step prompting improves LLM
+performance on arithmetic and symbolic reasoning, and
+Kojima et al.~\cite{Kojima2022} demonstrated zero-shot chain-of-thought
+prompting. Wang et al.~\cite{Wang2023sc} proposed self-consistency
+decoding, which samples multiple reasoning paths and aggregates the most
+frequent answer. The present results indicate that self-consistency
+provides no net benefit at 4B scale on this task
+(Section~\ref{sec:results}).
+
+\subsection{Mathematics and Science Language Models}
+DeepSeekMath~\cite{Shao2024} combined large-scale mathematical
+pre-training with GRPO. Qwen2.5-Math~\cite{Yang2024} and the broader Qwen
+family~\cite{Qwen2025} extended this approach across model scales.
+Llemma~\cite{Azerbayev2024} performed continued pre-training on scientific
+and proof corpora. MetaMath~\cite{Yu2023} and MAmmoTH~\cite{Yue2023}
+constructed augmented mathematical reasoning datasets. The present work
+operates at a smaller scale (4B) in a two-domain setting (physics and
+logic) and introduces a unit-consistency reward term.
+
+\subsection{Neuro-Symbolic Integration}
+Logic-LM~\cite{Pan2023} and LINC~\cite{Olausson2023} couple LLMs with
+formal solvers (Z3, first-order provers) for logical reasoning, and
+PAL~\cite{Gao2022} delegates arithmetic to a Python interpreter.
+Math-Shepherd~\cite{Wang2024mathshepherd} and process-supervision
+methods~\cite{Lightman2023} provide step-level reward labels. This study
+integrates the Z3 SMT solver into the correctness reward and into a
+tool-augmented inference variant, while relying on outcome-level rewards to
+avoid step-level annotation.
+
+\subsection{Parameter-Efficient Fine-Tuning}
+LoRA~\cite{Hu2022} decomposes weight updates into low-rank matrices, and
+QLoRA~\cite{Dettmers2023} extends it to quantized backbones.
+LoRAHub~\cite{Huang2023} composes multiple domain adapters. The Dual-LoRA
+configuration evaluated here adapts this line of work to domain-specialized
+routing.
+
+\subsection{Reinforcement Learning for Language Models}
+InstructGPT~\cite{Ouyang2022} established RLHF via PPO~\cite{Schulman2017}.
+Direct Preference Optimization~\cite{Rafailov2023} removes the explicit
+reward model. GRPO~\cite{Shao2024} computes relative rewards within a
+generation group and omits a separate value network, which makes
+single-GPU training of 4B-class models practical. Curriculum
+learning~\cite{Bengio2009} motivates the staged data ordering used in the
+present pipeline.
+
+%% ============================================================
+\section{Problem Formulation}
+\label{sec:problem}
+%% ============================================================
+
+Let $\mathcal{D}=\mathcal{D}_{\text{phys}}\cup\mathcal{D}_{\text{logic}}$
+denote the \dataset{} dataset. Each sample
+$(q_i,a_i^{*},s_i)\in\mathcal{D}$ comprises a question $q_i$, a
+ground-truth answer $a_i^{*}$, and a domain label
+$s_i\in\{\text{physics},\text{logic}\}$. A model $M$ with parameters
+$\theta$ maps a question to a free-text response
+$\hat{y}_i=M_\theta(q_i)$. A structured extraction operator recovers the
+candidate answer,
+\begin{equation}
+  a_i=\texttt{extract}(\hat{y}_i),
+\end{equation}
+and accuracy is
+\begin{equation}
+  \mathrm{Acc}=\frac{1}{|\mathcal{D}_{\text{val}}|}
+  \sum_{i=1}^{|\mathcal{D}_{\text{val}}|}
+  \mathbf{1}\!\left[\mathrm{verify}(a_i,a_i^{*},s_i,q_i)\right],
+\end{equation}
+where $\mathrm{verify}(\cdot)$ applies Z3-based symbolic checking for logic
+samples and SI-unit-normalized numerical comparison for physics samples.
+
+%% ============================================================
+\section{Methodology}
+\label{sec:method}
+%% ============================================================
+
+\subsection{Structured Response Format}
+All models, base and fine-tuned, are instructed to produce a three-tag
+response,
+\begin{equation}
+  \langle\texttt{reasoning}\rangle\ldots\langle/\texttt{reasoning}\rangle\;
+  \langle\texttt{answer}\rangle\ldots\langle/\texttt{answer}\rangle\;
+  \langle\texttt{explanation}\rangle\ldots\langle/\texttt{explanation}\rangle,
+\end{equation}
+which supports reliable answer extraction and enables a format-based reward
+term.
+
+\subsection{Phase 1: Supervised Fine-Tuning}
+\basemodelname{} is fine-tuned on the full training set ($1{,}945$ samples)
+with a cross-entropy loss on the target response. The configuration is
+3~epochs, per-device batch size 4 with gradient accumulation 4 (effective
+batch 16), learning rate $2\times10^{-4}$, LoRA $r=32$, $\alpha=64$, dropout
+$0.05$, applied to all seven projection matrices. Training completes in
+$58.8$~min on one A100-80GB and converges to a training loss of $0.3085$.
+
+\subsection{Phase 1.5: Logic Curriculum Fine-Tuning}
+A second SFT stage is restricted to the logic subset ($732$ samples) with a
+reduced learning rate of $5\times10^{-5}$ for two epochs. This curriculum
+stage~\cite{Bengio2009} allocates additional capacity to formal reasoning,
+which is under-represented ($37.6\%$ of the training data). Training
+completes in $15.7$~min and converges to a loss of $0.1326$.
+
+\subsection{Phase 2: GRPO with Reward Shaping}
+\paragraph{Reward function}
+For a completion $y$ with ground truth $a^{*}$ and domain $s$, the reward is
+\begin{equation}
+  R(y,a^{*},s)=
+    w_f\,r_{\text{format}}(y)
+   +w_c\,r_{\text{correct}}(y,a^{*},s)
+   +w_u\,r_{\text{unit}}(y,a^{*})
+   +\lambda\,\mathbf{1}[\,|y_{\text{reason}}|>800\,],
+  \label{eq:reward}
+\end{equation}
+with $w_f=0.30$, $w_c=0.60$, $w_u=0.10$, and $\lambda=-0.10$, where
+$|y_{\text{reason}}|$ is the reasoning token count. The format term awards
+$0.10$ per present tag (maximum $0.30$). The correctness term is binary and
+applies a $\le 5\%$ relative tolerance after SI-unit normalization for
+physics and normalized string or Z3-verified matching for logic. The
+unit-consistency term equals $1$ when the extracted answer carries a unit
+dimensionally compatible with the ground-truth unit, and $0$ otherwise.
+
+\paragraph{GRPO training}
+GRPO~\cite{Shao2024} is applied from the Phase~1.5 checkpoint with $K=4$
+completions per prompt. The group-normalized advantage is
+\begin{equation}
+  \hat{r}_k=\frac{R_k-\bar{R}}{\sigma_R+\epsilon},
+\end{equation}
+with KL coefficient $\beta=0.04$, learning rate $10^{-6}$, and $250$ steps.
+Training completes in $79.8$~min and reaches a loss of $0.0295$.
+
+\subsection{Dual-LoRA Expert Routing}
+As an additional configuration, two LoRA adapters are maintained, one
+physics-specialized and one logic-specialized, and each question is routed
+by a TF-IDF and logistic-regression classifier ($5{,}000$ n-gram features
+fitted on the $1{,}945$ training samples). When the router confidence
+exceeds $0.80$ the corresponding adapter is selected; otherwise a keyword
+heuristic is used. Self-consistency voting with $N=5$ samples is applied as
+a post-processing step in the full-agent configuration.
+
+%% ============================================================
+\section{Experimental Setup}
+\label{sec:setup}
+%% ============================================================
+
+\subsection{Dataset}
+Table~\ref{tab:dataset} summarizes the data split. The raw sources are a
+logic corpus and a physics problem set, combined and divided by a $90/10$
+stratified train/validation split.
+
+\begin{table}[t]
+\centering
+\caption{Dataset statistics for \dataset{}.}
+\label{tab:dataset}
+\begin{tabular}{lrrr}
+\toprule
+Split & Total & Physics & Logic \\
+\midrule
+Train & $1{,}945$ & $1{,}213$ & $732$ \\
+Validation & $217$ & $141$ & $76$ \\
+\midrule
+Total & $2{,}162$ & $1{,}354$ & $808$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Baselines}
+Six zero-shot baselines are evaluated on the $217$ validation samples:
+Qwen2.5-Math-7B-Instruct~\cite{Yang2024}, Llemma-7B~\cite{Azerbayev2024},
+Mistral-7B-Instruct-v0.3, Qwen2-Math-7B-Instruct, DeepSeek-Math-7B-Instruct,
+and Gemini-2.5-flash-lite. The first five are open-weight models executed
+locally; the last is a proprietary model accessed through an API and serves
+as a reference point. All baselines receive the same system prompt and the
+same verification protocol.
+
+\subsection{Evaluation Metric}
+The primary metric is overall accuracy; physics and logic sub-accuracies are
+reported separately. Statistical significance between configuration pairs is
+assessed by McNemar's test (two-sided, continuity-corrected), and Wilson
+score intervals are reported for overall accuracy.
+
+\subsection{Implementation Details}
+Table~\ref{tab:hyperparams} lists the principal hyper-parameters. Decoding
+uses greedy generation with a maximum of $1{,}024$ new tokens for all
+configurations and baselines, which ensures that long chains of reasoning
+reach the final answer before truncation.
+
+\begin{table}[t]
+\centering
+\caption{Principal hyper-parameters.}
+\label{tab:hyperparams}
+\begin{tabular}{ll}
+\toprule
+Parameter & Value \\
+\midrule
+Base model & \basemodelname{} (BF16) \\
+LoRA rank $r$ / $\alpha$ / dropout & $32$ / $64$ / $0.05$ \\
+SFT learning rate / epochs & $2\times10^{-4}$ / $3$ \\
+GRPO learning rate / steps & $1\times10^{-6}$ / $250$ \\
+GRPO KL coefficient $\beta$ & $0.04$ \\
+GRPO completions per prompt $K$ & $4$ \\
+Reward weights $(w_f,w_c,w_u)$ & $(0.30,0.60,0.10)$ \\
+Length penalty $\lambda$ & $-0.10$ if ${>}800$ tokens \\
+Max new tokens & $1{,}024$ \\
+GPU & A100-SXM4-80GB \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%% ============================================================
+\section{Results and Analysis}
+\label{sec:results}
+%% ============================================================
+
+\subsection{Main Results}
+Table~\ref{tab:main} reports the full comparison. The strongest
+configuration, cfg3 (SFT~$+$~logic~SFT~$+$~GRPO-mixed), reaches $54.84\%$
+overall accuracy, $18.43$~pp above the \basemodelname{} zero-shot baseline
+and above all six zero-shot baselines. The configurations are evaluated
+with up to two answer-regeneration attempts, which is the agent evaluation
+protocol used throughout the main comparison.
+
+\begin{table}[t]
+\centering
+\caption{Main results on the \dataset{} validation set ($217$ samples:
+         $141$ physics, $76$ logic). The double dagger ($\ddagger$) marks
+         McNemar $p<0.01$ versus cfg0 for the two transitions reported in
+         Table~\ref{tab:mcnemar} (cfg0$\rightarrow$cfg1,
+         cfg0$\rightarrow$cfg3).}
+\label{tab:main}
+\begin{tabular}{llrrr}
+\toprule
+& System & Overall & Physics & Logic \\
+\midrule
+\multicolumn{5}{l}{\textit{Zero-shot baselines}} \\
+B1 & \basemodelname{} (4B)            & $36.41\%$ & $45.39\%$ & $19.74\%$ \\
+B2 & Qwen2.5-Math-7B-Instruct         & $28.57\%$ & $36.17\%$ & $14.47\%$ \\
+B3 & Llemma-7B                        & $12.90\%$ & $\phantom{0}5.67\%$ & $26.32\%$ \\
+B4 & Mistral-7B-Instruct-v0.3         & $\phantom{0}9.68\%$ & $\phantom{0}6.38\%$ & $15.79\%$ \\
+B5 & Qwen2-Math-7B-Instruct           & $26.73\%$ & $33.33\%$ & $14.47\%$ \\
+B6 & DeepSeek-Math-7B-Instruct        & $11.98\%$ & $\phantom{0}9.93\%$ & $15.79\%$ \\
+B8 & Gemini-2.5-flash-lite (API)      & $24.88\%$ & $32.62\%$ & $10.53\%$ \\
+\midrule
+\multicolumn{5}{l}{\textit{Ours (fine-tuned \basemodelname{})}} \\
+cfg0 & Zero-shot                      & $36.41\%$ & $45.39\%$ & $19.74\%$ \\
+cfg1 & $+$ SFT Phase~1$^{\ddagger}$   & $48.85\%$ & $63.12\%$ & $22.37\%$ \\
+cfg2 & $+$ Logic SFT                  & $52.07\%$ & $65.25\%$ & $27.63\%$ \\
+cfg3 & $+$ GRPO-mixed$^{\ddagger}$    & $\mathbf{54.84\%}$ & $\mathbf{69.50\%}$ & $27.63\%$ \\
+cfg4 & Dual-LoRA $+$ Router           & $50.69\%$ & $62.41\%$ & $28.95\%$ \\
+cfg5 & Full Agent (SC $\times 5$)     & $52.53\%$ & $65.25\%$ & $28.95\%$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Statistical Confidence and Significance}
+Table~\ref{tab:ci} reports Wilson score intervals. The intervals for
+cfg1--cfg5 overlap substantially, which indicates that the differences among
+fine-tuned configurations are small relative to the validation-set size. The
+non-overlap between the cfg0 and cfg1 intervals supports the conclusion that
+the zero-shot-to-SFT gain is the robust effect.
+
+\begin{table}[t]
+\centering
+\caption{Overall accuracy with $95\%$ Wilson score intervals ($n=217$).
+         A representative subset of baselines is shown; the full set
+         appears in Table~\ref{tab:main}.}
+\label{tab:ci}
+\begin{tabular}{llr}
+\toprule
+& System & Overall (\%) and $95\%$ CI \\
+\midrule
+B2 & Qwen2.5-Math-7B   & $28.57$\;\;[$23.0,34.9$] \\
+B5 & Qwen2-Math-7B     & $26.73$\;\;[$21.3,33.0$] \\
+B8 & Gemini-2.5-flash-lite & $24.88$\;\;[$19.6,31.0$] \\
+B6 & DeepSeek-Math-7B  & $11.98$\;\;[$\phantom{0}8.3,17.0$] \\
+\midrule
+cfg0 & Zero-shot       & $36.41$\;\;[$30.3,43.0$] \\
+cfg1 & $+$ SFT          & $48.85$\;\;[$42.3,55.5$] \\
+cfg2 & $+$ Logic SFT    & $52.07$\;\;[$45.4,58.6$] \\
+cfg3 & $+$ GRPO-mixed   & $54.84$\;\;[$48.2,61.3$] \\
+cfg5 & Full Agent       & $52.53$\;\;[$45.9,59.1$] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:mcnemar} reports the pairwise McNemar tests computed on the
+canonical per-sample predictions. The zero-shot-to-SFT transition
+(cfg0~$\rightarrow$~cfg1) and the zero-shot-to-GRPO transition
+(cfg0~$\rightarrow$~cfg3) are both significant. The logic-SFT increment
+(cfg1~$\rightarrow$~cfg2, $p=0.10$) and the GRPO-over-SFT increment
+(cfg2~$\rightarrow$~cfg3, $p=0.21$) are not significant at the
+$0.05$ level; the self-consistency change
+(cfg3~$\rightarrow$~cfg5) is a non-significant decrease.
+
+\begin{table}[t]
+\centering
+\caption{Pairwise McNemar tests (two-sided, continuity-corrected,
+         canonical per-sample predictions, $n=217$). $b$ is the count of
+         samples where B is correct and A is wrong; $c$ is the reverse.}
+\label{tab:mcnemar}
+\begin{tabular}{lrrrrl}
+\toprule
+Pair (A~$\rightarrow$~B) & $\Delta$Acc & $b$ & $c$ & $\chi^2$ & $p$ \\
+\midrule
+cfg0~$\rightarrow$~cfg1 & $+12.44$ & $33$ & $\phantom{0}6$ & $17.33$ & $3.1\times10^{-5}$ \\
+cfg0~$\rightarrow$~cfg3 & $+18.43$ & $44$ & $\phantom{0}4$ & $31.69$ & $<10^{-7}$ \\
+cfg1~$\rightarrow$~cfg2 & $+3.22$  & $10$ & $\phantom{0}3$ & $2.77$  & $0.096$ \\
+cfg2~$\rightarrow$~cfg3 & $+2.77$  & $11$ & $\phantom{0}5$ & $1.56$  & $0.211$ \\
+cfg3~$\rightarrow$~cfg5 & $-2.31$  & $\phantom{0}5$ & $10$ & $1.07$ & $0.302$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Multi-Seed Reliability}
+Table~\ref{tab:multiseed} reports cfg3 re-evaluated with three generation
+seeds. The overall standard deviation of $1.92$~pp is comparable to the
+$+2.77$~pp GRPO-over-SFT increment, which reinforces the McNemar finding
+that the GRPO margin should be interpreted with caution.
+
+\begin{table}[t]
+\centering
+\caption{cfg3 multi-seed results (same checkpoint, three generation seeds).}
+\label{tab:multiseed}
+\begin{tabular}{lrrr}
+\toprule
+& Overall & Physics & Logic \\
+\midrule
+Seed 42   & $54.84\%$ & $69.50\%$ & $27.63\%$ \\
+Seed 1337 & $51.15\%$ & $65.25\%$ & $25.00\%$ \\
+Seed 2024 & $52.07\%$ & $65.96\%$ & $26.32\%$ \\
+\midrule
+Mean $\pm$ std & $52.69\pm1.92\%$ & $66.90\pm2.28\%$ & $26.32\pm1.32\%$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Fair Multi-Prompt Baseline Re-evaluation}
+\label{sec:fair}
+The zero-shot baselines in Table~\ref{tab:main} use a single XML-format
+prompt, which several models follow inconsistently. To separate format
+compliance from reasoning capability, each baseline is re-evaluated under
+three answer formats: XML tags, chain-of-thought with a boxed answer, and
+chain-of-thought with a plain answer line. A unified extractor recovers the
+answer in priority order, and the best score per model is reported in
+Table~\ref{tab:fair}.
+
+\begin{table}[t]
+\centering
+\caption{Fair multi-prompt re-evaluation. ``Best'' is the maximum overall
+         accuracy across the XML, boxed, and plain answer formats; the
+         selecting format is indicated ($n=217$).}
+\label{tab:fair}
+\begin{tabular}{llrr}
+\toprule
+Model & Best format & Best overall & (Physics / Logic) \\
+\midrule
+Qwen2-Math-7B-Instruct   & XML        & $29.03\%$ & $35.46$ / $17.11$ \\
+Qwen2.5-Math-7B-Instruct & XML        & $24.88\%$ & $34.75$ / $\phantom{0}6.58$ \\
+Mistral-7B-Instruct-v0.3 & plain CoT  & $16.59\%$ & $13.48$ / $22.37$ \\
+DeepSeek-Math-7B-Instruct& boxed CoT  & $12.44\%$ & $14.89$ / $\phantom{0}7.89$ \\
+Llemma-7B                & XML        & $11.52\%$ & $\phantom{0}4.96$ / $23.68$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Under the best-of-three protocol the strongest baseline reaches $29.03\%$,
+and the native answer format improves only Mistral-7B (by $+6.91$~pp over
+its XML score); the other models do not benefit. The low baseline scores
+therefore reflect task difficulty rather than format non-compliance, and
+the fine-tuned 4B model (cfg3, $54.84\%$) retains a substantial margin over
+all 7B-class baselines under this fairer protocol.
+
+\subsection{External Generalization: MMLU Physics}
+\label{sec:mmlu}
+To assess transfer beyond the in-domain split, cfg0, cfg2, and cfg3 are
+evaluated on the MMLU~\cite{Hendrycks2021} high-school physics and college
+physics subsets ($253$ four-option multiple-choice questions). No additional
+fine-tuning is performed. Table~\ref{tab:mmlu} reports the results.
+
+\begin{table}[t]
+\centering
+\caption{Zero-shot transfer to MMLU physics ($253$ questions:
+         $151$ high-school, $102$ college). No MMLU-specific training.}
+\label{tab:mmlu}
+\begin{tabular}{lrrr}
+\toprule
+Configuration & Overall & High-school & College \\
+\midrule
+cfg0 (zero-shot)     & $42.29\%$ & $41.06\%$ & $44.12\%$ \\
+cfg2 ($+$ logic SFT) & $47.04\%$ & $47.68\%$ & $46.08\%$ \\
+cfg3 ($+$ GRPO)      & $\mathbf{48.62\%}$ & $46.36\%$ & $51.96\%$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The fine-tuned configurations outperform the zero-shot model on the external
+benchmark by up to $+6.33$~pp, with monotonic improvement across the pipeline
+stages. This indicates that the in-domain curriculum transfers to an unseen
+physics test distribution rather than overfitting to the \dataset{} format.
+
+\subsection{Tool-Augmented Reasoning}
+\label{sec:tool}
+Table~\ref{tab:tool} compares direct inference with a tool-augmented variant
+of the best checkpoint, in which a Python evaluator handles physics
+arithmetic and the Z3 solver handles logic inference; the language-model
+answer is retained when the solver abstains. Both arms use single-pass
+greedy decoding.
+
+\begin{table}[t]
+\centering
+\caption{Direct versus tool-augmented inference on the best checkpoint
+         ($n=217$, single-pass). Tool activations: Python evaluator on
+         $62$ samples; the Z3 solver abstained on the remaining cases.}
+\label{tab:tool}
+\begin{tabular}{lrrr}
+\toprule
+Arm & Overall & Physics & Logic \\
+\midrule
+A: direct                 & $39.63\%$ & $49.65\%$ & $21.05\%$ \\
+B: $+$ Python / Z3 tools  & $40.09\%$ & $51.06\%$ & $19.74\%$ \\
+\midrule
+$\Delta$ (B $-$ A)        & $+0.46$   & $+1.41$   & $-1.31$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Tool augmentation yields a marginal overall change ($+0.46$~pp), with a small
+physics gain from the Python evaluator and a small logic decrease. The Z3
+solver abstained on the natural-language logic items because their premises
+were not reliably parseable into a formal specification, which limits the
+benefit of symbolic tooling under the current parser.
+
+\subsection{Reward Component Ablation}
+Table~\ref{tab:reward} reports four reward variants trained for $150$ GRPO
+steps from the Phase~1 checkpoint and evaluated under single-pass decoding,
+which isolates the reward effect from the multi-attempt agent protocol used
+in Table~\ref{tab:main}. The correctness-only variant (R4) attains the
+highest accuracy at this budget, $1.84$~pp above the full mixture (R1).
+Removing the format term (R3) reduces physics accuracy by $2.84$~pp.
+
+\begin{table}[t]
+\centering
+\caption{Reward component ablation ($150$ GRPO steps from the Phase~1
+         checkpoint, single-pass, $n=217$).}
+\label{tab:reward}
+\begin{tabular}{llrrr}
+\toprule
+& Reward configuration & Overall & Physics & Logic \\
+\midrule
+R1 & Full (format$+$correct$+$unit$+$length) & $39.63\%$ & $49.65\%$ & $21.05\%$ \\
+R2 & No unit term                            & $39.17\%$ & $49.65\%$ & $19.74\%$ \\
+R3 & No format term                          & $38.25\%$ & $46.81\%$ & $22.37\%$ \\
+R4 & Correctness only                        & $\mathbf{41.47\%}$ & $\mathbf{51.06\%}$ & $23.68\%$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+At a $150$-step budget the auxiliary unit-consistency and format terms do not
+provide a net accuracy benefit relative to a correctness-only objective. A
+plausible explanation is that the correctness reward supplies the most direct
+training signal and that auxiliary terms add gradient variance that is not
+amortized within $150$ steps; verifying whether the ordering reverses at
+longer horizons was not feasible within the compute budget.
+
+\subsection{Compute Cost}
+Table~\ref{tab:compute} summarizes the compute profile. Phase~1 SFT provides
+the highest accuracy per training dollar, and the full pipeline cost is below
+one A100-day.
+
+\begin{table}[t]
+\centering
+\caption{Compute profile on one A100-SXM4-80GB (\$3.67 per GPU-hour).}
+\label{tab:compute}
+\begin{tabular}{lrr}
+\toprule
+Stage & Time (min) & Cost \\
+\midrule
+SFT Phase 1            & $58.8$  & \$3.60 \\
+Logic SFT (Phase 1.5)  & $15.7$  & \$0.96 \\
+GRPO Phase 2 (mixed)   & $79.8$  & \$4.89 \\
+GRPO Phase 2 (physics) & $76.6$  & \$4.69 \\
+GRPO Phase 2 (logic)   & $62.9$  & \$3.85 \\
+\midrule
+Total training         & $293.8$ & \textbf{\$18.0} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Error Analysis}
+\label{sec:error}
+Table~\ref{tab:errors} reports a rule-based taxonomy of the $98$ cfg3 wrong
+predictions. The largest category is answer-format extraction mismatch
+($69.4\%$): the model produces a response whose format the automated verifier
+cannot reconcile with the ground truth, for example a numerical value where
+the ground truth is a qualitative label. The second category is
+logical-fallacy and quantifier error ($22.4\%$), which is concentrated in the
+logic subset.
+
+\begin{table}[t]
+\centering
+\caption{Error taxonomy for cfg3 wrong predictions ($98$ of $217$).}
+\label{tab:errors}
+\begin{tabular}{llrr}
+\toprule
+ID & Error type & Count & \% \\
+\midrule
+E6 & Answer-format extraction mismatch   & $68$ & $69.4$ \\
+E4 & Logical fallacy / quantifier error  & $22$ & $22.4$ \\
+E0 & Unclassified                        & $\phantom{0}5$ & $\phantom{0}5.1$ \\
+E1 & Unit or dimension error             & $\phantom{0}3$ & $\phantom{0}3.1$ \\
+E2 & Wrong formula selection             & $\phantom{0}0$ & $\phantom{0}0.0$ \\
+E3 & Arithmetic error                    & $\phantom{0}0$ & $\phantom{0}0.0$ \\
+E5 & Question misinterpretation          & $\phantom{0}0$ & $\phantom{0}0.0$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two implications follow. First, because most measured errors are extraction
+mismatches rather than reasoning failures, the reported accuracies are
+conservative lower bounds on the model's reasoning capability; the
+\dataset{} answer space mixes numerical, categorical, and free-text targets,
+which the automated verifier cannot always reconcile. Second, among genuine
+reasoning errors the logical-fallacy category dominates, which is consistent
+with the persistent physics--logic accuracy gap ($69.50\%$ versus $27.63\%$
+for cfg3) and indicates that formal logic is the principal reasoning
+bottleneck at this scale.
+
+%% ============================================================
+\section{Discussion}
+\label{sec:discussion}
+%% ============================================================
+
+\subsection{Self-Consistency at 4B Scale}
+Self-consistency is effective when errors are independent across
+samples~\cite{Wang2023sc}. The present error profile indicates that a large
+share of failures are systematic, either fixed answer-format mismatches or
+repeated quantifier errors, which majority voting reinforces rather than
+corrects. This accounts for the non-significant decrease from cfg3 to cfg5
+($-2.31$~pp, $p=0.30$) despite five times the inference compute.
+
+\subsection{Domain Routing}
+The TF-IDF and logistic-regression router classifies clean physics and logic
+items reliably, but border-zone questions, such as physics problems phrased
+as logical conditionals, are routed to the wrong adapter. The Dual-LoRA
+configuration (cfg4, $50.69\%$) does not exceed the single mixed adapter
+(cfg3, $54.84\%$), which indicates that routing noise offsets the benefit of
+domain specialization at this scale.
+
+\subsection{Limitations}
+\begin{itemize}
+  \item \emph{Validation-set size.} With $217$ samples, Wilson intervals span
+        roughly $\pm7$~pp, and differences below approximately $5$~pp are not
+        statistically separable; the GRPO-over-SFT margin
+        ($+2.77$~pp, $p=0.21$) falls in this regime.
+  \item \emph{Budget-conditional reward finding.} The advantage of the
+        correctness-only reward holds at a $150$-step budget and may not
+        persist at longer horizons.
+  \item \emph{Extraction-bounded measurement.} A majority of residual errors
+        are answer-format extraction mismatches; the reported accuracies are
+        lower bounds, and a manual annotation protocol is required to
+        quantify the gap between measured and true reasoning accuracy.
+  \item \emph{Symbolic tooling coverage.} The Z3 integration abstains on
+        natural-language logic items that are not reliably parseable, which
+        limits the benefit of the tool-augmented variant.
+  \item \emph{Logic gap.} The physics--logic accuracy gap and the
+        logical-fallacy error rate indicate that standard SFT and GRPO are
+        insufficient for formal symbolic logic at 4B scale; step-level
+        supervision~\cite{Lightman2023,Wang2024mathshepherd} or
+        solver-guided training are the most direct avenues for improvement.
+\end{itemize}
+
+%% ============================================================
+\section{Conclusion}
+\label{sec:conclusion}
+%% ============================================================
+
+This paper presented \modelname{}, a low-cost curriculum training pipeline
+for mixed-domain scientific reasoning that combines curriculum SFT, GRPO with
+lightweight reward shaping, and an optional Dual-LoRA routing agent. The
+strongest configuration reaches $54.84\%$ overall accuracy on the \dataset{}
+validation set, an $18.43$~pp improvement over the \basemodelname{} zero-shot
+baseline, using a 4B open model and under \$64 of total compute. The largest
+single-stage contribution comes from the first (general) SFT stage
+($+12.44$~pp), while the GRPO-over-SFT increment is not statistically
+separable under the validation-set size. A fair multi-prompt re-evaluation establishes that
+7B-class baselines remain at $11.5$--$29.0\%$, an external evaluation on MMLU
+physics shows positive transfer ($+6.33$~pp over zero-shot), and a
+tool-augmented variant produces only a marginal change. The error analysis
+indicates that most residual errors are answer-format extraction mismatches
+and that formal logic is the principal reasoning bottleneck. Future work
+includes scaling to 7B and 14B checkpoints, process-level reward via
+step-annotated data, cross-dataset evaluation on SciBench~\cite{Wang2024scibench}
+and GPQA~\cite{Rein2023}, and tighter integration of solver-guided training
+signals for the logic domain.
+
+%% ============================================================
+\section*{Data and Code Availability}
+All training code, checkpoints, evaluation scripts, and result files are
+released to support reproducibility.
+
+%% ---- References ----
+\bibliographystyle{elsarticle-num}
+\bibliography{references}
+
+\end{document}

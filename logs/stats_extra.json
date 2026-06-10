@@ -1,0 +1,271 @@
+{
+  "note": "CI values for cfg0-cfg3 are computed from ablation_per_sample_latest.jsonl (v2 repeat evaluation with consistent XML prompting, n=217). CI values for cfg4, cfg5, and baselines are computed via Wilson score interval from aggregate n_correct/n_total (v1 canonical evaluation). McNemar tests use v2 per-sample data. Main paper results table uses v1 canonical numbers.",
+  "n_bootstrap": 10000,
+  "ci_v2_per_sample": {
+    "0": {
+      "acc": 45.16129032258064,
+      "ci_lo": 38.70967741935484,
+      "ci_hi": 52.07373271889401,
+      "n": 217
+    },
+    "1": {
+      "acc": 50.69124423963134,
+      "ci_lo": 43.77880184331797,
+      "ci_hi": 57.14285714285714,
+      "n": 217
+    },
+    "2": {
+      "acc": 53.45622119815668,
+      "ci_lo": 46.54377880184332,
+      "ci_hi": 59.907834101382484,
+      "n": 217
+    },
+    "3": {
+      "acc": 52.53456221198156,
+      "ci_lo": 46.08294930875576,
+      "ci_hi": 58.986175115207374,
+      "n": 217
+    }
+  },
+  "ci_v1_aggregate": {
+    "0": {
+      "acc": 35.483870967741936,
+      "ci_lo": 29.420916147216268,
+      "ci_hi": 42.0518316243591,
+      "n_correct": 77,
+      "n_total": 217,
+      "name": "zero_shot",
+      "description": "Qwen3.5-4B zero-shot (no LoRA)"
+    },
+    "1": {
+      "acc": 52.53456221198156,
+      "ci_lo": 45.90436674169752,
+      "ci_hi": 59.076582060090885,
+      "n_correct": 114,
+      "n_total": 217,
+      "name": "sft_phase1",
+      "description": "+ SFT Phase 1"
+    },
+    "2": {
+      "acc": 51.61290322580645,
+      "ci_lo": 44.993781470399256,
+      "ci_hi": 58.17591322164791,
+      "n_correct": 112,
+      "n_total": 217,
+      "name": "sft_logic",
+      "description": "+ Logic SFT Phase 1.5"
+    },
+    "3": {
+      "acc": 53.91705069124424,
+      "ci_lo": 47.274391037251526,
+      "ci_hi": 60.42343892914877,
+      "n_correct": 117,
+      "n_total": 217,
+      "name": "grpo_mixed",
+      "description": "+ GRPO mixed Phase 2"
+    },
+    "4": {
+      "acc": 49.76958525345622,
+      "ci_lo": 43.17922395415892,
+      "ci_hi": 56.367962518405776,
+      "n_correct": 108,
+      "n_total": 217,
+      "name": "dual_lora_router",
+      "description": "+ Dual LoRA specialists + Router"
+    },
+    "5": {
+      "acc": 50.69124423963134,
+      "ci_lo": 44.085401461851745,
+      "ci_hi": 57.27303912045421,
+      "n_correct": 110,
+      "n_total": 217,
+      "name": "full_v2",
+      "description": "+ Self-consistency 5x (full v2 agent)"
+    }
+  },
+  "ci_baselines": {
+    "B2": {
+      "model": "Qwen2.5-Math-7B-Instruct (zero-shot)",
+      "acc": 28.57142857142857,
+      "ci_lo": 22.97439599032327,
+      "ci_hi": 34.91394595819274,
+      "acc_physics": 36.17,
+      "acc_logic": 14.47,
+      "n_correct": 62,
+      "n_total": 217
+    },
+    "B3": {
+      "model": "Llemma-7B (zero-shot)",
+      "acc": 12.903225806451612,
+      "ci_lo": 9.080289242518864,
+      "ci_hi": 18.01673284039595,
+      "acc_physics": 5.67,
+      "acc_logic": 26.32,
+      "n_correct": 28,
+      "n_total": 217
+    },
+    "B4": {
+      "model": "Mistral-7B-Instruct-v0.3 (zero-shot)",
+      "acc": 9.67741935483871,
+      "ci_lo": 6.416943745508863,
+      "ci_hi": 14.340688953311581,
+      "acc_physics": 6.38,
+      "acc_logic": 15.79,
+      "n_correct": 21,
+      "n_total": 217
+    },
+    "B5": {
+      "model": "Qwen2-Math-7B-Instruct (zero-shot)",
+      "acc": 26.72811059907834,
+      "ci_lo": 21.28228654480855,
+      "ci_hi": 32.98354718422497,
+      "acc_physics": 33.33,
+      "acc_logic": 14.47,
+      "n_correct": 58,
+      "n_total": 217
+    },
+    "B6": {
+      "model": "DeepSeek-Math-7B-Instruct (zero-shot)",
+      "acc": 11.981566820276496,
+      "ci_lo": 8.30909677908353,
+      "ci_hi": 16.97667119409003,
+      "acc_physics": 9.93,
+      "acc_logic": 15.79,
+      "n_correct": 26,
+      "n_total": 217
+    }
+  },
+  "mcnemar_tests": [
+    {
+      "comparison": "cfg0 vs cfg1",
+      "cid_a": 0,
+      "cid_b": 1,
+      "delta_acc_v1": 17.05,
+      "delta_acc_v2": 5.53,
+      "b": 18,
+      "c": 6,
+      "chi2_statistic": 5.0417,
+      "p_value": 0.02474,
+      "significance": "p<0.05 *",
+      "interpretation": "statistically significant"
+    },
+    {
+      "comparison": "cfg1 vs cfg2",
+      "cid_a": 1,
+      "cid_b": 2,
+      "delta_acc_v1": -0.92,
+      "delta_acc_v2": 2.76,
+      "b": 11,
+      "c": 5,
+      "chi2_statistic": 1.5625,
+      "p_value": 0.2113,
+      "significance": "p=0.211 n.s.",
+      "interpretation": "not statistically significant \u2014 interpret cautiously"
+    },
+    {
+      "comparison": "cfg1 vs cfg3",
+      "cid_a": 1,
+      "cid_b": 3,
+      "delta_acc_v1": 1.39,
+      "delta_acc_v2": 1.84,
+      "b": 12,
+      "c": 8,
+      "chi2_statistic": 0.45,
+      "p_value": 0.50233,
+      "significance": "p=0.502 n.s.",
+      "interpretation": "not statistically significant \u2014 interpret cautiously"
+    },
+    {
+      "comparison": "cfg2 vs cfg3",
+      "cid_a": 2,
+      "cid_b": 3,
+      "delta_acc_v1": 2.31,
+      "delta_acc_v2": -0.92,
+      "b": 7,
+      "c": 9,
+      "chi2_statistic": 0.0625,
+      "p_value": 0.80259,
+      "significance": "p=0.803 n.s.",
+      "interpretation": "not statistically significant \u2014 interpret cautiously"
+    },
+    {
+      "comparison": "cfg0 vs cfg3",
+      "cid_a": 0,
+      "cid_b": 3,
+      "delta_acc_v1": 18.44,
+      "delta_acc_v2": 7.37,
+      "b": 23,
+      "c": 7,
+      "chi2_statistic": 7.5,
+      "p_value": 0.00617,
+      "significance": "p<0.01 **",
+      "interpretation": "statistically significant"
+    }
+  ],
+  "existing_mcnemar_from_stats_results": {
+    "cfg3 vs cfg0": {
+      "comparison": "cfg3 vs cfg0",
+      "statistic": 7.5,
+      "p_value": 0.00617,
+      "b": 23,
+      "c": 7,
+      "significant_p05": true
+    },
+    "cfg1 vs cfg0": {
+      "comparison": "cfg1 vs cfg0",
+      "statistic": 5.0417,
+      "p_value": 0.024745,
+      "b": 18,
+      "c": 6,
+      "significant_p05": true
+    }
+  },
+  "multiseed_cfg3": {
+    "seeds": [
+      42,
+      1337,
+      2024
+    ],
+    "per_seed": [
+      {
+        "seed": 42,
+        "accuracy_overall": 53.46,
+        "accuracy_physics": 66.67,
+        "accuracy_logic": 28.95,
+        "n_total": 217,
+        "n_physics": 141,
+        "n_logic": 76,
+        "n_correct": 116,
+        "elapsed_min": 83.9
+      },
+      {
+        "seed": 1337,
+        "accuracy_overall": 54.38,
+        "accuracy_physics": 69.5,
+        "accuracy_logic": 26.32,
+        "n_total": 217,
+        "n_physics": 141,
+        "n_logic": 76,
+        "n_correct": 118,
+        "elapsed_min": 84.5
+      },
+      {
+        "seed": 2024,
+        "accuracy_overall": 51.61,
+        "accuracy_physics": 64.54,
+        "accuracy_logic": 27.63,
+        "n_total": 217,
+        "n_physics": 141,
+        "n_logic": 76,
+        "n_correct": 112,
+        "elapsed_min": 85.9
+      }
+    ],
+    "mean_overall": 53.15,
+    "std_overall": 1.15,
+    "mean_physics": 66.9,
+    "std_physics": 2.03,
+    "mean_logic": 27.63,
+    "std_logic": 1.07
+  }
+}

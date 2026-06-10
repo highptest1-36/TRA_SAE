@@ -1,0 +1,142 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{Wei2022,Wang2023sc,Kojima2022}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{I}{1}{Introduction}{section.1}{}}
+\citation{Wei2022}
+\citation{Wang2023sc}
+\citation{Shao2024}
+\citation{Yang2024}
+\citation{Azerbayev2024}
+\citation{Yu2023}
+\citation{Yue2023}
+\citation{Pan2023}
+\citation{Olausson2023}
+\citation{Gao2022}
+\citation{Pan2023}
+\citation{Wang2024mathshepherd}
+\citation{Hu2022}
+\citation{Huang2023}
+\citation{Ouyang2022}
+\citation{Schulman2017}
+\citation{Rafailov2023}
+\citation{Shao2024}
+\@writefile{toc}{\contentsline {section}{\numberline {II}Related Work}{2}{section.2}\protected@file@percent }
+\newlabel{sec:related}{{II}{2}{Related Work}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-A}}Chain-of-Thought and Self-Consistency}{2}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-B}}Mathematics and Science LLMs}{2}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-C}}Neuro-Symbolic Integration}{2}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-D}}Parameter-Efficient Fine-Tuning}{2}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-E}}Reinforcement Learning for LLMs}{2}{subsection.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {III}Problem Formulation}{2}{section.3}\protected@file@percent }
+\newlabel{sec:problem}{{III}{2}{Problem Formulation}{section.3}{}}
+\citation{Shao2024}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Overview of the \textsc  {TRA-SAE}{} training pipeline. All stages use LoRA ($r{=}32$, $\alpha {=}64$) on Qwen3.5-4B{}. Total training cost: \$18 on one A100-SXM4-80GB.}}{3}{figure.1}\protected@file@percent }
+\newlabel{fig:pipeline}{{1}{3}{Overview of the \modelname {} training pipeline. All stages use LoRA ($r{=}32$, $\alpha {=}64$) on \basemodelname {}. Total training cost: \$18 on one A100-SXM4-80GB}{figure.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Methodology}{3}{section.4}\protected@file@percent }
+\newlabel{sec:method}{{IV}{3}{Methodology}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}Structured XML Response Format}{3}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}Phase 1: Supervised Fine-Tuning}{3}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}Phase 1.5: Logic Curriculum SFT}{3}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-D}}Phase 2: GRPO with Reward Shaping}{3}{subsection.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-D}1}Reward Function}{3}{subsubsection.4.4.1}\protected@file@percent }
+\newlabel{eq:reward}{{4}{3}{Reward Function}{equation.4.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IV-D}1a}Format reward $r_{\text  {format}}$}{3}{paragraph.4.4.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IV-D}1b}Correctness reward $r_{\text  {correct}}$}{3}{paragraph.4.4.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IV-D}1c}Unit-consistency reward $r_{\text  {unit}}$}{3}{paragraph.4.4.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-D}2}GRPO Training}{3}{subsubsection.4.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-E}}Agent V2: Dual-LoRA Expert Routing}{3}{subsection.4.5}\protected@file@percent }
+\citation{Yang2024}
+\citation{Azerbayev2024}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Dataset statistics for EXACT\nobreakspace  {}2026{}.}}{4}{table.1}\protected@file@percent }
+\newlabel{tab:dataset}{{1}{4}{Dataset statistics for \dataset {}}{table.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Key hyper-parameters.}}{4}{table.2}\protected@file@percent }
+\newlabel{tab:hyperparams}{{2}{4}{Key hyper-parameters}{table.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Experimental Setup}{4}{section.5}\protected@file@percent }
+\newlabel{sec:setup}{{V}{4}{Experimental Setup}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}Dataset}{4}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}Baselines}{4}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Evaluation Metric}{4}{subsection.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}Implementation Details}{4}{subsection.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Results and Analysis}{4}{section.6}\protected@file@percent }
+\newlabel{sec:results}{{VI}{4}{Results and Analysis}{section.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Main results on EXACT\nobreakspace  {}2026{} validation set (217 samples, 141 physics, 76 logic). Qwen3.5-4B{} zero-shot = 35.48\% (cfg0). $\dagger $ = McNemar $p < 0.05$ vs.\ cfg0. $\ddagger $ = McNemar $p < 0.01$ vs.\ cfg0. Tests use per-sample predictions from a repeat evaluation; see Table\nobreakspace  {}\ref  {tab:mcnemar}.}}{4}{table.3}\protected@file@percent }
+\newlabel{tab:main}{{3}{4}{Main results on \dataset {} validation set (217 samples, 141 physics, 76 logic). \basemodelname {} zero-shot = 35.48\% (cfg0). $\dagger $ = McNemar $p < 0.05$ vs.\ cfg0. $\ddagger $ = McNemar $p < 0.01$ vs.\ cfg0. Tests use per-sample predictions from a repeat evaluation; see Table~\ref {tab:mcnemar}}{table.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces 95\% confidence intervals for overall accuracy (Wilson score interval from $n=217$ evaluation samples). Configs cfg0--cfg3 additionally have bootstrap CI (10,000 resamples, Eval-V2); values agree within 1\nobreakspace  {}pp.}}{4}{table.4}\protected@file@percent }
+\newlabel{tab:ci}{{4}{4}{95\% confidence intervals for overall accuracy (Wilson score interval from $n=217$ evaluation samples). Configs cfg0--cfg3 additionally have bootstrap CI (10,000 resamples, Eval-V2); values agree within 1~pp}{table.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-A}}Main Results}{4}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-B}}Statistical Confidence and Pairwise Significance}{4}{subsection.6.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Pairwise McNemar tests (continuity-corrected, two-sided, Eval-V2 per-sample predictions, $n=217$). $b$ = B correct \& A wrong; $c$ = A correct \& B wrong.}}{5}{table.5}\protected@file@percent }
+\newlabel{tab:mcnemar}{{5}{5}{Pairwise McNemar tests (continuity-corrected, two-sided, Eval-V2 per-sample predictions, $n=217$). $b$ = B correct \& A wrong; $c$ = A correct \& B wrong}{table.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-C}}Baseline Low Scores: Robustness Check}{5}{subsection.6.3}\protected@file@percent }
+\newlabel{sec:baseline_robustness}{{\mbox  {VI-C}}{5}{Baseline Low Scores: Robustness Check}{subsection.6.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-D}}Multi-Seed Reliability}{5}{subsection.6.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces cfg3 multi-seed results (3 seeds; same trained checkpoint, different generation seeds).}}{5}{table.6}\protected@file@percent }
+\newlabel{tab:multiseed}{{6}{5}{cfg3 multi-seed results (3 seeds; same trained checkpoint, different generation seeds)}{table.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Reward component ablation (150 GRPO steps from Phase\nobreakspace  {}1 SFT checkpoint, $n=217$). R4 (correctness-only) is the strongest at this budget.}}{5}{table.7}\protected@file@percent }
+\newlabel{tab:reward_ablation}{{7}{5}{Reward component ablation (150 GRPO steps from Phase~1 SFT checkpoint, $n=217$). R4 (correctness-only) is the strongest at this budget}{table.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-E}}Reward Component Ablation}{5}{subsection.6.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {VI-E}0a}Interpretation.}{5}{paragraph.6.5.0.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Compute profile on one A100-SXM4-80GB (\$3.67/GPU-hr). Training total = \$18.0; full pipeline including all evaluations = \$63.9. ``Gain/\$'' = accuracy gain over prior stage per training dollar.}}{6}{table.8}\protected@file@percent }
+\newlabel{tab:compute}{{8}{6}{Compute profile on one A100-SXM4-80GB (\$3.67/GPU-hr). Training total = \$18.0; full pipeline including all evaluations = \$63.9. ``Gain/\$'' = accuracy gain over prior stage per training dollar}{table.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Error taxonomy for cfg3 wrong predictions ($n=103$ of 217). E4 dominates, explaining the large physics/logic accuracy gap.}}{6}{table.9}\protected@file@percent }
+\newlabel{tab:errors}{{9}{6}{Error taxonomy for cfg3 wrong predictions ($n=103$ of 217). E4 dominates, explaining the large physics/logic accuracy gap}{table.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-F}}Compute Cost and Efficiency}{6}{subsection.6.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-G}}Error Analysis and Domain Asymmetry}{6}{subsection.6.7}\protected@file@percent }
+\newlabel{sec:error_analysis}{{\mbox  {VI-G}}{6}{Error Analysis and Domain Asymmetry}{subsection.6.7}{}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {VI-G}0a}Physics vs.\ logic error profile.}{6}{paragraph.6.7.0.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Accuracy gain decomposition across the \textsc  {TRA-SAE}{} pipeline. Each bar shows the change relative to the previous stage. Curriculum SFT (cfg0 $\to $ cfg1) dominates with $+17.05$\nobreakspace  {}pp; GRPO (cfg2 $\to $ cfg3) adds $+2.31$\nobreakspace  {}pp.}}{6}{figure.2}\protected@file@percent }
+\newlabel{fig:decomposition}{{2}{6}{Accuracy gain decomposition across the \modelname {} pipeline. Each bar shows the change relative to the previous stage. Curriculum SFT (cfg0 $\to $ cfg1) dominates with $+17.05$~pp; GRPO (cfg2 $\to $ cfg3) adds $+2.31$~pp}{figure.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {VI-G}0b}Implication.}{6}{paragraph.6.7.0.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-H}}Key Findings}{6}{subsection.6.8}\protected@file@percent }
+\citation{Wang2023sc}
+\citation{Wang2024scibench}
+\citation{Rein2023}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Representative SC failure patterns from cfg5 ($N=5$ samples). In each case, all 5 samples agree on the same wrong answer.}}{7}{table.10}\protected@file@percent }
+\newlabel{tab:sc_failures}{{10}{7}{Representative SC failure patterns from cfg5 ($N=5$ samples). In each case, all 5 samples agree on the same wrong answer}{table.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Discussion}{7}{section.7}\protected@file@percent }
+\newlabel{sec:discussion}{{VII}{7}{Discussion}{section.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-A}}When Does Self-Consistency Fail?}{7}{subsection.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-B}}Router Limitations}{7}{subsection.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VII-C}}Limitations}{7}{subsection.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VIII}Conclusion}{7}{section.8}\protected@file@percent }
+\newlabel{sec:conclusion}{{VIII}{7}{Conclusion}{section.8}{}}
+\bibstyle{IEEEtran}
+\bibdata{references}
+\bibcite{Wei2022}{1}
+\bibcite{Wang2023sc}{2}
+\bibcite{Kojima2022}{3}
+\bibcite{Shao2024}{4}
+\bibcite{Yang2024}{5}
+\bibcite{Azerbayev2024}{6}
+\bibcite{Yu2023}{7}
+\bibcite{Yue2023}{8}
+\bibcite{Pan2023}{9}
+\bibcite{Olausson2023}{10}
+\bibcite{Gao2022}{11}
+\bibcite{Wang2024mathshepherd}{12}
+\bibcite{Hu2022}{13}
+\bibcite{Huang2023}{14}
+\bibcite{Ouyang2022}{15}
+\bibcite{Schulman2017}{16}
+\bibcite{Rafailov2023}{17}
+\bibcite{Wang2024scibench}{18}
+\bibcite{Rein2023}{19}
+\@writefile{toc}{\contentsline {section}{REFERENCES}{8}{section*.2}\protected@file@percent }
+\gdef \@abspage@last{8}

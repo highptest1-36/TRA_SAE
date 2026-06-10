@@ -1,0 +1,4 @@
+Best config = cfg3 (acc=54.84%), 98 errors total.
+Wrote 50 rows → /content/drive/MyDrive/TRA-SAE/logs/manual_error_template.csv
+Fill the 'manual_label' column (FS/UC/AR/PU/LE/AX), save as manual_error_filled.csv, then re-run with --score.
+Taxonomy: {'FS': 'formula_selection', 'UC': 'unit_conversion', 'AR': 'arithmetic', 'PU': 'problem_understanding', 'LE': 'logic_entailment', 'AX': 'answer_extraction'}

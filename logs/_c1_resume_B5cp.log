@@ -1,0 +1,64 @@
+[20:44:26] Running 1 baselines × 1 strategies  | retrieval=True
+[20:44:26] Baselines: ['B5']
+[20:44:26] Strategies: ['cot_plain']
+[20:44:28] Val samples: 217
+[20:44:28] --with-retrieval: building retriever over /content/drive/MyDrive/TRA-SAE/processed_data/exact_train
+[Retriever] Built TF-IDF index: 1945 docs, 6166 features
+[Retriever] Subject distribution: {'logic': 732, 'physics': 1213}
+[20:44:30] retrieval exemplars built for 217/217 samples
+
+[20:44:33] ============================================================
+[20:44:33]  B5 (Qwen2-Math-7B-Instruct) | strategy=cot_plain
+[20:44:33] ============================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:03<19:49,  3.52s/it]Loading weights:   1%|          | 2/339 [00:03<09:08,  1.63s/it]Loading weights:   1%|▏         | 5/339 [00:03<02:43,  2.05it/s]Loading weights:   5%|▌         | 18/339 [00:04<00:31, 10.20it/s]Loading weights:   9%|▉         | 30/339 [00:04<00:16, 18.97it/s]Loading weights:  12%|█▏        | 42/339 [00:04<00:10, 28.75it/s]Loading weights:  16%|█▌        | 54/339 [00:04<00:07, 38.98it/s]Loading weights:  19%|█▉        | 66/339 [00:04<00:05, 49.15it/s]Loading weights:  23%|██▎       | 78/339 [00:04<00:04, 58.77it/s]Loading weights:  27%|██▋       | 90/339 [00:04<00:03, 66.94it/s]Loading weights:  30%|███       | 102/339 [00:04<00:03, 73.77it/s]Loading weights:  34%|███▎      | 114/339 [00:05<00:02, 79.02it/s]Loading weights:  37%|███▋      | 126/339 [00:05<00:02, 83.26it/s]Loading weights:  41%|████      | 138/339 [00:05<00:02, 86.54it/s]Loading weights:  44%|████▍     | 150/339 [00:05<00:02, 88.42it/s]Loading weights:  48%|████▊     | 162/339 [00:05<00:01, 90.11it/s]Loading weights:  51%|█████▏    | 174/339 [00:05<00:01, 91.09it/s]Loading weights:  55%|█████▍    | 186/339 [00:05<00:01, 92.07it/s]Loading weights:  58%|█████▊    | 198/339 [00:05<00:01, 92.75it/s]Loading weights:  62%|██████▏   | 210/339 [00:06<00:01, 92.91it/s]Loading weights:  65%|██████▌   | 222/339 [00:06<00:01, 92.46it/s]Loading weights:  69%|██████▊   | 233/339 [00:06<00:01, 89.73it/s]Loading weights:  73%|███████▎  | 246/339 [00:06<00:01, 90.70it/s]Loading weights:  76%|███████▌  | 258/339 [00:06<00:00, 91.53it/s]Loading weights:  79%|███████▉  | 268/339 [00:06<00:00, 87.70it/s]Loading weights:  83%|████████▎ | 282/339 [00:06<00:00, 93.91it/s]Loading weights:  87%|████████▋ | 294/339 [00:07<00:00, 93.31it/s]Loading weights:  90%|█████████ | 306/339 [00:07<00:00, 93.49it/s]Loading weights:  94%|█████████▍| 318/339 [00:07<00:00, 93.07it/s]Loading weights:  97%|█████████▋| 330/339 [00:07<00:00, 93.79it/s]Loading weights: 100%|██████████| 339/339 [00:07<00:00, 45.72it/s]
+[20:44:43]  Loaded  VRAM 14.2/39GB
+[z3_engine] z3-solver not installed — Z3Engine.verify() always returns None
+[20:45:17]  8/217 | acc=25.0% | 0.6min  VRAM 15.6/39GB
+[20:45:44]  16/217 | acc=25.0% | 1.0min  VRAM 15.6/39GB
+[20:46:08]  24/217 | acc=20.8% | 1.4min  VRAM 15.6/39GB
+[20:46:37]  32/217 | acc=15.6% | 1.9min  VRAM 15.6/39GB
+[20:47:17]  40/217 | acc=15.0% | 2.6min  VRAM 16.3/39GB
+[20:47:51]  48/217 | acc=16.7% | 3.1min  VRAM 16.3/39GB
+[20:48:13]  56/217 | acc=19.6% | 3.5min  VRAM 16.3/39GB
+[20:48:33]  64/217 | acc=23.4% | 3.8min  VRAM 16.3/39GB
+[20:49:09]  72/217 | acc=23.6% | 4.4min  VRAM 17.1/39GB
+[20:49:39]  80/217 | acc=26.2% | 4.9min  VRAM 17.1/39GB
+[20:50:07]  88/217 | acc=26.1% | 5.4min  VRAM 17.1/39GB
+[20:50:31]  96/217 | acc=27.1% | 5.8min  VRAM 17.1/39GB
+[20:50:59]  104/217 | acc=27.9% | 6.3min  VRAM 17.1/39GB
+[20:51:38]  112/217 | acc=26.8% | 6.9min  VRAM 17.1/39GB
+[20:52:06]  120/217 | acc=25.0% | 7.4min  VRAM 17.1/39GB
+[20:52:36]  128/217 | acc=26.6% | 7.9min  VRAM 17.1/39GB
+[20:52:53]  136/217 | acc=27.9% | 8.2min  VRAM 17.1/39GB
+[20:53:29]  144/217 | acc=27.8% | 8.8min  VRAM 17.1/39GB
+[20:53:59]  152/217 | acc=27.0% | 9.3min  VRAM 17.1/39GB
+[20:54:28]  160/217 | acc=26.9% | 9.7min  VRAM 17.1/39GB
+[20:54:56]  168/217 | acc=26.8% | 10.2min  VRAM 17.1/39GB
+[20:55:29]  176/217 | acc=26.1% | 10.8min  VRAM 17.1/39GB
+[20:55:55]  184/217 | acc=26.1% | 11.2min  VRAM 17.1/39GB
+[20:56:24]  192/217 | acc=26.0% | 11.7min  VRAM 17.1/39GB
+[20:57:03]  200/217 | acc=25.5% | 12.3min  VRAM 17.1/39GB
+[20:57:42]  208/217 | acc=25.5% | 13.0min  VRAM 17.1/39GB
+[20:58:11]  216/217 | acc=25.5% | 13.5min  VRAM 17.1/39GB
+[20:58:31]  217/217 | acc=25.3% | 13.8min  VRAM 17.2/39GB
+[20:58:31]  RESULT: overall=25.35%  phys=29.79%  logic=17.11%  (13.8min)
+[20:58:31]  Saved → /content/drive/MyDrive/TRA-SAE/logs/fair_baselines_retrieval_results_latest.json
+
+[20:58:31] ╔════════════════════════════════════════════════════════════════════════╗
+[20:58:31] ║ FAIR BASELINE SUMMARY                                                  ║
+[20:58:31] ╠════════════════════════════════════════════════════════════════════════╣
+[20:58:31] ║ ID   Strategy      Overall  Physics    Logic Description                ║
+[20:58:31] ╠════════════════════════════════════════════════════════════════════════╣
+[20:58:31] ║ --- ORIGINAL RESULTS (step3, XML-forcing) ---                         ║
+[20:58:31] ║ B2   xml_orig       28.57%   36.17%   14.47%                            ║
+[20:58:31] ║ B3   xml_orig       12.90%    5.67%   26.32%                            ║
+[20:58:31] ║ B4   xml_orig        9.68%    6.38%   15.79%                            ║
+[20:58:31] ║ B5   xml_orig       26.73%   33.33%   14.47%                            ║
+[20:58:31] ║ B6   xml_orig       11.98%    9.93%   15.79%                            ║
+[20:58:31] ╠════════════════════════════════════════════════════════════════════════╣
+[20:58:31] ║ --- NEW RESULTS ---                                                    ║
+[20:58:31] ║ B5   cot_plain      25.35%   29.79%   17.11%                            ║
+[20:58:31] ╚════════════════════════════════════════════════════════════════════════╝
+[20:58:31] Saved: /content/drive/MyDrive/TRA-SAE/logs/fair_baselines_retrieval_results_latest.json

@@ -1,0 +1,26 @@
+================================================================
+CHECK 1-2: canonical ablation
+  [OK ] cfg0 zero_shot          acc= 36.41%  141+76=217 (n=217)
+  [OK ] cfg1 sft_phase1         acc= 48.85%  141+76=217 (n=217)
+  [OK ] cfg2 sft_logic          acc= 52.07%  141+76=217 (n=217)
+  [OK ] cfg3 grpo_mixed         acc= 54.84%  141+76=217 (n=217)
+  [OK ] cfg4 dual_lora_router   acc= 50.69%  141+76=217 (n=217)
+  [OK ] cfg5 full_v2            acc= 52.53%  141+76=217 (n=217)
+
+CHECK 3: per-sample JSONL coverage
+  per-config rows: {0: 217, 1: 217, 2: 217, 3: 217, 4: 217, 5: 217}
+
+CHECK 4: drift vs OLD qwen35_ablation.json (V1) — paper numbers to update
+  cfg0: V1= 35.48%  canonical= 36.41%  Δ=+0.93pp
+  cfg1: V1= 52.53%  canonical= 48.85%  Δ=-3.68pp  <-- CHANGED
+  cfg2: V1= 51.61%  canonical= 52.07%  Δ=+0.46pp
+  cfg3: V1= 53.92%  canonical= 54.84%  Δ=+0.92pp
+  cfg4: V1= 49.77%  canonical= 50.69%  Δ=+0.92pp
+  cfg5: V1= 50.69%  canonical= 52.53%  Δ=+1.84pp  <-- CHANGED
+
+CHECK 5: baselines denominator
+  7 baselines checked
+
+================================================================
+
+ALL CONSISTENCY CHECKS PASSED — safe to rebuild paper tables.

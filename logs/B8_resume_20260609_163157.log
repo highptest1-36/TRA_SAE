@@ -1,0 +1,41 @@
+GEMINI_MODEL=gemini-2.5-flash-lite  GEMINI_key_len=39  HF_key_len=37
+[16:31:57] ── STEP 3: Baseline Evaluation ──────────────────────────────
+Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+[16:31:58] HF login OK  →  user=CaoPhuc  token=hf_...oIsB
+[16:32:04]  DynamicCache.from_legacy_cache shim applied (transformers compat)
+Only running: ['B8']
+
+[16:32:04] [1] Loading val dataset
+[16:32:08]     Eval samples: 217  (smoke=False)
+[16:32:08]     Resuming — already done (no error): {'B3', 'B6', 'B5', 'B4', 'B2'}
+[16:32:08]     Models to run: ['B8']
+  Gemini via OpenAI-compat: model=gemini-2.5-flash-lite  base_url=https://generativelanguage.googleapis.com/v1beta/openai/
+    1/217  acc=0.0%
+[z3_engine] z3-solver not installed — Z3Engine.verify() always returns None
+    21/217  acc=14.3%
+    41/217  acc=17.1%
+    61/217  acc=21.3%
+    81/217  acc=23.5%
+    101/217  acc=27.7%
+    121/217  acc=24.8%
+    141/217  acc=24.1%
+    161/217  acc=24.8%
+    181/217  acc=24.9%
+    201/217  acc=24.4%
+[16:43:45]  ✔ B8 saved → overall=24.88%  phys=32.62%  logic=10.53%  (11.6 min)
+
+[16:43:45] ============================================================
+[16:43:45]  ALL BASELINES DONE  (11.6 min total)
+[16:43:45] ============================================================
+[16:43:45]  ID    Model                                        Overall     Phys    Logic  Status
+[16:43:45]  --------------------------------------------------------------------------------
+[16:43:45]  B2    Qwen/Qwen2.5-Math-7B-Instruct                 28.57%   36.17%   14.47%  OK
+[16:43:45]  B5    Qwen/Qwen2-Math-7B-Instruct                   26.73%   33.33%   14.47%  OK
+[16:43:45]  B8    gemini-2.5-flash-lite                         24.88%   32.62%   10.53%  OK
+[16:43:45]  B3    EleutherAI/llemma_7b                          12.90%    5.67%   26.32%  OK
+[16:43:45]  B6    deepseek-ai/deepseek-math-7b-instruct         11.98%    9.93%   15.79%  OK
+[16:43:45]  B4    mistralai/Mistral-7B-Instruct-v0.3             9.68%    6.38%   15.79%  OK
+[16:43:45]  B8    N/A                                            0.00%    0.00%    0.00%  ERROR: no GEMINI_API_KEY
+[16:43:45]  ================================================================================
+[16:43:45]  Saved → /content/drive/MyDrive/TRA-SAE/logs/baselines_20260609_163202.json
+=== B8 EXIT CODE: 0 ===

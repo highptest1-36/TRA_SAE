@@ -138,6 +138,19 @@ BASELINES = [
         "type": "hf", "chat_template": True,
         "desc": "DeepSeek-Math-7B-Instruct (zero-shot)",
     },
+    {
+        "id": "B7", "model_id": "Qwen/Qwen2.5-7B-Instruct",
+        "type": "hf", "chat_template": True,
+        "desc": "Qwen2.5-7B-Instruct general (zero-shot)",
+    },
+    {
+        # Commercial API reference. Swapped gpt-4o-mini -> Gemini Flash, called
+        # via Gemini's OpenAI-compatible endpoint (no extra dependency).
+        # Override the model with env GEMINI_MODEL (e.g. gemini-3.5-flash).
+        "id": "B8", "model_id": os.environ.get("GEMINI_MODEL", "gemini-2.5-flash"),
+        "type": "gemini", "chat_template": True,
+        "desc": "Gemini Flash commercial reference (zero-shot, API)",
+    },
 ]
 
 # Filter by --only-ids
@@ -363,6 +376,66 @@ def _run_openai_baseline(baseline: dict, samples: list) -> dict:
     return _build_result(baseline, N, correct_arr, subjects, time.time() - t_start)
 
 
+def _run_gemini_baseline(baseline: dict, samples: list) -> dict:
+    """Run a Gemini model via Gemini's OpenAI-compatible endpoint.
+
+    Reuses the `openai` SDK (no extra dependency) pointed at Google's
+    /v1beta/openai/ endpoint. Identical eval logic to _run_openai_baseline.
+    Auth: env GEMINI_API_KEY (or GOOGLE_API_KEY). Model: baseline['model_id']
+    (default from env GEMINI_MODEL). Endpoint override: env GEMINI_BASE_URL.
+    """
+    try:
+        from openai import OpenAI
+    except ImportError:
+        print("  openai package not found. pip install openai")
+        return {"id": baseline["id"], "error": "openai not installed"}
+
+    api_key = (os.environ.get("GEMINI_API_KEY", "")
+               or os.environ.get("GOOGLE_API_KEY", ""))
+    if not api_key:
+        print("  WARNING: GEMINI_API_KEY (or GOOGLE_API_KEY) not set — skipping B8")
+        return {"id": baseline["id"], "error": "no GEMINI_API_KEY"}
+
+    model    = baseline.get("model_id") or os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+    base_url = os.environ.get(
+        "GEMINI_BASE_URL", "https://generativelanguage.googleapis.com/v1beta/openai/")
+    client = OpenAI(api_key=api_key, base_url=base_url)
+    print(f"  Gemini via OpenAI-compat: model={model}  base_url={base_url}", flush=True)
+
+    N = len(samples)
+    questions = [s.get("question", "")
+                 or (s["prompt"][-1]["content"] if s.get("prompt") else "")
+                 for s in samples]
+    gts      = [str(s.get("answer", "")) for s in samples]
+    subjects = [str(s.get("type", ""))   for s in samples]
+    correct_arr = [False] * N
+    t_start = time.time()
+
+    for i, (q, gt, subj) in enumerate(zip(questions, gts, subjects)):
+        try:
+            resp = client.chat.completions.create(
+                model=model,
+                messages=[
+                    {"role": "system", "content": SYSTEM_PROMPT},
+                    {"role": "user",   "content": q},
+                ],
+                max_tokens=1024,
+                temperature=0.0,
+            )
+            raw  = resp.choices[0].message.content or ""
+            pred = extract_answer_from_text(raw)
+            correct_arr[i] = verify_answer(
+                pred, gt, subject=subj, question_text=q, use_z3=True)
+        except Exception as exc:
+            print(f"  API error at sample {i}: {exc}")
+        if i % 20 == 0:
+            done = i + 1
+            print(f"    {done}/{N}  acc={sum(correct_arr[:done])/done*100:.1f}%", flush=True)
+        time.sleep(0.2)  # rate-limit guard
+
+    return _build_result(baseline, N, correct_arr, subjects, time.time() - t_start)
+
+
 def _build_result(baseline, N, correct_arr, subjects, elapsed_sec):
     correct_all = correct_phys = correct_logic = 0
     n_phys = n_logic = 0
@@ -423,6 +496,8 @@ for baseline in BASELINES:
             result = _run_hf_baseline(baseline, samples)
         elif baseline["type"] == "openai":
             result = _run_openai_baseline(baseline, samples)
+        elif baseline["type"] == "gemini":
+            result = _run_gemini_baseline(baseline, samples)
         else:
             print(f"[{_ts()}]   Unknown type: {baseline['type']}")
             continue

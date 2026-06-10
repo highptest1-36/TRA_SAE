@@ -1,0 +1,46 @@
+FIGURE LEGENDS / CAPTIONS
+=========================
+
+Manuscript: TRA-SAE: A Low-Cost Retrieval-Augmented Expert Reasoning System for
+Mixed Physics-Logic Question Answering with a 4B Language Model
+Journal: Expert Systems (Wiley)
+
+All figures are the authors' own work (no permission to reproduce required).
+Files are supplied as 300-dpi PDF (primary) and PNG. All figures are cited in
+the manuscript text.
+
+------------------------------------------------------------------------------
+Figure 1  (file: Figure_1_TRA_SAE_Overview.pdf  /  tex: fig1_pipeline)
+------------------------------------------------------------------------------
+Overview of the TRA-SAE training and inference pipeline. Stage 1 performs
+general supervised fine-tuning; Stage 2 applies a logic-focused curriculum
+stage; Stage 3 applies GRPO with a composite reward. At inference, the
+fine-tuned configurations retrieve three in-context exemplars. Optional
+Dual-LoRA routing and self-consistency voting are evaluated as additional
+configurations.
+
+------------------------------------------------------------------------------
+Figure 2  (file: Figure_2_Pipeline_Accuracy.pdf  /  tex: fig_stage_accuracy)
+------------------------------------------------------------------------------
+Overall, physics, and logic accuracy across the pipeline stages under a single
+greedy decoding pass; cfg0-R (shaded) is the retrieval-only control (base model
+with retrieval, no fine-tuning). The dashed line marks the best overall accuracy
+(cfg3, 47.47%). Physics accuracy increases monotonically through cfg3, whereas
+logic accuracy remains below 23% for all configurations.
+
+------------------------------------------------------------------------------
+Figure 3  (file: Figure_3_Baseline_Comparison.pdf  /  tex: fig_vs_baselines)
+------------------------------------------------------------------------------
+Overall accuracy of the fine-tuned 4B model (cfg3) against the six zero-shot
+baselines under the fair best-of-three protocol. The fine-tuned model exceeds
+the strongest baseline by 18.4 pp.
+
+------------------------------------------------------------------------------
+ADVISORY NOTE (please review Figure 1 wording before submission)
+------------------------------------------------------------------------------
+The manuscript reports that GRPO reward shaping adds NO statistically separable
+benefit over SFT. If the Figure 1 diagram presents the GRPO stage with any
+"winning/trophy/best" emphasis, soften that wording so the figure is consistent
+with the paper's conclusion (retrieval and SFT carry the gain; GRPO does not
+provide a significant improvement). The current PDF/PNG were exported from the
+manuscript's fig1_pipeline source.

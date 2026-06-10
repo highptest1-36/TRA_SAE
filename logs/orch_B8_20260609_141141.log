@@ -1,0 +1,26 @@
+[14:11:41] ── STEP 3: Baseline Evaluation ──────────────────────────────
+[14:11:41] WARNING: HF_TOKEN not set — gated models (B5) will fail.
+[14:11:41]   Run:  HF_TOKEN=hf_... python experiments/step3_baselines.py
+[14:11:45]  DynamicCache.from_legacy_cache shim applied (transformers compat)
+Only running: ['B8']
+
+[14:11:45] [1] Loading val dataset
+[14:11:46]     Eval samples: 217  (smoke=False)
+[14:11:46]     Resuming — already done (no error): {'B3', 'B6', 'B2', 'B4', 'B5'}
+[14:11:46]     Models to run: ['B8']
+  WARNING: GEMINI_API_KEY (or GOOGLE_API_KEY) not set — skipping B8
+[14:11:47]  ✔ B8 saved → FAILED (no GEMINI_API_KEY...)  (0 min)
+
+[14:11:47] ============================================================
+[14:11:47]  ALL BASELINES DONE  (0.0 min total)
+[14:11:47] ============================================================
+[14:11:47]  ID    Model                                        Overall     Phys    Logic  Status
+[14:11:47]  --------------------------------------------------------------------------------
+[14:11:47]  B2    Qwen/Qwen2.5-Math-7B-Instruct                 28.57%   36.17%   14.47%  OK
+[14:11:47]  B5    Qwen/Qwen2-Math-7B-Instruct                   26.73%   33.33%   14.47%  OK
+[14:11:47]  B3    EleutherAI/llemma_7b                          12.90%    5.67%   26.32%  OK
+[14:11:47]  B6    deepseek-ai/deepseek-math-7b-instruct         11.98%    9.93%   15.79%  OK
+[14:11:47]  B4    mistralai/Mistral-7B-Instruct-v0.3             9.68%    6.38%   15.79%  OK
+[14:11:47]  B8    N/A                                            0.00%    0.00%    0.00%  ERROR: no GEMINI_API_KEY
+[14:11:47]  ================================================================================
+[14:11:47]  Saved → /content/drive/MyDrive/TRA-SAE/logs/baselines_20260609_141143.json

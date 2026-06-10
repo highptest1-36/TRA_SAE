@@ -1,0 +1,126 @@
+{
+  "run_ts": "20260609_164507",
+  "smoke_test": true,
+  "n_val": 10,
+  "results": [
+    {
+      "id": "B2",
+      "strategy": "cot_boxed",
+      "model_id": "Qwen/Qwen2.5-Math-7B-Instruct",
+      "description": "Qwen2.5-Math-7B-Instruct [cot_boxed]",
+      "system_prompt": "You are an expert in Logic and Physics. Solve the problem step by step. At the end, write your final...",
+      "n_total": 10,
+      "n_correct": 2,
+      "n_physics": 7,
+      "n_logic": 3,
+      "n_phys_correct": 2,
+      "n_logic_correct": 0,
+      "accuracy_overall": 20.0,
+      "accuracy_physics": 28.57,
+      "accuracy_logic": 0.0,
+      "elapsed_min": 1.7,
+      "per_sample": [
+        {
+          "bid": "B2",
+          "strategy": "cot_boxed",
+          "question_id": 0,
+          "subject": "physics",
+          "prediction_raw": "To determine the factor by which the angular frequency must be multiplied for resonance to occur in an RLC series circuit, we need to understand the condition for resonance. Resonance occurs when the inductive reactance \\(X_L\\) equals the capacitive reactance \\(X_C\\).\n\nGiven:\n- At angular frequency ",
+          "prediction_extracted": ":",
+          "ground_truth": "2.0",
+          "correct": false
+        },
+        {
+          "bid": "B2",
+          "strategy": "cot_boxed",
+          "question_id": 1,
+          "subject": "physics",
+          "prediction_raw": "To determine the charge on the capacitor after it is disconnected from the power source, we can use the relationship between charge, capacitance, and voltage. The formula that relates these quantities is:\n\n\\[ Q = C \\times V \\]\n\nwhere:\n- \\( Q \\) is the charge on the capacitor,\n- \\( C \\) is the capaci",
+          "prediction_extracted": "100  C",
+          "ground_truth": "Do not change",
+          "correct": false
+        },
+        {
+          "bid": "B2",
+          "strategy": "cot_boxed",
+          "question_id": 2,
+          "subject": "logic",
+          "prediction_raw": "To determine which statement is true based on the given premises, let's analyze each part of the statement step by step.\n\n1. **If a student does not follow the school rules and if a student violates the school rules, they will be disciplined and banned from extracurricular activities.**\n   - From pr",
+          "prediction_extracted": "\\boxed{A}",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B2",
+          "strategy": "cot_boxed",
+          "question_id": 3,
+          "subject": "physics",
+          "prediction_raw": "To find the energy stored in a capacitor, we use the formula for the energy \\( U \\) stored in a capacitor, which is given by:\n\n\\[ U = \\frac{1}{2} C V^2 \\]\n\nwhere \\( C \\) is the capacitance and \\( V \\) is the potential difference across the capacitor. However, we can also use the formula that directl",
+          "prediction_extracted": "0.135",
+          "ground_truth": "0.135 J",
+          "correct": true
+        },
+        {
+          "bid": "B2",
+          "strategy": "cot_boxed",
+          "question_id": 4,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement \"If there exists at least one object x that has property R, does it follow that there exists at least one object x that has property R?\" is true, we need to analyze the given premises and their implications step by step.\n\nLet's start by summarizing the premises:\n\n1. If ",
+          "prediction_extracted": "\\boxed{Yes}",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B2",
+          "strategy": "cot_boxed",
+          "question_id": 5,
+          "subject": "physics",
+          "prediction_raw": "To find the resultant electric field strength at point C, we need to calculate the electric field due to each charge separately and then add them vectorially. Since point C lies on the perpendicular bisector of AB, the electric fields due to \\( q_1 \\) and \\( q_2 \\) will have the same magnitude but o",
+          "prediction_extracted": "1.44  107 \\, N/C",
+          "ground_truth": "1.152 \u00d7 10^7 V/m",
+          "correct": false
+        },
+        {
+          "bid": "B2",
+          "strategy": "cot_boxed",
+          "question_id": 6,
+          "subject": "physics",
+          "prediction_raw": "To find the net electric field strength at point M, we need to calculate the electric field due to each charge separately and then sum them up. The electric field due to a point charge \\( q \\) at a distance \\( r \\) is given by the formula:\n\n\\[ E = k \\frac{q}{r^2} \\]\n\nwhere \\( k \\) is Coulomb's const",
+          "prediction_extracted": "35730.00",
+          "ground_truth": "2.36*10^7 V/m",
+          "correct": false
+        },
+        {
+          "bid": "B2",
+          "strategy": "cot_boxed",
+          "question_id": 7,
+          "subject": "logic",
+          "prediction_raw": "To determine which statement can be inferred from the given premises, we need to analyze each premise and their logical implications step by step.\n\n1. **Premise 1**: All students engage in self-study.\n   - This can be written as: \u2200x (S(x) \u2192 T(x))\n\n2. **Premise 2**: If a student participates in resea",
+          "prediction_extracted": "B",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B2",
+          "strategy": "cot_boxed",
+          "question_id": 8,
+          "subject": "physics",
+          "prediction_raw": "To determine the inductance of the coil in an oscillating LC circuit, we can use the relationship between the current, the inductance, and the magnetic field energy. The magnetic field energy \\(U_B\\) in an inductor is given by the formula:\n\n\\[ U_B = \\frac{1}{2} L I^2 \\]\n\nwhere:\n- \\(U_B\\) is the magn",
+          "prediction_extracted": "2",
+          "ground_truth": "2 H",
+          "correct": true
+        },
+        {
+          "bid": "B2",
+          "strategy": "cot_boxed",
+          "question_id": 9,
+          "subject": "physics",
+          "prediction_raw": "To determine the electric field vector at point \\( M \\) due to the two electric charges \\( q_1 \\) and \\( q_2 \\), we need to use Coulomb's law and the principle of superposition. Coulomb's law states that the electric field \\( \\mathbf{E} \\) due to a point charge \\( q \\) at a distance \\( r \\) is given",
+          "prediction_extracted": "\\mathbf{E}_{\\text{total}} = \\mathbf{E}_1 + \\",
+          "ground_truth": "32000 V/m",
+          "correct": false
+        }
+      ]
+    }
+  ]
+}

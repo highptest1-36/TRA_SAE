@@ -1,0 +1,29 @@
+{
+  "ablation": [
+    {
+      "config_id": 6,
+      "config_name": "zero_shot_retr",
+      "description": "Qwen3.5-4B zero-shot + retrieval (no LoRA)",
+      "accuracy_overall": 39.17,
+      "accuracy_physics": 50.35,
+      "accuracy_logic": 18.42,
+      "n_total": 217,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_correct": 85,
+      "per_retry": {
+        "0": 217,
+        "1": 0,
+        "2": 0
+      },
+      "elapsed_min": 30.4,
+      "seed": 42,
+      "smoke_test": false,
+      "canonical": true
+    }
+  ],
+  "version": "canonical",
+  "seed": 42,
+  "run_timestamp": "20260610_074031",
+  "smoke_test": false
+}

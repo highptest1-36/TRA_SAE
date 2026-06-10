@@ -1,0 +1,37 @@
+query_id,type,answer,unit,premises_used,latency_s,status,query
+T1_0008,type1,No,,0 1 2 3 4,32.2,200,Does having thermal sensors and an optical camera guarantee emergency response data in this case?
+T1_0016,type1,No,,0 1 2 3 4 5,26.6,200,Does Robot Kappa satisfy every requirement for preparing outbound orders?
+T1_0022,type1,Yes,,0 1 2 3 5 6 7 8 9,34.1,200,"Does the Amber Amulet qualify for public display, according to the premises?"
+T1_0024,type1,Uncertain,,0 1 2 3 4 5 6 7,34.1,200,Do the premises prove that the Atlas case can be formally closed?
+T1_0026,type1,No,,0 1 2 3 4 5 6 7 8 9,34.0,200,"Is MedKit-7 eligible to use the aerial corridor, according to the premises?"
+T1_0028,type1,No,,0 1 3 4 5 6 7 8,27.5,200,Do the premises establish that Mira should receive the standard antiviral dose?
+T1_0030,type1,Yes,,0 1 2 4 5 6 7,26.7,200,"Does the Harbor microgrid have a high resilience score, according to the premises?"
+T1_0032,type1,Yes,,0 1 2 3 4 5 6 7 8 9,34.1,200,Do the premises establish that the River Codex is safe for public release?
+T1_0034,type1,Yes,,0 1 2 4 5 6 7,28.3,200,"Is a temporary no-take zone recommended for Azure Reef, according to the premises?"
+T1_0042,type1,Yes,,0 1 2 3 4 5,23.8,200,Is Asha listed as an active contributor?
+T1_0043,type1,Uncertain,,0 1 2 3 5,34.1,200,Does Asha have budget approval?
+T1_0048,type1,No,,3 4 5,26.9,200,Does Linh have pharmacy training?
+T2_0001,type2,6,,,33.9,200,A capacitor has capacitance C = 47 μF and is connected to a potential difference U = 12 V. Calculate the energy stored in the capacitor.
+T2_0002,type2,1.5e-4,F,,34.1,200,A capacitor stores a charge Q = 2.4 mC when connected to a voltage U = 16 V. Calculate the capacitance of the capacitor.
+T2_0003,type2,0.135,,,34.0,200,Two point charges q1 = +3.0 μC and q2 = -5.0 μC are separated by a distance of 0.30 m in air. Calculate the magnitude of the electrostatic force between them. Use k = 9.0 × 10^9 N·m²/C².
+T2_0004,type2,9000000000,,,34.1,200,Two charges +4.0 nC and -4.0 nC are fixed 20 cm apart in air. Calculate the magnitude of the electric field at the midpoint between the charges. Use k = 9.0 × 10^9 N·m²/C².
+T2_0005,type2,9,,,34.1,200,A point P is 10 cm from a charge q1 = +6.0 nC and 20 cm from a charge q2 = -2.0 nC. Calculate the electric potential at P. Use k = 9.0 × 10^9 N·m²/C².
+T2_0006,type2,18,V,,34.0,200,Two capacitors C1 = 6.0 μF and C2 = 3.0 μF are connected in series across an 18 V battery. Calculate the charge stored on each capacitor.
+T2_0007,type2,1800,,,34.0,200,A 24 Ω resistor is connected to a 12 V battery for 5 minutes. Calculate the electrical energy converted in the resistor.
+T2_0008,type2,0.5,A,,27.6,200,Two resistors R1 = 12 Ω and R2 = 18 Ω are connected in series to a 15 V source. Calculate the current in the circuit.
+T2_0009,type2,6,A,,29.1,200,Two resistors R1 = 6 Ω and R2 = 3 Ω are connected in parallel across a 12 V source. Calculate the total current drawn from the source.
+T2_0011,type2,48,,,34.1,200,An inductor with inductance L = 0.40 H is connected to an AC source of frequency f = 60 Hz. Calculate the inductive reactance.
+T2_0012,type2,1,m/s,,29.3,200,A car starts with an initial speed of 8 m/s and travels 66 m in 6 s with constant acceleration. Calculate the acceleration of the car.
+T2_0013,type2,50,,,23.2,200,A car moving at 20 m/s brakes uniformly to rest with acceleration -4.0 m/s². Calculate the braking distance.
+T2_0014,type2,678,,,34.0,200,A person of mass 60 kg stands in an elevator accelerating upward at 1.5 m/s². Calculate the normal force exerted by the elevator floor on the person. Use g = 9.8 m/s².
+T2_0015,type2,50,,,34.1,200,A 2.0 kg object starts from rest. A constant net force of 10 N acts on it over a distance of 5.0 m. Calculate the final speed of the object.
+T2_0016,type2,2,gh,,34.0,200,A ball is thrown vertically upward with an initial speed of 19.6 m/s. Calculate the maximum height reached by the ball. Use g = 9.8 m/s².
+T2_0017,type2,31500,,,34.0,200,How much heat is required to raise the temperature of 0.50 kg of water by 15 °C? Use c = 4200 J/(kg·°C).
+T2_0018,type2,66800,J,,34.0,200,Calculate the heat required to melt 0.20 kg of ice at 0 °C. Use the latent heat of fusion of ice L = 3.34 × 10^5 J/kg.
+T2_0019,type2,7,,,34.0,200,A gas sample contains n = 0.50 mol at temperature T = 300 K in a volume V = 0.010 m³. Calculate the pressure of the gas. Use R = 8.314 J/(mol·K).
+T2_0020,type2,20,cm,,34.1,200,An object is placed 30 cm in front of a converging lens with focal length 20 cm. Calculate the image distance.
+T2_0028,type2,3,W,,15.3,200,A lamp carries current I = 0.25 A under voltage U = 12 V. Calculate its power.
+T2_0029,type2,1.5e-5,J,,34.1,200,A charge q = 3 uC moves through a potential difference U = 5 V. Calculate the work done.
+T2_0039,type2,1,ohm,,34.0,200,"A conductor has length l = 2 m, cross-sectional area S = 1 mm^2, and resistivity rho = 0.5 ohm*mm^2/m. Calculate its resistance."
+T2_0049,type2,48,V,,34.0,200,"A transformer has primary turns N1 = 200, secondary turns N2 = 800, and primary voltage U1 = 12 V. Calculate the secondary voltage."
+T2_0050,type2,1,ohm,,33.8,200,A resistor dissipates P = 9 W when the current is I = 3 A. Calculate its resistance.

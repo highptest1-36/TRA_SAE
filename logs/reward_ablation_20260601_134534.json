@@ -1,0 +1,62 @@
+{
+  "reward_ablation": [
+    {
+      "variant_id": "R1",
+      "variant_name": "full_reward",
+      "description": "Full: format(0.30) + correct(0.60) + unit(0.10) + len_pen(-0.10)",
+      "reward_weights": {
+        "format_w": 0.3,
+        "correct_w": 0.6,
+        "unit_w": 0.1,
+        "len_pen": -0.1
+      },
+      "accuracy_overall": 39.63,
+      "accuracy_physics": 49.65,
+      "accuracy_logic": 21.05,
+      "n_total": 217,
+      "training_loss": 0.00856,
+      "grpo_steps": 150,
+      "train_elapsed_min": 291.2,
+      "smoke": false
+    },
+    {
+      "variant_id": "R2",
+      "variant_name": "no_unit",
+      "description": "No unit reward: format(0.30) + correct(0.70), no unit, no len_pen",
+      "reward_weights": {
+        "format_w": 0.3,
+        "correct_w": 0.7,
+        "unit_w": 0.0,
+        "len_pen": 0.0
+      },
+      "accuracy_overall": 39.17,
+      "accuracy_physics": 49.65,
+      "accuracy_logic": 19.74,
+      "n_total": 217,
+      "training_loss": 0.008065,
+      "grpo_steps": 150,
+      "train_elapsed_min": 267.5,
+      "smoke": false
+    },
+    {
+      "variant_id": "R3",
+      "variant_name": "no_format",
+      "description": "No format reward: correct(0.80) + unit(0.10), no format, no len_pen",
+      "reward_weights": {
+        "format_w": 0.0,
+        "correct_w": 0.8,
+        "unit_w": 0.1,
+        "len_pen": 0.0
+      },
+      "accuracy_overall": 38.25,
+      "accuracy_physics": 46.81,
+      "accuracy_logic": 22.37,
+      "n_total": 217,
+      "training_loss": 0.000987,
+      "grpo_steps": 150,
+      "train_elapsed_min": 278.0,
+      "smoke": false
+    }
+  ],
+  "run_ts": "20260601_134534"
+}

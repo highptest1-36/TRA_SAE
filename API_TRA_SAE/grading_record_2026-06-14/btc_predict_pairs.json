@@ -1,0 +1,1019 @@
+[
+  {
+    "query_id": "T1_0008",
+    "type": "type1",
+    "query": "Does having thermal sensors and an optical camera guarantee emergency response data in this case?",
+    "premises": [
+      "If a satellite has calibrated thermal sensors, then it can monitor surface temperature.",
+      "If a satellite can monitor surface temperature and has cloud-penetrating radar, then it can support disaster mapping.",
+      "If a satellite supports disaster mapping, then it can provide emergency response data.",
+      "Satellite Vega has calibrated thermal sensors.",
+      "Satellite Vega does not have cloud-penetrating radar.",
+      "Satellite Vega has a high-resolution optical camera.",
+      "All satellites with high-resolution optical cameras can capture daytime images."
+    ],
+    "options": [
+      "Yes",
+      "No",
+      "Uncertain"
+    ],
+    "answer": "No",
+    "unit": "",
+    "premises_used": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Vega lacks cloud-penetrating radar, which is required to support disaster mapping (Premises 1, 2). Without disaster mapping support, it cannot provide emergency response data (Premises 2, 3), regardless of its optical camera (Premises 6, 7).",
+    "reasoning": {
+      "type": "fol",
+      "steps": [
+        "According to Premises 1 and 2, a satellite can support disaster mapping only if it has both calibrated thermal sensors AND cloud-penetrating radar.",
+        "Premises 3 and 4 show that Vega has thermal sensors but lacks radar, so it cannot support disaster mapping.",
+        "Without disaster mapping support, Vega cannot provide emergency response data (Premises 2→3).",
+        "The high-resolution optical camera (Premises 6, 7) allows daytime image capture but does not compensate for the missing radar required for disaster mapping.",
+        "Therefore, Vega cannot provide emergency response data despite having thermal sensors and an optical camera."
+      ]
+    },
+    "status": 200,
+    "latency_s": 32.2
+  },
+  {
+    "query_id": "T1_0016",
+    "type": "type1",
+    "query": "Does Robot Kappa satisfy every requirement for preparing outbound orders?",
+    "premises": [
+      "If a warehouse robot has obstacle detection, then it can navigate aisles safely.",
+      "If a robot can navigate aisles safely and has barcode scanning, then it can pick inventory items.",
+      "If a robot can pick inventory items and has weight verification, then it can prepare outbound orders.",
+      "Robot Kappa has obstacle detection.",
+      "Robot Kappa has barcode scanning.",
+      "Robot Kappa lacks weight verification.",
+      "Robot Kappa has a long-life battery."
+    ],
+    "options": [
+      "Yes",
+      "No",
+      "Uncertain"
+    ],
+    "answer": "No",
+    "unit": "",
+    "premises_used": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "explanation": "Robot Kappa lacks weight verification, which is required to transition from picking inventory to preparing outbound orders, despite having obstacle detection and barcode scanning.",
+    "reasoning": {
+      "type": "fol",
+      "steps": [
+        "To determine if Robot Kappa can prepare outbound orders, we follow the logical chain provided in the premises:",
+        "Obstacle detection → Safe navigation: Premises 1 and 4 tell us Robot Kappa has obstacle detection, so it can navigate aisles safely.",
+        "Safe navigation + Barcode scanning → Pick items: Premises 2 and 5 show it has both safe navigation and barcode scanning, so it can pick inventory items.",
+        "Picking items + Weight verification → Prepare orders: Premises 3 and 6 indicate that while it can pick items, it lacks weight verification.",
+        "Since weight verification is required to move from picking to preparing orders, this step is not completed.",
+        "Battery life is irrelevant: Premises 7 mentions a long-life battery, but this does not affect the logical requirements for order preparation.",
+        "Because Robot Kappa cannot verify weights, it cannot prepare outbound orders."
+      ]
+    },
+    "status": 200,
+    "latency_s": 26.6
+  },
+  {
+    "query_id": "T1_0022",
+    "type": "type1",
+    "query": "Does the Amber Amulet qualify for public display, according to the premises?",
+    "premises": [
+      "If an artifact has a humidity-control log and no pest-damage report, then it is storage-ready.",
+      "If an artifact is storage-ready and has a provenance certificate, then it is eligible for exhibition.",
+      "If an artifact is eligible for exhibition and has curator approval, then it can be placed on public display.",
+      "If an artifact is fragile, then it requires low-light protection.",
+      "If an artifact requires low-light protection and can be placed on public display, then it must be displayed in a climate-controlled case.",
+      "The Amber Amulet has a humidity-control log.",
+      "The Amber Amulet has no pest-damage report.",
+      "The Amber Amulet has a provenance certificate.",
+      "The Amber Amulet has curator approval.",
+      "The Amber Amulet is fragile."
+    ],
+    "options": [
+      "Yes",
+      "No",
+      "Uncertain"
+    ],
+    "answer": "Yes",
+    "unit": "",
+    "premises_used": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "explanation": "The Amber Amulet has a humidity-control log and no pest-damage report, making it storage-ready (Premises 1, 6, 7). It is storage-ready and has a provenance certificate, making it eligible for exhibition (Premises 2, 8). It is eligible for exhibition and has curator approval, allowing it to be placed on public display (Premises 3, 9). While it is fragile and requires low-light protection, the premises confirm it qualifies for public display placement.",
+    "reasoning": {
+      "type": "fol",
+      "steps": [
+        "Check if the Amber Amulet is storage-ready: It has a humidity-control log (Premises 6) and no pest-damage report (Premises 7).",
+        "According to Premises 1, this makes it storage-ready.",
+        "Check if it is eligible for exhibition: It is storage-ready (from step 1) and has a provenance certificate (Premises 8).",
+        "According to Premises 2, this makes it eligible for exhibition.",
+        "Check if it can be placed on public display: It is eligible for exhibition (from step 2) and has curator approval (Premises 9).",
+        "According to Premises 3, this allows it to be placed on public display.",
+        "Consider the fragility condition: The Amber Amulet is fragile (Premises 10), so it requires low-light protection (Premises 4).",
+        "However, the question only asks if it qualifies for public display, not whether it meets all display conditions (like climate-controlled cases).",
+        "The premises show it meets the criteria for public display placement."
+      ]
+    },
+    "status": 200,
+    "latency_s": 34.1
+  },
+  {
+    "query_id": "T1_0024",
+    "type": "type1",
+    "query": "Do the premises prove that the Atlas case can be formally closed?",
+    "premises": [
+      "If a server is patched and its logs have been reviewed, then the incident is contained.",
+      "If an incident is contained and all affected passwords have been reset, then the affected account is secured.",
+      "If an affected account is secured and the forensic report has been submitted, then the case is audit-ready.",
+      "If a case is audit-ready and a manager signs off, then the case can be formally closed.",
+      "The Atlas server is patched.",
+      "The Atlas server logs have been reviewed.",
+      "All affected Atlas passwords have been reset.",
+      "The Atlas forensic report has been submitted."
+    ],
+    "options": [
+      "Yes",
+      "No",
+      "Uncertain"
+    ],
+    "answer": "Uncertain",
+    "unit": "",
+    "premises_used": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "explanation": "Answer: Uncertain.",
+    "reasoning": null,
+    "status": 200,
+    "latency_s": 34.1
+  },
+  {
+    "query_id": "T1_0026",
+    "type": "type1",
+    "query": "Is MedKit-7 eligible to use the aerial corridor, according to the premises?",
+    "premises": [
+      "If a package is medical and weighs under 2 kilograms, then it receives priority delivery status.",
+      "If a package has priority delivery status and its route is clear, then it can be dispatched.",
+      "If a package can be dispatched and the weather is safe, then it is eligible to use the aerial corridor.",
+      "If a package is eligible to use the aerial corridor and an operator is assigned, then launch is approved.",
+      "If an emergency waiver is approved and an alternate route is mapped, then the route is clear.",
+      "The MedKit-7 package is medical.",
+      "The MedKit-7 package weighs under 2 kilograms.",
+      "An emergency waiver is approved for MedKit-7.",
+      "An alternate route is mapped for MedKit-7.",
+      "The weather is safe for MedKit-7."
+    ],
+    "options": [
+      "Yes",
+      "No",
+      "Uncertain"
+    ],
+    "answer": "No",
+    "unit": "",
+    "premises_used": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "explanation": "Answer: No.",
+    "reasoning": null,
+    "status": 200,
+    "latency_s": 34.0
+  },
+  {
+    "query_id": "T1_0028",
+    "type": "type1",
+    "query": "Do the premises establish that Mira should receive the standard antiviral dose?",
+    "premises": [
+      "If a patient has a fever and low oxygen saturation, then the patient is placed in respiratory isolation.",
+      "If a patient is in respiratory isolation and has a positive rapid test, then the patient enters the antiviral protocol.",
+      "If a patient enters the antiviral protocol and has a completed renal screen, then the patient receives the standard antiviral dose.",
+      "If a patient has renal impairment, then the patient requires dose adjustment.",
+      "If a patient requires dose adjustment, then the patient should not receive the standard antiviral dose without review.",
+      "Mira has a fever.",
+      "Mira has low oxygen saturation.",
+      "Mira has a positive rapid test.",
+      "Mira has renal impairment."
+    ],
+    "options": [
+      "Yes",
+      "No",
+      "Uncertain"
+    ],
+    "answer": "No",
+    "unit": "",
+    "premises_used": [
+      0,
+      1,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "explanation": "Mira meets the criteria for the antiviral protocol (fever, low oxygen, positive test), but her renal impairment requires dose adjustment, which prevents her from receiving the standard dose without a review. Since no review is indicated, she does not receive the standard dose.",
+    "reasoning": {
+      "type": "fol",
+      "steps": [
+        "From premises 6 and 7, Mira has a fever and low oxygen saturation.",
+        "According to premise 1, this means Mira is placed in respiratory isolation.",
+        "From premise 8, Mira has a positive rapid test.",
+        "Combining this with the fact that she is in respiratory isolation (from step 1), premise 2 states that Mira enters the antiviral protocol.",
+        "From premise 9, Mira has renal impairment.",
+        "According to premise 4, this means Mira requires dose adjustment.",
+        "From premise 5, if a patient requires dose adjustment, they should not receive the standard antiviral dose without review.",
+        "Since Mira has not undergone the required review (as no such step is mentioned in the premises), she does not receive the standard dose.",
+        "Therefore, the premises establish that Mira should NOT receive the standard antiviral dose."
+      ]
+    },
+    "status": 200,
+    "latency_s": 27.5
+  },
+  {
+    "query_id": "T1_0030",
+    "type": "type1",
+    "query": "Does the Harbor microgrid have a high resilience score, according to the premises?",
+    "premises": [
+      "If a solar array is online and the battery bank is charged, then the microgrid can island from the main grid.",
+      "If the microgrid can island and the load forecast is stable, then night service can be maintained.",
+      "If night service can be maintained and the diesel backup has been tested, then the microgrid has a high resilience score.",
+      "If the microgrid has a high resilience score and community notification has been sent, then the emergency hub is ready.",
+      "The Harbor microgrid solar array is online.",
+      "The Harbor microgrid battery bank is charged.",
+      "The Harbor load forecast is stable.",
+      "The Harbor diesel backup has been tested."
+    ],
+    "options": [
+      "Yes",
+      "No",
+      "Uncertain"
+    ],
+    "answer": "Yes",
+    "unit": "",
+    "premises_used": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      6,
+      7
+    ],
+    "explanation": "The premises form a logical chain: (Solar online + Battery charged) → Can island (Premises 1, 5, 6); (Can island + Stable forecast) → Night service maintained (Premises 2, 7); (Night service + Diesel tested) → High resilience score (Premises 3, 8). All conditions for the Harbor microgrid are met.",
+    "reasoning": {
+      "type": "fol",
+      "steps": [
+        "From Premises 5 and 6, we know the solar array is online and the battery bank is charged.",
+        "According to Premise 1, this means the microgrid can island from the main grid.",
+        "From Premises 2 and 7, we know the microgrid can island and the load forecast is stable.",
+        "According to Premise 2, this means night service can be maintained.",
+        "From Premises 3 and 8, we know night service can be maintained and the diesel backup has been tested.",
+        "According to Premise 3, this means the microgrid has a high resilience score.",
+        "Therefore, the Harbor microgrid does have a high resilience score."
+      ]
+    },
+    "status": 200,
+    "latency_s": 26.7
+  },
+  {
+    "query_id": "T1_0032",
+    "type": "type1",
+    "query": "Do the premises establish that the River Codex is safe for public release?",
+    "premises": [
+      "If a manuscript is scanned at 600 dpi and its metadata is complete, then it is preservation-ready.",
+      "If a manuscript is preservation-ready and its rights are cleared, then it is eligible for the public portal.",
+      "If a manuscript is eligible for the public portal and OCR has been verified, then it is searchable online.",
+      "If a manuscript contains personal data, then privacy review is required.",
+      "If privacy review is required and redaction is complete, then the manuscript is safe for public release.",
+      "The River Codex was scanned at 600 dpi.",
+      "The River Codex metadata is complete.",
+      "The River Codex rights are cleared.",
+      "The River Codex OCR has been verified.",
+      "The River Codex contains personal data."
+    ],
+    "options": [
+      "Yes",
+      "No",
+      "Uncertain"
+    ],
+    "answer": "Yes",
+    "unit": "",
+    "premises_used": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "explanation": "Answer: Yes.",
+    "reasoning": null,
+    "status": 200,
+    "latency_s": 34.1
+  },
+  {
+    "query_id": "T1_0034",
+    "type": "type1",
+    "query": "Is a temporary no-take zone recommended for Azure Reef, according to the premises?",
+    "premises": [
+      "If a reef shows bleaching signs and has a temperature anomaly, then a stress alert is issued.",
+      "If a reef has a stress alert and coral cover is below 30 percent, then it becomes a restoration priority.",
+      "If a reef is a restoration priority and local fishing pressure is high, then a temporary no-take zone is recommended.",
+      "If a temporary no-take zone is recommended and community consultation is complete, then the conservation plan is approved.",
+      "Azure Reef shows bleaching signs.",
+      "Azure Reef has a temperature anomaly.",
+      "Azure Reef has coral cover below 30 percent.",
+      "Azure Reef has high local fishing pressure."
+    ],
+    "options": [
+      "Yes",
+      "No",
+      "Uncertain"
+    ],
+    "answer": "Yes",
+    "unit": "",
+    "premises_used": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      6,
+      7
+    ],
+    "explanation": "The premises logically lead to the conclusion that a temporary no-take zone is recommended for Azure Reef because it shows bleaching signs, has a temperature anomaly, has coral cover below 30 percent, and experiences high local fishing pressure.",
+    "reasoning": {
+      "type": "fol",
+      "steps": [
+        "From Premises 5 and 6, we know that Azure Reef shows bleaching signs and has a temperature anomaly.",
+        "According to Premises 1, if a reef shows bleaching signs and has a temperature anomaly, then a stress alert is issued.",
+        "Therefore, Azure Reef has a stress alert.",
+        "From Premises 7, we know that Azure Reef has a coral cover below 30 percent.",
+        "According to Premises 2, if a reef has a stress alert and coral cover is below 30 percent, then it becomes a restoration priority.",
+        "Therefore, Azure Reef is a restoration priority.",
+        "From Premises 8, we know that Azure Reef has high local fishing pressure.",
+        "According to Premises 3, if a reef is a restoration priority and local fishing pressure is high, then a temporary no-take zone is recommended.",
+        "Therefore, a temporary no-take zone is recommended for Azure Reef."
+      ]
+    },
+    "status": 200,
+    "latency_s": 28.3
+  },
+  {
+    "query_id": "T1_0042",
+    "type": "type1",
+    "query": "Is Asha listed as an active contributor?",
+    "premises": [
+      "If a researcher completed ethics training and has lab access, then that researcher can handle participant data.",
+      "If a researcher can handle participant data and has supervisor approval, then that researcher may join Study Alpha.",
+      "Every researcher who may join Study Alpha is listed as an active contributor.",
+      "Asha completed ethics training.",
+      "Asha has lab access.",
+      "Asha has supervisor approval.",
+      "Study Alpha has 12 enrolled participants.",
+      "No premise states whether Asha has budget approval."
+    ],
+    "options": [
+      "Yes",
+      "No",
+      "Uncertain"
+    ],
+    "answer": "Yes",
+    "unit": "",
+    "premises_used": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "explanation": "Asha completed ethics training and has lab access, so she can handle participant data. With supervisor approval, she may join Study Alpha. Since all researchers who may join Study Alpha are listed as active contributors, Asha is listed as an active contributor.",
+    "reasoning": {
+      "type": "fol",
+      "steps": [
+        "We are told that if a researcher has completed ethics training and has lab access, they can handle participant data.",
+        "Asha has completed ethics training and has lab access, so she can handle participant data.",
+        "If a researcher can handle participant data and has supervisor approval, they may join Study Alpha.",
+        "Asha has supervisor approval, so she may join Study Alpha.",
+        "We are explicitly told that every researcher who may join Study Alpha is listed as an active contributor.",
+        "Since Asha may join Study Alpha, she must be listed as an active contributor.",
+        "The fact that no premise states whether Asha has budget approval is irrelevant to the question about active contributor status."
+      ]
+    },
+    "status": 200,
+    "latency_s": 23.8
+  },
+  {
+    "query_id": "T1_0043",
+    "type": "type1",
+    "query": "Does Asha have budget approval?",
+    "premises": [
+      "If a researcher completed ethics training and has lab access, then that researcher can handle participant data.",
+      "If a researcher can handle participant data and has supervisor approval, then that researcher may join Study Alpha.",
+      "Every researcher who may join Study Alpha is listed as an active contributor.",
+      "Asha completed ethics training.",
+      "Asha has lab access.",
+      "Asha has supervisor approval.",
+      "Study Alpha has 12 enrolled participants.",
+      "No premise states whether Asha has budget approval."
+    ],
+    "options": [
+      "Yes",
+      "No",
+      "Uncertain"
+    ],
+    "answer": "Uncertain",
+    "unit": "",
+    "premises_used": [
+      0,
+      1,
+      2,
+      3,
+      5
+    ],
+    "explanation": "The premises establish that Asha can handle participant data and may join Study Alpha due to completing ethics training, having lab access, and receiving supervisor approval. However, no premise links these conditions to budget approval, nor does any premise mention budget approval at all. Therefore, it is unknown whether Asha has budget approval.",
+    "reasoning": {
+      "type": "fol",
+      "steps": [
+        "Let's analyze the premises step by step:",
+        "Premises:",
+        "Ethics training + lab access → can handle participant data",
+        "Can handle data + supervisor approval → may join Study Alpha",
+        "All researchers who may join Study Alpha are active contributors",
+        "Asha completed ethics training",
+        "Asha has lab access",
+        "Asha has supervisor approval",
+        "Study Alpha has 12 participants",
+        "No premise states whether Asha has budget approval"
+      ]
+    },
+    "status": 200,
+    "latency_s": 34.1
+  },
+  {
+    "query_id": "T1_0048",
+    "type": "type1",
+    "query": "Does Linh have pharmacy training?",
+    "premises": [
+      "If a clinic volunteer has first-aid certification and completed patient privacy training, then the volunteer may assist at the triage desk.",
+      "If a volunteer may assist at the triage desk and has morning availability, then the volunteer is assigned to the morning triage shift.",
+      "Every volunteer assigned to the morning triage shift receives a blue access badge.",
+      "Linh has first-aid certification.",
+      "Linh completed patient privacy training.",
+      "Linh has morning availability.",
+      "The morning triage shift needs 3 volunteers.",
+      "No premise states that Linh has pharmacy training."
+    ],
+    "options": [
+      "Yes",
+      "No",
+      "Uncertain"
+    ],
+    "answer": "No",
+    "unit": "",
+    "premises_used": [
+      3,
+      4,
+      5
+    ],
+    "explanation": "The premises do not state that Linh has pharmacy training, nor do they imply it through any logical chain. The relevant premises (1, 2, 4, 5, 6) concern first-aid certification, patient privacy training, and availability for the triage shift, but none mention pharmacy training.",
+    "reasoning": {
+      "type": "fol",
+      "steps": [
+        "The premises provide a logical chain for assigning volunteers to the triage shift and issuing badges, but they do not mention pharmacy training at all.",
+        "Premises 1 and 2 specify the requirements for assisting at the triage desk (first-aid certification and patient privacy training) and for being assigned to the morning shift (assistance eligibility and morning availability).",
+        "Premises 3 and 7 discuss the consequences of being assigned to the shift and the shift's staffing needs.",
+        "Premises 4 and 5 confirm Linh's qualifications (first-aid and privacy training), and premise 6 confirms her availability.",
+        "However, there is no premise linking any of these conditions to pharmacy training, nor is there any statement that Linh possesses pharmacy training.",
+        "The question asks whether Linh has pharmacy training, but the premises do not provide this information.",
+        "Therefore, based strictly on the premises, we cannot conclude that Linh has pharmacy training."
+      ]
+    },
+    "status": 200,
+    "latency_s": 26.9
+  },
+  {
+    "query_id": "T2_0001",
+    "type": "type2",
+    "query": "A capacitor has capacitance C = 47 μF and is connected to a potential difference U = 12 V. Calculate the energy stored in the capacitor.",
+    "premises": [],
+    "options": [],
+    "answer": "6",
+    "unit": "",
+    "premises_used": [],
+    "explanation": "Answer: 6.",
+    "reasoning": null,
+    "status": 200,
+    "latency_s": 33.9
+  },
+  {
+    "query_id": "T2_0002",
+    "type": "type2",
+    "query": "A capacitor stores a charge Q = 2.4 mC when connected to a voltage U = 16 V. Calculate the capacitance of the capacitor.",
+    "premises": [],
+    "options": [],
+    "answer": "1.5e-4",
+    "unit": "F",
+    "premises_used": [],
+    "explanation": "Answer: 1.5e-4 F.",
+    "reasoning": null,
+    "status": 200,
+    "latency_s": 34.1
+  },
+  {
+    "query_id": "T2_0003",
+    "type": "type2",
+    "query": "Two point charges q1 = +3.0 μC and q2 = -5.0 μC are separated by a distance of 0.30 m in air. Calculate the magnitude of the electrostatic force between them. Use k = 9.0 × 10^9 N·m²/C².",
+    "premises": [],
+    "options": [],
+    "answer": "0.135",
+    "unit": "",
+    "premises_used": [],
+    "explanation": "Answer: 0.135.",
+    "reasoning": null,
+    "status": 200,
+    "latency_s": 34.0
+  },
+  {
+    "query_id": "T2_0004",
+    "type": "type2",
+    "query": "Two charges +4.0 nC and -4.0 nC are fixed 20 cm apart in air. Calculate the magnitude of the electric field at the midpoint between the charges. Use k = 9.0 × 10^9 N·m²/C².",
+    "premises": [],
+    "options": [],
+    "answer": "9000000000",
+    "unit": "",
+    "premises_used": [],
+    "explanation": "Answer: 9000000000.",
+    "reasoning": null,
+    "status": 200,
+    "latency_s": 34.1
+  },
+  {
+    "query_id": "T2_0005",
+    "type": "type2",
+    "query": "A point P is 10 cm from a charge q1 = +6.0 nC and 20 cm from a charge q2 = -2.0 nC. Calculate the electric potential at P. Use k = 9.0 × 10^9 N·m²/C².",
+    "premises": [],
+    "options": [],
+    "answer": "9",
+    "unit": "",
+    "premises_used": [],
+    "explanation": "Answer: 9.",
+    "reasoning": null,
+    "status": 200,
+    "latency_s": 34.1
+  },
+  {
+    "query_id": "T2_0006",
+    "type": "type2",
+    "query": "Two capacitors C1 = 6.0 μF and C2 = 3.0 μF are connected in series across an 18 V battery. Calculate the charge stored on each capacitor.",
+    "premises": [],
+    "options": [],
+    "answer": "18",
+    "unit": "V",
+    "premises_used": [],
+    "explanation": "Answer: 18 V.",
+    "reasoning": null,
+    "status": 200,
+    "latency_s": 34.0
+  },
+  {
+    "query_id": "T2_0007",
+    "type": "type2",
+    "query": "A 24 Ω resistor is connected to a 12 V battery for 5 minutes. Calculate the electrical energy converted in the resistor.",
+    "premises": [],
+    "options": [],
+    "answer": "1800",
+    "unit": "",
+    "premises_used": [],
+    "explanation": "Answer: 1800.",
+    "reasoning": null,
+    "status": 200,
+    "latency_s": 34.0
+  },
+  {
+    "query_id": "T2_0008",
+    "type": "type2",
+    "query": "Two resistors R1 = 12 Ω and R2 = 18 Ω are connected in series to a 15 V source. Calculate the current in the circuit.",
+    "premises": [],
+    "options": [],
+    "answer": "0.5",
+    "unit": "A",
+    "premises_used": [],
+    "explanation": "In a series circuit, the total resistance is the sum of the individual resistances (12 Ω + 18 Ω = 30 Ω). Using Ohm's Law (I = U/R), the current is calculated as 15 V / 30 Ω = 0.5 A.",
+    "reasoning": {
+      "type": "cot",
+      "steps": [
+        "Identify the circuit configuration: The two resistors, R1 and R2, are connected in series.",
+        "Recall the rule for total resistance in a series circuit: For resistors in series, the total resistance (R_total) is the sum of individual resistances.",
+        "Formula: R_total = R1 + R2",
+        "Calculate the total resistance:",
+        "R_total = 12 Ω + 18 Ω = 30 Ω",
+        "Recall Ohm's Law: The current (I) is equal to the voltage (U) divided by the resistance (R).",
+        "Formula: I = U / R_total",
+        "Substitute the known values:",
+        "U = 15 V",
+        "R_total = 30 Ω"
+      ]
+    },
+    "status": 200,
+    "latency_s": 27.6
+  },
+  {
+    "query_id": "T2_0009",
+    "type": "type2",
+    "query": "Two resistors R1 = 6 Ω and R2 = 3 Ω are connected in parallel across a 12 V source. Calculate the total current drawn from the source.",
+    "premises": [],
+    "options": [],
+    "answer": "6",
+    "unit": "A",
+    "premises_used": [],
+    "explanation": "The current through R1 is 12/6 = 2 A, and the current through R2 is 12/3 = 4 A. Since they are in parallel, the total current is the sum of the branch currents: 2 A + 4 A = 6 A.",
+    "reasoning": {
+      "type": "cot",
+      "steps": [
+        "Identify the circuit configuration: The two resistors R1 and R2 are connected in parallel.",
+        "Recall the properties of parallel circuits: In a parallel circuit, the voltage across each branch is the same and equal to the source voltage.",
+        "Therefore, U1 = U2 = U_source = 12 V.",
+        "Calculate the current through R1 (I1): Using Ohm's Law (I = U/R), I1 = 12 V / 6 Ω = 2 A.",
+        "Calculate the current through R2 (I2): Using Ohm's Law, I2 = 12 V / 3 Ω = 4 A.",
+        "Calculate the total current (I_total): According to Kirchhoff's Current Law (KCL), the total current entering a junction equals the sum of the currents leaving it.",
+        "For parallel branches, I_total = I1 + I2.",
+        "Perform the addition: I_total = 2 A + 4 A = 6 A."
+      ]
+    },
+    "status": 200,
+    "latency_s": 29.1
+  },
+  {
+    "query_id": "T2_0011",
+    "type": "type2",
+    "query": "An inductor with inductance L = 0.40 H is connected to an AC source of frequency f = 60 Hz. Calculate the inductive reactance.",
+    "premises": [],
+    "options": [],
+    "answer": "48",
+    "unit": "",
+    "premises_used": [],
+    "explanation": "Answer: 48.",
+    "reasoning": null,
+    "status": 200,
+    "latency_s": 34.1
+  },
+  {
+    "query_id": "T2_0012",
+    "type": "type2",
+    "query": "A car starts with an initial speed of 8 m/s and travels 66 m in 6 s with constant acceleration. Calculate the acceleration of the car.",
+    "premises": [],
+    "options": [],
+    "answer": "1",
+    "unit": "m/s",
+    "premises_used": [],
+    "explanation": "Using the formula $s = ut + \\frac{1}{2}at^2$ with $s=66$, $u=8$, and $t=6$, we solve for $a$ and find $a=1$.",
+    "reasoning": {
+      "type": "cot",
+      "steps": [
+        "We are given the following kinematic variables for the car:",
+        "Initial velocity, $u = 8 \\text{ m/s}$",
+        "Displacement, $s = 66 \\text{ m}$",
+        "Time, $t = 6 \\text{ s}$",
+        "Acceleration, $a = ?$ (constant)",
+        "We use the kinematic equation that relates displacement, initial velocity, time, and acceleration:",
+        "$$s = ut + \\frac{1}{2}at^2$$",
+        "Substitute the known values into the equation:",
+        "$$66 = (8)(6) + \\frac{1}{2}a(6)^2$$",
+        "Calculate the terms:"
+      ]
+    },
+    "status": 200,
+    "latency_s": 29.3
+  },
+  {
+    "query_id": "T2_0013",
+    "type": "type2",
+    "query": "A car moving at 20 m/s brakes uniformly to rest with acceleration -4.0 m/s². Calculate the braking distance.",
+    "premises": [],
+    "options": [],
+    "answer": "50",
+    "unit": "",
+    "premises_used": [],
+    "explanation": "Using the kinematic equation v² = u² + 2as with v=0, u=20, and a=-4.0 yields s = 50 m.",
+    "reasoning": {
+      "type": "cot",
+      "steps": [
+        "We are given:",
+        "Initial velocity, u = 20 m/s",
+        "Final velocity, v = 0 m/s (since the car comes to rest)",
+        "Acceleration, a = -4.0 m/s² (negative because it's deceleration)",
+        "We need to find the braking distance, s.",
+        "We can use the kinematic equation that relates velocity, acceleration, and displacement:",
+        "v² = u² + 2as",
+        "Substitute the known values into the equation:",
+        "0² = (20)² + 2(-4.0)s",
+        "Simplify the equation:"
+      ]
+    },
+    "status": 200,
+    "latency_s": 23.2
+  },
+  {
+    "query_id": "T2_0014",
+    "type": "type2",
+    "query": "A person of mass 60 kg stands in an elevator accelerating upward at 1.5 m/s². Calculate the normal force exerted by the elevator floor on the person. Use g = 9.8 m/s².",
+    "premises": [],
+    "options": [],
+    "answer": "678",
+    "unit": "",
+    "premises_used": [],
+    "explanation": "The normal force is calculated using the formula $N = m(g + a)$ for an upward acceleration. Substituting $m=60$ kg, $g=9.8$ m/s², and $a=1.5$ m/s² yields $N = 60 \\times 11.3 = 678$ N.",
+    "reasoning": {
+      "type": "cot",
+      "steps": [
+        "Identify the forces acting on the person:",
+        "Gravity (Weight, $W$) acting downwards: $W = mg$.",
+        "Normal force ($N$) acting upwards from the elevator floor.",
+        "Apply Newton's Second Law:",
+        "Since the elevator is accelerating upward with acceleration $a$, the net force must be in the upward direction.",
+        "$$ \\sum F = ma $$",
+        "$$ N - mg = ma $$",
+        "Rearrange the formula to solve for the Normal force ($N$):",
+        "$$ N = m(g + a) $$",
+        "Substitute the given values:"
+      ]
+    },
+    "status": 200,
+    "latency_s": 34.0
+  },
+  {
+    "query_id": "T2_0015",
+    "type": "type2",
+    "query": "A 2.0 kg object starts from rest. A constant net force of 10 N acts on it over a distance of 5.0 m. Calculate the final speed of the object.",
+    "premises": [],
+    "options": [],
+    "answer": "50",
+    "unit": "",
+    "premises_used": [],
+    "explanation": "Answer: 50.",
+    "reasoning": null,
+    "status": 200,
+    "latency_s": 34.1
+  },
+  {
+    "query_id": "T2_0016",
+    "type": "type2",
+    "query": "A ball is thrown vertically upward with an initial speed of 19.6 m/s. Calculate the maximum height reached by the ball. Use g = 9.8 m/s².",
+    "premises": [],
+    "options": [],
+    "answer": "2",
+    "unit": "gh",
+    "premises_used": [],
+    "explanation": "Answer: 2 gh.",
+    "reasoning": null,
+    "status": 200,
+    "latency_s": 34.0
+  },
+  {
+    "query_id": "T2_0017",
+    "type": "type2",
+    "query": "How much heat is required to raise the temperature of 0.50 kg of water by 15 °C? Use c = 4200 J/(kg·°C).",
+    "premises": [],
+    "options": [],
+    "answer": "31500",
+    "unit": "",
+    "premises_used": [],
+    "explanation": "Answer: 31500.",
+    "reasoning": null,
+    "status": 200,
+    "latency_s": 34.0
+  },
+  {
+    "query_id": "T2_0018",
+    "type": "type2",
+    "query": "Calculate the heat required to melt 0.20 kg of ice at 0 °C. Use the latent heat of fusion of ice L = 3.34 × 10^5 J/kg.",
+    "premises": [],
+    "options": [],
+    "answer": "66800",
+    "unit": "J",
+    "premises_used": [],
+    "explanation": "The question asks for the heat required to melt a specific mass of ice at its melting point.\n1. Identify the given values:\n   - Mass of ice ($m$) = 0.20 kg\n   - Latent heat of fusion of ice ($L$) = $3.34 \\times 10^5$ J/kg\n   - The ice is already at 0 °C, so no heat is needed to raise the temperature, only to change the phase from solid to liquid.\n\n2. Select the appropriate formula:\n   The heat energy ($Q$) required for a phase change (melting) is calculated using:\n   $$Q = m \\times L$$\n\n3. Perform the calculation:\n   $$Q = 0.20 \\, \\text{kg} \\times 3.34 \\times 10^5 \\, \\text{J/kg}$$\n   $$Q = 0.2 \\times 334000$$\n   $$Q = 66800 \\, \\text{J}$$\n\n4. Convert to scientific notation (optional but standard):\n   $$Q = 6.68 \\times 10^4 \\, \\text{J}$$\n\nThe calculation is straightforward multiplication. The result represents the energy needed to convert the solid ice into liquid water at the same temperature.",
+    "reasoning": {
+      "type": "cot",
+      "steps": [
+        "The question asks for the heat required to melt a specific mass of ice at its melting point.",
+        "Identify the given values:",
+        "Mass of ice ($m$) = 0.20 kg",
+        "Latent heat of fusion of ice ($L$) = $3.34 \\times 10^5$ J/kg",
+        "The ice is already at 0 °C, so no heat is needed to raise the temperature, only to change the phase from solid to liquid.",
+        "Select the appropriate formula:",
+        "The heat energy ($Q$) required for a phase change (melting) is calculated using:",
+        "$$Q = m \\times L$$",
+        "Perform the calculation:",
+        "$$Q = 0.20 \\, \\text{kg} \\times 3.34 \\times 10^5 \\, \\text{J/kg}$$"
+      ]
+    },
+    "status": 200,
+    "latency_s": 34.0
+  },
+  {
+    "query_id": "T2_0019",
+    "type": "type2",
+    "query": "A gas sample contains n = 0.50 mol at temperature T = 300 K in a volume V = 0.010 m³. Calculate the pressure of the gas. Use R = 8.314 J/(mol·K).",
+    "premises": [],
+    "options": [],
+    "answer": "7",
+    "unit": "",
+    "premises_used": [],
+    "explanation": "Answer: 7.",
+    "reasoning": null,
+    "status": 200,
+    "latency_s": 34.0
+  },
+  {
+    "query_id": "T2_0020",
+    "type": "type2",
+    "query": "An object is placed 30 cm in front of a converging lens with focal length 20 cm. Calculate the image distance.",
+    "premises": [],
+    "options": [],
+    "answer": "20",
+    "unit": "cm",
+    "premises_used": [],
+    "explanation": "Answer: 20 cm.",
+    "reasoning": null,
+    "status": 200,
+    "latency_s": 34.1
+  },
+  {
+    "query_id": "T2_0028",
+    "type": "type2",
+    "query": "A lamp carries current I = 0.25 A under voltage U = 12 V. Calculate its power.",
+    "premises": [],
+    "options": [],
+    "answer": "3",
+    "unit": "W",
+    "premises_used": [],
+    "explanation": "Electric power is calculated by multiplying the voltage across the component by the current flowing through it (P = U × I). Here, 12 V multiplied by 0.25 A equals 3 Watts.",
+    "reasoning": {
+      "type": "cot",
+      "steps": [
+        "The problem asks for the power consumed by a lamp.",
+        "Given values:",
+        "Current (I) = 0.25 A",
+        "Voltage (U) = 12 V",
+        "The formula for electric power is P = U * I.",
+        "Substituting the given values:",
+        "P = 12 V * 0.25 A",
+        "P = 3 W"
+      ]
+    },
+    "status": 200,
+    "latency_s": 15.3
+  },
+  {
+    "query_id": "T2_0029",
+    "type": "type2",
+    "query": "A charge q = 3 uC moves through a potential difference U = 5 V. Calculate the work done.",
+    "premises": [],
+    "options": [],
+    "answer": "1.5e-5",
+    "unit": "J",
+    "premises_used": [],
+    "explanation": "1.  **Identify the given values:**\n    *   Charge ($q$) = $3 \\, \\mu\\text{C} = 3 \\times 10^{-6} \\, \\text{C}$.\n    *   Potential difference ($U$) = $5 \\, \\text{V}$.\n\n2.  **Recall the formula for electric work:**\n    The work done ($A$ or $W$) by the electric field when a charge moves through a potential difference is given by:\n    $$A = q \\cdot U$$\n\n3.  **Perform the calculation:**\n    $$A = (3 \\times 10^{-6} \\, \\text{C}) \\times (5 \\, \\text{V})$$\n    $$A = 15 \\times 10^{-6} \\, \\text{J}$$\n    $$A = 1.5 \\times 10^{-5} \\, \\text{J}$$\n\n4.  **Final check:**\n    The unit of work is Joules (J), which is consistent with Coulombs $\\times$ Volts. The magnitude is correct for micro-Coulombs and Volts.",
+    "reasoning": {
+      "type": "cot",
+      "steps": [
+        "Identify the given values:",
+        "Charge ($q$) = $3 \\, \\mu\\text{C} = 3 \\times 10^{-6} \\, \\text{C}$.",
+        "Potential difference ($U$) = $5 \\, \\text{V}$.",
+        "Recall the formula for electric work:",
+        "The work done ($A$ or $W$) by the electric field when a charge moves through a potential difference is given by:",
+        "$$A = q \\cdot U$$",
+        "Perform the calculation:",
+        "$$A = (3 \\times 10^{-6} \\, \\text{C}) \\times (5 \\, \\text{V})$$",
+        "$$A = 15 \\times 10^{-6} \\, \\text{J}$$",
+        "$$A = 1.5 \\times 10^{-5} \\, \\text{J}$$"
+      ]
+    },
+    "status": 200,
+    "latency_s": 34.1
+  },
+  {
+    "query_id": "T2_0039",
+    "type": "type2",
+    "query": "A conductor has length l = 2 m, cross-sectional area S = 1 mm^2, and resistivity rho = 0.5 ohm*mm^2/m. Calculate its resistance.",
+    "premises": [],
+    "options": [],
+    "answer": "1",
+    "unit": "ohm",
+    "premises_used": [],
+    "explanation": "1.  **Identify the given values:**\n    *   Length ($l$) = 2 m\n    *   Cross-sectional area ($S$) = 1 mm²\n    *   Resistivity ($\\rho$) = 0.5 Ω·mm²/m\n\n2.  **Recall the formula for electrical resistance:**\n    The resistance $R$ of a conductor is calculated using the formula:\n    $$R = \\rho \\cdot \\frac{l}{S}$$\n\n3.  **Check unit consistency:**\n    *   $\\rho$ is given in Ω·mm²/m.\n    *   $l$ is given in m.\n    *   $S$ is given in mm².\n    The units match perfectly with the formula (no conversion needed).\n\n4.  **Substitute the values into the formula:**\n    $$R = 0.5 \\cdot \\frac{2}{1}$$\n\n5.  **Perform the calculation:**\n    $$R = 0.5 \\cdot 2 = 1$$\n\n6.  **Determine the unit of the result:**\n    Since $\\rho$ is in Ohms (Ω), the result $R$ is in Ohms (Ω).\n\n7.  **Final Answer:** 1 Ω.",
+    "reasoning": {
+      "type": "cot",
+      "steps": [
+        "Identify the given values:",
+        "Length ($l$) = 2 m",
+        "Cross-sectional area ($S$) = 1 mm²",
+        "Resistivity ($\\rho$) = 0.5 Ω·mm²/m",
+        "Recall the formula for electrical resistance:",
+        "The resistance $R$ of a conductor is calculated using the formula:",
+        "$$R = \\rho \\cdot \\frac{l}{S}$$",
+        "Check unit consistency:",
+        "$\\rho$ is given in Ω·mm²/m.",
+        "$l$ is given in m."
+      ]
+    },
+    "status": 200,
+    "latency_s": 34.0
+  },
+  {
+    "query_id": "T2_0049",
+    "type": "type2",
+    "query": "A transformer has primary turns N1 = 200, secondary turns N2 = 800, and primary voltage U1 = 12 V. Calculate the secondary voltage.",
+    "premises": [],
+    "options": [],
+    "answer": "48",
+    "unit": "V",
+    "premises_used": [],
+    "explanation": "1.  **Identify the principle**: A transformer operates on the principle of electromagnetic induction, where the ratio of the voltages across the primary and secondary coils is directly proportional to the ratio of their number of turns.\n2.  **State the formula**: The relationship is given by:\n    $$ \\frac{U_1}{N_1} = \\frac{U_2}{N_2} $$\n    Where:\n    *   $U_1$ is the primary voltage.\n    *   $N_1$ is the number of primary turns.\n    *   $U_2$ is the secondary voltage (unknown).\n    *   $N_2$ is the number of secondary turns.\n3.  **Rearrange the formula**: Solve for $U_2$:\n    $$ U_2 = U_1 \\times \\frac{N_2}{N_1} $$\n4.  **Substitute the values**:\n    *   $U_1 = 12 \\text{ V}$\n    *   $N_1 = 200$\n    *   $N_2 = 800$\n    $$ U_2 = 12 \\times \\frac{800}{200} $$\n5.  **Calculate**:\n    *   $\\frac{800}{200} = 4$\n    *   $U_2 = 12 \\times 4 = 48$\n6.  **Conclusion**: The secondary voltage is 48 V.",
+    "reasoning": {
+      "type": "cot",
+      "steps": [
+        "Identify the principle: A transformer operates on the principle of electromagnetic induction, where the ratio of the voltages across the primary and secondary coils is directly proportional to the ratio of their number of turns.",
+        "State the formula: The relationship is given by:",
+        "$$ \\frac{U_1}{N_1} = \\frac{U_2}{N_2} $$",
+        "Where:",
+        "$U_1$ is the primary voltage.",
+        "$N_1$ is the number of primary turns.",
+        "$U_2$ is the secondary voltage (unknown).",
+        "$N_2$ is the number of secondary turns.",
+        "Rearrange the formula: Solve for $U_2$:",
+        "$$ U_2 = U_1 \\times \\frac{N_2}{N_1} $$"
+      ]
+    },
+    "status": 200,
+    "latency_s": 34.0
+  },
+  {
+    "query_id": "T2_0050",
+    "type": "type2",
+    "query": "A resistor dissipates P = 9 W when the current is I = 3 A. Calculate its resistance.",
+    "premises": [],
+    "options": [],
+    "answer": "1",
+    "unit": "ohm",
+    "premises_used": [],
+    "explanation": "Using the power formula $P = I^2R$, we substitute $P=9$ and $I=3$ to get $9 = 3^2 \\cdot R$, which simplifies to $9 = 9R$. Solving for $R$ yields $1 \\Omega$.",
+    "reasoning": {
+      "type": "cot",
+      "steps": [
+        "Identify the given values:",
+        "Power dissipated ($P$) = 9 W",
+        "Current ($I$) = 3 A",
+        "Recall the relevant physical formula:",
+        "The relationship between electric power, current, and resistance is given by the formula:",
+        "$$P = I^2 \\cdot R$$",
+        "where:",
+        "$P$ is the power in watts (W)",
+        "$I$ is the current in amperes (A)",
+        "$R$ is the resistance in ohms ($\\Omega$)"
+      ]
+    },
+    "status": 200,
+    "latency_s": 33.8
+  }
+]

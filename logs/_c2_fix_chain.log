@@ -1,0 +1,6 @@
+[c2fix] waiting for C1 resume+merge to finish (sentinel)...
+[c2fix] C1 done; running C2 cfg2 at 20:59:27
+[c2fix] cfg2 done at 21:15:35
+[c2fix] cfg3 done at 21:30:56
+[c2 merge] configs: [('cfg0', 34.48), ('cfg2', 48.28), ('cfg3', 46.8)]
+[c2fix] ALL C2 DONE at 21:30:56

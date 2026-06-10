@@ -1,0 +1,74 @@
+{
+  "baselines": [
+    {
+      "id": "B2",
+      "model_id": "Qwen/Qwen2.5-Math-7B-Instruct",
+      "description": "Qwen2.5-Math-7B-Instruct (zero-shot)",
+      "accuracy_overall": 28.57,
+      "accuracy_physics": 36.17,
+      "accuracy_logic": 14.47,
+      "n_total": 217,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_correct": 62,
+      "elapsed_min": 29.8
+    },
+    {
+      "id": "B3",
+      "model_id": "EleutherAI/llemma_7b",
+      "description": "Llemma-7B (zero-shot)",
+      "accuracy_overall": 12.9,
+      "accuracy_physics": 5.67,
+      "accuracy_logic": 26.32,
+      "n_total": 217,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_correct": 28,
+      "elapsed_min": 38.2
+    },
+    {
+      "id": "B4",
+      "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+      "description": "Mistral-7B-Instruct-v0.3 (zero-shot)",
+      "accuracy_overall": 9.68,
+      "accuracy_physics": 6.38,
+      "accuracy_logic": 15.79,
+      "n_total": 217,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_correct": 21,
+      "elapsed_min": 21.9
+    },
+    {
+      "id": "B5",
+      "model_id": "Qwen/Qwen2-Math-7B-Instruct",
+      "description": "Qwen2-Math-7B-Instruct (zero-shot)",
+      "accuracy_overall": 26.73,
+      "accuracy_physics": 33.33,
+      "accuracy_logic": 14.47,
+      "n_total": 217,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_correct": 58,
+      "elapsed_min": 25.5
+    },
+    {
+      "id": "B6",
+      "model_id": "deepseek-ai/deepseek-math-7b-instruct",
+      "description": "DeepSeek-Math-7B-Instruct (zero-shot)",
+      "accuracy_overall": 11.98,
+      "accuracy_physics": 9.93,
+      "accuracy_logic": 15.79,
+      "n_total": 217,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_correct": 26,
+      "elapsed_min": 18.0
+    },
+    {
+      "id": "B8",
+      "error": "no GEMINI_API_KEY"
+    }
+  ],
+  "smoke_test": false
+}

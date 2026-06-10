@@ -1,0 +1,47 @@
+REPOSITORY / CODE & DATA LINK
+=============================
+
+Manuscript: TRA-SAE: A Low-Cost Retrieval-Augmented Expert Reasoning System for
+Mixed Physics-Logic Question Answering with a 4B Language Model
+Journal: Expert Systems (Wiley)
+
+------------------------------------------------------------------------------
+ACTION REQUIRED BEFORE SUBMISSION
+------------------------------------------------------------------------------
+Create a public (or anonymous-for-review) repository and paste the working URL
+below. The same URL must also be entered into:
+  - the manuscript Data Availability Statement
+    (currently a placeholder: https://github.com/highptest1-36/TRA_SAE),
+  - the cover letter,
+  - the submission-portal metadata.
+
+Code & data repository URL : https://github.com/highptest1-36/TRA_SAE
+
+Permanent archive (on acceptance) : Zenodo / OSF DOI to be minted ___________
+
+------------------------------------------------------------------------------
+WHAT THE REPOSITORY CONTAINS (see README_reproducibility.pdf for details)
+------------------------------------------------------------------------------
+  - Training scripts          : run_phase1_sft.py, run_phase1_5_logic_sft.py,
+                                 run_phase2_grpo.py (and logic/physics variants)
+  - Evaluation scripts        : experiments/step0_canonical_eval.py,
+                                 step1_rerun_cfg0_3.py, step2_multiseed_cfg3.py,
+                                 step8_fair_baselines.py, step9_external_benchmark.py
+  - Leakage audit script      : experiments/step10_leakage_check.py
+  - Reward-ablation scripts   : experiments/step5_reward_ablation.py
+  - Statistics & error tools  : experiments/step4_stats_and_errors.py,
+                                 step7_stats_extra.py, step12_error_reannotation.py
+  - Trained LoRA adapters     : checkpoints/ (phase1_sft, qwen35_sft_logic,
+                                 qwen35_grpo, grpo_reward_ablation_R1..R4, router.pkl)
+  - Exact 90/10 split         : processed_data/exact_train, processed_data/exact_val
+  - Prompt templates          : Appendix A of the manuscript + repository
+  - Raw per-sample predictions: logs/*.json (cfg0, cfg0-R, cfg1..cfg5, baselines,
+                                 external benchmarks, reward ablations)
+  - Compute / cost logs       : logs/ (per-stage runtime and US$ cost)
+  - License                   : (recommend MIT or Apache-2.0 for code)
+
+NOTE ON DATA REDISTRIBUTION
+  The EXACT 2026 competition data are governed by the challenge access policy and
+  must NOT be redistributed. State this in the repository README. The MMLU and
+  FOLIO benchmarks are downloaded from their original public sources by the
+  evaluation scripts.

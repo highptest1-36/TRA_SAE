@@ -1,0 +1,10 @@
+.env: line 1: HF_TOKEN: command not found
+.env: line 2: GEMINI_API_KEY: command not found
+[2026-06-09 11:30:37] Đợi multi-seed xong (marker 'MULTISEED ALL DONE' trong logs/multiseed_cfg3_canonical_20260609_112057.log)
+[2026-06-09 14:11:38] Multi-seed xong (hoặc timeout). Bắt đầu Phase B.
+[2026-06-09 14:11:38]   OK có logs/qwen35_ablation_canonical_seed1337.json
+[2026-06-09 14:11:38]   OK có logs/qwen35_ablation_canonical_seed2024.json
+[2026-06-09 14:11:38] Preflight: đảm bảo openai + datasets + scipy có
+[2026-06-09 14:11:41] >>> BẮT ĐẦU B8 Gemini(flash-lite)  (log: logs/orch_B8_20260609_141141.log)
+[2026-06-09 14:11:48] <<< XONG    B8 Gemini(flash-lite)
+[2026-06-09 14:11:48] >>> BẮT ĐẦU B7 fair baseline  (log: logs/orch_B7_20260609_141141.log)

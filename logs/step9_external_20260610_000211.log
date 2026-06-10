@@ -1,0 +1,124 @@
+=== step9 MMLU external benchmark (cfg0/cfg2/cfg3) → logs/step9_external_20260610_000211.log ===
+start=00:02:11  torchao_gone+z3_ok (đã chuẩn bị)
+[00:02:14] Loading MMLU physics datasets ...
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'cais/mmlu' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+Generating test split:   0%|          | 0/151 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 151/151 [00:00<00:00, 3177.61 examples/s]
+Generating validation split:   0%|          | 0/17 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 17/17 [00:00<00:00, 6987.77 examples/s]
+Generating dev split:   0%|          | 0/5 [00:00<?, ? examples/s]Generating dev split: 100%|██████████| 5/5 [00:00<00:00, 2408.86 examples/s]
+[00:02:17]   mmlu/high_school_physics: 151 samples
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'cais/mmlu' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+Generating test split:   0%|          | 0/102 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 102/102 [00:00<00:00, 33908.14 examples/s]
+Generating validation split:   0%|          | 0/11 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 11/11 [00:00<00:00, 5018.20 examples/s]
+Generating dev split:   0%|          | 0/5 [00:00<?, ? examples/s]Generating dev split: 100%|██████████| 5/5 [00:00<00:00, 2234.10 examples/s]
+[00:02:19]   mmlu/college_physics: 102 samples
+[00:02:19] Total: 253 samples (HS=151, College=102)
+[00:02:19] Configs to run: ['cfg0', 'cfg2', 'cfg3']
+
+[00:02:24] ============================================================
+[00:02:24]  Evaluating: Qwen3.5-4B zero-shot (no fine-tuning)
+[00:02:24]  Checkpoint: base model
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:19<00:19, 19.34s/it]Fetching 2 files: 100%|██████████| 2/2 [00:27<00:00, 12.95s/it]Fetching 2 files: 100%|██████████| 2/2 [00:27<00:00, 13.91s/it]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:55,  3.68it/s]Loading weights:   6%|▋         | 27/426 [00:00<00:04, 88.34it/s]Loading weights:  11%|█         | 46/426 [00:00<00:03, 120.21it/s]Loading weights:  18%|█▊        | 75/426 [00:00<00:02, 169.02it/s]Loading weights:  23%|██▎       | 96/426 [00:00<00:01, 175.66it/s]Loading weights:  28%|██▊       | 119/426 [00:00<00:01, 187.67it/s]Loading weights:  34%|███▍      | 145/426 [00:00<00:01, 206.09it/s]Loading weights:  39%|███▉      | 167/426 [00:01<00:01, 204.28it/s]Loading weights:  44%|████▍     | 189/426 [00:01<00:01, 200.60it/s]Loading weights:  49%|████▉     | 210/426 [00:01<00:01, 198.05it/s]Loading weights:  56%|█████▌    | 237/426 [00:01<00:00, 216.59it/s]Loading weights:  61%|██████    | 260/426 [00:01<00:00, 195.89it/s]Loading weights:  68%|██████▊   | 288/426 [00:01<00:00, 216.06it/s]Loading weights:  73%|███████▎  | 311/426 [00:01<00:00, 194.66it/s]Loading weights:  80%|███████▉  | 340/426 [00:01<00:00, 218.99it/s]Loading weights:  85%|████████▌ | 363/426 [00:01<00:00, 206.99it/s]Loading weights:  90%|█████████ | 385/426 [00:02<00:00, 205.09it/s]Loading weights:  96%|█████████▋| 411/426 [00:02<00:00, 219.40it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 187.68it/s]
+[00:03:02]  Model loaded  VRAM 7.8/79GB
+[00:03:38]  4/253 | acc=0.0% | 0.6min  VRAM 8.3/79GB
+[00:04:13]  8/253 | acc=12.5% | 1.2min  VRAM 8.6/79GB
+[00:04:48]  12/253 | acc=8.3% | 1.8min  VRAM 8.6/79GB
+[00:05:23]  16/253 | acc=6.2% | 2.4min  VRAM 8.6/79GB
+[00:05:59]  20/253 | acc=10.0% | 3.0min  VRAM 8.6/79GB
+[00:06:34]  24/253 | acc=12.5% | 3.5min  VRAM 8.6/79GB
+[00:07:09]  28/253 | acc=14.3% | 4.1min  VRAM 8.6/79GB
+[00:07:44]  32/253 | acc=12.5% | 4.7min  VRAM 8.6/79GB
+[00:08:18]  36/253 | acc=13.9% | 5.3min  VRAM 8.6/79GB
+[00:08:53]  40/253 | acc=15.0% | 5.9min  VRAM 8.6/79GB
+[00:09:27]  44/253 | acc=13.6% | 6.4min  VRAM 8.6/79GB
+[00:10:02]  48/253 | acc=14.6% | 7.0min  VRAM 8.6/79GB
+[00:10:36]  52/253 | acc=13.5% | 7.6min  VRAM 8.6/79GB
+[00:11:11]  56/253 | acc=12.5% | 8.1min  VRAM 8.6/79GB
+[00:11:45]  60/253 | acc=13.3% | 8.7min  VRAM 8.6/79GB
+[00:12:20]  64/253 | acc=12.5% | 9.3min  VRAM 8.6/79GB
+[00:12:54]  68/253 | acc=14.7% | 9.9min  VRAM 8.6/79GB
+[00:13:29]  72/253 | acc=13.9% | 10.4min  VRAM 8.6/79GB
+[00:14:03]  76/253 | acc=14.5% | 11.0min  VRAM 8.6/79GB
+[00:14:37]  80/253 | acc=13.8% | 11.6min  VRAM 8.6/79GB
+[00:15:11]  84/253 | acc=13.1% | 12.2min  VRAM 8.6/79GB
+[00:15:46]  88/253 | acc=13.6% | 12.7min  VRAM 8.6/79GB
+[00:16:20]  92/253 | acc=13.0% | 13.3min  VRAM 8.6/79GB
+[00:16:54]  96/253 | acc=13.5% | 13.9min  VRAM 8.6/79GB
+[00:17:28]  100/253 | acc=16.0% | 14.4min  VRAM 8.6/79GB
+[00:18:02]  104/253 | acc=15.4% | 15.0min  VRAM 8.6/79GB
+[00:18:37]  108/253 | acc=15.7% | 15.6min  VRAM 8.6/79GB
+[00:19:11]  112/253 | acc=17.0% | 16.2min  VRAM 8.6/79GB
+[00:19:45]  116/253 | acc=16.4% | 16.7min  VRAM 8.6/79GB
+[00:20:19]  120/253 | acc=16.7% | 17.3min  VRAM 8.6/79GB
+[00:20:54]  124/253 | acc=16.1% | 17.9min  VRAM 8.6/79GB
+[00:21:29]  128/253 | acc=16.4% | 18.5min  VRAM 8.6/79GB
+[00:22:04]  132/253 | acc=15.9% | 19.0min  VRAM 8.6/79GB
+[00:22:39]  136/253 | acc=15.4% | 19.6min  VRAM 8.6/79GB
+[00:23:14]  140/253 | acc=16.4% | 20.2min  VRAM 8.6/79GB
+[00:23:49]  144/253 | acc=18.1% | 20.8min  VRAM 8.6/79GB
+[00:24:24]  148/253 | acc=18.9% | 21.4min  VRAM 8.6/79GB
+[00:24:59]  152/253 | acc=19.1% | 21.9min  VRAM 8.6/79GB
+[00:25:33]  156/253 | acc=19.2% | 22.5min  VRAM 8.6/79GB
+[00:26:08]  160/253 | acc=19.4% | 23.1min  VRAM 8.6/79GB
+[00:26:43]  164/253 | acc=18.9% | 23.7min  VRAM 8.6/79GB
+[00:27:18]  168/253 | acc=18.5% | 24.3min  VRAM 8.6/79GB
+[00:27:53]  172/253 | acc=19.2% | 24.9min  VRAM 8.6/79GB
+[00:28:28]  176/253 | acc=19.3% | 25.4min  VRAM 8.6/79GB
+[00:29:03]  180/253 | acc=18.9% | 26.0min  VRAM 8.6/79GB
+[00:29:39]  184/253 | acc=18.5% | 26.6min  VRAM 8.6/79GB
+[00:30:14]  188/253 | acc=18.6% | 27.2min  VRAM 8.6/79GB
+[00:30:49]  192/253 | acc=18.2% | 27.8min  VRAM 8.6/79GB
+[00:31:25]  196/253 | acc=18.9% | 28.4min  VRAM 8.6/79GB
+[00:32:00]  200/253 | acc=18.5% | 29.0min  VRAM 8.6/79GB
+[00:32:34]  204/253 | acc=19.1% | 29.5min  VRAM 8.6/79GB
+[00:33:09]  208/253 | acc=20.2% | 30.1min  VRAM 8.6/79GB
+[00:33:44]  212/253 | acc=20.3% | 30.7min  VRAM 8.6/79GB
+[00:34:18]  216/253 | acc=20.4% | 31.3min  VRAM 8.6/79GB
+[00:34:53]  220/253 | acc=20.9% | 31.9min  VRAM 8.6/79GB
+[00:35:27]  224/253 | acc=21.0% | 32.4min  VRAM 8.6/79GB
+[00:36:02]  228/253 | acc=21.5% | 33.0min  VRAM 8.6/79GB
+[00:36:36]  232/253 | acc=21.6% | 33.6min  VRAM 8.6/79GB
+[00:37:10]  236/253 | acc=21.6% | 34.1min  VRAM 8.6/79GB
+[00:37:45]  240/253 | acc=21.2% | 34.7min  VRAM 8.6/79GB
+[00:38:19]  244/253 | acc=20.9% | 35.3min  VRAM 8.6/79GB
+[00:38:54]  248/253 | acc=21.0% | 35.9min  VRAM 8.6/79GB
+[00:39:30]  252/253 | acc=21.0% | 36.5min  VRAM 8.6/79GB
+[00:40:03]  253/253 | acc=21.3% | 37.0min  VRAM 8.7/79GB
+[00:40:03]  RESULT: overall=21.34%  per_subject={'hs_physics': 19.21, 'college_physics': 24.51}
+[00:40:03] Saved → /content/drive/MyDrive/TRA-SAE/logs/external_benchmark_results_latest.json
+
+[00:40:03] ============================================================
+[00:40:03]  Evaluating: cfg2: SFT Ph1 + Logic SFT
+[00:40:03]  Checkpoint: /content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_sft_logic/final
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 20164.92it/s]
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<02:01,  3.50it/s]Loading weights:   6%|▋         | 27/426 [00:00<00:04, 85.72it/s]Loading weights:  11%|█         | 46/426 [00:00<00:03, 118.31it/s]Loading weights:  17%|█▋        | 73/426 [00:00<00:02, 157.11it/s]Loading weights:  22%|██▏       | 95/426 [00:00<00:01, 171.05it/s]Loading weights:  28%|██▊       | 119/426 [00:00<00:01, 185.98it/s]Loading weights:  34%|███▍      | 144/426 [00:00<00:01, 203.69it/s]Loading weights:  39%|███▉      | 166/426 [00:01<00:01, 204.07it/s]Loading weights:  44%|████▍     | 188/426 [00:01<00:01, 201.62it/s]Loading weights:  49%|████▉     | 209/426 [00:01<00:01, 203.80it/s]Loading weights:  55%|█████▌    | 236/426 [00:01<00:00, 220.19it/s]Loading weights:  61%|██████    | 259/426 [00:01<00:00, 200.59it/s]Loading weights:  67%|██████▋   | 287/426 [00:01<00:00, 222.00it/s]Loading weights:  73%|███████▎  | 310/426 [00:01<00:00, 213.69it/s]Loading weights:  78%|███████▊  | 332/426 [00:01<00:00, 210.97it/s]Loading weights:  84%|████████▍ | 358/426 [00:01<00:00, 216.77it/s]Loading weights:  90%|████████▉ | 383/426 [00:02<00:00, 219.46it/s]Loading weights:  96%|█████████▌| 407/426 [00:02<00:00, 218.96it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 188.26it/s]
+[00:40:17]  Model loaded  VRAM 8.4/79GB
+[00:40:51]  4/253 | acc=25.0% | 0.6min  VRAM 8.4/79GB
+[00:41:27]  8/253 | acc=25.0% | 1.2min  VRAM 8.5/79GB
+[00:42:01]  12/253 | acc=25.0% | 1.7min  VRAM 8.5/79GB
+[00:42:36]  16/253 | acc=18.8% | 2.3min  VRAM 8.5/79GB
+[00:43:10]  20/253 | acc=20.0% | 2.9min  VRAM 8.5/79GB
+[00:43:45]  24/253 | acc=16.7% | 3.5min  VRAM 8.5/79GB
+[00:44:20]  28/253 | acc=17.9% | 4.0min  VRAM 8.5/79GB
+[00:44:54]  32/253 | acc=15.6% | 4.6min  VRAM 8.5/79GB
+[00:45:29]  36/253 | acc=13.9% | 5.2min  VRAM 8.5/79GB
+[00:46:04]  40/253 | acc=12.5% | 5.8min  VRAM 8.5/79GB
+[00:46:39]  44/253 | acc=11.4% | 6.4min  VRAM 8.5/79GB
+[00:47:13]  48/253 | acc=12.5% | 6.9min  VRAM 8.5/79GB
+[00:47:48]  52/253 | acc=11.5% | 7.5min  VRAM 8.5/79GB
+[00:48:22]  56/253 | acc=10.7% | 8.1min  VRAM 8.5/79GB
+[00:48:57]  60/253 | acc=10.0% | 8.7min  VRAM 8.5/79GB
+[00:49:32]  64/253 | acc=10.9% | 9.2min  VRAM 8.5/79GB
+[00:50:06]  68/253 | acc=11.8% | 9.8min  VRAM 8.5/79GB
+[00:50:41]  72/253 | acc=11.1% | 10.4min  VRAM 8.5/79GB
+[00:51:18]  76/253 | acc=11.8% | 11.0min  VRAM 8.5/79GB
+[00:51:56]  80/253 | acc=11.2% | 11.6min  VRAM 8.5/79GB
+[00:52:33]  84/253 | acc=13.1% | 12.3min  VRAM 8.5/79GB
+[00:53:10]  88/253 | acc=14.8% | 12.9min  VRAM 8.5/79GB
+[00:53:47]  92/253 | acc=15.2% | 13.5min  VRAM 8.5/79GB

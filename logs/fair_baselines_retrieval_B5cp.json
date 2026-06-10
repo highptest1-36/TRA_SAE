@@ -1,0 +1,2198 @@
+{
+  "run_ts": "20260612_204425",
+  "smoke_test": false,
+  "retrieval": true,
+  "n_val": 217,
+  "results": [
+    {
+      "id": "B5",
+      "strategy": "cot_plain",
+      "retrieval": true,
+      "model_id": "Qwen/Qwen2-Math-7B-Instruct",
+      "description": "Qwen2-Math-7B-Instruct [cot_plain]+retrieval",
+      "system_prompt": "You are an expert in Logic and Physics. Solve the problem step by step, showing all reasoning. End y...",
+      "n_total": 217,
+      "n_correct": 55,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_phys_correct": 42,
+      "n_logic_correct": 13,
+      "accuracy_overall": 25.35,
+      "accuracy_physics": 29.79,
+      "accuracy_logic": 17.11,
+      "elapsed_min": 13.8,
+      "per_sample": [
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 0,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to understand the condition for resonance in an RLC series circuit. Resonance occurs when the inductive reactance (X_L) equals the capacitive reactance (X_C). The reactances are given by:\nX_L = \u03c9L\nX_C = 1/(\u03c9C)\nwhere \u03c9 is the angular frequency, L is the inductance, and ",
+          "prediction_extracted": "2.0",
+          "ground_truth": "2.0",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 1,
+          "subject": "physics",
+          "prediction_raw": "The charge on a capacitor is given by the formula Q = CV, where Q is the charge, C is the capacitance, and V is the voltage.\nGiven:\nC = 5 \u03bcF\nV = 20 V\nSubstituting the given values into the formula:\nQ = (5 \u03bcF)(20 V) = 100 \u03bcC\nTherefore, the charge on the capacitor after it is disconnected is 100 \u03bcC.\nT",
+          "prediction_extracted": "C",
+          "ground_truth": "Do not change",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 2,
+          "subject": "logic",
+          "prediction_raw": "To solve this problem, we need to analyze the given premises and determine which of the statements is true based on these premises.\n\nLet's break down the premises and analyze them step by step:\n\n1. If a student does not follow the school rules, the student will be disciplined.\n2. Every student must ",
+          "prediction_extracted": "Therefore, the correct answer is: D.",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 3,
+          "subject": "physics",
+          "prediction_raw": "To find the energy stored in the capacitor, we use the formula for the energy stored in a capacitor, which is given by:\n\\[ U = \\frac{1}{2} CV^2 \\]\nwhere \\( U \\) is the energy stored, \\( C \\) is the capacitance, and \\( V \\) is the voltage across the capacitor. We can also express the voltage \\( V \\) ",
+          "prediction_extracted": "0.135 \\, J",
+          "ground_truth": "0.135 J",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 4,
+          "subject": "logic",
+          "prediction_raw": "The answer is: Yes",
+          "prediction_extracted": "Yes",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 5,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to calculate the electric field strength at point C due to each charge and then find the resultant field. The electric field strength due to a point charge is given by the formula:\n\nE = k * |q| / r^2\n\nwhere:\n- E is the electric field strength,\n- k is Coulomb's constant",
+          "prediction_extracted": "[0]",
+          "ground_truth": "1.152 \u00d7 10^7 V/m",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 6,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to calculate the electric field contributions from both charges at point M and then find their vector sum. The electric field due to a point charge q at a distance r is given by the formula:\n\nE = k * |q| / r^2\n\nwhere k is the Coulomb constant (approximately 8.99 \u00d7 10^9",
+          "prediction_extracted": "[1.24 \u00d7 10^7 V/m] or simply [1.24] in the given format",
+          "ground_truth": "2.36*10^7 V/m",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 7,
+          "subject": "logic",
+          "prediction_raw": "To solve this problem, we need to analyze the given premises and determine which of the statements A, B, C, or D can be inferred. Let's break it down step by step.\n\n1. **Identify the key relationships:**\n   - All students engage in self-study (Premise 12).\n   - If a student does not engage in self-s",
+          "prediction_extracted": "B",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 8,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to use the relationship between the magnetic field energy, inductance, and current in an LC circuit. The magnetic field energy \\( U_B \\) stored in an inductor is given by the formula:\n\n\\[ U_B = \\frac{1}{2} L I^2 \\]\n\nwhere:\n- \\( U_B \\) is the magnetic field energy,\n- \\(",
+          "prediction_extracted": "2",
+          "ground_truth": "2 H",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 9,
+          "subject": "physics",
+          "prediction_raw": "To determine the electric field vector at point M, we need to calculate the electric field contributions from both charges q1 and q2 at point M and then find the vector sum of these contributions.\n\n1. Calculate the electric field due to q1 at point M:\n   The electric field due to a point charge q at",
+          "prediction_extracted": "4.1954  104 \\, V/m",
+          "ground_truth": "32000 V/m",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 10,
+          "subject": "logic",
+          "prediction_raw": "To determine which statement can be inferred about students with clear learning objectives, let's analyze the given premises step by step:\n\n1. If students receive clear learning objectives, they can set better academic goals.\n   - This premise directly links clear learning objectives to the ability ",
+          "prediction_extracted": "D. Some students set better academic goals",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 11,
+          "subject": "logic",
+          "prediction_raw": "Let's analyze the premises step by step:\n\n1. If x does not use online documents from the library, then x does not gain more knowledge.\n   This can be written as: ~U \u2192 ~G, where U is \"uses online documents\" and G is \"gains more knowledge.\"\n\n2. There exists a student who gains more knowledge from the ",
+          "prediction_extracted": "A. Some students gain more knowledge",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 12,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to calculate the electric forces exerted by q1 and q2 on the test charge q, and then find the net force. The electric force between two point charges is given by Coulomb's law:\n\nF = k * |q1| * |q2| / r^2\n\nwhere k is the Coulomb constant (approximately 8.99 \u00d7 10^9 N\u00b7m^2",
+          "prediction_extracted": "0 N",
+          "ground_truth": "0.495 N",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 13,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to understand the concept of power factor in an AC circuit. The power factor (PF) is the ratio of the real power (P) to the apparent power (S) in the circuit. For a circuit where the voltages are 90\u00b0 out of phase with the currents, the power factor is always 1 if there",
+          "prediction_extracted": "1",
+          "ground_truth": "1",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 14,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to use Coulomb's law, which states that the electric force between two point charges is given by:\n\nF = k * |q1| * |q2| / r^2\n\nwhere:\n- F is the magnitude of the force,\n- k is Coulomb's constant (approximately 8.99 \u00d7 10^9 N\u00b7m^2/C^2),\n- |q1| and |q2| are the magnitudes o",
+          "prediction_extracted": "0.0018 N",
+          "ground_truth": "0.018 N",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 15,
+          "subject": "logic",
+          "prediction_raw": "To determine the validity of the conclusions, let's analyze the premises step by step and see if they support any of the given options.\n\n1. **Premise Analysis:**\n   - **(1) At least one student has received a Scholarship.**\n   - **(2) All students are required to submit a Research project.**\n   - **",
+          "prediction_extracted": "D",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 16,
+          "subject": "logic",
+          "prediction_raw": "To determine if Dio passed by reading books, let's analyze the premises step by step:\n\n1. **Students who come to the library to borrow books will gain books.**\n   - This means if Dio comes to the library to borrow a book, he will gain a book.\n\n2. **Students who got a book and are hardworking will re",
+          "prediction_extracted": "Yes",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 17,
+          "subject": "physics",
+          "prediction_raw": "To determine how the electric field energy changes when the voltage across a capacitor doubles, we need to understand the relationship between voltage, charge, and energy in a capacitor.\n\n1. **Initial Condition:**\n   Let the initial voltage across the capacitor be \\( V \\) and the initial charge on t",
+          "prediction_extracted": "D",
+          "ground_truth": "Increase by 4 times",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 18,
+          "subject": "physics",
+          "prediction_raw": "To determine the shape of the graph representing the energy stored in a capacitor as a function of the voltage U, let's start with the formula for the energy stored in a capacitor:\n\n\\[ E = \\frac{1}{2} C U^2 \\]\n\nwhere:\n- \\( E \\) is the energy stored in the capacitor,\n- \\( C \\) is the capacitance,\n- \\",
+          "prediction_extracted": "Parabola",
+          "ground_truth": "upward parabola",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 19,
+          "subject": "physics",
+          "prediction_raw": "To find the capacitance of the capacitor, we can use the formula for the energy stored in a capacitor:\n\\[ U = \\frac{1}{2} CV^2 \\]\nwhere:\n- \\( U \\) is the energy stored (in joules),\n- \\( C \\) is the capacitance (in farads),\n- \\( V \\) is the voltage (in volts).\n\nWe are given:\n\\[ U = 0.2 \\text{ J} \\]\n\\",
+          "prediction_extracted": "40  \u03bcF",
+          "ground_truth": "40 \u00b5F",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 20,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we can use the formula for the magnetic field energy stored in an inductor, which is given by:\n\\[ U = \\frac{1}{2} L I^2 \\]\nwhere:\n- \\( U \\) is the magnetic field energy (in Joules),\n- \\( L \\) is the inductance (in Henrys),\n- \\( I \\) is the current (in Amperes).\n\nWe are given:\n",
+          "prediction_extracted": "0.01  H",
+          "ground_truth": "0.01 H",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 21,
+          "subject": "physics",
+          "prediction_raw": "To calculate the average power P consumed by the circuit, we need to use the formula for average power in an AC circuit, which is given by:\n\\[ P = \\frac{1}{2} I_{\\text{RMS}} V_{\\text{RMS}} \\cos \\phi \\]\nwhere \\( I_{\\text{RMS}} \\) is the root mean square (RMS) current, \\( V_{\\text{RMS}} \\) is the RMS ",
+          "prediction_extracted": "100",
+          "ground_truth": "200 W",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 22,
+          "subject": "physics",
+          "prediction_raw": "To calculate the magnetic energy density, we use the formula for magnetic energy density in a uniform magnetic field:\n\\[ u_B = \\frac{1}{2} \\mu_0 B^2 \\]\nwhere \\( u_B \\) is the magnetic energy density, \\( B \\) is the magnetic field strength, and \\( \\mu_0 \\) is the permeability of free space (\\( 4\\pi \\",
+          "prediction_extracted": "C",
+          "ground_truth": "0.895 J/m\u00b3",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 23,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement \"There exists at least one online student who has completed a module quiz\" is true, let's analyze the given premises step by step:\n\n1. All online students have logged into the online learning platform.\n2. There exists at least one online student who has completed a modu",
+          "prediction_extracted": "B",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 24,
+          "subject": "physics",
+          "prediction_raw": "To find the charge stored on the capacitor, we can use the formula:\n\\[ Q = C \\times V \\]\nwhere:\n- \\( Q \\) is the charge stored (in coulombs, C)\n- \\( C \\) is the capacitance (in farads, F)\n- \\( V \\) is the potential difference (in volts, V)\n\nGiven:\n- \\( C = 27.63 \\, \\text{pF} = 27.63 \\times 10^{-12} ",
+          "prediction_extracted": "C",
+          "ground_truth": "2.54 nC",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 25,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to use the relationship between the electric field energy, magnetic field energy, voltage, and current in an ideal LC circuit. Let's go through the steps:\n\n1. **Identify the total energy in the circuit:**\n   The total energy \\( U \\) in an ideal LC circuit is the sum of",
+          "prediction_extracted": ":",
+          "ground_truth": "1 / (\u03c9C) \u03a9",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 26,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to calculate the electric field contributions from both charges at point M and then find the net electric field. The electric field due to a point charge q at a distance r is given by the formula:\n\nE = k * |q| / r^2\n\nwhere k is the Coulomb constant (approximately 8.99 ",
+          "prediction_extracted": "[1.15 \u00d7 10^8 V/m]",
+          "ground_truth": "8.11*10^6 V/m",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 27,
+          "subject": "logic",
+          "prediction_raw": "To determine if students in problem-based learning can improve self-learning, let's analyze the given premises step by step:\n\n1. If students engage in problem-based learning, they develop stronger analytical skills.\n   - Problem-based learning (PBL) focuses on solving real-world problems, which requ",
+          "prediction_extracted": "B",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 28,
+          "subject": "physics",
+          "prediction_raw": "To find the capacitance C of the capacitor, we can use the formula for the energy stored in a capacitor:\n\\[ U = \\frac{1}{2} CV^2 \\]\nwhere:\n- \\( U \\) is the energy stored (in Joules),\n- \\( C \\) is the capacitance (in Farads),\n- \\( V \\) is the voltage across the capacitor (in Volts).\n\nWe are given:\n\\[",
+          "prediction_extracted": "C",
+          "ground_truth": "4.00 \u03bcF",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 29,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to calculate the electric field contributions from both charges q\u2081 and q\u2082 at point M, and then find the magnitude of the resultant electric field.\n\n1. Calculate the distance from M to each charge:\n   - Since M is on the perpendicular bisector of AB, the distance from M",
+          "prediction_extracted": "6.923  N/C",
+          "ground_truth": "5.76 x 10^4 N/C",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 30,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to calculate the net force acting on the charge at the right-angle vertex of an isosceles right triangle with legs of 15 cm, when three identical charges q = -8 \u00d7 10^-8 C are placed at the vertices.\n\nStep 1: Calculate the force between two charges.\nThe force between tw",
+          "prediction_extracted": "C",
+          "ground_truth": "3.62*10^-3 N",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 31,
+          "subject": "physics",
+          "prediction_raw": "To calculate the percentage relative error, we use the formula:\n\\[ \\text{Percentage relative error} = \\left( \\frac{\\text{Absolute error}}{\\text{ measured value}} \\right) \\times 100 \\]\n\nHere, the absolute error is 0.2 V and the measured value is 6.0 V. Plugging these values into the formula, we get:\n",
+          "prediction_extracted": "C",
+          "ground_truth": "3.33 %",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 32,
+          "subject": "logic",
+          "prediction_raw": "To solve this problem, we need to analyze the given premises and deduce the activities that all students perform based on the information provided.\n\nLet's break down the premises:\n\n1. If a student gives a seminar, then they receive a recommendation.\n2. If a student participates in a project, then th",
+          "prediction_extracted": "A",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 33,
+          "subject": "logic",
+          "prediction_raw": "To solve this problem, we need to analyze the given premises and determine which of the statements A, B, C, or D can be inferred. Let's break down the premises and see what we can deduce.\n\n1. All students complete fundamental courses.\n2. All students submit research papers.\n3. At least one student p",
+          "prediction_extracted": "The statement \"If not participating in extracurricular activities implies not developing leadership skills, then (if not completing fundamental",
+          "ground_truth": "D",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 34,
+          "subject": "logic",
+          "prediction_raw": "To solve this problem, we need to analyze the given premises and determine which statement can be logically inferred from them. Let's break down the premises and analyze each option step by step.\n\n### Premises Analysis:\n1. If a Raspberry Pi system is simple to use, then it is cost-effective.\n2. Ther",
+          "prediction_extracted": "A",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 35,
+          "subject": "physics",
+          "prediction_raw": "To calculate the power in a resonant RLC circuit, we use the formula:\nP = U^2 / R\nwhere P is the power, U is the applied voltage, and R is the resistance.\nGiven:\nR = 25 \u03a9\nU = 100 V\nSubstituting the given values into the formula:\nP = (100 V)^2 / 25 \u03a9\nP = 10000 V^2 / 25 \u03a9\nP = 400 W\nThe answer is: 400 ",
+          "prediction_extracted": "400 W",
+          "ground_truth": "400 W",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 36,
+          "subject": "logic",
+          "prediction_raw": "To solve this problem, we need to analyze the given premises and determine which statement can be inferred when we know that there exists at least one student who qualifies for the honors program.\n\nLet's break down the premises and analyze them step by step:\n\n1. All students in the digital literacy ",
+          "prediction_extracted": "D. It is not the case that qualifying for honors meaning participation in group projects implies that participation meaning feedback receipt leads to universal project participation",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 37,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement \"If a student scores exactly 100%, then they have a high academic standing\" is true according to the given premises, let's analyze the premises step by step:\n\n1. If a student does not study, then they do not pass. (Premise 7)\n2. There exists at least one student who sco",
+          "prediction_extracted": "Yes",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 38,
+          "subject": "physics",
+          "prediction_raw": "In an ideal LC circuit, the total energy is the sum of the electric energy and the magnetic energy. Let's denote the total energy by \\(E\\), the electric energy by \\(E_e\\), and the magnetic energy by \\(E_m\\). We know that \\(E = E_e + E_m\\).\n\nAccording to the problem, the magnetic energy is half of th",
+          "prediction_extracted": "[A]",
+          "ground_truth": "Half of the total energy J",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 39,
+          "subject": "logic",
+          "prediction_raw": "To determine if all students are eligible for a senior job, let's analyze the premises step by step:\n\n1. If a person does not have a university degree, then they are not eligible for a senior job.\n2. Everyone has completed training.\n3. If someone does not have a university degree, then they have not",
+          "prediction_extracted": "[Yes]",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 40,
+          "subject": "physics",
+          "prediction_raw": "To determine the value of R in a resonant RLC circuit given the total impedance Z, we need to understand the behavior of the circuit at resonance. At resonance in a series RLC circuit, the inductive reactance (X_L) and the capacitive reactance (X_C) cancel each other out, meaning X_L = X_C. This lea",
+          "prediction_extracted": "180 \u03a9",
+          "ground_truth": "180 \u03a9",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 41,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to use Faraday's law of induction, which states that the induced electromotive force (emf) in a circuit is equal to the negative rate of change of the magnetic flux through the circuit. Mathematically, this is expressed as:\n\n\u03b5 = -N * (\u0394\u03a6/\u0394t)\n\nwhere:\n- \u03b5 is the induced ",
+          "prediction_extracted": "800 V",
+          "ground_truth": "0.4 V",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 42,
+          "subject": "logic",
+          "prediction_raw": "To solve this problem, we need to analyze the given premises and determine which of the provided statements can be inferred. Let's break down the premises and the options step by step.\n\n### Premises Analysis:\n1. If a person has not complied with the new attendance rule, then they are not allowed to ",
+          "prediction_extracted": "The correct answer is: B. If a person received a warning for previous absences, then they acknowledged the new attendance policy, and if they acknowledged the new attendance policy, then not complying with the new rule implies they are not allowed to attend class.",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 43,
+          "subject": "physics",
+          "prediction_raw": "To calculate the maximum power dissipated in a series RLC circuit at resonance, we use the formula for power dissipation in a resistor, which is given by:\n\\[ P = \\frac{U^2}{R} \\]\nwhere \\( P \\) is the power, \\( U \\) is the voltage, and \\( R \\) is the resistance.\n\nGiven:\n- RMS voltage \\( U = 150 \\) V\n",
+          "prediction_extracted": "225 W",
+          "ground_truth": "225 W",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 44,
+          "subject": "logic",
+          "prediction_raw": "Let's analyze the premises step by step to determine which statement can be inferred.\n\n1. Every student completes the fundamental courses.\n   - This means that for all students, the fundamental courses are completed.\n\n2. If a student submits their assignments on time, then they achieve good grades.\n",
+          "prediction_extracted": "A",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 45,
+          "subject": "logic",
+          "prediction_raw": "To solve this problem, we need to analyze the given premises and determine which statement is correct based on the logical implications of these premises.\n\nLet's break down the premises and analyze them step by step:\n\n1. If a student does not practice solving math problems, they will not be able to ",
+          "prediction_extracted": "A",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 46,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement \"If every student participates in a course, then if a student is enrolled, they must complete the assignments\" is true according to the given premises, let's analyze the premises step by step.\n\n1. If a student participates in a class, they will register for it.\n2. Every",
+          "prediction_extracted": "D",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 47,
+          "subject": "physics",
+          "prediction_raw": "To calculate the capacitance of a parallel-plate air capacitor, we use the formula:\n\\[ C = \\frac{\\epsilon_0 A}{d} \\]\nwhere:\n- \\( C \\) is the capacitance,\n- \\( \\epsilon_0 \\) is the permittivity of free space (\\( 8.85 \\times 10^{-12} \\) F/m),\n- \\( A \\) is the area of one plate,\n- \\( d \\) is the distan",
+          "prediction_extracted": "C",
+          "ground_truth": "42.3 pF",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 48,
+          "subject": "physics",
+          "prediction_raw": "To find the inductance L required for a circuit to resonate at a given frequency with a specific capacitance, we use the formula for resonant frequency of anLC circuit:\nf = 1 / (2\u03c0\u221a(LC))\nwhere:\nf is the resonant frequency in Hz\nL is the inductance in Henry (H)\nC is the capacitance in Farads (F)\nRear",
+          "prediction_extracted": "[B]",
+          "ground_truth": "58.63 mH",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 49,
+          "subject": "physics",
+          "prediction_raw": "To find the induced electromotive force (emf) in a solenoid, we use Faraday's law of induction, which states that the emf is equal to the negative rate of change of the magnetic flux through the solenoid. For a solenoid, the magnetic flux is proportional to the current, so the emf is given by:\n\nemf ",
+          "prediction_extracted": "30 V",
+          "ground_truth": "30.00 V",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 50,
+          "subject": "logic",
+          "prediction_raw": "To solve this problem, we need to analyze the given premises and determine which of the statements can be inferred. Let's go through the premises step by step:\n\n1. If a student does not pass the exam, then they do not receive an award.\n2. If a student is diligent, then they study regularly.\n3. If a ",
+          "prediction_extracted": "C. All students study regularly",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 51,
+          "subject": "physics",
+          "prediction_raw": "To calculate the magnetic field B inside a solenoid, we use the formula:\nB = \u03bc\u2080 * n * I\nwhere:\n- B is the magnetic field strength,\n- \u03bc\u2080 is the permeability of free space (4\u03c0 \u00d7 10\u207b\u2077 T\u00b7m/A),\n- n is the number of turns per meter,\n- I is the current in the solenoid.\n\nGiven:\n- n = 3000 turns/m,\n- I = 2 A",
+          "prediction_extracted": "C",
+          "ground_truth": "7.54\u00d710\u207b\u00b3 T",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 52,
+          "subject": "physics",
+          "prediction_raw": "To determine the factor by which \u03c9 must be changed relative to \u03c90 for the circuit to be in resonance, we need to find the resonant angular frequency \u03c9r of the RLC circuit. The resonant angular frequency \u03c9r is given by the formula:\n\n\u03c9r = 1 / sqrt(LC)\n\nwhere L is the inductance and C is the capacitanc",
+          "prediction_extracted": "2.236",
+          "ground_truth": "2.236",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 53,
+          "subject": "physics",
+          "prediction_raw": "To find the RMS current in the circuit after the frequency is doubled, we need to follow these steps:\n\n1. Calculate the initial impedance (Z) of the circuit at the original frequency.\n2. Determine the new impedance (Z') after the frequency is doubled.\n3. Calculate the new current (I') using the new ",
+          "prediction_extracted": "[A]",
+          "ground_truth": "3 A",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 54,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to use the principle of conservation of charge. When two capacitors are connected with their like-polarized terminals, the total charge before and after the connection remains the same. The total charge before the connection is the sum of the charges on each capacitor,",
+          "prediction_extracted": "240 V",
+          "ground_truth": "240 V",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 55,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement is true, let's analyze the premises step by step:\n\n1. BK students can participate in the lab of a lecturer to gain guidance to do a science article.\n   - This means if a BK student is in the lab, they can get guidance to do a science article.\n\n2. If they are a member of",
+          "prediction_extracted": "D",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 56,
+          "subject": "physics",
+          "prediction_raw": "To calculate the stored magnetic field energy in a solenoid, we use the formula for the energy stored in an inductor:\n\\[ U = \\frac{1}{2} L I^2 \\]\nwhere:\n- \\( U \\) is the energy stored (in Joules, J)\n- \\( L \\) is the inductance (in Henrys, H)\n- \\( I \\) is the current (in Amperes, A)\n\nGiven:\n- \\( L = ",
+          "prediction_extracted": "100 mJ",
+          "ground_truth": "100.0 mJ",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 57,
+          "subject": "logic",
+          "prediction_raw": "To solve this problem, we need to analyze the given premises and determine which statement can be inferred from them.\n\nThe premises are:\n1. If a student attends classes regularly, then they will understand the material better.\n2. If a student participates in extracurricular activities, then they wil",
+          "prediction_extracted": "D. If participating in extracurricular activities helps students develop social skills, then understanding the material will help them perform well in exams.",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 58,
+          "subject": "physics",
+          "prediction_raw": "To calculate the total impedance Z of a series circuit given the voltage U and the current I, we can use Ohm's law for AC circuits, which states that Z = U / I. Here, U is the voltage and I is the current.\n\nGiven:\nU = 100 V\nI = 2 A\n\nUsing Ohm's law for AC circuits:\nZ = U / I\nZ = 100 V / 2 A\nZ = 50 \u03a9",
+          "prediction_extracted": "50 \u03a9",
+          "ground_truth": "50.0 \u03a9",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 59,
+          "subject": "physics",
+          "prediction_raw": "To find the resultant force of two electric forces acting at an angle of 135\u00b0 to each other, we can use the formula for the magnitude of the resultant force of two vectors:\nR = \u221a(F1\u00b2 + F2\u00b2 + 2F1F2cos\u03b8)\nwhere F1 and F2 are the magnitudes of the two forces, and \u03b8 is the angle between them.\nIn this cas",
+          "prediction_extracted": "B",
+          "ground_truth": "8.2594 N",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 60,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to calculate the electric forces acting on the test charge q due to each of the two charges q1 and q2, and then find the resultant force. The electric force between two point charges is given by Coulomb's law:\n\nF = k * |q1| * |q2| / r^2\n\nwhere:\n- F is the magnitude of ",
+          "prediction_extracted": "0 N",
+          "ground_truth": "0.509*10^-3 N",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 61,
+          "subject": "logic",
+          "prediction_raw": "To determine if students with open-ended projects can avoid rigid curriculum struggles, let's analyze the premises step by step:\n\n1. **Premise 6**: If students work on open-ended projects, they enhance their creativity and innovation skills.\n2. **Premise 5**: If students face rigid curriculum struct",
+          "prediction_extracted": "No",
+          "ground_truth": "No",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 62,
+          "subject": "physics",
+          "prediction_raw": "To find the resultant force of two electric forces that are perpendicular to each other, we can use the Pythagorean theorem. The theorem states that in a right-angled triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the le",
+          "prediction_extracted": "D",
+          "ground_truth": "12.8062 N",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 63,
+          "subject": "physics",
+          "prediction_raw": "The answer is: 60 \u03a9",
+          "prediction_extracted": "60 \u03a9",
+          "ground_truth": "60 \u03a9",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 64,
+          "subject": "physics",
+          "prediction_raw": "To calculate the electric field energy stored in the capacitor, we use the formula:\n\\[ U = \\frac{1}{2} CV^2 \\]\nwhere \\( U \\) is the energy stored, \\( C \\) is the capacitance, and \\( V \\) is the potential difference.\n\nGiven:\n\\[ C = 19.75 \\, \\text{pF} = 19.75 \\times 10^{-12} \\, \\text{F} \\]\n\\[ V = 131.",
+          "prediction_extracted": "171.64 nJ",
+          "ground_truth": "171.80 nJ",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 65,
+          "subject": "physics",
+          "prediction_raw": "To find the magnitude of the net electric force exerted by charges q1 and q2 on charge q3, we need to calculate the individual forces due to q1 and q2 on q3 and then find their vector sum. The force between two point charges is given by Coulomb's law:\n\nF = k * |q1| * |q2| / r^2\n\nwhere k is the Coulo",
+          "prediction_extracted": "7.84 \u00d7 10^-3 N",
+          "ground_truth": "34.56 N",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 66,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to follow these steps:\n\n1. Calculate the capacitance of the parallel plate capacitor.\n2. Use the capacitance to find the electric field between the plates.\n3. Use the electric field to find the force between the plates.\n\n**Step 1: Calculate the capacitance**\n\nThe formu",
+          "prediction_extracted": "72.9 \\, mN",
+          "ground_truth": "7.23*10^4 mN",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 67,
+          "subject": "logic",
+          "prediction_raw": "To determine if Linh is eligible for the tuition discount, we need to analyze the premises related to credit limits and special cases for full-time students.\n\n1. Full-time students must take at least 14 credits per semester, but in special cases, they can take a minimum of 11 credits for up to 2 sem",
+          "prediction_extracted": "Yes",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 68,
+          "subject": "logic",
+          "prediction_raw": "To solve this problem, we need to analyze the given premises and determine which of the provided statements can be inferred. Let's break it down step by step.\n\n### Given Premises:\n1. All students have knowledge.\n2. At least one student conducts research.\n3. If a student conducts research, then they ",
+          "prediction_extracted": "C",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 69,
+          "subject": "physics",
+          "prediction_raw": "To find the voltage across capacitor C2 in a series circuit, we need to follow these steps:\n\n1. Calculate the equivalent capacitance of the series circuit.\n2. Determine the total charge on the capacitors.\n3. Use the charge to find the voltage across each capacitor.\n\n**Step 1: Calculate the equivalen",
+          "prediction_extracted": "3.33",
+          "ground_truth": "10/3 V",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 70,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement \"If a student is not studying, then they are not revising, and if a student is not understanding the material, then they are not revising\" is true based on the given premises, let's analyze the premises step by step.\n\nPremises:\n1. If a student is not studying, then they",
+          "prediction_extracted": "A",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 71,
+          "subject": "logic",
+          "prediction_raw": "To solve this problem, we need to analyze the given premises and determine which of the statements can be logically concluded if we know that all students have passed the Philosophy prerequisite.\n\nLet's break down the premises and analyze them step by step:\n\n1. If a student x is enrolled in Research",
+          "prediction_extracted": "None of the above",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 72,
+          "subject": "physics",
+          "prediction_raw": "To find the stored energy in a capacitor, we use the formula:\n\\[ U = \\frac{1}{2} C V^2 \\]\nwhere \\( U \\) is the stored energy, \\( C \\) is the capacitance, and \\( V \\) is the voltage across the capacitor. We can also express the voltage in terms of the charge \\( Q \\) and capacitance \\( C \\) as:\n\\[ V =",
+          "prediction_extracted": "0.18 J",
+          "ground_truth": "0.18 J",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 73,
+          "subject": "physics",
+          "prediction_raw": "To calculate the capacitance of the capacitor, we can use the formula for the energy stored in a capacitor:\n\\[ U = \\frac{1}{2} CV^2 \\]\nwhere:\n- \\( U \\) is the energy stored (in Joules),\n- \\( C \\) is the capacitance (in Farads),\n- \\( V \\) is the voltage across the capacitor (in Volts).\n\nWe are given:",
+          "prediction_extracted": "4 \u03bcF",
+          "ground_truth": "4 \u03bcF",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 74,
+          "subject": "physics",
+          "prediction_raw": "To find the net electric force acting on the charge at A, we need to calculate the forces due to charges B and C and then find their vector sum.\n\n1. Calculate the force due to charge B:\n   - The distance AB = 4 m.\n   - The force is given by Coulomb's law: F = k * q1 * q2 / r^2, where k = 9 \u00d7 10^9 N ",
+          "prediction_extracted": "7.25 \u00d7 10^-3 N",
+          "ground_truth": "24.45 \u00d7 10^-3 N",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 75,
+          "subject": "physics",
+          "prediction_raw": "To determine the electric field strength E at point M, which is located on the perpendicular bisector of AB and 4 cm away from AB, we need to use the formula for the electric field due to a point charge. The electric field E due to a point charge q at a distance r is given by:\n\n\\[ E = \\frac{kq}{r^2}",
+          "prediction_extracted": "0 V/m",
+          "ground_truth": "2160 V/m",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 76,
+          "subject": "logic",
+          "prediction_raw": "To determine if all library users have valid reservations, let's analyze the premises step by step:\n\n1. If someone is not a library user, then they cannot borrow books. (Not a library user \u2192 Cannot borrow books)\n2. Everyone has a library card. ( Everyone \u2192 Has a library card)\n3. If someone is allowe",
+          "prediction_extracted": "D",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 77,
+          "subject": "logic",
+          "prediction_raw": "To determine if all committee members approve the methodology, let's analyze the premises step by step:\n\n1. Every committee member agrees that the thesis is acceptable. (Premise 1)\n2. At least one professor has raised a concern about the thesis. (Premise 2)\n3. At least one observer found the thesis ",
+          "prediction_extracted": "No",
+          "ground_truth": "No",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 78,
+          "subject": "logic",
+          "prediction_raw": "To answer this question, let's analyze the relevant premises step by step:\n\n1. All students are guaranteed University housing (U).\n2. Universal housing (\u2200U) guarantees Scholarship-Thesis compliance under Quantum enrollment (\u2200Q \u2192 \u00acS\u2192\u00acT).\n\nFrom premise 1, we know that every student has access to Unive",
+          "prediction_extracted": ":",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 79,
+          "subject": "physics",
+          "prediction_raw": "To find the total current in the circuit, we need to follow these steps:\n\n1. Calculate the equivalent resistance of the two parallel resistors.\n2. Use Ohm's Law to find the total current in the circuit.\n\n**Step 1: Calculate the equivalent resistance (R_eq) of the two parallel resistors.**\n\nThe formu",
+          "prediction_extracted": "1.5 A",
+          "ground_truth": "I_total = 1.5 A",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 80,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to calculate both the absolute error and the relative error. Let's start with the absolute error.\n\nThe absolute error is the difference between the true value and the measured value. In this case, the true value is 100\u00b0C and the measured value is 98.5\u00b0C. So, the absolu",
+          "prediction_extracted": ":",
+          "ground_truth": "1.5; 1.5 \u00b0C; %",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 81,
+          "subject": "physics",
+          "prediction_raw": "To find the magnitude of the electric field at the fourth vertex of the square, we need to calculate the electric field contributions from each of the three charges at that point and then find the resultant magnitude.\n\nThe electric field due to a point charge \\( q \\) at a distance \\( r \\) is given b",
+          "prediction_extracted": "562.35 \\, N/C",
+          "ground_truth": "9.6 \u00d7 10^2 V/m",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 82,
+          "subject": "physics",
+          "prediction_raw": "To calculate the electric field energy stored in the capacitor, we need to use the formula for the energy stored in a capacitor, which is given by:\n\\[ U = \\frac{1}{2} CV^2 \\]\nwhere \\( U \\) is the energy stored, \\( C \\) is the capacitance, and \\( V \\) is the voltage across the capacitor.\n\nGiven:\n\\[ C",
+          "prediction_extracted": "15.00 \\, nJ",
+          "ground_truth": "14.99 nJ",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 83,
+          "subject": "physics",
+          "prediction_raw": "To find the magnitude of the electric field at the fourth vertex of the square, we need to calculate the contributions from each of the three charges and then find the resultant vector.\n\n1. **Identify the charges and their positions:**\n   - charges q1, q2, and q3 are placed at three vertices of the ",
+          "prediction_extracted": "\\boxed{596 \\, \\text{N/C}}",
+          "ground_truth": "538 N/C",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 84,
+          "subject": "physics",
+          "prediction_raw": "To find the quality factor (Q) of the circuit, we use the formula:\nQ = 1 / (R * sqrt(L/C))\n\nGiven:\nL = 0.05 H\nC = 40 \u00b5F = 40 * 10^-6 F\nR = 20 \u03a9\n\nFirst, we calculate the resonant angular frequency (\u03c90):\n\u03c90 = 1 / sqrt(L * C)\n\u03c90 = 1 / sqrt(0.05 * 40 * 10^-6)\n\u03c90 = 1 / sqrt(2 * 10^-6)\n\u03c90 = 1 / (sqrt(2) *",
+          "prediction_extracted": "C",
+          "ground_truth": "1.77",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 85,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement \"ForAll(x, ResearchProject(x))\" is true based on the given premises, let's analyze the information step by step:\n\n1. **Premise 1**: If a student is enrolled in a specific course, then they have access to university resources.\n2. **Premise 2**: Every student is required ",
+          "prediction_extracted": "Yes",
+          "ground_truth": "Yes",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 86,
+          "subject": "physics",
+          "prediction_raw": "To calculate the percentage relative uncertainty for the resistance measurement, we follow these steps:\n\n1. Identify the measured value and the uncertainty:\n   - Measured value = 12.0 \u03a9\n   - Uncertainty = 0.2 \u03a9\n\n2. Use the formula for percentage relative uncertainty:\n   \\[\n   \\text{Percentage relati",
+          "prediction_extracted": "1.67\\%",
+          "ground_truth": "1.67 %",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 87,
+          "subject": "physics",
+          "prediction_raw": "To calculate the capacitance of the air parallel-plate capacitor, we use the formula:\n\\[ C = \\frac{\\epsilon_0 A}{d} \\]\nwhere:\n- \\( C \\) is the capacitance,\n- \\( \\epsilon_0 \\) is the permittivity of free space (\\( 8.85 \\times 10^{-12} \\) F/m),\n- \\( A \\) is the area of one plate,\n- \\( d \\) is the dist",
+          "prediction_extracted": "[44.6 pF]",
+          "ground_truth": "44.56 pF",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 88,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to follow these steps:\n\n1. Determine the new capacitance of the capacitor after it is immersed in the liquid dielectric.\n2. Calculate the new potential difference across the capacitor plates.\n3. Use the formula for the energy stored in a capacitor to find the electric ",
+          "prediction_extracted": "45  \u03bcJ",
+          "ground_truth": "45 \u03bcJ",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 89,
+          "subject": "logic",
+          "prediction_raw": "To solve this problem, we need to analyze the given premises and determine which of the statements can be logically deduced if we know that there exists at least one object x that has property R.\n\nLet's break down the premises and analyze them step by step:\n\n1. There exists at least one object x tha",
+          "prediction_extracted": "D",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 90,
+          "subject": "physics",
+          "prediction_raw": "To find the effective current in the circuit after the frequency is increased by 2 times, we need to follow these steps:\n\n1. Calculate the impedance (Z) of the circuit at the original frequency.\n2. Determine the new impedance (Z') after the frequency is increased by 2 times.\n3. Calculate the effecti",
+          "prediction_extracted": "3",
+          "ground_truth": "3 A",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 91,
+          "subject": "physics",
+          "prediction_raw": "To find the charge on the parallel-plate capacitor, we need to follow these steps:\n\n1. Calculate the capacitance of the capacitor.\n2. Use the capacitance and the potential difference to find the charge.\n\n**Step 1: Calculate the capacitance**\n\nThe formula for the capacitance \\(C\\) of a parallel-plate",
+          "prediction_extracted": "3 \\, nC",
+          "ground_truth": "3 nC",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 92,
+          "subject": "physics",
+          "prediction_raw": "To calculate the magnetic field energy in the solenoid, we need to use the formula for the energy stored in an inductor:\n\\[ U = \\frac{1}{2} L I^2 \\]\nwhere \\( U \\) is the energy stored, \\( L \\) is the inductance, and \\( I \\) is the current.\n\nGiven:\n\\[ L = 0.2 \\, \\text{H} \\]\n\\[ I = 2 \\, \\text{A} \\]\n\nS",
+          "prediction_extracted": "400 mJ",
+          "ground_truth": "400.0 mJ",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 93,
+          "subject": "physics",
+          "prediction_raw": "To find the resultant electric field strength at the midpoint M of AB, we need to calculate the electric field contributions from both charges q1 and q2 at point M and then find their vector sum.\n\nGiven:\n- q1 = -10^-6 C\n- q2 = 10^-6 C\n- Distance between A and B = 40 cm = 0.4 m\n- M is the midpoint of",
+          "prediction_extracted": "0 N/C",
+          "ground_truth": "4.5 . 10^5 V/m",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 94,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement \"If a student publishes papers, then they conduct research\" is true based on the given premises, let's analyze the premises step by step:\n\n1. All students have knowledge.\n2. At least one student conducts research.\n3. If a student conducts research, then they publish pap",
+          "prediction_extracted": "[Yes]",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 95,
+          "subject": "logic",
+          "prediction_raw": "To determine if Sophia qualifies for the university scholarship, we need to follow the premises step by step:\n\n1. Sophia has completed the core curriculum (Premise 7).\n2. Sophia has passed the science assessment (Premise 8).\n3. Sophia has completed the research methodology course (Premise 9).\n4. Sop",
+          "prediction_extracted": "[C]",
+          "ground_truth": "Yes",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 96,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement \"A student who uses security measures will protect user data on their website\" is true based on the given premises, let's analyze the relevant information step by step:\n\n1. The premises mention security measures in point 14: \"Security measures like HTTPS, input validati",
+          "prediction_extracted": "Yes",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 97,
+          "subject": "physics",
+          "prediction_raw": "To calculate the maximum power consumed (Pmax) in a series RLC circuit at resonance, we use the formula:\nPmax = U^2 / R\nwhere U is the RMS voltage and R is the resistance.\nGiven:\nU = 90 V\nR = 60 \u03a9\nSubstituting the values into the formula:\nPmax = (90 V)^2 / 60 \u03a9\nPmax = 8100 V^2 / 60 \u03a9\nPmax = 135 W\nTh",
+          "prediction_extracted": "135 W",
+          "ground_truth": "135 W",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 98,
+          "subject": "physics",
+          "prediction_raw": "To find the expression for the energy of oscillation in an LC circuit, we need to consider the total energy in the system, which is the sum of the magnetic field energy ( stored in the inductor) and the electric field energy ( stored in the capacitor).\n\nFrom Example 1, we know that the magnetic fiel",
+          "prediction_extracted": "C",
+          "ground_truth": "U = 0.5*L*I_max\u00b2 J",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 99,
+          "subject": "logic",
+          "prediction_raw": "To determine if Lan can participate in the flight practice session and if not, whether she has to take a make-up session within 2 weeks, let's analyze the premises step by step:\n\n1. **Premise 1**: If an aviation student completes the aircraft theory course, they are allowed to participate in the fli",
+          "prediction_extracted": "No",
+          "ground_truth": "No",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 100,
+          "subject": "logic",
+          "prediction_raw": "To determine if all courses meet curriculum standards, let's analyze the premises step by step:\n\n1. If a course is offered online, then it is engaging. (Premise 1)\n2. If a course is not engaging, then it does not meet curriculum standards. (Premise 2)\n3. There does not exist any course that is engag",
+          "prediction_extracted": "No",
+          "ground_truth": "No",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 101,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement \"If a student does not undergo training, then they do not engage in self-study\" is true based on the given premises, let's analyze the relevant premises step by step:\n\n1. All students engage in self-study.\n2. If a student does not undergo training, then they do not enga",
+          "prediction_extracted": "[A]",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 102,
+          "subject": "physics",
+          "prediction_raw": "To find the resultant force of two electric forces acting at a 90\u00b0 angle to each other, we can use the Pythagorean theorem. The formula for the resultant force \\( R \\) when two forces \\( F_1 \\) and \\( F_2 \\) act at a 90\u00b0 angle is:\n\\[ R = \\sqrt{F_1^2 + F_2^2} \\]\n\nGiven:\n\\[ F_1 = 7 \\, \\text{N} \\]\n\\[ F",
+          "prediction_extracted": "[A]",
+          "ground_truth": "7.2801 N",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 103,
+          "subject": "physics",
+          "prediction_raw": "To find the distance from point M to B where the net electric field is zero, we need to use the concept of the electric field due to point charges. The electric field at a point due to a point charge is given by:\n\nE = k * |q| / r^2\n\nwhere:\n- E is the electric field,\n- k is Coulomb's constant (approx",
+          "prediction_extracted": "5.4 cm",
+          "ground_truth": "27 cm",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 104,
+          "subject": "logic",
+          "prediction_raw": "To determine which statement can be inferred about students with personalized support, let's analyze the premises and the options provided.\n\n1. **Identify the relevant premise:**\n   - Premise 4 states: \"If students receive constructive feedback, they can improve their academic performance.\"\n   - Pre",
+          "prediction_extracted": "A. Some students improve academic performance",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 105,
+          "subject": "physics",
+          "prediction_raw": "To determine the net electric force exerted on q3, we need to consider the forces exerted by q1 and q2 on q3. Since the charges are identical and the triangle is equilateral, the magnitudes of the forces F13 and F23 will be the same, and the directions will be 120 degrees apart.\n\nThe magnitude of th",
+          "prediction_extracted": "5.76  10-5 \\, N",
+          "ground_truth": "6.928*10^-3 N",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 106,
+          "subject": "physics",
+          "prediction_raw": "To calculate the electrical energy stored in the capacitor, we use the formula for the energy stored in a capacitor, which is given by:\n\\[ U = \\frac{1}{2} CV^2 \\]\nwhere \\( U \\) is the energy stored, \\( C \\) is the capacitance, and \\( V \\) is the potential difference.\n\nGiven:\n\\[ C = 22.30 \\, \\text{pF",
+          "prediction_extracted": ":",
+          "ground_truth": "47.47 nJ",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 107,
+          "subject": "physics",
+          "prediction_raw": "To find the total power consumed by circuit AB, we need to calculate the power consumed by each segment (AM and MB) and then sum them up. The power consumed by a resistor is given by P = I\u00b2R, and the power consumed by an inductor or capacitor is zero because they store and release energy without dis",
+          "prediction_extracted": "P_total = (100 V / (101 + 1/(1/(1/\u03c9\u00b2",
+          "ground_truth": "100.0 W",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 108,
+          "subject": "physics",
+          "prediction_raw": "To calculate the percentage relative uncertainty for the measured voltage, we follow these steps:\n\n1. Identify the measured value and the uncertainty:\n   - Measured voltage = 4.0 V\n   - Uncertainty = 0.1 V\n\n2. Use the formula for percentage relative uncertainty:\n   \\[\n   \\text{Percentage relative un",
+          "prediction_extracted": "2.5 %",
+          "ground_truth": "2.5 %",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 109,
+          "subject": "physics",
+          "prediction_raw": "To find the inductance (L) of the circuit, we can use the formula for the resonant frequency of an LC circuit:\nf = 1 / (2\u03c0\u221a(LC))\nwhere f is the resonant frequency, L is the inductance, and C is the capacitance.\nWe are given f = 500 Hz and C = 1 \u03bcF = 1 \u00d7 10^-6 F. We need to solve for L.\nRearranging t",
+          "prediction_extracted": "C",
+          "ground_truth": "0.101 H",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 110,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement \"Exists(x, CompletingAssignments(x))\" is true based on the given premises, let's analyze the information step by step:\n\n1. \"All students are attending the course\" (Premise 1)\n2. \"If x attends lectures regularly, then x passes the course\" (Premise 2)\n3. \"There exists a s",
+          "prediction_extracted": "Yes",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 111,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to use Coulomb's law, which states that the electric force between two point charges is given by:\n\nF = k * |q1| * |q2| / r^2\n\nwhere:\n- F is the magnitude of the electric force,\n- k is Coulomb's constant (approximately 8.99 \u00d7 10^9 N\u00b7m^2/C^2),\n- |q1| and |q2| are the mag",
+          "prediction_extracted": "7.192 \u00d7 10^-6 N",
+          "ground_truth": "4.495*10^-3 N",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 112,
+          "subject": "physics",
+          "prediction_raw": "To find the resultant force when two electric forces act at an angle to each other, we can use the formula for the resultant of two vectors:\nR = \u221a(F1\u00b2 + F2\u00b2 + 2F1F2cos\u03b8)\nwhere F1 and F2 are the magnitudes of the forces, and \u03b8 is the angle between them.\nIn this case, F1 = 3 N, F2 = 9 N, and \u03b8 = 120\u00b0.",
+          "prediction_extracted": "[B] 7.94 N",
+          "ground_truth": "7.9373 N",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 113,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to calculate the electric forces due to q1 and q2 on the test charge q, and then find the net force. The electric force between two point charges is given by Coulomb's law:\n\nF = k * |q1| * |q2| / r^2\n\nwhere k is Coulomb's constant (approximately 8.99 \u00d7 10^9 N\u00b7m^2/C^2),",
+          "prediction_extracted": "0 N",
+          "ground_truth": "0.4315*10^-3 N",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 114,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to calculate the electric field contributions from both charges at the given point and then find the magnitude of the resultant electric field.\n\n1. Calculate the electric field due to q1 at the given point:\n   - Distance from q1 to the point = 5 cm = 0.05 m\n   - Electr",
+          "prediction_extracted": "15937.780 V/m",
+          "ground_truth": "20000 V/m",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 115,
+          "subject": "physics",
+          "prediction_raw": "To achieve resonance in a series RLC circuit, the inductive reactance (X_L) must equal the capacitive reactance (X_C). The resonant angular frequency (\u03c9_0) is given by the formula:\n\n\u03c9_0 = 1 / sqrt(LC)\n\nwhere L is the inductance and C is the capacitance. At resonance, the inductive reactance (X_L) is",
+          "prediction_extracted": "7",
+          "ground_truth": "2.646",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 116,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement \"Exists(x, ParticipatesInStudyGroup(x))\" is true based on the given premises, let's analyze the information step by step:\n\n1. Premise 3 states: \"Not every student participates in a study group.\" This means that there is at least one student who does not participate in a",
+          "prediction_extracted": "Yes",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 117,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to follow these steps:\n\n1. Determine the surface charge density (\u03c3) of the metal plate.\n2. Use the surface charge density to find the electric field strength (E) at a distance r from an infinitely large, uniformly charged plate.\n\n**Step 1: Calculate the surface charge ",
+          "prediction_extracted": "23000",
+          "ground_truth": "2.26.10^4 V/m",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 118,
+          "subject": "physics",
+          "prediction_raw": "To determine the electric field vector generated by the system of two point charges at the midpoint of the line segment connecting the two charges, we need to follow these steps:\n\n1. Calculate the electric field due to each charge at the midpoint.\n2. Add the electric fields vectorially to get the re",
+          "prediction_extracted": ":",
+          "ground_truth": "9.8 . 10^{5} N/C",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 119,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to calculate the net electric force acting on charge q3 due to the other two charges q1 and q2. The force between two point charges is given by Coulomb's law:\n\nF = k * q1 * q2 / r^2\n\nwhere:\n- F is the force between the charges,\n- k is Coulomb's constant (approximately ",
+          "prediction_extracted": "B",
+          "ground_truth": "15.588*10^-3 N",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 120,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to use the given information and apply the principles of circuit analysis. Let's break it down step by step.\n\n1. **Identify the given values:**\n   - R2 = 30 \u03a9\n   - LC\u03c9\u00b2 = 1 (implies \u03c9 = 1/\u221a(LC))\n   - U = 90 V\n   - Power consumed = 150 W\n\n2. **Understand the circuit:**\n",
+          "prediction_extracted": "24 \u03a9",
+          "ground_truth": "24.0 \u03a9",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 121,
+          "subject": "physics",
+          "prediction_raw": "To calculate the electric field energy stored in a capacitor, we use the formula:\n\\[ U = \\frac{1}{2} CV^2 \\]\nwhere:\n- \\( U \\) is the energy stored in the capacitor (in Joules, J)\n- \\( C \\) is the capacitance (in Farads, F)\n- \\( V \\) is the voltage across the capacitor (in Volts, V)\n\nGiven:\n- \\( C = ",
+          "prediction_extracted": "0.0001 J",
+          "ground_truth": "100 \u03bcJ",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 122,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to calculate the electric field at point C due to the two charges q1 and q2, and then use this electric field to find the force on a charge q3 placed at C. We will use Coulomb's law for both parts of the problem.\n\n### Step 1: Calculate the electric field at point C due",
+          "prediction_extracted": "\\boxed{1.25 \\times 10^{-2} \\, \\text{N}}",
+          "ground_truth": "33.6 \u00d7 10^5 V/m",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 123,
+          "subject": "physics",
+          "prediction_raw": "The answer is: 10 \u03a9",
+          "prediction_extracted": "10 \u03a9",
+          "ground_truth": "10 \u03a9",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 124,
+          "subject": "physics",
+          "prediction_raw": "To find the magnitude of the resultant electric field at point M, we need to use the Pythagorean theorem because the electric fields are perpendicular to each other. The magnitude of the resultant electric field \\(E_{\\text{resultant}}\\) is given by:\n\n\\[E_{\\text{resultant}} = \\sqrt{E_1^2 + E_2^2}\\]\n\n",
+          "prediction_extracted": "5.73  106 \\, V/m",
+          "ground_truth": "57.41 \u00d7 10^6 V/m",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 125,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement is true based on the given premises, let's analyze the premises and the statement step by step.\n\n**Premises:**\n1. Every student is preparing for an exam.\n2. If a student is not asking questions, then they are not attending tutorials.\n3. There exists at least one student",
+          "prediction_extracted": "No",
+          "ground_truth": "No",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 126,
+          "subject": "physics",
+          "prediction_raw": "To answer this question, let's analyze the relationship between the current through a solenoid and the induced electromotive force (EMF). According to Faraday's law of induction, the induced EMF in a circuit is equal to the rate of change of the magnetic flux through the circuit. The magnetic flux i",
+          "prediction_extracted": "A",
+          "ground_truth": "Increase and the opposite current direction cause it \u2014",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 127,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to use Coulomb's law, which states that the electric force between two point charges is given by:\n\nF = k * |q1| * |q2| / r^2\n\nwhere:\n- F is the magnitude of the force,\n- k is Coulomb's constant (approximately 8.99 \u00d7 10^9 N\u00b7m^2/C^2),\n- |q1| and |q2| are the magnitudes o",
+          "prediction_extracted": "0 N",
+          "ground_truth": "64.8 N",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 128,
+          "subject": "physics",
+          "prediction_raw": "To calculate the power factor (cos\u03c6) of an RLC circuit at resonance, we need to understand the relationship between the impedance (Z), resistance (R), and reactance (X) in a resonant circuit.\n\nAt resonance in a series RLC circuit, the inductive reactance (X_L) equals the capacitive reactance (X_C), ",
+          "prediction_extracted": "[A]",
+          "ground_truth": "1",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 129,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to determine the capacitive reactance \\(Z_C\\) and the power factor \\(cos\\phi\\) for the given series circuit. Let's break it down step by step.\n\n### Step 1: Calculate the Capacitive Reactance \\(Z_C\\)\nThe formula for capacitive reactance is:\n\\[ Z_C = \\frac{1}{2\\pi f C} \\",
+          "prediction_extracted": ":",
+          "ground_truth": "38.16 \u03a9 and 0.30 \u2014",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 130,
+          "subject": "physics",
+          "prediction_raw": "To find the charge on the capacitor, we use the formula:\n\\[ Q = C \\times V \\]\nwhere \\( Q \\) is the charge, \\( C \\) is the capacitance, and \\( V \\) is the voltage.\n\nGiven:\n\\[ C = 27.62 \\, \\text{pF} = 27.62 \\times 10^{-12} \\, \\text{F} \\]\n\\[ V = 108.8 \\, \\text{V} \\]\n\nSubstitute the values into the form",
+          "prediction_extracted": "C",
+          "ground_truth": "3.005 nC",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 131,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to understand the behavior of an RLC circuit at different frequencies. The key is to recognize that the voltage across the resistor R is not affected by the frequency change in a series RLC circuit. The voltage across R is always the same as the applied voltage U, rega",
+          "prediction_extracted": "200 V",
+          "ground_truth": "200 V",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 132,
+          "subject": "logic",
+          "prediction_raw": "To determine if all students with feedback have the company stamp, let's analyze the premises step by step:\n\n1. There exists a student who has received the company stamp for their internship.\n2. There exists a student who has received feedback from the company for their internship.\n3. If x completes",
+          "prediction_extracted": "No",
+          "ground_truth": "No",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 133,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to use the concept of power in parallel circuits. When two identical lamps are connected in parallel, the total power consumed by the circuit is the sum of the power consumed by each lamp. Let's denote the power of each lamp as P.\n\nGiven:\n- The total power consumed by ",
+          "prediction_extracted": "C",
+          "ground_truth": "P = 9.0 W",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 134,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement is true, let's analyze the premises step by step:\n\n1. The third-year students can get an internship at a company or go to work.\n   - This premise doesn't directly apply to Coke since Coke is a fourth-year student.\n\n2. If they get an internship, they get a good CV.\n   - ",
+          "prediction_extracted": "No",
+          "ground_truth": "No",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 135,
+          "subject": "logic",
+          "prediction_raw": "To determine if Nurse John can prescribe medication, we need to follow the logical steps based on the given premises:\n\n1. Completing 500 clinical hours grants Advanced Practice certification.\n2. Nurse John has completed 600 clinical hours.\n3. John is a registered nurse.\n4. All registered nurses with",
+          "prediction_extracted": "Yes",
+          "ground_truth": "Yes",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 136,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement \"Everyone is a student\" is true based on the given premises, let's analyze each premise step by step:\n\n1. \"Everyone takes courses.\"\n   - This means that for every individual, if they are a student, they take courses. Conversely, if someone does not take courses, they ar",
+          "prediction_extracted": "Yes",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 137,
+          "subject": "logic",
+          "prediction_raw": "To solve this problem, we need to analyze the given premises and determine which of the statements can be inferred. Let's break it down step by step.\n\n### Given Premises:\n1. If a student is not understanding the material, then they are not attending tutorials.\n2. If a student is preparing for an exa",
+          "prediction_extracted": "A",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 138,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to use Coulomb's law, which states that the electric force between two point charges is given by:\n\nF = k * |q1| * |q2| / r^2\n\nwhere:\n- F is the magnitude of the electric force,\n- k is Coulomb's constant (approximately 8.99 \u00d7 10^9 N\u00b7m^2/C^2),\n- |q1| and |q2| are the mag",
+          "prediction_extracted": "2.88 \u00d7 10^-5 N",
+          "ground_truth": "0.018 N",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 139,
+          "subject": "physics",
+          "prediction_raw": "To calculate the electric field strength at the midpoint of the line segment, we need to use the formula for the electric field due to a point charge and the principle of superposition. The electric field at a point due to a point charge is given by:\n\nE = k * |q| / r^2\n\nwhere:\n- E is the electric fi",
+          "prediction_extracted": "49.02 \u00d7 10^6 V/m",
+          "ground_truth": "0.56 \u00d7 10^6 V/m",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 140,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to calculate the electric field contributions from both charges at point M and then find the net electric field. The electric field due to a point charge is given by the formula:\n\nE = k * |q| / r^2\n\nwhere:\n- E is the electric field strength,\n- k is Coulomb's constant (",
+          "prediction_extracted": "9.25 \u00d7 10^6 V/m",
+          "ground_truth": "2.1*10^6 V/m",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 141,
+          "subject": "physics",
+          "prediction_raw": "The answer is: 145 \u03a9",
+          "prediction_extracted": "145 \u03a9",
+          "ground_truth": "145 \u03a9",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 142,
+          "subject": "logic",
+          "prediction_raw": "The answer is: B",
+          "prediction_extracted": "B",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 143,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to calculate the total power consumed by the circuit AB. The power consumed by a circuit is given by the formula P =UIcos(\u03c6), where U is the RMS voltage, I is the RMS current, and \u03c6 is the phase angle between the voltage and current. However, since the voltage across A",
+          "prediction_extracted": "67.5 W",
+          "ground_truth": "67.5 W",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 144,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to calculate the electric field strength at the midpoint of the line segment connecting two point charges. The formula for the electric field strength due to a point charge is given by:\n\nE = k * |q| / r^2\n\nwhere:\n- E is the electric field strength,\n- k is Coulomb's con",
+          "prediction_extracted": "5042.28 V/m",
+          "ground_truth": "5.162 \u00d7 10\u2076 V/m",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 145,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement \"If a student is not understanding the material, then they are not revising, and if a student is attending tutorials, then they are revising\" is true based on the given premises, let's analyze the premises step by step.\n\nPremises:\n1. If a student is attending tutorials,",
+          "prediction_extracted": "[C]",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 146,
+          "subject": "physics",
+          "prediction_raw": "To find the inductive reactance (ZL) at resonance, we can use the relationship between the resonant frequency (fr), the inductance (L), and the capacitance (C) in an RLC circuit. The resonant frequency is given by:\n\nfr = 1 / (2\u03c0\u221a(LC))\n\nHowever, we don't need to find L or C directly. Instead, we can ",
+          "prediction_extracted": "100 \u03a9",
+          "ground_truth": "40 \u03a9",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 147,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement \"There exists at least one university member\" is true based on the given premises, let's analyze the premises step by step:\n\n1. \"If a person is a researcher, then they are a professional.\"\n2. \"If a person is a professional, then they are a scholar.\"\n3. \"All individuals ",
+          "prediction_extracted": "Yes",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 148,
+          "subject": "physics",
+          "prediction_raw": "To calculate the electric field energy stored in a capacitor, we use the formula:\n\\[ U = \\frac{1}{2} C U^2 \\]\nwhere:\n- \\( U \\) is the electric field energy in joules (J),\n- \\( C \\) is the capacitance in farads (F),\n- \\( U \\) is the voltage in volts (V).\n\nGiven:\n- \\( C = 60 \\, \\mu F = 60 \\times 10^{-",
+          "prediction_extracted": "675 \\, mJ",
+          "ground_truth": "675.00 mJ",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 149,
+          "subject": "physics",
+          "prediction_raw": "To calculate the power factor cos\u03c6 for the given RLC circuit, we need to follow these steps:\n\n1. Calculate the angular frequency \u03c9.\n2. Determine the inductive reactance X_L.\n3. Determine the capacitive reactance X_C.\n4. Calculate the total impedance Z of the circuit.\n5. Determine the power factor co",
+          "prediction_extracted": "255",
+          "ground_truth": "0.707",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 150,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to calculate the electric force exerted by each charge (q1 and q2) on the test charge (q) and then find the magnitude of the net force. The formula for the electric force between two point charges is given by Coulomb's law:\n\nF = k * q1 * q2 / r^2\n\nwhere:\n- F is the for",
+          "prediction_extracted": "1.85 \u00d7 10^-3 N",
+          "ground_truth": "2.270 N",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 151,
+          "subject": "logic",
+          "prediction_raw": "To solve this problem, let's analyze the given premises and see what can be inferred:\n\n1. Every student is understanding the material.\n2. Every student is asking questions.\n3. Every student is revising.\n\nFrom these premises, we can directly infer that all students are understanding the material, ask",
+          "prediction_extracted": "A",
+          "ground_truth": "A",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 152,
+          "subject": "physics",
+          "prediction_raw": "To find the charge stored by the capacitor, we use the formula:\n\\[ Q = C \\times V \\]\nwhere \\( Q \\) is the charge, \\( C \\) is the capacitance, and \\( V \\) is the voltage.\n\nGiven:\n\\[ C = 32.48 \\, \\text{pF} = 32.48 \\times 10^{-12} \\, \\text{F} \\]\n\\[ V = 162.4 \\, \\text{V} \\]\n\nNow, substitute the given va",
+          "prediction_extracted": "C",
+          "ground_truth": "5.27 nC",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 153,
+          "subject": "logic",
+          "prediction_raw": "Let's analyze the premises step by step:\n\n1. If a person is an undergraduate, then they must be registered.\n2. Everyone is registered.\n3. If undergraduates are required to register, then everyone must register.\n4. If a person does not study, then they are not registered.\n5. Everyone is an undergradu",
+          "prediction_extracted": "A. Everyone studies",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 154,
+          "subject": "logic",
+          "prediction_raw": "To solve this problem, we need to analyze the given premises and determine which statement can be inferred if we know that all students take final examinations. Let's break it down step by step.\n\n1. **Identify the relevant premises:**\n   - Premise 10: All students take final examinations.\n   - Premi",
+          "prediction_extracted": "C",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 155,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to use the concept of energy conservation in an electric field. The kinetic energy of the electron is converted into potential energy as it moves against the electric field.\n\n1. **Identify the initial kinetic energy of the electron:**\n   The initial velocity of the ele",
+          "prediction_extracted": "\\boxed{0.256 \\, \\text{mm}}",
+          "ground_truth": "2.56 mm",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 156,
+          "subject": "physics",
+          "prediction_raw": "To determine if resonance occurs in a series RLC circuit at a given frequency, we need to calculate the resonant frequency (f resonant) of the circuit and compare it to the given frequency. The resonant frequency for a series RLC circuit is given by the formula:\n\nf resonant = 1 / (2\u03c0\u221a(LC))\n\nwhere L ",
+          "prediction_extracted": "Yes",
+          "ground_truth": "Yes",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 157,
+          "subject": "physics",
+          "prediction_raw": "To calculate the induced electromotive force (EMF) in a solenoid when the current changes, we use Faraday's law of induction, which states that the induced EMF is equal to the negative rate of change of the magnetic flux through the solenoid. For a solenoid, the magnetic flux is proportional to the ",
+          "prediction_extracted": "20 V",
+          "ground_truth": "20.00 V",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 158,
+          "subject": "logic",
+          "prediction_raw": "To solve this problem, we need to analyze the given premises and determine which statement can be inferred from them. Let's break it down step by step.\n\n### Premises Analysis:\n1. There exists at least one student who has qualified for the Quantum Physics competition.\n2. All students are enrolled in ",
+          "prediction_extracted": "C",
+          "ground_truth": "A",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 159,
+          "subject": "physics",
+          "prediction_raw": "To calculate the energy stored in a capacitor, we use the formula:\n\\[ U = \\frac{1}{2} CV^2 \\]\nwhere \\( U \\) is the energy stored, \\( C \\) is the capacitance, and \\( V \\) is the voltage.\n\nFirst, we need to find the capacitance \\( C \\) using the formula for capacitance:\n\\[ C = \\frac{Q}{V} \\]\nwhere \\( ",
+          "prediction_extracted": "[D] 160 \u03bcJ",
+          "ground_truth": "160 \u03bcJ",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 160,
+          "subject": "logic",
+          "prediction_raw": "Let's analyze the premises and the question step by step.\n\n1. **Premise 4**: At the University of Technology, if there exists an object with property U, then if an object lacks property S it does not have property P.\n   - This can be written as: \\( \\exists x (U(x)) \\rightarrow (\\forall x (\\neg S(x) ",
+          "prediction_extracted": "B",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 161,
+          "subject": "physics",
+          "prediction_raw": "To find the RMS voltage across the inductor, we need to follow these steps:\n\n1. Calculate the angular frequency \u03c9.\n2. Determine the inductive reactance X_L.\n3. Calculate the current I in the circuit using the total impedance Z.\n4. Find the voltage across the inductor using the formula V_L = I * X_L.",
+          "prediction_extracted": "C",
+          "ground_truth": "141.4 V",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 162,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to understand the relationship between the energy in an oscillating LC circuit and the current. In anLC circuit, the total energy is the sum of the electric field energy and the magnetic field energy. The energy is conserved, and it oscillates between the two forms.\n\nT",
+          "prediction_extracted": "D",
+          "ground_truth": "86.6 %",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 163,
+          "subject": "physics",
+          "prediction_raw": "To find the capacitance (C) of the capacitor, we can use the formula for the energy stored in a capacitor:\n\\[ U = \\frac{1}{2} CV^2 \\]\nwhere:\n- \\( U \\) is the energy stored (in Joules),\n- \\( C \\) is the capacitance (in Farads),\n- \\( V \\) is the voltage (in Volts).\n\nWe are given:\n- \\( U = 2 \\text{ mJ}",
+          "prediction_extracted": "0.1 \u03bcF",
+          "ground_truth": "0.10 \u03bcF",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 164,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to calculate the electric field contributions from both charges at point M and then find the resultant field. The electric field due to a point charge q at a distance r is given by:\n\nE = k * |q| / r^2\n\nwhere k is Coulomb's constant (approximately 8.99 \u00d7 10^9 N\u00b7m^2/C^2)",
+          "prediction_extracted": "4.59 \u00d7 10^7 V/m",
+          "ground_truth": "6.02 \u00d7 10^7 V/m",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 165,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement \"If a student is attending tutorials, then they are understanding the material, and there exists at least one student who is asking questions\" is true based on the given premises, let's analyze the premises step by step.\n\n1. If a student is not studying, then they are n",
+          "prediction_extracted": "Yes",
+          "ground_truth": "Yes",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 166,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement \"Exists(x, Differentiable(x))\" is true based on the given premises, let's analyze the premises step by step:\n\n1. \"If a function is differentiable, then it is continuous.\"\n   - This premise establishes a relationship between differentiability and continuity, but it doesn",
+          "prediction_extracted": "B",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 167,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement \"If a high school student attends tutoring sessions, then they improve their grades, and there exists at least one high school student who attends tutoring sessions\" is true based on the given premises, let's analyze the premises step by step.\n\nPremises:\n1. Every high s",
+          "prediction_extracted": "A",
+          "ground_truth": "Yes",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 168,
+          "subject": "logic",
+          "prediction_raw": "To determine if the conclusion follows from the premises, let's analyze the relevant premises step by step:\n\n1. There exists at least one student who graduates on time. (Premise 1)\n2. If a student doesn't understand foundational concepts, then that student won't graduate on time. (Premise 3)\n\nWe nee",
+          "prediction_extracted": "Yes",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 169,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement \"There exists a complete pathway from maintaining a high GPA to receiving a scholarship\" is true based on the given premises, let's analyze the information step by step:\n\n1. Premise 3 states: \"If a student maintains a high GPA, they qualify for a merit-based scholarship",
+          "prediction_extracted": "Yes",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 170,
+          "subject": "logic",
+          "prediction_raw": "To determine if Nam can register for Advanced Algorithms, we need to check if Nam has completed the prerequisites for the course. According to the premises, Advanced Algorithms requires Data Structures and Discrete Mathematics as prerequisites.\n\nLet's analyze the information given about Nam:\n1. Nam ",
+          "prediction_extracted": "No",
+          "ground_truth": "No",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 171,
+          "subject": "physics",
+          "prediction_raw": "To find the power consumed by a resonant circuit, we need to use the formula for power in an electrical circuit, which is given by:\nP = U^2 / R\nwhere P is the power, U is the voltage, and R is the resistance.\nGiven U = 90 V and R = 45 \u03a9, we can substitute these values into the formula:\nP = (90 V)^2 ",
+          "prediction_extracted": "[C]",
+          "ground_truth": "180 W",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 172,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to calculate the mean value of the measurements and then the mean absolute error.\n\nStep 1: Calculate the mean value.\nThe mean value is the sum of the measurements divided by the number of measurements.\nMean = (10.1 cm + 10.3 cm + 10.2 cm) / 3\nMean = 30.6 cm / 3\nMean = ",
+          "prediction_extracted": "D",
+          "ground_truth": "10.2; 0.067 cm; cm",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 173,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to use the concept of AC circuits and power in such circuits. The power consumed in an AC circuit is given by the real power (P) which is the product of the voltage (V), current (I), and the cosine of the phase angle (cos(\u03b8)) between the voltage and current. However, i",
+          "prediction_extracted": "130",
+          "ground_truth": "90.0 \u03a9",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 174,
+          "subject": "physics",
+          "prediction_raw": "To find the resonant frequency of an RLC circuit connected in series, we use the formula for the resonant frequency of a series RLC circuit:\n\nf = 1 / (2\u03c0\u221a(LC))\n\nwhere:\nf is the resonant frequency in Hz,\nL is the inductance in Henrys (H),\nC is the capacitance in Farads (F).\n\nGiven:\nL = 1 H\nC = 4 \u03bcF =",
+          "prediction_extracted": "[A]",
+          "ground_truth": "79.58 Hz",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 175,
+          "subject": "physics",
+          "prediction_raw": "To find the magnitude of the resultant electric field at point M, we can use the formula for the magnitude of the resultant of two vectors that form an angle with each other. The formula is:\n\nE_resultant = \u221a(E1^2 + E2^2 + 2E1E2 cos(\u03b8))\n\nwhere E1 and E2 are the magnitudes of the individual electric f",
+          "prediction_extracted": "87.14 \u00d7 10^6 V/m",
+          "ground_truth": "82.49 \u00d7 10^6 V/m",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 176,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement is true based on the given premises, let's analyze the statement and the premises step by step.\n\nThe statement to verify is:\nIf a person received a warning for previous absences, then they acknowledged the new attendance policy, and if they acknowledged the new attendan",
+          "prediction_extracted": "[A]",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 177,
+          "subject": "logic",
+          "prediction_raw": "To determine if it follows that someone is prepared if every teacher is respected, let's analyze the premises step by step:\n\n1. If a person is a student, then that person is qualified.\n2. If a person is a teacher, then that person is respected.\n3. There exists at least one person who is prepared.\n4.",
+          "prediction_extracted": "Yes",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 178,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to calculate the net force acting on the charge at the right-angle vertex of an isosceles right triangle. The force on this charge due to the other two charges can be broken down into two components: one along the leg of the triangle and one along the other leg.\n\n1. Ca",
+          "prediction_extracted": "[6.43 \u00d7 10^-2 N]",
+          "ground_truth": "0.434 N",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 179,
+          "subject": "physics",
+          "prediction_raw": "To calculate the stored electric field energy in a capacitor, we use the formula:\n\\[ E = \\frac{1}{2} C U^2 \\]\nwhere:\n- \\( E \\) is the stored energy in joules (J),\n- \\( C \\) is the capacitance in farads (F),\n- \\( U \\) is the voltage in volts (V).\n\nGiven:\n- \\( C = 45 \\, \\mu F = 45 \\times 10^{-6} \\, F ",
+          "prediction_extracted": "81 \\, mJ",
+          "ground_truth": "81.00 mJ",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 180,
+          "subject": "physics",
+          "prediction_raw": "To find the capacitance (C) of the charged capacitor, we can use the formula for the energy stored in a capacitor:\n\\[ U = \\frac{1}{2} CV^2 \\]\nwhere:\n- \\( U \\) is the energy stored in the capacitor (in Joules, J)\n- \\( C \\) is the capacitance (in Farads, F)\n- \\( V \\) is the voltage across the capacito",
+          "prediction_extracted": "50 \u00b5F",
+          "ground_truth": "50 \u00b5F",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 181,
+          "subject": "logic",
+          "prediction_raw": "Let's analyze the premises step by step:\n\n1. All students have met all academic requirements.\n   - This means every student satisfies the condition of having met all academic requirements.\n\n2. If a student has submitted the exam eligibility form, then they have received clearance from the academic o",
+          "prediction_extracted": "The correct answer is: A. Some students have received clearance from the academic office.",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 182,
+          "subject": "physics",
+          "prediction_raw": "To calculate the voltage across the inductor (U_L) at resonance, we need to use the formula for the quality factor (Q) of an RLC circuit and the relationship between the voltage and current in the circuit.\n\nThe quality factor Q for an RLC circuit at resonance is given by:\n\\[ Q = \\frac{1}{R} \\sqrt{\\f",
+          "prediction_extracted": "133.92 V",
+          "ground_truth": "134.16 V",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 183,
+          "subject": "physics",
+          "prediction_raw": "To calculate the electric field energy stored in the capacitor, we use the formula:\n\\[ U = \\frac{1}{2} CV^2 \\]\nwhere \\( U \\) is the energy stored, \\( C \\) is the capacitance, and \\( V \\) is the potential difference.\n\nGiven:\n\\[ C = 21.96 \\, \\text{pF} = 21.96 \\times 10^{-12} \\, \\text{F} \\]\n\\[ V = 28.8",
+          "prediction_extracted": "10.08 nJ",
+          "ground_truth": "9.11 nJ",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 184,
+          "subject": "physics",
+          "prediction_raw": "To find the resultant force of two electric forces acting at an angle of 120\u00b0 to each other, we can use the formula for the resultant of two vectors:\nR = \u221a(F1\u00b2 + F2\u00b2 + 2F1F2cos\u03b8)\nwhere F1 and F2 are the magnitudes of the forces, and \u03b8 is the angle between them.\nIn this case, F1 = 10 N, F2 = 7 N, and",
+          "prediction_extracted": "[B]",
+          "ground_truth": "8.8882 N",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 185,
+          "subject": "logic",
+          "prediction_raw": "To solve this problem, we need to analyze the given premises and determine which of the statements can be inferred. Let's go through the premises step by step:\n\n1. If a student installs the software from the university\u2019s repository, then the software is functional.\n2. There exists at least one stude",
+          "prediction_extracted": "C",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 186,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to understand the behavior of an RLC circuit under frequency changes. The impedance (Z) of an RLC circuit is given by:\n\\[ Z = \\sqrt{R^2 + (XL - XC)^2} \\]\nwhere \\( XL \\) is the inductive reactance, \\( XC \\) is the capacitive reactance, and \\( R \\) is the resistance. The",
+          "prediction_extracted": "120 V",
+          "ground_truth": "120 V",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 187,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement \"If a Raspberry Pi system is cost-effective, then it is necessarily versatile\" is true based on the given premises, let's analyze the premises step by step:\n\n1. If a Raspberry Pi system is simple to use, then it is cost-effective. (Premise 1)\n2. There exists at least on",
+          "prediction_extracted": "[C]",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 188,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to understand the behavior of parallel circuits. In a parallel circuit, the total current is the sum of the currents through each branch. When one lamp is removed, the total current will be the current through the remaining lamp.\n\nGiven:\n- Total current (I_total) = 1.2",
+          "prediction_extracted": "B",
+          "ground_truth": "I_total_new = 0.5 A",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 189,
+          "subject": "logic",
+          "prediction_raw": "To determine if all VR games are thoroughly tested, let's analyze the premises step by step:\n\n1. If a VR game is engaging, then it is stable. (Engaging \u2192 Stable)\n2. If a VR game is not stable, then it does not run smoothly. (Not Stable \u2192 Not Running Smoothly)\n3. If a VR game is not thoroughly tested",
+          "prediction_extracted": "[D]",
+          "ground_truth": "Yes",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 190,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we will use Coulomb's Law, which states that the electric force between two point charges is given by:\n\nF = k * |q1| * |q2| / r^2\n\nwhere:\n- F is the magnitude of the electric force,\n- k is Coulomb's constant (approximately 8.99 \u00d7 10^9 N\u00b7m^2/C^2),\n- |q1| and |q2| are the magnit",
+          "prediction_extracted": "1.62 \u00d7 10^-3 N",
+          "ground_truth": "1.0125 N",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 191,
+          "subject": "physics",
+          "prediction_raw": "To calculate the percentage relative error, we use the formula:\n\\[ \\text{Percentage relative error} = \\left( \\frac{\\text{Absolute error}}{\\text{ measured value}} \\right) \\times 100 \\]\n\nHere, the absolute error is 0.05 cm and the measured value is 8.00 cm. Plugging these values into the formula, we g",
+          "prediction_extracted": "0.63",
+          "ground_truth": "0.63 %",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 192,
+          "subject": "physics",
+          "prediction_raw": "To calculate the net electric field strength at the position of q3 due to the other two charges q1 and q2, we need to consider the contributions from each charge separately and then find the vector sum of these fields. The electric field due to a point charge q at a distance r is given by:\n\nE = k * ",
+          "prediction_extracted": "2.69 \u00d7 10^6 V/m",
+          "ground_truth": "27.51 \u00d7 10^6 V/m",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 193,
+          "subject": "physics",
+          "prediction_raw": "To determine the factor by which \u03c9 must be changed relative to \u03c90 for the circuit to resonate, we need to find the resonant frequency \u03c9r of the RLC circuit. The resonant frequency \u03c9r is given by the formula:\n\n\\[ \\omega_r = \\frac{1}{\\sqrt{LC}} \\]\n\nwhere L is the inductance and C is the capacitance. A",
+          "prediction_extracted": "3",
+          "ground_truth": "3.0",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 194,
+          "subject": "logic",
+          "prediction_raw": "To determine if all students are enrolled in an advanced seminar, let's analyze the premises step by step:\n\n1. All students must complete their coursework.\n2. If a student completes their coursework, they will graduate.\n3. At least one student is enrolled in an advanced seminar.\n4. If all students m",
+          "prediction_extracted": "No",
+          "ground_truth": "Yes",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 195,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to determine the charge q2 that should be placed at B so that the electric field at D is zero. Let's break it down step by step.\n\n1. **Identify the charges and their positions:**\n   - Charge q1 = q is at A.\n   - Charge q2 = q2 is at B.\n   - Charge q3 = q is at C.\n   - ",
+          "prediction_extracted": "\\(\\boxed{0}\\)",
+          "ground_truth": "-2\\sqrt{2} x q",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 196,
+          "subject": "logic",
+          "prediction_raw": "To solve this problem, we need to analyze the given premises and determine which statement can be inferred from them. Let's break down the premises and analyze each option step by step.\n\n### Given Premises:\n1. All students attend the course.\n2. There exists someone who attended the midterm exam.\n3. ",
+          "prediction_extracted": "D. If there exists someone who attended the midterm exam, then all students attend the course, and if a person did not attend the course, they did not attend the final exam",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 197,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to calculate the electric field strength at point M due to each charge and then find the net electric field by vector addition. Since the charges are equal in magnitude but opposite in sign, and point M is the midpoint of AB, the electric fields due to the charges will",
+          "prediction_extracted": "0.00 V/m",
+          "ground_truth": "1.32 \u00d7 10^7 V/m",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 198,
+          "subject": "physics",
+          "prediction_raw": "To find the value of k for the circuit to resonate, we need to use the condition for resonance in an RLC circuit. The circuit resonates when the inductive reactance (X_L) equals the capacitive reactance (X_C). At resonance, the angular frequency \u03c9 is given by:\n\n\u03c9 = 1 / sqrt(LC)\n\nwhere L is the induc",
+          "prediction_extracted": "C",
+          "ground_truth": "2.0",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 199,
+          "subject": "physics",
+          "prediction_raw": "To determine the electric field strength at point C due to the two point charges, we need to calculate the electric field contributions from each charge separately and then find the resultant field. The electric field due to a point charge is given by the formula:\n\nE = k * |q| / r\u00b2\n\nwhere:\n- E is th",
+          "prediction_extracted": "6.4 \u00d7",
+          "ground_truth": "3.51 \u00d7 10^5 V/m",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 200,
+          "subject": "physics",
+          "prediction_raw": "To determine when the electric field energy stored in an LC circuit reaches its maximum, let's analyze the energy components of the circuit:\n\n1. In an LC circuit, the total energy is conserved and oscillates between the electric field energy stored in the capacitor and the magnetic field energy stor",
+          "prediction_extracted": "B",
+          "ground_truth": "the charge Q reaches its maximum value \u2014",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 201,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement \"\u2200x (\u00acH(x) \u2192 \u00acW(x))\" is true based on the given premises, we need to analyze the logical relationships between the properties of the books as described in the premises.\n\nLet's break down the statement:\n- H(x) represents \"x is in high demand\"\n- W(x) represents \"x is well",
+          "prediction_extracted": "29. \"If a book",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 202,
+          "subject": "physics",
+          "prediction_raw": "To calculate the magnetic field energy stored in an inductor, we use the formula:\n\\[ U = \\frac{1}{2} L I^2 \\]\nwhere \\( U \\) is the magnetic field energy, \\( L \\) is the inductance, and \\( I \\) is the current.\n\nGiven:\n\\[ L = 0.4 \\, \\text{H} \\]\n\\[ I = 2.5 \\, \\text{A} \\]\n\nSubstitute the given values in",
+          "prediction_extracted": "1250.00 \\, mJ",
+          "ground_truth": "1250.00 mJ",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 203,
+          "subject": "logic",
+          "prediction_raw": "To solve this problem, we need to analyze the given premises and determine which of the statements can be logically inferred. Let's break it down step by step.\n\n### Given Premises:\n1. If a student does not attend classes, they will not pass the exams.\n2. If a student does not attend classes, they wi",
+          "prediction_extracted": "D",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 204,
+          "subject": "physics",
+          "prediction_raw": "To determine if the circuit resonates, we need to compare the natural frequency of the circuit with the frequency of the AC voltage. The natural frequency (f_n) of an RLC series circuit is given by:\n\nf_n = 1 / (2\u03c0\u221a(LC))\n\nwhere L is the inductance and C is the capacitance. Let's calculate the natural",
+          "prediction_extracted": "No",
+          "ground_truth": "No",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 205,
+          "subject": "logic",
+          "prediction_raw": "To determine if all smartphones support advanced camera features, let's analyze the premises step by step:\n\n1. If a smartphone has a high-resolution display, then it has superior screen quality.\n2. If a smartphone does not have long battery life, then it does not have superior screen quality.\n3. The",
+          "prediction_extracted": "No",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 206,
+          "subject": "logic",
+          "prediction_raw": "To determine if all people solve real-world problems, we need to analyze the given premises step by step.\n\n1. **Identify the key premises related to solving real-world problems:**\n   - If someone knows how to program, then they can solve real-world problems. (Premise 3)\n   - If someone can solve rea",
+          "prediction_extracted": "[Yes]",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 207,
+          "subject": "physics",
+          "prediction_raw": "To calculate the electric field energy of a capacitor, we use the formula:\n\\[ U = \\frac{1}{2} CV^2 \\]\nwhere:\n- \\( U \\) is the electric field energy (in Joules, J)\n- \\( C \\) is the capacitance (in Farads, F)\n- \\( V \\) is the voltage (in Volts, V)\n\nGiven:\n- \\( C = 6 \\, \\mu F = 6 \\times 10^{-6} \\, F \\)",
+          "prediction_extracted": "0.0432 \\, J",
+          "ground_truth": "0.0432 J",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 208,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to calculate the electric force exerted by each charge on the test charge and then find the magnitude of the net force. The formula for the electric force between two point charges is given by Coulomb's law:\n\nF = k * |q1| * |q2| / r^2\n\nwhere:\n- F is the magnitude of th",
+          "prediction_extracted": "0 N",
+          "ground_truth": "1.82*10^-3 N",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 209,
+          "subject": "physics",
+          "prediction_raw": "To calculate the net electric force acting on q3, we need to consider the forces exerted by q1 and q2 on q3 separately and then find their vector sum. The force between two point charges is given by Coulomb's law:\n\nF = k * |q1| * |q2| / r^2\n\nwhere k is Coulomb's constant (approximately 8.99 \u00d7 10^9 N",
+          "prediction_extracted": "2.63 \u00d7 10^-3 N",
+          "ground_truth": "0.734*10^-3 N",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 210,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to calculate the electric field strength at point M due to each charge separately and then find the resultant field. The electric field strength due to a point charge q at a distance r is given by the formula:\n\nE = k * |q| / r^2\n\nwhere k is the Coulomb constant (approx",
+          "prediction_extracted": "1.90 \u00d7 10^7 V/m",
+          "ground_truth": "1.34 \u00d7 10\u2077 V/m",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 211,
+          "subject": "logic",
+          "prediction_raw": "To determine if the statement \"If a transportation system is safe, then it is necessarily cost-effective\" is true based on the given premises, let's analyze the premises step by step.\n\n1. Every transportation system in the city is equipped with modern technology.\n2. Every transportation system in th",
+          "prediction_extracted": "No",
+          "ground_truth": "No",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 212,
+          "subject": "logic",
+          "prediction_raw": "To determine if some students are careful with food generally, let's analyze the premises step by step:\n\n1. \"There exists a student who is careful with the food at the university canteen.\"\n   - This tells us that at least one student is careful with food at the canteen.\n\n2. \"If x does not consume fo",
+          "prediction_extracted": "Yes",
+          "ground_truth": "No",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 213,
+          "subject": "physics",
+          "prediction_raw": "To find the charge stored by the capacitor, we use the formula:\n\\[ Q = C \\times V \\]\nwhere \\( Q \\) is the charge, \\( C \\) is the capacitance, and \\( V \\) is the voltage.\n\nGiven:\n\\[ C = 21.96 \\, \\text{pF} = 21.96 \\times 10^{-12} \\, \\text{F} \\]\n\\[ V = 28.8 \\, \\text{V} \\]\n\nNow, substitute the given val",
+          "prediction_extracted": "C",
+          "ground_truth": "0.63 nC",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 214,
+          "subject": "physics",
+          "prediction_raw": "To calculate the total impedance Z of a series RLC circuit, we use the formula:\nZ = U / I\nwhere U is the applied voltage and I is the current.\nGiven:\nU = 100 V\nI = 4 A\nSubstituting the values into the formula:\nZ = 100 V / 4 A = 25 \u03a9\nThe answer is: 25 \u03a9",
+          "prediction_extracted": "25 \u03a9",
+          "ground_truth": "25.0 \u03a9",
+          "correct": true
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 215,
+          "subject": "logic",
+          "prediction_raw": "To solve this problem, we need to analyze the given premises and determine which of the statements A, B, C, or D is correct based on these premises.\n\nLet's break down the premises and analyze them step by step:\n\n1. Every student with a GPA of 4.0 is eligible for a full scholarship.\n2. If a student r",
+          "prediction_extracted": "A",
+          "ground_truth": "Unknown",
+          "correct": false
+        },
+        {
+          "bid": "B5",
+          "strategy": "cot_plain",
+          "question_id": 216,
+          "subject": "physics",
+          "prediction_raw": "To solve this problem, we need to calculate the electric force due to each charge on the test charge q3 and then find the net force. The electric force between two point charges is given by Coulomb's law:\n\nF = k * |q1| * |q3| / r^2\n\nwhere k is the Coulomb's constant (9 \u00d7 10^9 N\u00b7m^2/C^2), q1 and q3 a",
+          "prediction_extracted": "0.072 N",
+          "ground_truth": "6.76 N",
+          "correct": false
+        }
+      ]
+    }
+  ]
+}

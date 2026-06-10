@@ -1,0 +1,31 @@
+[1] Loading per-sample results
+    Loaded 6 configs from ablation_per_sample_latest.jsonl
+[2] McNemar test (canonical-aware, dynamic best config)
+    Accuracies: {0: 36.41, 1: 48.85, 2: 52.07, 3: 54.84, 4: 50.69, 5: 52.53}  → best fine-tuned config = cfg3
+    cfg0 → cfg3 (best): Δ=+18.43pp  p=0.000000  SIGNIFICANT
+    cfg0 → cfg1 (SFT gain): Δ=+12.44pp  p=0.000031  SIGNIFICANT
+    cfg1 → cfg2 (logic SFT effect): Δ=+3.22pp  p=0.096092  n.s.
+    cfg2 → cfg3 (GRPO over SFT): Δ=+2.77pp  p=0.211300  n.s.
+    cfg3 → cfg5 (self-consistency effect): Δ=-2.31pp  p=0.301700  n.s.
+[3] Error analysis
+    Error analysis target = cfg3
+    Wrong predictions in cfg3: 98
+    E1_unit_dimension: 3 (3.1%)
+    E2_wrong_formula: 0 (0.0%)
+    E3_arithmetic: 0 (0.0%)
+    E4_logical_fallacy: 22 (22.4%)
+    E5_misinterpretation: 0 (0.0%)
+    E6_extraction: 68 (69.4%)
+    E0_unclassified: 5 (5.1%)
+
+Saved stats: /content/drive/MyDrive/TRA-SAE/logs/stats_results.json
+Saved error analysis: /content/drive/MyDrive/TRA-SAE/logs/error_analysis.json
+
+=== Error Analysis Summary ===
+  E1_unit_dimension:   3 (3.1%)  — Unit or dimension error (physics)
+  E2_wrong_formula:   0 (0.0%)  — Wrong formula / law selected (physics)
+  E3_arithmetic:   0 (0.0%)  — Numerical arithmetic computation error
+  E4_logical_fallacy:  22 (22.4%)  — Logical fallacy or quantifier error (logic)
+  E5_misinterpretation:   0 (0.0%)  — Question misinterpretation or missing context
+  E6_extraction:  68 (69.4%)  — Reasoning plausible but answer not extractable (no <answer> tag / wrong format)
+  E0_unclassified:   5 (5.1%)  — Could not classify from output alone

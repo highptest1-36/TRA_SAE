@@ -1,0 +1,139 @@
+[20:14:23] Running 1 baselines × 3 strategies  | retrieval=True
+[20:14:23] Baselines: ['B6']
+[20:14:23] Strategies: ['xml', 'cot_boxed', 'cot_plain']
+[20:14:25] Val samples: 217
+[20:14:26] --with-retrieval: building retriever over /content/drive/MyDrive/TRA-SAE/processed_data/exact_train
+[Retriever] Built TF-IDF index: 1945 docs, 6166 features
+[Retriever] Subject distribution: {'logic': 732, 'physics': 1213}
+[20:14:28] retrieval exemplars built for 217/217 samples
+
+[20:14:33] ============================================================
+[20:14:33]  B6 (DeepSeek-Math-7B-Instruct) | strategy=xml
+[20:14:33] ============================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:38<00:38, 38.24s/it]Fetching 2 files: 100%|██████████| 2/2 [00:38<00:00, 19.12s/it]
+Loading weights:   0%|          | 0/273 [00:00<?, ?it/s]Loading weights:   0%|          | 1/273 [00:00<01:53,  2.40it/s]Loading weights:   4%|▎         | 10/273 [00:00<00:10, 24.74it/s]Loading weights:   7%|▋         | 18/273 [00:00<00:06, 39.43it/s]Loading weights:  10%|▉         | 26/273 [00:00<00:04, 50.53it/s]Loading weights:  13%|█▎        | 35/273 [00:00<00:03, 60.23it/s]Loading weights:  16%|█▌        | 44/273 [00:00<00:03, 67.01it/s]Loading weights:  19%|█▉        | 52/273 [00:01<00:03, 70.64it/s]Loading weights:  22%|██▏       | 60/273 [00:01<00:02, 71.47it/s]Loading weights:  25%|██▌       | 69/273 [00:01<00:02, 74.39it/s]Loading weights:  29%|██▊       | 78/273 [00:01<00:02, 76.72it/s]Loading weights:  32%|███▏      | 87/273 [00:01<00:02, 77.43it/s]Loading weights:  35%|███▌      | 96/273 [00:01<00:02, 77.65it/s]Loading weights:  38%|███▊      | 104/273 [00:01<00:02, 74.29it/s]Loading weights:  42%|████▏     | 114/273 [00:01<00:02, 78.41it/s]Loading weights:  45%|████▌     | 123/273 [00:01<00:01, 79.93it/s]Loading weights:  48%|████▊     | 132/273 [00:02<00:01, 80.48it/s]Loading weights:  52%|█████▏    | 141/273 [00:02<00:01, 81.24it/s]Loading weights:  55%|█████▍    | 150/273 [00:02<00:01, 82.10it/s]Loading weights:  58%|█████▊    | 159/273 [00:02<00:01, 82.36it/s]Loading weights:  62%|██████▏   | 168/273 [00:02<00:01, 83.18it/s]Loading weights:  65%|██████▍   | 177/273 [00:02<00:01, 82.62it/s]Loading weights:  68%|██████▊   | 186/273 [00:02<00:01, 83.12it/s]Loading weights:  71%|███████▏  | 195/273 [00:02<00:00, 83.27it/s]Loading weights:  75%|███████▍  | 204/273 [00:02<00:00, 83.68it/s]Loading weights:  78%|███████▊  | 213/273 [00:03<00:00, 83.47it/s]Loading weights:  81%|████████▏ | 222/273 [00:03<00:00, 83.76it/s]Loading weights:  85%|████████▍ | 231/273 [00:03<00:00, 83.42it/s]Loading weights:  88%|████████▊ | 240/273 [00:03<00:00, 83.24it/s]Loading weights:  91%|█████████ | 249/273 [00:03<00:00, 82.98it/s]Loading weights:  95%|█████████▍| 258/273 [00:03<00:00, 83.14it/s]Loading weights:  98%|█████████▊| 267/273 [00:03<00:00, 82.50it/s]Loading weights: 100%|██████████| 273/273 [00:03<00:00, 73.72it/s]
+[20:15:20]  Loaded  VRAM 12.9/39GB
+[z3_engine] z3-solver not installed — Z3Engine.verify() always returns None
+[20:15:36]  8/217 | acc=0.0% | 0.3min  VRAM 26.0/39GB
+[20:15:55]  16/217 | acc=0.0% | 0.6min  VRAM 26.0/39GB
+[20:16:16]  24/217 | acc=8.3% | 0.9min  VRAM 26.0/39GB
+[20:16:35]  32/217 | acc=18.8% | 1.2min  VRAM 26.0/39GB
+[20:16:38]  40/217 | acc=15.0% | 1.3min  VRAM 26.5/39GB
+[20:16:47]  48/217 | acc=14.6% | 1.4min  VRAM 26.5/39GB
+[20:16:57]  56/217 | acc=17.9% | 1.6min  VRAM 26.5/39GB
+[20:17:11]  64/217 | acc=21.9% | 1.9min  VRAM 26.5/39GB
+[20:17:30]  72/217 | acc=19.4% | 2.2min  VRAM 24.9/39GB
+[20:17:54]  80/217 | acc=18.8% | 2.6min  VRAM 33.9/39GB
+[20:18:21]  88/217 | acc=20.5% | 3.0min  VRAM 33.9/39GB
+[20:18:34]  96/217 | acc=20.8% | 3.2min  VRAM 33.9/39GB
+[20:18:44]  104/217 | acc=19.2% | 3.4min  VRAM 33.9/39GB
+[20:18:58]  112/217 | acc=19.6% | 3.6min  VRAM 33.9/39GB
+[20:19:20]  120/217 | acc=19.2% | 4.0min  VRAM 33.9/39GB
+[20:19:37]  128/217 | acc=19.5% | 4.3min  VRAM 33.9/39GB
+[20:19:46]  136/217 | acc=21.3% | 4.4min  VRAM 33.9/39GB
+[20:20:22]  144/217 | acc=20.8% | 5.0min  VRAM 38.9/39GB
+[20:20:59]  152/217 | acc=20.4% | 5.7min  VRAM 38.9/39GB
+[20:21:36]  160/217 | acc=20.0% | 6.3min  VRAM 38.9/39GB
+[20:21:58]  168/217 | acc=19.6% | 6.6min  VRAM 38.9/39GB
+[20:22:17]  176/217 | acc=19.9% | 6.9min  VRAM 38.9/39GB
+[20:22:32]  184/217 | acc=19.0% | 7.2min  VRAM 38.9/39GB
+[20:22:45]  192/217 | acc=19.3% | 7.4min  VRAM 38.9/39GB
+[20:23:17]  200/217 | acc=20.0% | 7.9min  VRAM 38.9/39GB
+[20:23:29]  208/217 | acc=20.2% | 8.2min  VRAM 38.9/39GB
+[20:23:49]  216/217 | acc=19.9% | 8.5min  VRAM 38.9/39GB
+[20:24:23]  217/217 | acc=19.8% | 9.1min  VRAM 38.9/39GB
+[20:24:23]  RESULT: overall=19.82%  phys=28.37%  logic=3.95%  (9.1min)
+[20:24:23]  Saved → /content/drive/MyDrive/TRA-SAE/logs/fair_baselines_retrieval_results_latest.json
+
+[20:24:23] ============================================================
+[20:24:23]  B6 (DeepSeek-Math-7B-Instruct) | strategy=cot_boxed
+[20:24:23] ============================================================
+Loading weights:   0%|          | 0/273 [00:00<?, ?it/s]Loading weights:   0%|          | 1/273 [00:00<01:00,  4.49it/s]Loading weights:   1%|          | 2/273 [00:00<01:00,  4.50it/s]Loading weights:   4%|▍         | 11/273 [00:00<00:09, 27.42it/s]Loading weights:   7%|▋         | 20/273 [00:00<00:05, 43.78it/s]Loading weights:  11%|█         | 29/273 [00:00<00:04, 55.56it/s]Loading weights:  14%|█▎        | 37/273 [00:00<00:03, 62.38it/s]Loading weights:  17%|█▋        | 46/273 [00:00<00:03, 68.62it/s]Loading weights:  20%|██        | 55/273 [00:01<00:02, 72.91it/s]Loading weights:  23%|██▎       | 64/273 [00:01<00:02, 76.00it/s]Loading weights:  27%|██▋       | 73/273 [00:01<00:02, 76.11it/s]Loading weights:  30%|███       | 82/273 [00:01<00:02, 79.58it/s]Loading weights:  33%|███▎      | 91/273 [00:01<00:02, 80.30it/s]Loading weights:  37%|███▋      | 100/273 [00:01<00:02, 80.75it/s]Loading weights:  40%|███▉      | 109/273 [00:01<00:02, 81.00it/s]Loading weights:  43%|████▎     | 118/273 [00:01<00:01, 81.47it/s]Loading weights:  47%|████▋     | 127/273 [00:01<00:01, 82.04it/s]Loading weights:  50%|████▉     | 136/273 [00:02<00:01, 82.23it/s]Loading weights:  53%|█████▎    | 145/273 [00:02<00:01, 82.63it/s]Loading weights:  56%|█████▋    | 154/273 [00:02<00:01, 82.73it/s]Loading weights:  60%|█████▉    | 163/273 [00:02<00:01, 82.93it/s]Loading weights:  63%|██████▎   | 172/273 [00:02<00:01, 83.53it/s]Loading weights:  66%|██████▋   | 181/273 [00:02<00:01, 83.42it/s]Loading weights:  70%|██████▉   | 190/273 [00:02<00:00, 83.28it/s]Loading weights:  73%|███████▎  | 199/273 [00:02<00:00, 83.85it/s]Loading weights:  76%|███████▌  | 208/273 [00:02<00:00, 83.87it/s]Loading weights:  79%|███████▉  | 217/273 [00:03<00:00, 83.71it/s]Loading weights:  83%|████████▎ | 226/273 [00:03<00:00, 83.74it/s]Loading weights:  86%|████████▌ | 235/273 [00:03<00:00, 83.50it/s]Loading weights:  89%|████████▉ | 244/273 [00:03<00:00, 83.23it/s]Loading weights:  93%|█████████▎| 253/273 [00:03<00:00, 83.03it/s]Loading weights:  96%|█████████▌| 262/273 [00:03<00:00, 82.79it/s]Loading weights:  99%|█████████▉| 271/273 [00:03<00:00, 82.84it/s]Loading weights: 100%|██████████| 273/273 [00:03<00:00, 73.76it/s]
+[20:24:29]  Loaded  VRAM 12.9/39GB
+[20:25:07]  8/217 | acc=12.5% | 0.6min  VRAM 26.7/39GB
+[20:25:22]  16/217 | acc=6.2% | 0.9min  VRAM 26.7/39GB
+[20:25:59]  24/217 | acc=4.2% | 1.5min  VRAM 26.7/39GB
+[20:26:36]  32/217 | acc=12.5% | 2.1min  VRAM 26.7/39GB
+[20:26:38]  40/217 | acc=12.5% | 2.2min  VRAM 27.1/39GB
+[20:27:15]  48/217 | acc=12.5% | 2.8min  VRAM 27.1/39GB
+[20:27:52]  56/217 | acc=14.3% | 3.4min  VRAM 27.1/39GB
+[20:28:06]  64/217 | acc=17.2% | 3.6min  VRAM 27.1/39GB
+[20:28:26]  72/217 | acc=15.3% | 3.9min  VRAM 27.6/39GB
+[20:29:03]  80/217 | acc=15.0% | 4.6min  VRAM 25.4/39GB
+[20:29:40]  88/217 | acc=15.9% | 5.2min  VRAM 25.4/39GB
+[20:29:51]  96/217 | acc=16.7% | 5.4min  VRAM 25.4/39GB
+[20:30:29]  104/217 | acc=18.3% | 6.0min  VRAM 25.4/39GB
+[20:30:40]  112/217 | acc=18.8% | 6.2min  VRAM 25.4/39GB
+[20:30:56]  120/217 | acc=18.3% | 6.5min  VRAM 25.4/39GB
+[20:31:33]  128/217 | acc=19.5% | 7.1min  VRAM 25.4/39GB
+[20:32:10]  136/217 | acc=21.3% | 7.7min  VRAM 25.4/39GB
+[20:32:47]  144/217 | acc=21.5% | 8.3min  VRAM 25.4/39GB
+[20:33:24]  152/217 | acc=21.7% | 8.9min  VRAM 25.4/39GB
+[20:33:32]  160/217 | acc=21.2% | 9.0min  VRAM 25.4/39GB
+[20:34:09]  168/217 | acc=21.4% | 9.7min  VRAM 25.4/39GB
+[20:34:47]  176/217 | acc=21.6% | 10.3min  VRAM 25.4/39GB
+[20:35:10]  184/217 | acc=20.7% | 10.7min  VRAM 25.4/39GB
+[20:35:47]  192/217 | acc=21.4% | 11.3min  VRAM 25.4/39GB
+[20:36:24]  200/217 | acc=22.0% | 11.9min  VRAM 25.4/39GB
+[20:36:42]  208/217 | acc=22.1% | 12.2min  VRAM 25.4/39GB
+[20:37:03]  216/217 | acc=21.8% | 12.6min  VRAM 25.4/39GB
+[20:37:37]  217/217 | acc=21.7% | 13.1min  VRAM 25.4/39GB
+[20:37:37]  RESULT: overall=21.66%  phys=28.37%  logic=9.21%  (13.1min)
+[20:37:37]  Saved → /content/drive/MyDrive/TRA-SAE/logs/fair_baselines_retrieval_results_latest.json
+
+[20:37:37] ============================================================
+[20:37:37]  B6 (DeepSeek-Math-7B-Instruct) | strategy=cot_plain
+[20:37:37] ============================================================
+Loading weights:   0%|          | 0/273 [00:00<?, ?it/s]Loading weights:   0%|          | 1/273 [00:00<01:00,  4.52it/s]Loading weights:   1%|          | 2/273 [00:00<01:01,  4.42it/s]Loading weights:   4%|▎         | 10/273 [00:00<00:10, 24.69it/s]Loading weights:   7%|▋         | 18/273 [00:00<00:06, 39.43it/s]Loading weights:  10%|▉         | 26/273 [00:00<00:04, 50.06it/s]Loading weights:  12%|█▏        | 33/273 [00:00<00:04, 55.42it/s]Loading weights:  15%|█▌        | 42/273 [00:00<00:03, 62.49it/s]Loading weights:  19%|█▊        | 51/273 [00:01<00:03, 67.82it/s]Loading weights:  22%|██▏       | 60/273 [00:01<00:02, 71.59it/s]Loading weights:  25%|██▌       | 69/273 [00:01<00:02, 74.00it/s]Loading weights:  29%|██▊       | 78/273 [00:01<00:02, 75.50it/s]Loading weights:  32%|███▏      | 87/273 [00:01<00:02, 75.91it/s]Loading weights:  35%|███▌      | 96/273 [00:01<00:02, 76.41it/s]Loading weights:  38%|███▊      | 105/273 [00:01<00:02, 76.62it/s]Loading weights:  42%|████▏     | 114/273 [00:01<00:02, 77.62it/s]Loading weights:  45%|████▌     | 123/273 [00:02<00:01, 79.03it/s]Loading weights:  48%|████▊     | 132/273 [00:02<00:01, 79.56it/s]Loading weights:  52%|█████▏    | 141/273 [00:02<00:01, 80.12it/s]Loading weights:  55%|█████▍    | 150/273 [00:02<00:01, 80.97it/s]Loading weights:  58%|█████▊    | 159/273 [00:02<00:01, 81.42it/s]Loading weights:  62%|██████▏   | 168/273 [00:02<00:01, 82.32it/s]Loading weights:  65%|██████▍   | 177/273 [00:02<00:01, 81.80it/s]Loading weights:  68%|██████▊   | 186/273 [00:02<00:01, 82.43it/s]Loading weights:  71%|███████▏  | 195/273 [00:02<00:00, 82.58it/s]Loading weights:  75%|███████▍  | 204/273 [00:02<00:00, 82.22it/s]Loading weights:  78%|███████▊  | 213/273 [00:03<00:00, 82.00it/s]Loading weights:  81%|████████▏ | 222/273 [00:03<00:00, 82.41it/s]Loading weights:  85%|████████▍ | 231/273 [00:03<00:00, 82.59it/s]Loading weights:  88%|████████▊ | 240/273 [00:03<00:00, 82.32it/s]Loading weights:  91%|█████████ | 249/273 [00:03<00:00, 82.41it/s]Loading weights:  95%|█████████▍| 258/273 [00:03<00:00, 82.49it/s]Loading weights:  98%|█████████▊| 267/273 [00:03<00:00, 82.55it/s]Loading weights: 100%|██████████| 273/273 [00:03<00:00, 72.02it/s]
+[20:37:42]  Loaded  VRAM 12.9/39GB
+[20:37:50]  8/217 | acc=12.5% | 0.1min  VRAM 17.7/39GB
+[20:37:56]  16/217 | acc=12.5% | 0.2min  VRAM 17.7/39GB
+[20:38:07]  24/217 | acc=12.5% | 0.4min  VRAM 17.7/39GB
+[20:38:22]  32/217 | acc=12.5% | 0.7min  VRAM 17.7/39GB
+[20:38:24]  40/217 | acc=10.0% | 0.7min  VRAM 18.4/39GB
+[20:38:33]  48/217 | acc=10.4% | 0.8min  VRAM 18.4/39GB
+[20:39:11]  56/217 | acc=10.7% | 1.5min  VRAM 30.1/39GB
+[20:39:21]  64/217 | acc=10.9% | 1.6min  VRAM 30.1/39GB
+[20:39:30]  72/217 | acc=9.7% | 1.8min  VRAM 30.6/39GB
+[20:39:50]  80/217 | acc=12.5% | 2.1min  VRAM 30.6/39GB
+[20:39:59]  88/217 | acc=14.8% | 2.3min  VRAM 30.6/39GB
+[20:40:02]  96/217 | acc=14.6% | 2.3min  VRAM 30.6/39GB
+[20:40:07]  104/217 | acc=16.3% | 2.4min  VRAM 30.6/39GB
+[20:40:24]  112/217 | acc=16.1% | 2.7min  VRAM 30.6/39GB
+[20:40:37]  120/217 | acc=15.0% | 2.9min  VRAM 30.6/39GB
+[20:40:45]  128/217 | acc=14.8% | 3.0min  VRAM 30.6/39GB
+[20:41:22]  136/217 | acc=16.9% | 3.7min  VRAM 30.6/39GB
+[20:41:29]  144/217 | acc=16.0% | 3.8min  VRAM 30.6/39GB
+[20:41:41]  152/217 | acc=16.4% | 4.0min  VRAM 30.6/39GB
+[20:41:47]  160/217 | acc=16.9% | 4.1min  VRAM 30.6/39GB
+[20:42:27]  168/217 | acc=16.1% | 4.7min  VRAM 21.1/39GB
+[20:42:37]  176/217 | acc=17.6% | 4.9min  VRAM 21.1/39GB
+[20:42:55]  184/217 | acc=16.8% | 5.2min  VRAM 21.1/39GB
+[20:43:22]  192/217 | acc=17.2% | 5.7min  VRAM 21.1/39GB
+[20:43:23]  200/217 | acc=17.5% | 5.7min  VRAM 21.1/39GB
+[20:43:30]  208/217 | acc=16.8% | 5.8min  VRAM 21.1/39GB
+[20:43:49]  216/217 | acc=16.2% | 6.1min  VRAM 21.1/39GB
+[20:44:23]  217/217 | acc=16.1% | 6.7min  VRAM 21.1/39GB
+[20:44:23]  RESULT: overall=16.13%  phys=16.31%  logic=15.79%  (6.7min)
+[20:44:23]  Saved → /content/drive/MyDrive/TRA-SAE/logs/fair_baselines_retrieval_results_latest.json
+
+[20:44:23] ╔════════════════════════════════════════════════════════════════════════╗
+[20:44:23] ║ FAIR BASELINE SUMMARY                                                  ║
+[20:44:23] ╠════════════════════════════════════════════════════════════════════════╣
+[20:44:23] ║ ID   Strategy      Overall  Physics    Logic Description                ║
+[20:44:23] ╠════════════════════════════════════════════════════════════════════════╣
+[20:44:23] ║ --- ORIGINAL RESULTS (step3, XML-forcing) ---                         ║
+[20:44:23] ║ B2   xml_orig       28.57%   36.17%   14.47%                            ║
+[20:44:23] ║ B3   xml_orig       12.90%    5.67%   26.32%                            ║
+[20:44:23] ║ B4   xml_orig        9.68%    6.38%   15.79%                            ║
+[20:44:23] ║ B5   xml_orig       26.73%   33.33%   14.47%                            ║
+[20:44:23] ║ B6   xml_orig       11.98%    9.93%   15.79%                            ║
+[20:44:23] ╠════════════════════════════════════════════════════════════════════════╣
+[20:44:23] ║ --- NEW RESULTS ---                                                    ║
+[20:44:23] ║ B6   xml            19.82%   28.37%    3.95%                            ║
+[20:44:23] ║ B6   cot_boxed      21.66%   28.37%    9.21%  ← primary                 ║
+[20:44:23] ║ B6   cot_plain      16.13%   16.31%   15.79%                            ║
+[20:44:23] ╚════════════════════════════════════════════════════════════════════════╝
+[20:44:23] Saved: /content/drive/MyDrive/TRA-SAE/logs/fair_baselines_retrieval_results_latest.json

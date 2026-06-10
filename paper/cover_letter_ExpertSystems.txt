@@ -1,0 +1,51 @@
+[Date]
+
+Dear Editor-in-Chief,
+
+We are pleased to submit our manuscript entitled "TRA-SAE: A Low-Cost
+Retrieval-Augmented Expert Reasoning System for Mixed Physics-Logic Question
+Answering with a 4B Language Model" for consideration as an Original Article in
+Expert Systems.
+
+Our work concerns the design of an expert reasoning system for scientific
+question answering that couples numerical physical reasoning with symbolic
+logical inference under strict resource constraints. Using a single
+4B-parameter open model and a total compute budget below US$64, we develop and
+rigorously evaluate a curriculum training pipeline -- supervised fine-tuning, a
+logic-focused curriculum stage, and Group Relative Policy Optimization with a
+composite reward -- combined with retrieval-augmented inference and an optional
+symbolic (Z3) verification component.
+
+We believe the manuscript fits the scope of Expert Systems in the following
+respects. First, it concerns knowledge-based and reasoning systems that
+integrate machine learning with symbolic verification. Second, it provides a
+transparent, reproducible methodology with full statistical analysis (McNemar
+tests, Wilson confidence intervals, and a three-seed evaluation) under a clean
+evaluation protocol that does not use ground-truth labels at inference time.
+Third, it reports actionable and honestly characterised findings -- including
+negative results -- for practitioners who build scientific-reasoning systems on
+a limited budget.
+
+The principal contributions are: (i) a low-cost, reproducible pipeline for
+mixed-domain (physics and logic) scientific question answering on a small open
+model; (ii) a controlled causal decomposition showing that retrieval-augmented
+exemplars, rather than fine-tuning, account for the larger share of the accuracy
+gain; (iii) a fair multi-prompt baseline re-evaluation and external transfer
+checks on MMLU physics and FOLIO logic; and (iv) a structured error analysis
+that identifies formal logical inference as the principal bottleneck at this
+model scale, with the measured gains concentrated in the physics domain.
+
+We confirm that this manuscript is original, has not been published previously,
+and is not under consideration for publication elsewhere. All authors have
+approved the submission and declare no conflicts of interest. The code, trained
+adapters, evaluation scripts, the exact train/validation split, and the raw
+per-sample predictions are available in an anonymised repository for review, and
+a permanent, citable archive will be deposited upon acceptance.
+
+Thank you for considering our submission. We look forward to your response.
+
+Sincerely,
+
+[Author name(s)]
+[Affiliation]
+[Corresponding author e-mail]

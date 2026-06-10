@@ -1,0 +1,30 @@
+{
+  "run_ts": "20260610_020553",
+  "checkpoint": "/content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_grpo/final",
+  "smoke_test": false,
+  "arm_a_direct": {
+    "accuracy_overall": 39.63,
+    "accuracy_physics": 49.65,
+    "accuracy_logic": 21.05,
+    "n_total": 217,
+    "n_physics": 141,
+    "n_logic": 76,
+    "n_correct": 86,
+    "elapsed_min": 42.1
+  },
+  "arm_b_tool": {
+    "accuracy_overall": 40.09,
+    "accuracy_physics": 51.06,
+    "accuracy_logic": 19.74,
+    "n_total": 217,
+    "n_physics": 141,
+    "n_logic": 76,
+    "n_correct": 87,
+    "elapsed_min": 42.7,
+    "tool_activations": {
+      "calc": 62,
+      "none": 155
+    }
+  },
+  "delta_overall": 0.46
+}

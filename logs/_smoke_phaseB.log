@@ -1,0 +1,144 @@
+######## SMOKE 1/4: step3_baselines (B2 only) ########
+[17:24:28] ── STEP 3: Baseline Evaluation ──────────────────────────────
+[17:24:28] WARNING: HF_TOKEN not set — gated models (B5) will fail.
+[17:24:28]   Run:  HF_TOKEN=hf_... python experiments/step3_baselines.py
+[17:24:32]  DynamicCache.from_legacy_cache shim applied (transformers compat)
+Only running: ['B2']
+
+[17:24:32] [1] Loading val dataset
+[17:24:36]     Eval samples: 8  (smoke=True)
+[17:24:36]     Resuming — already done (no error): {'B3', 'B5', 'B2', 'B6', 'B4'}
+[17:24:36]     Models to run: []
+
+[17:24:36] Skipping B2 (already done OK)
+
+[17:24:36] ============================================================
+[17:24:36]  ALL BASELINES DONE  (0.0 min total)
+[17:24:36] ============================================================
+[17:24:36]  ID    Model                                        Overall     Phys    Logic  Status
+[17:24:36]  --------------------------------------------------------------------------------
+[17:24:36]  B2    Qwen/Qwen2.5-Math-7B-Instruct                 28.57%   36.17%   14.47%  OK
+[17:24:36]  B5    Qwen/Qwen2-Math-7B-Instruct                   26.73%   33.33%   14.47%  OK
+[17:24:36]  B3    EleutherAI/llemma_7b                          12.90%    5.67%   26.32%  OK
+[17:24:36]  B6    deepseek-ai/deepseek-math-7b-instruct         11.98%    9.93%   15.79%  OK
+[17:24:36]  B4    mistralai/Mistral-7B-Instruct-v0.3             9.68%    6.38%   15.79%  OK
+[17:24:36]  ================================================================================
+[17:24:36]  Saved → /content/drive/MyDrive/TRA-SAE/logs/baselines_20260608_172430.json
+===STEP3 EXIT=0===
+######## SMOKE 2/4: step8_fair_baselines (B2, cot_boxed) ########
+[17:24:38] Running 1 baselines × 1 strategies
+[17:24:38] Baselines: ['B2']
+[17:24:38] Strategies: ['cot_boxed']
+[17:24:39] SMOKE TEST: 10 samples
+[17:24:39] Val samples: 10
+
+[17:24:44] ============================================================
+[17:24:44]  B2 (Qwen2.5-Math-7B-Instruct) | strategy=cot_boxed
+[17:24:44] ============================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [00:36<01:48, 36.06s/it]Fetching 4 files:  50%|█████     | 2/4 [00:44<00:39, 19.54s/it]Fetching 4 files: 100%|██████████| 4/4 [00:44<00:00, 11.01s/it]
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<03:18,  1.70it/s]Loading weights:   4%|▍         | 15/339 [00:00<00:12, 25.63it/s]Loading weights:   8%|▊         | 28/339 [00:00<00:07, 44.11it/s]Loading weights:  12%|█▏        | 40/339 [00:01<00:05, 57.28it/s]Loading weights:  15%|█▌        | 52/339 [00:01<00:04, 67.64it/s]Loading weights:  19%|█▉        | 65/339 [00:01<00:03, 77.62it/s]Loading weights:  23%|██▎       | 77/339 [00:01<00:03, 82.71it/s]Loading weights:  26%|██▋       | 89/339 [00:01<00:02, 86.52it/s]Loading weights:  29%|██▉       | 99/339 [00:01<00:02, 84.00it/s]Loading weights:  33%|███▎      | 113/339 [00:01<00:02, 91.80it/s]Loading weights:  37%|███▋      | 125/339 [00:01<00:02, 92.60it/s]Loading weights:  40%|████      | 137/339 [00:02<00:02, 93.73it/s]Loading weights:  44%|████▎     | 148/339 [00:02<00:02, 91.71it/s]Loading weights:  47%|████▋     | 160/339 [00:02<00:01, 93.05it/s]Loading weights:  51%|█████     | 173/339 [00:02<00:01, 88.04it/s]Loading weights:  55%|█████▍    | 186/339 [00:02<00:01, 92.12it/s]Loading weights:  58%|█████▊    | 198/339 [00:02<00:01, 92.85it/s]Loading weights:  62%|██████▏   | 210/339 [00:02<00:01, 92.91it/s]Loading weights:  65%|██████▌   | 222/339 [00:02<00:01, 93.19it/s]Loading weights:  69%|██████▉   | 234/339 [00:03<00:01, 93.53it/s]Loading weights:  73%|███████▎  | 246/339 [00:03<00:00, 94.12it/s]Loading weights:  76%|███████▌  | 258/339 [00:03<00:00, 93.48it/s]Loading weights:  80%|███████▉  | 270/339 [00:03<00:00, 93.98it/s]Loading weights:  83%|████████▎ | 282/339 [00:03<00:00, 94.45it/s]Loading weights:  87%|████████▋ | 294/339 [00:03<00:00, 94.80it/s]Loading weights:  90%|█████████ | 306/339 [00:03<00:00, 94.87it/s]Loading weights:  94%|█████████▍| 318/339 [00:03<00:00, 94.93it/s]Loading weights:  97%|█████████▋| 330/339 [00:04<00:00, 94.74it/s]Loading weights: 100%|██████████| 339/339 [00:04<00:00, 82.89it/s]
+[17:25:37]  Loaded  VRAM 14.2/79GB
+[z3_engine] z3-solver not installed — Z3Engine.verify() always returns None
+[17:25:58]  4/10 | acc=25.0% | 0.4min  VRAM 14.7/79GB
+[17:26:17]  8/10 | acc=12.5% | 0.7min  VRAM 14.7/79GB
+[17:26:37]  10/10 | acc=20.0% | 1.0min  VRAM 14.8/79GB
+[17:26:37]  RESULT: overall=20.0%  phys=28.57%  logic=0.0%  (1.0min)
+[17:26:37]  Saved → /content/drive/MyDrive/TRA-SAE/logs/fair_baselines_results_latest.json
+
+[17:26:37] ╔════════════════════════════════════════════════════════════════════════╗
+[17:26:37] ║ FAIR BASELINE SUMMARY                                                  ║
+[17:26:37] ╠════════════════════════════════════════════════════════════════════════╣
+[17:26:37] ║ ID   Strategy      Overall  Physics    Logic Description                ║
+[17:26:37] ╠════════════════════════════════════════════════════════════════════════╣
+[17:26:37] ║ --- ORIGINAL RESULTS (step3, XML-forcing) ---                         ║
+[17:26:37] ║ B2   xml_orig       28.57%   36.17%   14.47%                            ║
+[17:26:37] ║ B3   xml_orig       12.90%    5.67%   26.32%                            ║
+[17:26:37] ║ B4   xml_orig        9.68%    6.38%   15.79%                            ║
+[17:26:37] ║ B5   xml_orig       26.73%   33.33%   14.47%                            ║
+[17:26:37] ║ B6   xml_orig       11.98%    9.93%   15.79%                            ║
+[17:26:37] ╠════════════════════════════════════════════════════════════════════════╣
+[17:26:37] ║ --- NEW RESULTS ---                                                    ║
+[17:26:37] ║ B2   cot_boxed      20.00%   28.57%    0.00%  ← primary                 ║
+[17:26:37] ╚════════════════════════════════════════════════════════════════════════╝
+[17:26:37] Saved: /content/drive/MyDrive/TRA-SAE/logs/fair_baselines_results_latest.json
+===STEP8 EXIT=0===
+######## SMOKE 3/4: step9_external_benchmark (cfg0) ########
+[17:26:42] Loading MMLU physics datasets ...
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'cais/mmlu' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating test split:   0%|          | 0/151 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 151/151 [00:00<00:00, 5403.19 examples/s]
+Generating validation split:   0%|          | 0/17 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 17/17 [00:00<00:00, 6564.46 examples/s]
+Generating dev split:   0%|          | 0/5 [00:00<?, ? examples/s]Generating dev split: 100%|██████████| 5/5 [00:00<00:00, 2426.98 examples/s]
+[17:26:45]   mmlu/high_school_physics: 151 samples
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'cais/mmlu' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+Generating test split:   0%|          | 0/102 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 102/102 [00:00<00:00, 33399.88 examples/s]
+Generating validation split:   0%|          | 0/11 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 11/11 [00:00<00:00, 4398.22 examples/s]
+Generating dev split:   0%|          | 0/5 [00:00<?, ? examples/s]Generating dev split: 100%|██████████| 5/5 [00:00<00:00, 2270.38 examples/s]
+[17:26:47]   mmlu/college_physics: 102 samples
+[17:26:47]   Smoke test: 20 samples
+[17:26:47] Total: 20 samples (HS=20, College=0)
+[17:26:47] Configs to run: ['cfg0']
+
+[17:26:52] ============================================================
+[17:26:52]  Evaluating: Qwen3.5-4B zero-shot (no fine-tuning)
+[17:26:52]  Checkpoint: base model
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 23301.69it/s]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:59,  3.55it/s]Loading weights:   6%|▌         | 26/426 [00:00<00:04, 86.31it/s]Loading weights:  11%|█         | 45/426 [00:00<00:03, 118.47it/s]Loading weights:  16%|█▌        | 67/426 [00:00<00:02, 145.82it/s]Loading weights:  22%|██▏       | 93/426 [00:00<00:01, 179.94it/s]Loading weights:  27%|██▋       | 115/426 [00:00<00:01, 180.58it/s]Loading weights:  33%|███▎      | 142/426 [00:00<00:01, 206.17it/s]Loading weights:  39%|███▊      | 165/426 [00:01<00:01, 207.83it/s]Loading weights:  44%|████▍     | 187/426 [00:01<00:01, 196.91it/s]Loading weights:  49%|████▉     | 208/426 [00:01<00:01, 199.56it/s]Loading weights:  55%|█████▍    | 234/426 [00:01<00:00, 212.53it/s]Loading weights:  60%|██████    | 256/426 [00:01<00:00, 212.69it/s]Loading weights:  65%|██████▌   | 278/426 [00:01<00:00, 210.68it/s]Loading weights:  71%|███████   | 302/426 [00:01<00:00, 210.42it/s]Loading weights:  77%|███████▋  | 327/426 [00:01<00:00, 219.06it/s]Loading weights:  82%|████████▏ | 350/426 [00:01<00:00, 216.39it/s]Loading weights:  87%|████████▋ | 372/426 [00:02<00:00, 206.05it/s]Loading weights:  93%|█████████▎| 398/426 [00:02<00:00, 214.39it/s]Loading weights:  99%|█████████▊| 420/426 [00:02<00:00, 206.87it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 188.07it/s]
+[17:26:57]  Model loaded  VRAM 7.8/79GB
+[17:27:33]  4/20 | acc=0.0% | 0.6min  VRAM 8.3/79GB
+[17:28:08]  8/20 | acc=12.5% | 1.2min  VRAM 8.6/79GB
+[17:28:42]  12/20 | acc=8.3% | 1.7min  VRAM 8.6/79GB
+[17:29:17]  16/20 | acc=6.2% | 2.3min  VRAM 8.6/79GB
+[17:29:52]  20/20 | acc=10.0% | 2.9min  VRAM 8.6/79GB
+[17:29:52]  RESULT: overall=10.0%  per_subject={'hs_physics': 10.0}
+[17:29:52] Saved → /content/drive/MyDrive/TRA-SAE/logs/external_benchmark_results_latest.json
+
+[17:29:52] ╔═════════════════════════════════════════════════════════════════╗
+[17:29:52] ║ MMLU PHYSICS BENCHMARK SUMMARY                                 ║
+[17:29:52] ╠═════════════════════════════════════════════════════════════════╣
+[17:29:52] ║ Config        Overall   HS Phys   College Desc                      ║
+[17:29:52] ╠═════════════════════════════════════════════════════════════════╣
+[17:29:52] ║ cfg0           10.00%    10.00%     0.00% Qwen3.5-4B zero-shot (no  ║
+[17:29:52] ╚═════════════════════════════════════════════════════════════════╝
+
+[17:29:52] NOTE FOR PAPER:
+===STEP9 EXIT=0===
+######## SMOKE 4/4: check_consistency ########
+================================================================
+CHECK 1-2: canonical ablation
+  [OK ] cfg0 zero_shot          acc= 45.16%  141+76=217 (n=217)
+  [OK ] cfg1 sft_phase1         acc= 50.69%  141+76=217 (n=217)
+  [OK ] cfg2 sft_logic          acc= 53.46%  141+76=217 (n=217)
+  [OK ] cfg3 grpo_mixed         acc= 52.53%  141+76=217 (n=217)
+  [OK ] cfg4 dual_lora_router   acc= 49.77%  141+76=217 (n=217)
+  [OK ] cfg5 full_v2            acc= 50.69%  141+76=217 (n=217)
+
+CHECK 3: per-sample JSONL coverage
+  per-config rows: {0: 217, 1: 217, 2: 217, 3: 217}
+
+CHECK 4: drift vs OLD qwen35_ablation.json (V1) — paper numbers to update
+  cfg0: V1= 35.48%  canonical= 45.16%  Δ=+9.68pp  <-- CHANGED
+  cfg1: V1= 52.53%  canonical= 50.69%  Δ=-1.84pp  <-- CHANGED
+  cfg2: V1= 51.61%  canonical= 53.46%  Δ=+1.85pp  <-- CHANGED
+  cfg3: V1= 53.92%  canonical= 52.53%  Δ=-1.39pp  <-- CHANGED
+  cfg4: V1= 49.77%  canonical= 49.77%  Δ=+0.00pp
+  cfg5: V1= 50.69%  canonical= 50.69%  Δ=+0.00pp
+
+CHECK 5: baselines denominator
+  5 baselines checked
+
+================================================================
+
+FAILED — 2 problem(s):
+  X per-sample JSONL missing config 4
+  X per-sample JSONL missing config 5
+===CONSISTENCY EXIT=1===
+######## ALL SMOKE DONE ########

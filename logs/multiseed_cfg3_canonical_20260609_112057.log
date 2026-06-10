@@ -1,0 +1,71 @@
+==== SEED 1337 cfg3 start Tue Jun  9 11:20:57 AM UTC 2026 ====
+[1] Loading val set | seed=1337 | ts=20260609_112059
+    Eval samples: 217  composition={'physics': 141, 'logic': 76}
+[2] Loading base model
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:24<00:24, 24.99s/it]Fetching 2 files: 100%|██████████| 2/2 [00:24<00:00, 12.50s/it]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<02:11,  3.22it/s]Loading weights:   6%|▋         | 27/426 [00:00<00:04, 83.02it/s]Loading weights:  11%|█         | 47/426 [00:00<00:03, 116.43it/s]Loading weights:  18%|█▊        | 78/426 [00:00<00:02, 173.81it/s]Loading weights:  24%|██▎       | 101/426 [00:00<00:01, 174.60it/s]Loading weights:  31%|███       | 130/426 [00:00<00:01, 206.67it/s]Loading weights:  36%|███▌      | 154/426 [00:00<00:01, 198.27it/s]Loading weights:  43%|████▎     | 182/426 [00:01<00:01, 215.40it/s]Loading weights:  48%|████▊     | 205/426 [00:01<00:01, 204.77it/s]Loading weights:  55%|█████▌    | 236/426 [00:01<00:00, 231.02it/s]Loading weights:  61%|██████▏   | 261/426 [00:01<00:00, 216.96it/s]Loading weights:  68%|██████▊   | 289/426 [00:01<00:00, 233.37it/s]Loading weights:  74%|███████▎  | 314/426 [00:01<00:00, 215.79it/s]Loading weights:  80%|████████  | 342/426 [00:01<00:00, 229.79it/s]Loading weights:  86%|████████▌ | 366/426 [00:01<00:00, 213.52it/s]Loading weights:  93%|█████████▎| 396/426 [00:02<00:00, 235.39it/s]Loading weights:  99%|█████████▉| 421/426 [00:02<00:00, 218.65it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 194.84it/s]
+[base model loaded] VRAM  8.41 GB alloc  /  8.42 GB reserved  /  42.4 GB total
+[3] Loading retriever
+[Retriever] Built TF-IDF index: 1945 docs, 6166 features
+[Retriever] Subject distribution: {'physics': 1213, 'logic': 732}
+[4] Loading router
+    Router loaded from /content/drive/MyDrive/TRA-SAE/checkpoints/router.pkl
+
+================================================================
+Config 3: + GRPO mixed Phase 2
+================================================================
+[cfg3 model loaded] VRAM  8.59 GB alloc  /  8.77 GB reserved  /  42.4 GB total
+  attempt 0: 217 pending
+  attempt 0: correct=100/217
+  attempt 1: 117 pending
+  attempt 1: correct=110/217
+  attempt 2: 107 pending
+  attempt 2: correct=111/217
+  cfg3 DONE: overall=51.15%  phys=65.25%  logic=25.0%  [141+76=217]  82.5min
+  [checkpoint saved → qwen35_ablation_canonical_seed1337.json]
+
+Saved: /content/drive/MyDrive/TRA-SAE/logs/qwen35_ablation_canonical_seed1337.json
+Saved per-sample: /content/drive/MyDrive/TRA-SAE/logs/ablation_per_sample_canonical_seed1337.jsonl
+
+SANITY CHECK (n_phys + n_logic == n_total):
+  cfg3 grpo_mixed         acc= 51.15%  141+76=217  OK
+
+NOTE: rebuild ALL paper tables from this file. Do not mix with old qwen35_ablation.json.
+==== SEED 2024 cfg3 start Tue Jun  9 12:44:37 PM UTC 2026 ====
+[1] Loading val set | seed=2024 | ts=20260609_124439
+    Eval samples: 217  composition={'physics': 141, 'logic': 76}
+[2] Loading base model
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 23763.76it/s]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:48,  3.92it/s]Loading weights:   6%|▋         | 27/426 [00:00<00:04, 93.67it/s]Loading weights:  11%|█         | 46/426 [00:00<00:03, 121.60it/s]Loading weights:  18%|█▊        | 76/426 [00:00<00:01, 177.56it/s]Loading weights:  23%|██▎       | 98/426 [00:00<00:01, 185.75it/s]Loading weights:  28%|██▊       | 119/426 [00:00<00:01, 191.78it/s]Loading weights:  35%|███▍      | 147/426 [00:00<00:01, 214.28it/s]Loading weights:  40%|████      | 171/426 [00:00<00:01, 221.05it/s]Loading weights:  46%|████▌     | 196/426 [00:01<00:01, 228.65it/s]Loading weights:  52%|█████▏    | 220/426 [00:01<00:00, 222.79it/s]Loading weights:  57%|█████▋    | 243/426 [00:01<00:00, 222.53it/s]Loading weights:  62%|██████▏   | 266/426 [00:01<00:00, 215.70it/s]Loading weights:  69%|██████▊   | 292/426 [00:01<00:00, 224.29it/s]Loading weights:  74%|███████▍  | 315/426 [00:01<00:00, 219.77it/s]Loading weights:  81%|████████  | 343/426 [00:01<00:00, 236.11it/s]Loading weights:  86%|████████▌ | 367/426 [00:01<00:00, 217.25it/s]Loading weights:  93%|█████████▎| 396/426 [00:01<00:00, 236.25it/s]Loading weights:  99%|█████████▉| 421/426 [00:02<00:00, 218.91it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 200.28it/s]
+[base model loaded] VRAM  8.41 GB alloc  /  8.42 GB reserved  /  42.4 GB total
+[3] Loading retriever
+[Retriever] Built TF-IDF index: 1945 docs, 6166 features
+[Retriever] Subject distribution: {'physics': 1213, 'logic': 732}
+[4] Loading router
+    Router loaded from /content/drive/MyDrive/TRA-SAE/checkpoints/router.pkl
+
+================================================================
+Config 3: + GRPO mixed Phase 2
+================================================================
+[cfg3 model loaded] VRAM  8.59 GB alloc  /  8.77 GB reserved  /  42.4 GB total
+  attempt 0: 217 pending
+  attempt 0: correct=101/217
+  attempt 1: 116 pending
+  attempt 1: correct=109/217
+  attempt 2: 108 pending
+  attempt 2: correct=113/217
+  cfg3 DONE: overall=52.07%  phys=65.96%  logic=26.32%  [141+76=217]  85.8min
+  [checkpoint saved → qwen35_ablation_canonical_seed2024.json]
+
+Saved: /content/drive/MyDrive/TRA-SAE/logs/qwen35_ablation_canonical_seed2024.json
+Saved per-sample: /content/drive/MyDrive/TRA-SAE/logs/ablation_per_sample_canonical_seed2024.jsonl
+
+SANITY CHECK (n_phys + n_logic == n_total):
+  cfg3 grpo_mixed         acc= 52.07%  141+76=217  OK
+
+NOTE: rebuild ALL paper tables from this file. Do not mix with old qwen35_ablation.json.
+==== MULTISEED ALL DONE Tue Jun  9 02:10:42 PM UTC 2026 ====

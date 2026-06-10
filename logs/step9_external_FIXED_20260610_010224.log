@@ -1,0 +1,22 @@
+=== PHÓNG FULL step9 (cfg0/cfg2/cfg3, batch16, 1024tok) → logs/step9_external_FIXED_20260610_010224.log ===
+start=01:02:24
+[01:02:27] Loading MMLU physics datasets ...
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'cais/mmlu' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+[01:02:29]   mmlu/high_school_physics: 151 samples
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'cais/mmlu' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+[01:02:30]   mmlu/college_physics: 102 samples
+[01:02:30] Total: 253 samples (HS=151, College=102)
+[01:02:30] Configs to run: ['cfg0', 'cfg2', 'cfg3']
+
+[01:02:35] ============================================================
+[01:02:35]  Evaluating: Qwen3.5-4B zero-shot (no fine-tuning)
+[01:02:35]  Checkpoint: base model
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 25811.10it/s]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:56,  3.65it/s]Loading weights:   6%|▋         | 27/426 [00:00<00:04, 84.92it/s]Loading weights:  12%|█▏        | 50/426 [00:00<00:02, 129.87it/s]Loading weights:  18%|█▊        | 75/426 [00:00<00:02, 164.63it/s]Loading weights:  22%|██▏       | 95/426 [00:00<00:01, 175.05it/s]Loading weights:  28%|██▊       | 119/426 [00:00<00:01, 190.82it/s]Loading weights:  33%|███▎      | 142/426 [00:00<00:01, 202.41it/s]Loading weights:  39%|███▊      | 165/426 [00:01<00:01, 205.79it/s]Loading weights:  44%|████▍     | 187/426 [00:01<00:01, 203.70it/s]Loading weights:  49%|████▉     | 208/426 [00:01<00:01, 199.56it/s]Loading weights:  54%|█████▍    | 232/426 [00:01<00:00, 210.06it/s]Loading weights:  60%|█████▉    | 254/426 [00:01<00:00, 206.73it/s]Loading weights:  65%|██████▌   | 277/426 [00:01<00:00, 211.23it/s]Loading weights:  70%|███████   | 300/426 [00:01<00:00, 209.09it/s]Loading weights:  76%|███████▌  | 322/426 [00:01<00:00, 208.38it/s]Loading weights:  81%|████████  | 344/426 [00:01<00:00, 208.93it/s]Loading weights:  86%|████████▌ | 365/426 [00:02<00:00, 189.60it/s]Loading weights:  92%|█████████▏| 393/426 [00:02<00:00, 210.27it/s]Loading weights:  97%|█████████▋| 415/426 [00:02<00:00, 206.28it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 185.55it/s]
+[01:02:41]  Model loaded  VRAM 7.8/79GB

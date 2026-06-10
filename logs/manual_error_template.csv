@@ -1,0 +1,506 @@
+idx,subject,question,prediction,ground_truth,rule_label,manual_label,notes,raw_snippet
+0,logic,"Premises:
+  1. All online students have logged into the online learning platform
+  2. There exists at least one online student who has completed a module quiz
+  3. If an online student has logged into",Yes,No,LE,,,"<reasoning>
+The statement to evaluate is: ""There exists at least one online student who has completed a module quiz.""
+Looking at Premise 2: ""There exists at least one online student who has completed a module quiz.""
+The statement is identical to Premise 2. Since we accept the premises as true, the statement must be true.
+</reasoning>
+<answer>
+Yes
+</answer>
+<explanation>
+The statement is a direct r"
+1,logic,"Premises:
+  1. All students attend the course.
+  2. There exists someone who attended the midterm exam.
+  3. If a person did not complete the required attendance, then they did not attend the course.
+","Premises 4 and 5 are themselves implications. If we know $\exists x, M(x)$ is tr",Unknown,AX,,,"<reasoning>
+Let's break down the premises logically:
+- Let $A(x)$ denote ""x attends the course"".
+- Let $M(x)$ denote ""x attended the midterm exam"".
+- Let $F(x)$ denote ""x attended the final exam"".
+- Let $R(x)$ denote ""x completed the required attendance"".
+
+The premises translate to:
+1. $\forall x, A(x)$ (All students attend the course).
+2. $\exists x, M(x)$ (There exists someone who attended the m"
+2,logic,"Premises:
+  1. All students engage in self-study.
+  2. If a student participates in research, then they publish papers.
+  3. If a student participates in research, then they engage in training.
+  4. A",We know ∀x (¬S(x) → ¬Q,Unknown,AX,,,"<reasoning>
+We are given the following premises:
+
+1. All students engage in self-study: ∀x S(x)
+2. If a student participates in research, then they publish papers: ∀x (R(x) → P(x))
+3. If a student participates in research, then they engage in training: ∀x (R(x) → T(x))
+4. All students engage in training: ∀x T(x)
+5. If a student conducts research, then they receive a qualification: ∀x (R(x) → Q(x))"
+3,logic,"Premises:
+  1. All students have knowledge.
+  2. At least one student conducts research.
+  3. If a student conducts research, then they publish papers.
+  4. At least one student publishes papers.
+  5.",A. $\forall x (publishes \rightarrow teaches)$ : This is the reverse implication,Unknown,AX,,,"<reasoning>
+1.  **Translate premises to logical notation**:
+    *   Let $K(x)$: student $x$ has knowledge.
+    *   Let $R(x)$: student $x$ conducts research.
+    *   Let $P(x)$: student $x$ publishes papers.
+    *   Let $T(x)$: student $x$ teaches.
+    *   Let $S(x)$: student $x$ gives seminars.
+    *   Let $U(x)$: student $x$ understands the subject.
+
+    Premises:
+    1.  $\forall x K(x)$
+    2."
+4,logic,"Premises:
+  1. All students have knowledge.
+  2. At least one student conducts research.
+  3. If a student conducts research, then they publish papers.
+  4. At least one student publishes papers.
+  5.",Yes,No,AX,,,"<reasoning>
+The statement in question is: ""If a student publishes papers, then they conduct research.""
+Looking at the premises provided:
+Premises 1 through 16 are stated as facts (universal truths within the context of the logic problem).
+Premises 5, 11, and 16 directly match the logical structure of the statement we are evaluating:
+- Premise 5: ""If a student teaches, then they conduct research."" "
+5,logic,"Premises:
+  1. All students have met all academic requirements
+  2. If a student has submitted the exam eligibility form, then they have received clearance from the academic office
+  3. All students a",A,Unknown,LE,,,"<reasoning>
+1. Analyze Premises:
+   - Premises 1 and 2 state that all students meet academic requirements and that submitting the eligibility form results in receiving clearance. However, they do not explicitly state that all students have submitted the form or that all students are allowed to attend the exam.
+   - Premises 3 and 4 state that all students are allowed to attend the final exam and t"
+6,logic,"Premises:
+  1. All students in the digital literacy program take standardized assessments.
+  2. All students participate in group projects.
+  3. There exists at least one student who qualifies for the",B,Unknown,AX,,,"<reasoning>
+Let's break down the logical structure of the premises:
+
+1.  **Premises 1 & 2**: These are universal statements about students in the digital literacy program (all take assessments, all do group projects). However, the specific logical implication we need to evaluate is found in Premises 4, 5, 6, and 8.
+2.  **Premises 4 & 5**:
+    *   Premise 4: $H \rightarrow P$ (If a student qualifie"
+7,logic,"Premises:
+  1. All students must complete their coursework.
+  2. If a student completes their coursework, they will graduate.
+  3. At least one student is enrolled in an advanced seminar.
+  4. If all ",No,Yes,LE,,,"<reasoning>
+Let's break down the premises logically:
+1.  **All students must complete their coursework.** (True)
+2.  **If a student completes their coursework, they will graduate.** (True)
+3.  **At least one student is enrolled in an advanced seminar.** (True)
+4.  **If all students must complete their coursework, then at least one student is enrolled in an advanced seminar.** (True)
+5.  **If all s"
+8,logic,"Premises:
+  1. At least one student has received a Scholarship.
+  2. All students are required to submit a Research project.
+  3. Research project completion grants access to University housing.
+  4. ","Perhaps the intended answer is **C**, because in many logic",Unknown,AX,,,"<reasoning>
+We are given the premise: **All students are required to submit a Research project.**
+
+We need to determine which conclusion logically follows, based on the provided policies. Let's examine the relevant rules:
+
+- **Rule 6:** ""Research project submission requires Thesis completion.""
+  - This means: If a student submits a Research project, then they must have completed the Thesis.
+  - Sy"
+9,logic,"Premises:
+  1. At least one student receives a scholarship.
+  2. All students have the opportunity to apply for scholarships.
+  3. If a student maintains a high GPA, they qualify for a merit-based sch",Yes,No,AX,,,"<reasoning>
+1.  **Premises supporting the pathway:**
+    *   Premise 3 states: ""If a student maintains a high GPA, they qualify for a merit-based scholarship."" This directly links maintaining a high GPA to receiving a scholarship.
+    *   Premises 5 and 7 state that all students can and benefit from financial aid counseling, which supports the process of securing funding.
+    *   Premises 6 and 11"
+10,logic,"Premises:
+  1. At the University of Technology, there exists at least one object x that has property U.
+  2. At the University of Technology, if an object x does not have property S, then it does not ","The question asks: ""Which statement can be deduced if we know that there exists ",Unknown,AX,,,"<reasoning>
+1.  **Identify the premise in question**: The question asks about the logical implication: ""If there exists at least one object x that has property U, then if an object x lacks property S, it does not have property P."" Let's denote this statement as $H$.
+    $H = (\exists x U(x) \rightarrow (\neg S(x) \rightarrow \neg P(x)))$
+
+2.  **Check the premises provided**:
+    *   Premises 1 thr"
+11,logic,"Premises:
+  1. BK students can participate in the lab of a lecturer to gain guidance to do a science article.
+  2. If they are a member of the lab, they can get training.
+  3. Training helps them to b",Yes,No,LE,,,"<reasoning>
+1. Premises 1–4 establish a logical chain: Lab member → Training → Broadened knowledge + Guidance → Science article.
+2. Premise 5 states that publishing a science article results in plus points for the graduation thesis.
+3. Premise 6 confirms Kahne is a lab member, satisfying the condition to receive training and guidance.
+4. Therefore, if Kahne writes and publishes a science article, "
+12,logic,"Premises:
+  1. Every book in the library is available.
+  2. If a book is well-catalogued, then it is available.
+  3. Every book is in high demand.
+  4. If a book is in good condition, then it is well-",Yes,Unknown,AX,,,"<reasoning>
+The statement to evaluate is ∀x (¬H(x) → ¬W(x)), which translates to: ""If a book is not in high demand, then it is not well-catalogued.""
+
+Let's analyze the relevant premises directly:
+- Premises 1, 3, 8, and 19 state that every book is available, in high demand, in good condition, and frequently borrowed, respectively.
+- Premises 2, 4, 5, 7, 12, 13, 16, and 17 establish logical relatio"
+13,logic,"Premises:
+  1. Every committee member agrees that the thesis is acceptable.
+  2. At least one professor has raised a concern about the thesis.
+  3. At least one observer found the thesis presentation ",Yes,No,LE,,,"<reasoning>
+We are asked: Do all committee members approve the methodology?
+
+Given premises:
+- (1) Every committee member agrees that the thesis is acceptable.
+- (4) If a committee member agrees the thesis is acceptable, then they also approve the methodology.
+
+From (1), all committee members agree the thesis is acceptable.
+From (4), if they agree it's acceptable, they approve the methodology.
+The"
+14,logic,"Premises:
+  1. Every student completes the fundamental courses.
+  2. If a student submits their assignments on time, then they achieve good grades.
+  3. If submitting assignments on time implies achie","Option D: ""If a student does not complete fundamental courses, then they did not",Unknown,AX,,,"<reasoning>
+The question asks which statement can be inferred based on the premises. Let's analyze the premises logically:
+
+Premises:
+  1. ∀x F(x) (Every student completes fundamental courses).
+  2. (S(x) → G(x)) (If submitting assignments on time implies achieving good grades).
+  3. ((S(x) → G(x)) → ¬R(x) → ¬F(x)) (If the implication from assignments to grades holds, then not attending review ses"
+15,logic,"Premises:
+  1. Every student is preparing for an exam.
+  2. If a student is not asking questions, then they are not attending tutorials.
+  3. There exists at least one student who is attending tutoria",Yes,No,LE,,,"<reasoning>
+Let's break down the logical structure:
+- Premises:
+  1. ∀x P(x)  (Every student is preparing for an exam)
+  2. ¬Q(x) → ¬T(x)  (If a student is not asking questions, then they are not attending tutorials)
+  3. ∃x T(x)  (There exists at least one student who is attending tutorials)
+  4. (¬Q(x) → ¬T(x)) → ∃x T(x)  (If a student not asking questions implies they are not attending tutorial"
+16,logic,"Premises:
+  1. Every student with a GPA of 4.0 is eligible for a full scholarship.
+  2. If a student receives a full scholarship, they do not have to pay tuition fees.
+  3. A student who maintains a G",A,Unknown,AX,,,"<reasoning>
+The question asks us to evaluate a logical implication based on specific premises. Let's break down the relevant premises:
+
+Premises involved:
+- Premises 7 and 9 are tautological in structure if we consider them together, but let's look at the logical form requested.
+- The statement in the question is: ""If at least one student who received a full scholarship has participated in researc"
+17,logic,"Premises:
+  1. Every transportation system in the city is equipped with modern technology.
+  2. Every transportation system in the city is safe.
+  3. There exists at least one transportation system th",Yes,No,AX,,,"<reasoning>
+1.  **Analyze the premises regarding safety and cost-effectiveness:**
+    *   Premise 7 states: ""If there exists at least one cost-effective transportation system, then every transportation system in the city is safe.""
+    *   Premise 4 states: ""If a transportation system is not equipped with modern technology, then it is not cost-effective."" (¬Modern → ¬CostEffective). By contrapositi"
+18,logic,"Premises:
+  1. Everyone takes courses.
+  2. If x is not qualified, then x does not pass the exam.
+  3. If 'not being a student implies not taking courses' is true, then everyone takes courses.
+  4. Ev",Yes,No,LE,,,"<reasoning>
+1. **Analyze Premises 4 and 5**: 
+   - Premise 4 states: ""Everyone understands the lectures."" This means for all x, x is an understanding student.
+   - Premise 5 states: ""If x is not a student, then x does not understand the lectures."" This can be written as: ¬Student(x) → ¬UnderstandsLectures(x).
+   - By applying Modus Tollens to Premise 5 (if ¬UnderstandsLectures(x) implies Student(x"
+19,logic,"Premises:
+  1. Full-time students must take at least 14 credits per semester, but in special cases (e.g., weak academic performance or health issues), they can take a minimum of 11 credits for up to 2",Yes,No,LE,,,"<reasoning>
+1.  **Identify Linh's status**: Linh is a full-time student with health issues, taking 12 credits this semester. She has not exceeded the 2-semester limit for special cases.
+2.  **Check the tuition discount rule**: The university offers a tuition discount for students taking exactly 12 credits.
+3.  **Apply the rule to Linh**: Since Linh is taking exactly 12 credits, she meets the condi"
+20,logic,"Premises:
+  1. If a Raspberry Pi system is simple to use, then it is cost-effective.
+  2. There exists at least one Raspberry Pi system that is cost-effective.
+  3. If a Raspberry Pi system is not sim",*   Let's,Unknown,AX,,,"<reasoning>
+1.  **Analyze Premises 6 and 7**: Premises 6 and 7 form a logical implication chain. Premise 6 states that every Raspberry Pi system is thoroughly tested and well-documented. Premise 7 states: ""If (simple → cost-effective) then every system is thoroughly tested and well-documented."" Since we know from Premise 6 that the conclusion of Premise 7 is true (every system is thoroughly tested"
+21,logic,"Premises:
+  1. If a Raspberry Pi system is simple to use, then it is cost-effective.
+  2. There exists at least one Raspberry Pi system that is cost-effective.
+  3. If a Raspberry Pi system is not sim",*   Is it possible to have a system that is Cost-effective but,Unknown,AX,,,"<reasoning>
+1.  **Analyze the premises regarding cost-effectiveness and versatility:**
+    *   Premises 6, 9, and 10 establish that if a system is connected to online resources, it is thoroughly tested, well-documented, and versatile.
+    *   Premises 1 and 2 state that if a system is simple to use, it is cost-effective, and that there exists at least one cost-effective system.
+    *   Premises 3 "
+22,logic,"Premises:
+  1. If a function is differentiable, then it is continuous.
+  2. There exists at least one function that is integrable.
+  3. There exists at least one function that is differentiable.
+  4. ",Yes,No,LE,,,"<reasoning>
+The statement to evaluate is Exists(x, Differentiable(x)), which translates to ""There exists at least one differentiable function.""
+Looking at the premises provided:
+Premise 3 explicitly states: ""There exists at least one function that is differentiable.""
+Therefore, the statement is directly supported by the premises.
+</reasoning>
+<answer>
+Yes
+</answer>
+<explanation>
+Premise 3 states t"
+23,logic,"Premises:
+  1. If a person does not have a university degree, then they are not eligible for a senior job.
+  2. Everyone has completed training.
+  3. If someone does not have a university degree, then",B,No,AX,,,"<reasoning>
+The question asks if all students (meaning all individuals in the context of the premises) are eligible for a senior job.
+Looking at Premises:
+Premises 1, 3, 7, and 10 discuss the relationship between having a university degree, completing training, and eligibility for a senior job.
+Premises 2, 4, 6, and 9 state universal truths about everyone: everyone has completed training, everyone"
+24,logic,"Premises:
+  1. If a person has not complied with the new attendance rule, then they are not allowed to attend class.
+  2. Everyone is allowed to attend class.
+  3. If a person received a warning for p",5.  **Conclusion**: Option B is the only statement that is logically consistent.,Unknown,AX,,,"<reasoning>
+1.  **Analyze Premises 4 and 5**: Premises 4 and 5 are tautological implications of the same statement.
+    *   Let P = ""If a person received a warning for previous absences, then they acknowledged the new attendance policy.""
+    *   Let Q = ""If a person has not complied with the new attendance rule, then they are not allowed to attend class.""
+    *   Premise 4 states: If P is true, th"
+25,logic,"Premises:
+  1. If a person has not complied with the new attendance rule, then they are not allowed to attend class.
+  2. Everyone is allowed to attend class.
+  3. If a person received a warning for p",Yes,No,AX,,,"<reasoning>
+Let's break down the premises into logical propositions:
+- Let $C(x)$ be ""x has complied with the new attendance rule"".
+- Let $A(x)$ be ""x is allowed to attend class"".
+- Let $W(x)$ be ""x received a warning for previous absences"".
+- Let $P(x)$ be ""x acknowledged the new attendance policy"".
+
+Translate the premises:
+1. $\neg C(x) \implies \neg A(x)$ (If not complied, then not allowed).
+2."
+26,logic,"Premises:
+  1. If a person is a researcher, then they are a professional.
+  2. If a person is a professional, then they are a scholar.
+  3. All individuals are university members.
+  4. If being a prof",Yes,No,LE,,,"<reasoning>
+The statement to evaluate is ∃x U(x), which means ""There exists at least one x such that U(x) is true"" (i.e., there exists at least one university member).
+
+Looking at Premises:
+- Premises 4 and 5 are conditional statements involving implications, but they don't directly assert existence on their own without assuming their antecedents are true.
+- Premises 1, 2, and 7 are direct asserti"
+27,logic,"Premises:
+  1. If a person is a student, then that person is qualified.
+  2. If a person is a teacher, then that person is respected.
+  3. There exists at least one person who is prepared.
+  4. If a p",Yes,No,AX,,,"<reasoning>
+The question asks whether the statement ""If every teacher is respected, then someone is prepared"" is true, based on the premises.
+
+Let's break down the logic:
+1.  Premises 1-5 are factual statements about students, teachers, qualification, respect, and preparation.
+2.  Premises 6 and 7 are meta-statements (statements about statements). Premise 7 specifically says: ""If all teachers bein"
+28,logic,"Premises:
+  1. If a person is an undergraduate, then they must be registered.
+  2. Everyone is registered.
+  3. If undergraduates are required to register, then everyone must register.
+  4. If a perso",A,Unknown,LE,,,"<reasoning>
+1.  **Analyze Premises 2 and 5**: Premise 2 states ""Everyone is registered,"" and Premise 5 states ""Everyone is an undergraduate.""
+2.  **Apply Modus Ponens**: Premise 1 says ""If a person is an undergraduate, then they must be registered."" Since we know from Premise 5 that everyone is an undergraduate, it logically follows that everyone must be registered. This is consistent with Premise"
+29,logic,"Premises:
+  1. If a smartphone has a high-resolution display, then it has superior screen quality.
+  2. If a smartphone does not have long battery life, then it does not have superior screen quality.
+",- Is there a contradiction if a phone doesn't support camera features? If a phon,Unknown,AX,,,"<reasoning>
+1. From premise 4, we know that every smartphone is equipped with the latest processor.
+2. From premise 5, if a smartphone is equipped with the latest processor, then it is highly efficient. Thus, all smartphones are highly efficient.
+3. From premise 6, since there exists at least one smartphone with the latest processor (which is true because all have them), then if there exists at le"
+30,logic,"Premises:
+  1. If a student attends classes regularly, then they will understand the material better.
+  2. If a student participates in extracurricular activities, then they will develop social skills",D,Unknown,AX,,,"<reasoning>
+The question asks to identify the correct logical statement based on the premises. Let's break down the logical structure:
+
+Let:
+- P = Participating in extracurricular activities helps students develop social skills.
+- Q = Understanding the material helps them perform well in exams.
+
+The question essentially asks us to evaluate the statement: ""If participating in extracurricular activi"
+31,logic,"Premises:
+  1. If a student does not attend classes, they will not pass the exams.
+  2. If a student does not attend classes, they will not complete assignments.
+  3. All students must complete assign",A,Unknown,AX,,,"<reasoning>
+The question asks us to evaluate a logical conclusion based on two premises:
+Premises to consider:
+  1. If a student does not attend classes, they will not pass the exams. (¬Attendance → ¬Pass)
+  2. If a student does not attend classes, they will not complete assignments. (¬Attendance → ¬Assignments)
+  3. All students must complete assignments. (∀x Assignments(x))
+
+The statement in the"
+32,logic,"Premises:
+  1. If a student does not follow the school rules, the student will be disciplined.
+  2. Every student must arrive at school on time.
+  3. If a student violates the school rules, the studen",A,Unknown,AX,,,"<reasoning>
+Let's break down the premises logically:
+  1. Premises 1 and 3 state: If a student violates school rules, they are disciplined AND (if they violate rules again/continuously, implied by the existence of such cases) banned from extracurricular activities. More directly, the premises establish a causal link: Violation → Discipline and Violation → Ban from activities.
+  2. Premises 5 and 7"
+33,logic,"Premises:
+  1. If a student does not pass the exam, then they do not receive an award.
+  2. If a student is diligent, then they study regularly.
+  3. If a student studies regularly, then they receive ","Therefore,",Unknown,AX,,,"<reasoning>
+We are asked to determine which statement can be inferred from the premises. Let's analyze the relevant premises:
+
+Premises:
+  1. ¬PassesExam(x) → ¬ReceivesAward(x)
+  2. Diligent(x) → StudiesRegularly(x)
+  3. StudiesRegularly(x) → ReceivesAward(x)
+  4. ∃x PassesExam(x)
+  5. Extrapur(x) → ReceivesAward(x)
+  6. ∀x ReceivesAward(x)
+  7. ∃x Diligent(x)
+  8. ¬AttendsTutoring(x) → ¬StudiesRe"
+34,logic,"Premises:
+  1. If a student does not practice solving math problems, they will not be able to solve them correctly.
+  2. All students attend math lectures regularly.
+  3. At least one student is enrol",A,Unknown,AX,,,"<reasoning>
+Let's translate the premises to logical notation:
+P(x): x practices solving math problems.
+Q(x): x can solve math problems correctly.
+R(x): x attends math lectures regularly.
+S(x): x is enrolled in an advanced math course.
+T(x): x asks questions in math class.
+U(x): x passes the math exam.
+V(x): x successfully completes the math curriculum.
+W(x): x excels in mathematics.
+
+Premises:
+1. "
+35,logic,"Premises:
+  1. If a student does not submit the exam, then they fail.
+  2. All students who study regularly pass the exam.
+  3. There exists at least one student who passed the exam.
+  4. If a student",Yes,No,AX,,,"<reasoning>
+1.  **Analyze the statement:** The statement to evaluate is: ""If a student scores exactly 100%, then they have a high academic standing.""
+    *   Logical form: $Scores100\% \implies HighAcademicStanding$.
+
+2.  **Examine the premises:**
+    *   Premise 6 states: ""If a student scores exactly 100%, then they receive a distinction."" ($Scores100\% \implies Distinction$)
+    *   Premise 13 s"
+36,logic,"Premises:
+  1. If a student gives a seminar, then they receive a recommendation.
+  2. If a student participates in a project, then they earn a certification.
+  3. All students complete the training mo",A,Unknown,LE,,,"<reasoning>
+We are asked: which activities do all students perform?
+
+From the premises:
+- Premises 3 and 5 directly state that all students complete the training module and all students earn a certification.
+- Premises 2 and 4 together imply that all students participate in a project (since if a student participates in a project, they earn a certification, and all students earn a certification, th"
+37,logic,"Premises:
+  1. If a student installs the software from the university’s repository, then the software is functional.
+  2. There exists at least one student who has installed the software from the univ",C,Unknown,AX,,,"<reasoning>
+Let's break down the premises logically:
+
+Premises:
+  1. Installing software → Functional
+  2. There exists at least one student who installed the software.
+  3. There exists at least one student who is using the software.
+  4. Not updating software → Not secure
+  5. Not installing software → Not functional (This implies the software must be installed to be functional, reinforcing prem"
+38,logic,"Premises:
+  1. If a student is attending tutorials, then they are revising.
+  2. Every student is revising.
+  3. If a student is not understanding the material, then they are not revising.
+  4. If (a ",Yes,No,LE,,,"<reasoning>
+Let's break down the logical structure:
+- Premises 1, 2, 3, 6, and 7 are given as facts.
+- Premises 4 and 5 are meta-statements about the logical relationship itself.
+- The question asks whether the statement ""If a student is not understanding the material, then they are not revising, and if a student is attending tutorials, then they are revising"" is true.
+
+This statement can be forma"
+39,logic,"Premises:
+  1. If a student is not studying, then they are not revising.
+  2. If a student is not understanding the material, then they are not revising.
+  3. There exists at least one student who is ",Yes,No,LE,,,"<reasoning>
+The statement to evaluate is a conjunction of two implications:
+1. If a student is not studying, then they are not revising.
+2. If a student is not understanding the material, then they are not revising.
+
+Looking at Premises 1 and 2 directly:
+- Premises 1 and 2 state exactly these two implications as facts.
+- Therefore, the conjunction of these two implications is true, because both co"
+40,logic,"Premises:
+  1. If a student is not understanding the material, then they are not attending tutorials.
+  2. If a student is preparing for an exam, then they are asking questions.
+  3. If a student is n",4. (P → Q),Unknown,AX,,,"<reasoning>
+Let's break down the premises into logical variables:
+- U: A student is understanding the material.
+- T: A student is attending tutorials.
+- P: A student is preparing for an exam.
+- Q: A student is asking questions.
+- S: A student is studying.
+- R: A student is revising.
+
+Translate the premises to logical notation:
+1. ¬U → ¬T
+2. P → Q
+3. ¬S → ¬T
+4. (P → Q) → ((P → Q) ∧ (¬S → ¬T))  [Thi"
+41,logic,"Premises:
+  1. If a student participates in a class, they will register for it.
+  2. Every student is enrolled in at least one course.
+  3. If a student is not enrolled in a course, they are not parti",Yes,No,LE,,,"<reasoning>
+Let's analyze the logical structure of the premises:
+- Premises 4, 6, and 7 involve a statement of the form ""If P then P"" or are tautological in nature.
+- Specifically, Premises 6 and 7 state: ""If (every student participates in a course implies if a student is enrolled they must complete assignments), then every student participates in a course.""
+- Let P be the proposition: ""Every stud"
+42,logic,"Premises:
+  1. If a student studies, then they will pass the exam.
+  2. There exists at least one student who does research.
+  3. If a student takes a test, then they will pass the exam.
+  4. If takin",Yes,No,LE,,,"<reasoning>
+The question asks whether the statement ""There exists at least one student who does research"" is true, based on the provided premises.
+
+Looking at the premises:
+- Premise 2 explicitly states: ""There exists at least one student who does research.""
+
+Since the statement in the question is identical to Premise 2, it is directly supported by the premises. No further logical deduction is req"
+43,logic,"Premises:
+  1. If a student x is enrolled in Research Methods (R), then they have passed the Philosophy prerequisite (P).
+  2. There is at least one student x who has qualified for the Quantum Physics",A,Unknown,LE,,,"<reasoning>
+1.  **Analyze the relevant premise**: Premise 17 explicitly states: ""If all students have passed Philosophy (P), then every student x is admitted to the University Honors program (U)."" This is a direct logical implication: If ∀x P(x) → ∀x U(x).
+
+2.  **Evaluate the options against the premise**:
+    *   **Option A**: States that if all students pass Philosophy, all are admitted to the H"
+44,logic,"Premises:
+  1. If someone is not a library user, then they cannot borrow books.
+  2. Everyone has a library card.
+  3. If someone is allowed to borrow books, then they are allowed to take a book home.",Yes,No,LE,,,"<reasoning>
+The question asks if all library users have valid reservations. Let's analyze the premises:
+
+Premises:
+  1. ¬LibraryUser(x) → ¬BorrowBooks(x)
+  2. ∀x LibraryCard(x)
+  3. AllowedToBorrow(x) → AllowedToTakeHome(x)
+  4. ∀x AllowedToBorrow(x)
+  5. ValidReservation(x) → AllowedToBorrow(x)
+  6. ¬AllowedToTakeHome(x) → ¬LibraryCard(x)
+  7. ¬AllowedToBorrow(x) → ¬AllowedToTakeHome(x)
+  8. ¬Lib"
+45,logic,"Premises:
+  1. If someone studies computer science, then they know how to program.
+  2. If someone uses a computer, then they understand technology.
+  3. If someone knows how to program, then they can",Yes,No,AX,,,"<reasoning>
+We need to determine if everyone solves real-world problems. Let's analyze the premises step by step.
+
+First, premise 12 states that everyone knows how to program.
+Premises 2 and 3 state: using a computer implies understanding technology, and knowing how to program implies solving real-world problems.
+Premises 4 and 6 state: not understanding technology implies not using a computer, an"
+46,logic,"Premises:
+  1. If students engage in active learning, they retain information more effectively.
+  2. If students have access to diverse learning materials, they develop a broader understanding of subj",A,Unknown,LE,,,"<reasoning>
+Premises directly relevant to the question:
+- Premises 4 and 8 link personalized support to improvement and motivation.
+- Premises 3 and 9 show that personalized support improves motivation and helps with self-discipline, which leads to better performance.
+- Premises 1, 2, 5, 6, 7, and 10 describe general learning factors but do not directly connect personalized support to those outcom"
+47,logic,"Premises:
+  1. If students engage in problem-based learning, they develop stronger analytical skills.
+  2. If students have access to diverse learning materials, they gain a broader perspective on sub",D,Unknown,LE,,,"<reasoning>
+Premises directly relevant to the question:
+- Premises 4, 7, 8, 9, 10 describe positive outcomes for students under specific conditions (e.g., clear objectives, physical activity, etc.).
+- Premises 5 states that lack of motivation leads to declining performance, which is a negative condition not directly linked to clear objectives in the premises.
+
+Logical steps:
+1. Premises 4, 7, 8, 9"
+48,logic,"Premises:
+  1. If x does not use online documents from the library, then x does not gain more knowledge
+  2. There exists a student who gains more knowledge from the online documents
+  3. All students",A,Unknown,AX,,,"<reasoning>
+1. Analyze Premises:
+   - Premise 1: ¬UseOnline(x) → ¬GainKnowledge(x). This means if a student does not use online documents, they do not gain more knowledge. By contraposition, GainKnowledge(x) → UseOnline(x).
+   - Premise 2: ∃x GainKnowledge(x). There is at least one student who gains more knowledge.
+   - Premise 3: ∀x UseOnline(x). All students actively use the library's online res"
+49,logic,"Premises:
+  1. In Calculus 2 for engineering students, if an object x does not have property P then it also does not have property R.
+  2. In Calculus 2 for engineering students, for all objects x, x ",Yes,No,LE,,,"<reasoning>
+The question asks whether the statement ""there exists at least one object x that has property R"" follows from itself.
+Let P be the proposition: ""There exists at least one object x that has property R.""
+The question is: If P is true, is P true?
+This is a tautology (A → A is always true).
+Looking at the premises, Premise 3 explicitly states that P is true (""In Calculus 2 for engineering "

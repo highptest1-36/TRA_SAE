@@ -45,3 +45,22 @@ processed_data/         # HuggingFace Arrow binary files (~32 MB)
 =0.45.5
 *.tmp
 *.bak
+
+# Secrets (NEVER commit)
+.env
+.env.*
+
+# ── LaTeX build artifacts in any paper/ subfolder ─────────────────────────────
+paper/**/*.aux
+paper/**/*.bbl
+paper/**/*.blg
+paper/**/*.log
+paper/**/*.out
+paper/**/*.pag
+paper/**/*.toc
+paper/**/*.fls
+paper/**/*.fdb_latexmk
+paper/**/*.synctex.gz
+
+# ── Redundant whole-package archive (the folder itself is tracked) ────────────
+/TRA-SAE_ExpertSystems_Submission.zip

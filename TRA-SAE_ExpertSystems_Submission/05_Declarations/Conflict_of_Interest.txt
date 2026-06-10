@@ -1,0 +1,11 @@
+CONFLICT OF INTEREST STATEMENT
+
+Manuscript: TRA-SAE: A Low-Cost Retrieval-Augmented Expert Reasoning System for
+Mixed Physics-Logic Question Answering with a 4B Language Model
+Journal: Expert Systems (Wiley)
+
+The authors declare no conflicts of interest.
+
+The authors have no financial or non-financial interests, relationships, or
+affiliations that could be perceived to have influenced the work reported in
+this manuscript.

@@ -1,0 +1,32 @@
+start=08:35:27
+[1] Loading val set | seed=42 | ts=20260610_083529
+    Eval samples: 217  composition={'physics': 141, 'logic': 76}
+[2] Loading base model
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 34239.22it/s]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:50,  3.86it/s]Loading weights:   6%|▌         | 26/426 [00:00<00:04, 91.08it/s]Loading weights:  11%|█         | 45/426 [00:00<00:03, 124.13it/s]Loading weights:  16%|█▌        | 67/426 [00:00<00:02, 150.90it/s]Loading weights:  22%|██▏       | 94/426 [00:00<00:01, 181.25it/s]Loading weights:  28%|██▊       | 118/426 [00:00<00:01, 194.09it/s]Loading weights:  33%|███▎      | 142/426 [00:00<00:01, 203.78it/s]Loading weights:  38%|███▊      | 164/426 [00:01<00:01, 200.56it/s]Loading weights:  43%|████▎     | 185/426 [00:01<00:01, 200.43it/s]Loading weights:  48%|████▊     | 206/426 [00:01<00:01, 184.21it/s]Loading weights:  55%|█████▍    | 234/426 [00:01<00:00, 209.72it/s]Loading weights:  60%|██████    | 256/426 [00:01<00:00, 200.99it/s]Loading weights:  65%|██████▌   | 278/426 [00:01<00:00, 192.80it/s]Loading weights:  72%|███████▏  | 305/426 [00:01<00:00, 210.35it/s]Loading weights:  77%|███████▋  | 327/426 [00:01<00:00, 210.00it/s]Loading weights:  82%|████████▏ | 349/426 [00:01<00:00, 198.18it/s]Loading weights:  87%|████████▋ | 370/426 [00:02<00:00, 201.05it/s]Loading weights:  92%|█████████▏| 393/426 [00:02<00:00, 208.09it/s]Loading weights:  97%|█████████▋| 415/426 [00:02<00:00, 203.86it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 184.40it/s]
+[base model loaded] VRAM  8.41 GB alloc  /  8.42 GB reserved  /  85.1 GB total
+[3] Loading retriever
+[Retriever] Built TF-IDF index: 1945 docs, 6166 features
+[Retriever] Subject distribution: {'physics': 1213, 'logic': 732}
+[4] Loading router
+    Router loaded from /content/drive/MyDrive/TRA-SAE/checkpoints/router.pkl
+    RESUME: configs already done = [6]
+
+================================================================
+Config 3: + GRPO mixed Phase 2
+================================================================
+[cfg3 model loaded] VRAM  8.59 GB alloc  /  8.77 GB reserved  /  85.1 GB total
+  attempt 0: 217 pending
+  attempt 0: correct=100/217
+  cfg3 DONE: overall=46.08%  phys=60.99%  logic=18.42%  [141+76=217]  41.5min
+  [checkpoint saved → qwen35_ablation_canonical_partB.json]
+
+Saved: /content/drive/MyDrive/TRA-SAE/logs/qwen35_ablation_canonical_partB.json
+Saved per-sample: /content/drive/MyDrive/TRA-SAE/logs/ablation_per_sample_canonical_partB.jsonl
+
+SANITY CHECK (n_phys + n_logic == n_total):
+  cfg3 grpo_mixed         acc= 46.08%  141+76=217  OK
+  cfg6 zero_shot_retr     acc= 39.17%  141+76=217  OK
+
+NOTE: rebuild ALL paper tables from this file. Do not mix with old qwen35_ablation.json.

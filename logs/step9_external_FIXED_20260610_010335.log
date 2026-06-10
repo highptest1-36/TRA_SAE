@@ -1,0 +1,103 @@
+=== FULL step9 FIXED (cfg0/cfg2/cfg3, batch16, max_new=1024) → logs/step9_external_FIXED_20260610_010335.log ===
+start=01:03:35
+[01:03:38] Loading MMLU physics datasets ...
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'cais/mmlu' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+[01:03:40]   mmlu/high_school_physics: 151 samples
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'cais/mmlu' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+[01:03:41]   mmlu/college_physics: 102 samples
+[01:03:41] Total: 253 samples (HS=151, College=102)
+[01:03:41] Configs to run: ['cfg0', 'cfg2', 'cfg3']
+
+[01:03:46] ============================================================
+[01:03:46]  Evaluating: Qwen3.5-4B zero-shot (no fine-tuning)
+[01:03:46]  Checkpoint: base model
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 34100.03it/s]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:49,  3.88it/s]Loading weights:   6%|▌         | 26/426 [00:00<00:04, 90.66it/s]Loading weights:  10%|▉         | 41/426 [00:00<00:03, 109.05it/s]Loading weights:  16%|█▌        | 67/426 [00:00<00:02, 151.04it/s]Loading weights:  22%|██▏       | 93/426 [00:00<00:01, 181.45it/s]Loading weights:  27%|██▋       | 114/426 [00:00<00:01, 188.10it/s]Loading weights:  32%|███▏      | 135/426 [00:00<00:01, 181.89it/s]Loading weights:  36%|███▋      | 155/426 [00:01<00:01, 184.29it/s]Loading weights:  42%|████▏     | 181/426 [00:01<00:01, 205.18it/s]Loading weights:  48%|████▊     | 203/426 [00:01<00:01, 198.20it/s]Loading weights:  53%|█████▎    | 224/426 [00:01<00:01, 186.99it/s]Loading weights:  59%|█████▉    | 252/426 [00:01<00:00, 206.80it/s]Loading weights:  64%|██████▍   | 274/426 [00:01<00:00, 203.51it/s]Loading weights:  69%|██████▉   | 295/426 [00:01<00:00, 197.36it/s]Loading weights:  74%|███████▍  | 315/426 [00:01<00:00, 189.89it/s]Loading weights:  80%|███████▉  | 340/426 [00:01<00:00, 200.79it/s]Loading weights:  85%|████████▍ | 361/426 [00:02<00:00, 194.51it/s]Loading weights:  90%|████████▉ | 383/426 [00:02<00:00, 193.21it/s]Loading weights:  96%|█████████▌| 409/426 [00:02<00:00, 210.17it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 180.41it/s]
+[01:03:53]  Model loaded  VRAM 7.8/79GB
+[01:05:05]  16/253 | acc=56.2% | 1.2min  VRAM 19.5/79GB
+[01:06:16]  32/253 | acc=34.4% | 2.4min  VRAM 19.5/79GB
+[01:07:27]  48/253 | acc=41.7% | 3.6min  VRAM 19.5/79GB
+[01:08:41]  64/253 | acc=40.6% | 4.8min  VRAM 19.5/79GB
+[01:09:55]  80/253 | acc=41.2% | 6.0min  VRAM 19.5/79GB
+[01:11:09]  96/253 | acc=45.8% | 7.3min  VRAM 19.5/79GB
+[01:12:24]  112/253 | acc=42.9% | 8.5min  VRAM 19.5/79GB
+[01:13:38]  128/253 | acc=41.4% | 9.8min  VRAM 19.5/79GB
+[01:14:52]  144/253 | acc=41.7% | 11.0min  VRAM 19.5/79GB
+[01:16:06]  160/253 | acc=41.2% | 12.2min  VRAM 19.5/79GB
+[01:17:22]  176/253 | acc=42.0% | 13.5min  VRAM 19.5/79GB
+[01:18:36]  192/253 | acc=41.7% | 14.7min  VRAM 19.5/79GB
+[01:19:49]  208/253 | acc=41.3% | 15.9min  VRAM 19.5/79GB
+[01:21:03]  224/253 | acc=42.9% | 17.2min  VRAM 19.5/79GB
+[01:22:17]  240/253 | acc=42.5% | 18.4min  VRAM 19.5/79GB
+[01:23:30]  253/253 | acc=42.3% | 19.6min  VRAM 19.5/79GB
+[01:23:31]  RESULT: overall=42.29%  per_subject={'hs_physics': 41.06, 'college_physics': 44.12}
+[01:23:31] Saved → /content/drive/MyDrive/TRA-SAE/logs/external_benchmark_results_latest.json
+
+[01:23:31] ============================================================
+[01:23:31]  Evaluating: cfg2: SFT Ph1 + Logic SFT
+[01:23:31]  Checkpoint: /content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_sft_logic/final
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 24600.02it/s]
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<02:13,  3.18it/s]Loading weights:   6%|▌         | 26/426 [00:00<00:05, 79.40it/s]Loading weights:  11%|█         | 45/426 [00:00<00:03, 110.66it/s]Loading weights:  15%|█▌        | 66/426 [00:00<00:02, 139.29it/s]Loading weights:  21%|██▏       | 91/426 [00:00<00:01, 169.47it/s]Loading weights:  26%|██▌       | 111/426 [00:00<00:01, 176.02it/s]Loading weights:  31%|███       | 132/426 [00:00<00:01, 184.15it/s]Loading weights:  36%|███▌      | 152/426 [00:01<00:01, 180.33it/s]Loading weights:  42%|████▏     | 180/426 [00:01<00:01, 202.78it/s]Loading weights:  47%|████▋     | 201/426 [00:01<00:01, 196.04it/s]Loading weights:  53%|█████▎    | 225/426 [00:01<00:00, 202.07it/s]Loading weights:  58%|█████▊    | 248/426 [00:01<00:00, 208.34it/s]Loading weights:  63%|██████▎   | 270/426 [00:01<00:00, 208.05it/s]Loading weights:  69%|██████▊   | 292/426 [00:01<00:00, 203.05it/s]Loading weights:  73%|███████▎  | 313/426 [00:01<00:00, 196.45it/s]Loading weights:  80%|███████▉  | 340/426 [00:01<00:00, 211.05it/s]Loading weights:  85%|████████▍ | 362/426 [00:02<00:00, 210.23it/s]Loading weights:  90%|█████████ | 384/426 [00:02<00:00, 204.31it/s]Loading weights:  95%|█████████▌| 405/426 [00:02<00:00, 204.25it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 200.62it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 179.19it/s]
+[01:23:37]  Model loaded  VRAM 8.4/79GB
+[01:24:54]  16/253 | acc=37.5% | 1.3min  VRAM 19.7/79GB
+[01:26:08]  32/253 | acc=43.8% | 2.5min  VRAM 19.7/79GB
+[01:27:25]  48/253 | acc=41.7% | 3.8min  VRAM 19.7/79GB
+[01:28:40]  64/253 | acc=39.1% | 5.0min  VRAM 19.7/79GB
+[01:29:54]  80/253 | acc=40.0% | 6.3min  VRAM 19.7/79GB
+[01:31:09]  96/253 | acc=41.7% | 7.5min  VRAM 19.7/79GB
+[01:32:24]  112/253 | acc=42.9% | 8.8min  VRAM 19.7/79GB
+[01:33:39]  128/253 | acc=46.9% | 10.0min  VRAM 19.7/79GB
+[01:34:53]  144/253 | acc=49.3% | 11.3min  VRAM 19.7/79GB
+[01:36:04]  160/253 | acc=47.5% | 12.5min  VRAM 19.7/79GB
+[01:37:14]  176/253 | acc=49.4% | 13.6min  VRAM 19.7/79GB
+[01:38:27]  192/253 | acc=49.0% | 14.8min  VRAM 19.7/79GB
+[01:39:38]  208/253 | acc=47.1% | 16.0min  VRAM 19.7/79GB
+[01:40:49]  224/253 | acc=48.2% | 17.2min  VRAM 19.7/79GB
+[01:41:59]  240/253 | acc=48.3% | 18.4min  VRAM 19.7/79GB
+[01:43:08]  253/253 | acc=47.0% | 19.5min  VRAM 19.7/79GB
+[01:43:09]  RESULT: overall=47.04%  per_subject={'hs_physics': 47.68, 'college_physics': 46.08}
+[01:43:09] Saved → /content/drive/MyDrive/TRA-SAE/logs/external_benchmark_results_latest.json
+
+[01:43:09] ============================================================
+[01:43:09]  Evaluating: cfg3: SFT Ph1 + Logic SFT + GRPO-mixed
+[01:43:09]  Checkpoint: /content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_grpo/final
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 39945.75it/s]
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:55,  3.68it/s]Loading weights:   6%|▋         | 27/426 [00:00<00:04, 88.43it/s]Loading weights:  11%|█         | 47/426 [00:00<00:03, 119.49it/s]Loading weights:  18%|█▊        | 76/426 [00:00<00:02, 168.87it/s]Loading weights:  23%|██▎       | 97/426 [00:00<00:01, 176.28it/s]Loading weights:  28%|██▊       | 119/426 [00:00<00:01, 178.19it/s]Loading weights:  34%|███▍      | 146/426 [00:00<00:01, 203.79it/s]Loading weights:  39%|███▉      | 168/426 [00:01<00:01, 207.53it/s]Loading weights:  45%|████▍     | 190/426 [00:01<00:01, 207.95it/s]Loading weights:  50%|████▉     | 212/426 [00:01<00:01, 201.88it/s]Loading weights:  56%|█████▌    | 238/426 [00:01<00:00, 216.67it/s]Loading weights:  61%|██████▏   | 261/426 [00:01<00:00, 203.98it/s]Loading weights:  68%|██████▊   | 288/426 [00:01<00:00, 221.91it/s]Loading weights:  73%|███████▎  | 311/426 [00:01<00:00, 205.51it/s]Loading weights:  80%|███████▉  | 340/426 [00:01<00:00, 219.97it/s]Loading weights:  85%|████████▌ | 363/426 [00:01<00:00, 210.65it/s]Loading weights:  90%|█████████ | 385/426 [00:02<00:00, 207.39it/s]Loading weights:  96%|█████████▌| 410/426 [00:02<00:00, 216.92it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 188.90it/s]
+[01:43:22]  Model loaded  VRAM 8.3/79GB
+[01:44:32]  16/253 | acc=50.0% | 1.2min  VRAM 19.7/79GB
+[01:45:47]  32/253 | acc=50.0% | 2.4min  VRAM 19.7/79GB
+[01:47:03]  48/253 | acc=54.2% | 3.7min  VRAM 19.7/79GB
+[01:48:21]  64/253 | acc=45.3% | 5.0min  VRAM 19.7/79GB
+[01:49:37]  80/253 | acc=47.5% | 6.2min  VRAM 19.7/79GB
+[01:50:57]  96/253 | acc=46.9% | 7.6min  VRAM 19.7/79GB
+[01:52:13]  112/253 | acc=49.1% | 8.8min  VRAM 19.7/79GB
+[01:53:28]  128/253 | acc=48.4% | 10.1min  VRAM 19.7/79GB
+[01:54:47]  144/253 | acc=48.6% | 11.4min  VRAM 19.7/79GB
+[01:56:02]  160/253 | acc=47.5% | 12.7min  VRAM 19.7/79GB
+[01:57:16]  176/253 | acc=48.3% | 13.9min  VRAM 19.7/79GB
+[01:58:30]  192/253 | acc=48.4% | 15.1min  VRAM 19.7/79GB
+[01:59:39]  208/253 | acc=47.6% | 16.3min  VRAM 19.7/79GB
+[02:00:48]  224/253 | acc=49.1% | 17.4min  VRAM 19.7/79GB
+[02:01:58]  240/253 | acc=48.8% | 18.6min  VRAM 19.7/79GB
+[02:03:09]  253/253 | acc=48.6% | 19.8min  VRAM 19.7/79GB
+[02:03:10]  RESULT: overall=48.62%  per_subject={'hs_physics': 46.36, 'college_physics': 51.96}
+[02:03:10] Saved → /content/drive/MyDrive/TRA-SAE/logs/external_benchmark_results_latest.json
+
+[02:03:10] ╔═════════════════════════════════════════════════════════════════╗
+[02:03:10] ║ MMLU PHYSICS BENCHMARK SUMMARY                                 ║
+[02:03:10] ╠═════════════════════════════════════════════════════════════════╣
+[02:03:10] ║ Config        Overall   HS Phys   College Desc                      ║
+[02:03:10] ╠═════════════════════════════════════════════════════════════════╣
+[02:03:10] ║ cfg0           42.29%    41.06%    44.12% Qwen3.5-4B zero-shot (no  ║
+[02:03:10] ║ cfg2           47.04%    47.68%    46.08% cfg2: SFT Ph1 + Logic SFT ║
+[02:03:10] ║ cfg3           48.62%    46.36%    51.96% cfg3: SFT Ph1 + Logic SFT ║
+[02:03:10] ╚═════════════════════════════════════════════════════════════════╝
+
+[02:03:10] NOTE FOR PAPER:
+=== step9 EXIT: 0 @ 02:03:11 ===

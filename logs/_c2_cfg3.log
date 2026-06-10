@@ -1,0 +1,39 @@
+[21:15:38] Loading FOLIO (tasksource/folio) ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[21:15:39]   folio/validation: 203 samples
+[21:15:39] Total: 203 FOLIO samples
+[21:15:39] Benchmark: logic | Configs to run: ['cfg3']
+
+[21:15:44] ============================================================
+[21:15:44]  Evaluating: cfg3: SFT Ph1 + Logic SFT + GRPO-mixed  (benchmark=logic)
+[21:15:44]  Checkpoint: /content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_grpo/final
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 25811.10it/s]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:58,  3.58it/s]Loading weights:   6%|▋         | 27/426 [00:00<00:04, 86.86it/s]Loading weights:  11%|█         | 46/426 [00:00<00:03, 114.69it/s]Loading weights:  18%|█▊        | 76/426 [00:00<00:02, 167.42it/s]Loading weights:  23%|██▎       | 97/426 [00:00<00:01, 176.05it/s]Loading weights:  28%|██▊       | 119/426 [00:00<00:01, 183.59it/s]Loading weights:  34%|███▍      | 145/426 [00:00<00:01, 205.11it/s]Loading weights:  39%|███▉      | 167/426 [00:01<00:01, 202.02it/s]Loading weights:  44%|████▍     | 189/426 [00:01<00:01, 198.69it/s]Loading weights:  49%|████▉     | 210/426 [00:01<00:01, 195.46it/s]Loading weights:  55%|█████▌    | 236/426 [00:01<00:00, 205.16it/s]Loading weights:  60%|██████    | 257/426 [00:01<00:00, 205.07it/s]Loading weights:  65%|██████▌   | 279/426 [00:01<00:00, 203.55it/s]Loading weights:  71%|███████▏  | 304/426 [00:01<00:00, 216.31it/s]Loading weights:  77%|███████▋  | 327/426 [00:01<00:00, 218.74it/s]Loading weights:  82%|████████▏ | 350/426 [00:01<00:00, 214.41it/s]Loading weights:  87%|████████▋ | 372/426 [00:02<00:00, 203.18it/s]Loading weights:  93%|█████████▎| 397/426 [00:02<00:00, 214.60it/s]Loading weights:  98%|█████████▊| 419/426 [00:02<00:00, 198.34it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 186.17it/s]
+[21:15:55]  Model loaded  VRAM 8.3/39GB
+[21:17:05]  16/203 | acc=50.0% | 1.2min  VRAM 19.8/39GB
+[21:18:14]  32/203 | acc=37.5% | 2.3min  VRAM 19.8/39GB
+[21:19:23]  48/203 | acc=35.4% | 3.5min  VRAM 19.8/39GB
+[21:20:32]  64/203 | acc=37.5% | 4.6min  VRAM 19.8/39GB
+[21:21:41]  80/203 | acc=40.0% | 5.8min  VRAM 19.8/39GB
+[21:22:50]  96/203 | acc=42.7% | 6.9min  VRAM 19.8/39GB
+[21:24:00]  112/203 | acc=43.8% | 8.1min  VRAM 19.8/39GB
+[21:25:09]  128/203 | acc=43.0% | 9.2min  VRAM 19.8/39GB
+[21:26:19]  144/203 | acc=43.8% | 10.4min  VRAM 19.8/39GB
+[21:27:28]  160/203 | acc=43.1% | 11.5min  VRAM 19.8/39GB
+[21:28:37]  176/203 | acc=46.0% | 12.7min  VRAM 19.8/39GB
+[21:29:46]  192/203 | acc=45.8% | 13.8min  VRAM 19.8/39GB
+[21:30:55]  203/203 | acc=46.8% | 15.0min  VRAM 19.8/39GB
+[21:30:55]  RESULT: overall=46.8%  per_subject={'folio': 46.8}
+[21:30:55] Saved → /content/drive/MyDrive/TRA-SAE/logs/external_benchmark_logic_results_latest.json
+
+[21:30:55] ╔═════════════════════════════════════════════════════════════════╗
+[21:30:55] ║ FOLIO LOGIC BENCHMARK SUMMARY                                  ║
+[21:30:55] ╠═════════════════════════════════════════════════════════════════╣
+[21:30:55] ║ Config        Overall Desc                                      ║
+[21:30:55] ╠═════════════════════════════════════════════════════════════════╣
+[21:30:55] ║ cfg3           46.80%  cfg3: SFT Ph1 + Logic SFT + GRPO-mixed    ║
+[21:30:55] ╚═════════════════════════════════════════════════════════════════╝
+
+[21:30:55] NOTE FOR PAPER (logic):

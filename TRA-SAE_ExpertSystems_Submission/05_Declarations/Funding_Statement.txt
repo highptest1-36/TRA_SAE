@@ -1,0 +1,7 @@
+FUNDING STATEMENT
+
+Manuscript: TRA-SAE: A Low-Cost Retrieval-Augmented Expert Reasoning System for
+Mixed Physics-Logic Question Answering with a 4B Language Model
+Journal: Expert Systems (Wiley)
+
+The authors received no specific funding for this work.

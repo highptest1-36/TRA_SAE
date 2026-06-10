@@ -1,0 +1,50 @@
+{
+  "n_train": 1945,
+  "n_val": 217,
+  "val_subject_dist": {
+    "physics": 141,
+    "logic": 76
+  },
+  "exact_duplicate_questions": 3,
+  "exact_duplicate_same_answer": 2,
+  "exact_duplicate_diff_answer": 1,
+  "tfidf_cosine_question": {
+    "mean_of_per_val_max": 0.7409670341561371,
+    "p50": 0.797631341143834,
+    "p90": 0.9701496433686612,
+    "p95": 0.989602083570243,
+    "p99": 1.0000000000000002,
+    "max": 1.0000000000000002,
+    "count_ge_0.90": 66,
+    "count_ge_0.95": 36,
+    "count_ge_0.99": 11
+  },
+  "word3gram_jaccard": {
+    "mean_of_per_val_max": 0.47387086383847893,
+    "p90": 0.7959843686834659,
+    "p99": 1.0,
+    "max": 1.0,
+    "count_ge_0.80": 22
+  },
+  "char8gram_jaccard_top1": {
+    "mean": 0.5395916768170802,
+    "p90": 0.8059850933069321,
+    "p99": 0.9995598349381017,
+    "max": 1.0
+  },
+  "high_cosine_pairs_ge_0.95": 36,
+  "true_near_identical_char_ge_0.95": 6,
+  "template_collisions_cos_ge_0.95_char_lt_0.95": 30,
+  "near_duplicate_same_answer_count": 9,
+  "real_leakage_near_identical_and_same_answer": 5,
+  "real_leakage_fraction_pct": 2.3,
+  "retriever_exemplar_check": {
+    "available": true,
+    "protocol": "cfg0-R top-3, subject-filtered",
+    "top1_score_mean": 0.6761641717759419,
+    "top1_score_p90": 0.9432095084402896,
+    "top1_score_p99": 1.0000000000000002,
+    "top1_score_max": 1.0000000000000004,
+    "verbatim_exemplar_count": 3
+  }
+}

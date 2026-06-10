@@ -1,0 +1,2300 @@
+{
+  "run_ts": "20260610_000211",
+  "smoke": false,
+  "dataset": "MMLU high_school_physics + college_physics",
+  "n_samples": 253,
+  "results": [
+    {
+      "config": "cfg0",
+      "name": "cfg0_zero_shot",
+      "desc": "Qwen3.5-4B zero-shot (no fine-tuning)",
+      "n_total": 253,
+      "n_correct": 54,
+      "accuracy_overall": 21.34,
+      "per_subject": {
+        "hs_physics": 19.21,
+        "college_physics": 24.51
+      },
+      "elapsed_min": 37.0,
+      "per_sample": [
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "The plates of a capacitor are charged to a potential difference of 5 V. If the capacitance is 2 mF, ",
+          "pred": "A",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "atches Option B.\n\n**6. Formulate the reasoning:**\n*   State the formula $Q = CV$.\n*   Convert capacitance from mF to F.\n*   Substitute the values into"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Which of these quantities decreases as the inverse square of distance for distances far from the obj",
+          "pred": "C",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "t $I$.\n        *   Using Ampere's Law, the magnetic field at a distance $r$ is $B = \\frac{\\mu_0 I}{2\\pi r}$.\n        *   Therefore, $B \\propto \\frac{1"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A solid, metal object is isolated from other charges and has charge distributed on its surface. The ",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": " field outside the object. If the field were zero everywhere outside, the potential would be constant, and no work would be done moving a test charge,"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Standing waves are produced by a 100-Hz generator in a string of fixed length. The tension in the st",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "quency, the standing wave pattern depends on the speed of the wave.\n    The condition for standing waves is $L = n \\frac{\\lambda}{2}$, so $\\lambda = \\"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Two identical capacitors are hooked in parallel to an external circuit. Which of the following quant",
+          "pred": "B",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "eir physical properties, including capacitance, are the same.\n    *   Statement III is true.\n\n**4. Check the options:**\n*   A. I only\n*   B. II only\n*"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A 1-kg object is released from rest at the top of a rough-surfaced incline. The object slides withou",
+          "pred": "C",
+          "gt": "C",
+          "correct": true,
+          "raw_end": ":* Incorrect.\n\n*   **Option B:** \"Equal to the block\u2019s gravitational potential energy when it was released, because the gain in kinetic energy compens"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A student is experimenting with a simple spring-block oscillator of spring constant k and amplitude ",
+          "pred": "D",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "M_{total}$. The condition for sliding depends on the maximum acceleration.\n    *   Let's check the units of the friction coefficient condition. $\\mu_s"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "How much work is required to charge a 10 \u00b5F capacitor to a potential difference of 100 V ?\n\nOptions:",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "= 0.5 \\times 10^{-5} \\times (10^2)^2$\n$W = 0.5 \\times 10^{-5} \\times 10^4$\n$W = 0.5 \\times 10^{-1}$\n$W = 0.05 \\text{ J}$\n\nWait, let me re-calculate.\n$"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A box of mass m slides on a horizontal surface with initial speed v0. It feels no forces other than ",
+          "pred": "C",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "Equation:** $W_f = K_f - K_i$.\n*   $-\\mu mg d = 0 - \\frac{1}{2} m v_0^2$.\n*   $\\mu mg d = \\frac{1}{2} m v_0^2$.\n*   Solve for $d$:\n    $d = \\frac{m v_"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A soccer ball, at rest on the ground, is kicked with an initial velocity of 10 m/s at a launch angle",
+          "pred": "C",
+          "gt": "B",
+          "correct": false,
+          "raw_end": " 5}{9.8} = \\frac{10}{9.8} \\approx 1.02$ s\n*   Using $g \\approx 10$ m/s\u00b2 (often used in textbook problems for cleaner numbers):\n    $t = \\frac{2 \\times"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Two identical containers are filled with different gases. Container 1 is filled with hydrogen and co",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "s would be different.\n*   **Mass:** Hydrogen ($H_2$) has a molar mass of $\\approx 2$ g/mol. Nitrogen ($N_2$) has a molar mass of $\\approx 28$ g/mol.\n*"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A girl of mass m and a boy of mass 2m are sitting on opposite sides of a see-saw with its fulcrum in",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "arison:** $\\tau'_b = \\tau'_g$\n*   **Result:** Balanced.\n*   **Conclusion:** This IS a possible method.\n\n**3. Evaluate Option B:**\n*   **Action:** Move"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "When hot water is poured into a beaker containing cold alcohol, the temperature of the mixture will ",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "not primarily molecular collision.\n    *   Option D explicitly mentions molecular collisions and the definition of temperature (average kinetic energy"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A solid sphere (I = 0.06 kg\u00b7m^2) spins freely around an axis through its center at an angular speed ",
+          "pred": "A",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "ext{ rad/s}^2 $$\n    Since the force opposes the motion (friction to bring to rest), the acceleration is negative (deceleration). Let's work with magn"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "The radius of Mars is about half that of Earth; the mass of Mars is about one-tenth that of Earth. W",
+          "pred": "C",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "the given values:**\n*   $\\frac{M_m}{M_e} = \\frac{1}{10} = 0.1$\n*   $\\frac{R_m}{R_e} = \\frac{1}{2} \\implies \\frac{R_e}{R_m} = 2$\n\nSo,\n$$\\frac{g_m}{g_e}"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Above an infinitely large plane carrying charge density \u03c3, the electric field points up and is equal",
+          "pred": "D",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "0}$.\n\n**4. Determine the field below the plane:**\n*   **Magnitude:** Due to the symmetry of the infinite plane, the magnitude of the electric field is"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A beam of electrons has speed 10^7 m/s. It is desired to use the magnetic field of the Earth, 5 \u00d7 10",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "es (10^7)}{(1.6 \\times 10^{-19}) \\times (5 \\times 10^{-5})}$$\n\nLet's group the powers of 10 and the coefficients.\nNumerator: $9.11 \\times 10^{-31+7} ="
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "An object is placed 100 cm from a plane mirror. How far is the image from the object?\n\nOptions:\nA. 5",
+          "pred": ".",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "formation: Object distance ($d_o$) = 100 cm.\n    2.  Identify the type of mirror: Plane mirror.\n    3.  Apply the law of reflection for plane mirrors:"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A horse is attached to a cart that is at rest behind it. Which force, or combination of forces, expl",
+          "pred": "A",
+          "gt": "A",
+          "correct": true,
+          "raw_end": "ception.\n5.  **Evaluate Option C:** \"The force of the horse\u2019s muscles on the rest of the horse-cart system provides the necessary acceleration.\"\n    *"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "In a certain region, the electric field varies with the radius away from origin by the equation Er =",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": " the radial direction to the distance $r$ of the point $(3,4)$.\n*   Since $\\vec{E}$ is purely radial ($\\vec{E} \\parallel \\hat{r}$), the dot product $\\"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A gas undergoes an expansion-compression cycle. If, plotted on a P-V diagram, the cycle is countercl",
+          "pred": "A",
+          "gt": "B",
+          "correct": false,
+          "raw_end": " = 0$.\n\n**3. Apply principles to the specific problem:**\n*   **Cycle Direction:** Counterclockwise.\n    *   This means the gas is compressed more than"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "An ideal battery of constant voltage V supplies current to a circuit that has total resistance R. If",
+          "pred": "C",
+          "gt": "C",
+          "correct": true,
+          "raw_end": " be halved.\n\n**6. Evaluate the options:**\n*   A. It will double. (Incorrect)\n*   B. It will quadruple. (Incorrect)\n*   C. It will be halved. (Correct)"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Ultraviolet light has a wavelength of about 6 \u00d7 10^-8 m. What is the frequency of this light?\n\nOptio",
+          "pred": "D",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "*Compare with the options:**\n    *   A. $5 \\times 10^{15} \\text{ Hz}$\n    *   B. $0.5 \\text{ Hz}$\n    *   C. $2 \\text{ Hz}$\n    *   D. $20 \\text{ Hz}$"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Each of the following ionized isotopes is projected with the same speed into a uniform magnetic fiel",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": " the magnitude of the charge. The radius formula uses the magnitude $|q|$.\n    *   $r = \\frac{mv}{|q|B}$\n*   **Note on Mass ($m$):** The mass is given"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "An electric dipole consists of a pair of equal but opposite point charges of magnitude 4.0 nC separa",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": ". Step-by-Step Calculation:**\n\n*   **Step 1: Determine the distance from each charge to the midpoint.**\n    *   Total separation $d = 2.0 \\text{ cm} ="
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A person can stand outside on a cold day for hours without ill effect, but falling into a cold lake ",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "C:** \"As heat flows out of the person and warms the fluid surrounding the person, the warmer fluid rises, allowing fresh cool fluid to come in contact"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A liquid flows at a constant flow rate through a pipe with circular cross-sections of varying diamet",
+          "pred": "C",
+          "gt": "C",
+          "correct": true,
+          "raw_end": "1^2}{d_2^2}$\n$v_2 = v_1 \\times (\\frac{d_1}{d_2})^2$\n\n**7. Substitute the values:**\n$v_1 = 18$ m/s\n$d_1 = 2$ cm\n$d_2 = 3$ cm\n\n$v_2 = 18 \\times (\\frac{2"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "An ideal fluid flows through a pipe with radius Q and flow speed V. If the pipe splits up into three",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "are identical (same radius), the flow rate in each path is the same. Let $v$ be the speed in each path.\nFlow rate leaving = $3 \\times (A_2 v)$\n\nSo, $A"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A very slow-moving positron interacts with a stationary electron. Which of the following statements ",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "w particles must be neutral. For example, a neutral pion ($\\pi^0$) decays into photons, but a charged pion ($\\pi^+$) has charge $+1$. However, in $e^+"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A box sits on an inclined plane without sliding. As the angle of the plane (measured from the horizo",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "ionship between $N$ and $\\theta$:**\n    *   $N = mg \\cos(\\theta)$.\n    *   $m$ and $g$ are constants.\n    *   $\\theta$ is the variable increasing from"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A small cart of mass m is initially at rest. It collides elastically with a large cart of mass 4m an",
+          "pred": "C",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "tic energy of the large cart would be $K_{2f} = K_{2i} - \\Delta K = 2mv^2 - mv^2 = mv^2$.\nSince the collision is elastic, total kinetic energy is cons"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A circuit consists of a battery and a light bulb. At first, the circuit is disconnected. Then, the c",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "*   Even if we consider the battery as a source, it doesn't create or destroy net charge. It moves charge from one place to another within the system."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "If the force of gravity between the Moon and the Earth were to stop, which statement best describes ",
+          "pred": "C",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "olving).\n            *   Option B: Continue rotating, stop revolving. (Revolving requires centripetal force. Without gravity, no centripetal force. So"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A person stands on a scale in an elevator. He notices that the scale reading is less than his usual ",
+          "pred": "A",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "ondition.\n\n*   **Option C: Moving upward at a constant speed.**\n    *   Velocity ($v$) is upward.\n    *   Constant speed means acceleration ($a$) = 0."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A whiffle ball is tossed straight up, reaches a highest point, and falls back down. Air resistance i",
+          "pred": "C",
+          "gt": "C",
+          "correct": true,
+          "raw_end": "m}$. Since $F_{air} > 0$, $a_{down} < g$.\n*   **Comparison:**\n    *   The ball starts with an initial velocity $v_0$ going up and ends with velocity $"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "If L, M, and T denote the dimensions of length, mass, and time, respectively, what are the dimension",
+          "pred": "D",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "se = Change in Momentum, dimensions are $\\frac{ML}{T}$.\n\n5.  **Compare with Options:**\n    A. $LM/T^3$\n    B. $LM/T^2$\n    C. $LM/T$\n    D. $L^2M/T^2$"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Traveling at an initial speed of 1.5 \u00d7 10^6 m/s, a proton enters a region of constant magnetic field",
+          "pred": "C",
+          "gt": "C",
+          "correct": true,
+          "raw_end": "s 10^6 \\text{ m/s}$.\n*   Final speed $v = v_0 = 1.5 \\times 10^6 \\text{ m/s}$.\n\n**4. Check for relativistic effects:**\n*   $v_0 = 1.5 \\times 10^6 \\text"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A man stands on a platform scale in an elevator. The elevator moves upward, speeding up. What is the",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": " of the man on the Earth:** This is the gravitational force exerted by the man on the Earth. It is equal in magnitude and opposite in direction to the"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "During an isothermal expansion, a confined ideal gas does 150 J of work against its surroundings. Wh",
+          "pred": "D",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "\n\n**4. Interpret the sign of Q:**\n*   $Q$ is positive ($+150 \\text{ J}$).\n*   A positive $Q$ means heat is transferred *into* the system (added to the"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "An object carries a charge of \u20131 C. How many excess electrons does it contain?\n\nOptions:\nA. 6.25 \u00d7 1",
+          "pred": "B",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "to standard scientific notation: $n = 6.25 \\times 10^{18}$.\n\n**4. Check the Options:**\n*   A. $6.25 \\times 10^{18}$ - Matches my calculation.\n*   B. $"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A guitar string creates a sound wave of known frequency. Which of the following describes a correct ",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "g of length $L/2$ fixed at both ends. The fundamental frequency of this new system is $2f$.\n    *   The length of the string is $L$. The wavelength of"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Which of the following statements about images is true?\n\nOptions:\nA. Images produced by concave lens",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "*\nI need to provide the reasoning in a specific XML-like format and then the answer in a specific format.\nFormat:\n<reasoning>\n[Step-by-step reasoning]"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Pretend someone actually managed to dig a hole straight through the center of the Earth all the way ",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "hrough, and repeats the cycle.\n    *   Since there is no friction or air resistance (ideal conditions), energy is conserved. The object will oscillate"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A horizontal spring-block oscillator is in motion when a second block of equal mass falls on top of ",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "elocity of oscillating block: $v$.\n    *   Spring constant: $k$.\n    *   Displacement from equilibrium: $x$.\n    *   Total Energy: $E_i = \\frac{1}{2}k"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "In which of the following situations involving a source of sound and a detector of the sound is it p",
+          "pred": "B",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "rce} = 0$.\n    *   $v_{obs} > 0$ (moving toward).\n    *   Formula: $f_{obs} = f_{source} \\left( \\frac{v + v_{obs}}{v} \\right)$.\n    *   Since $v_{obs}"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A solid plastic cube with uniform density (side length = 0.5 m) of mass 100 kg is placed in a vat of",
+          "pred": "A",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "Fraction above = $\\frac{V_{\\text{total}} - V_{\\text{submerged}}}{V_{\\text{total}}} = 1 - \\frac{V_{\\text{submerged}}}{V_{\\text{total}}}$.\n\n**4. Perform"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A person standing on a horizontal floor is acted upon by two forces: the downward pull of gravity an",
+          "pred": "A",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "ese two forces cannot be an action-reaction pair.\n\n5.  **Evaluate the options:**\n    *   A. Equal magnitudes (True) and form an action-reaction pair ("
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A particle of mass m and charge Q and velocity V is directed toward a uniform electric field of stre",
+          "pred": "B",
+          "gt": "B",
+          "correct": true,
+          "raw_end": " $- \\Delta K$ (if opposing motion) or $+ \\Delta K$ (if aiding motion).\n    *   If the particle stops, the force must be opposing the motion.\n    *   $"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "An object of mass m1 experiences a linear, elastic collision with a stationary object of unknown mas",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "D elastic collisions where one object is initially at rest.\nThe final velocities are given by:\n$v_{1f} = \\frac{m_1 - m_2}{m_1 + m_2} v_{1i}$\n$v_{2f} ="
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "In an experiment designed to study the photoelectric effect, it is observed that low-intensity visib",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "s.\"\n    *   *Timing:* \"Almost immediately\" is correct for the photoelectric effect.\n    *   *Energy:* $K_{max} = E_{photon} - \\Phi$. The option says $"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Two traveling waves of equal frequency, one of amplitude 4 cm and the other of amplitude 6 cm, super",
+          "pred": "B",
+          "gt": "A",
+          "correct": false,
+          "raw_end": " or the range of possible amplitudes depending on phase.\n*   Let's re-read the options.\n    *   A. $2 \\text{ cm} \\le D \\le 10 \\text{ cm}$\n    *   B. $"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "In Collision A, two carts collide and bounce off each other. In Collision B, a ball sticks to a rigi",
+          "pred": "D",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "\n*   **Change in Velocity:** $\\Delta v = \\Delta p / m$. Since $\\Delta p$ is the same magnitude but $m$ is likely different, $\\Delta v$ is different.\n*"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "An object of mass 2 kg is acted upon by three external forces, each of magnitude 4 N. Which of the f",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "   $0 \\le |\\vec{F}_{net}| \\le 12$ N.\n\n3.  **Determine the range of the acceleration ($a$):**\n    *   Newton's Second Law: $\\vec{F}_{net} = m \\vec{a}$."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Spring scales are used to measure the net force applied to an object; a sonic motion detector is use",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "ere we are looking at the general relationship between net force and acceleration.\n    *   C. Velocity: This is not related to the slope of a Force vs"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A wooden block experiences a frictional force, f, as it slides across a table. If a block of the sam",
+          "pred": "D",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "n these types of conceptual questions, if width isn't mentioned, it's implied to be constant or irrelevant to the specific scaling logic being tested."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "An object is placed 10 cm in front of a diverging mirror. What is the focal length of the mirror if ",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "ck the options.* The options are all negative: A. -3/5, B. -5/3, C. -2/5, D. -5/2.\n    *   This suggests the convention being used might define $f$ as"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A body moving in the positive x direction passes the origin at time t = 0. Between t = 0 and t = 1 s",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": " = 24$ m/s.\n\n**Part 2: $t = 1$ s to $t = 11$ s**\n*   Initial position for this phase: $x_{start} = x_1 = 24$ m.\n*   Initial velocity for this phase: $"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A fluid of density \u03c1 flows through a horizontal pipe with negligible viscosity. The flow is streamli",
+          "pred": "C",
+          "gt": "B",
+          "correct": false,
+          "raw_end": " at Point 2 ($v_2$).**\n    *   Using continuity equation: $A_1 v_1 = A_2 v_2$.\n    *   $A_1 V = \\frac{A_1}{9} v_2$.\n    *   $V = \\frac{v_2}{9}$.\n    *"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "In a spring-block oscillator, the maximum speed of the block is\n\nOptions:\nA. proportional to amplitu",
+          "pred": "C",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "rvation:**\n    *   Total Energy $E = \\frac{1}{2} k A^2$.\n    *   At maximum speed, all potential energy is converted to kinetic energy.\n    *   $E = \\"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "The weight of a box on the Earth is 80 N. What is the weight of the box on the moon if the moon has ",
+          "pred": "C",
+          "gt": "C",
+          "correct": true,
+          "raw_end": "M_E)}{(\\frac{1}{4} R_E)^2}$\n*   $g_m = \\frac{G \\cdot \\frac{1}{80} M_E}{\\frac{1}{16} R_E^2}$\n*   $g_m = \\frac{1}{80} \\cdot \\frac{16}{1} \\cdot \\frac{G \\"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A textbook weighs 30 N at sea level. Earth\u2019s radius is 6,400 km. Which of the following is the best ",
+          "pred": "",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "} = 6,400,000 \\text{ m} = 6.4 \\times 10^6 \\text{ m}$.\n*   $h = 6,000 \\text{ m} = 6 \\times 10^3 \\text{ m}$.\n*   $r_1 = 6,400,000 \\text{ m}$.\n*   $r_2 ="
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Which of the following correctly describes the motion of a real object in free fall? Assume that the",
+          "pred": "A",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "$ become negative? The problem states the object strikes the ground *before* reaching terminal speed. Terminal speed occurs when $a=0$ (i.e., $mg = kv"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A bi-convex lens has a radius of curvature of magnitude 20 cm. Which of the following best describes",
+          "pred": "C",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "ard for glass).\n    *   $\\frac{1}{f} = (1.5 - 1) \\left( \\frac{1}{20} - \\frac{1}{-20} \\right)$\n    *   $\\frac{1}{f} = (0.5) \\left( \\frac{1}{20} + \\frac"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Two spheres of net charge +5e and -6e briefly come into contact. Afterward, which of the following i",
+          "pred": "D",
+          "gt": "A",
+          "correct": false,
+          "raw_end": ".\n        *   Sum: $+3e + (-4e) = -1e$.\n        *   Matches the total initial charge.\n    *   **Option B:** $+1.5e$ and $-2.5e$.\n        *   Sum: $+1."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "The circumference of a helium-filled balloon is measured for three different conditions: at room tem",
+          "pred": "C",
+          "gt": "C",
+          "correct": true,
+          "raw_end": "l Gas Law: $V \\propto T$ (assuming constant pressure $P$ and constant amount of gas $n$). This is Charles's Law.\n*   From the geometry: $C^3 \\propto V"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "The charge on an oil drop is measured in the laboratory. Which of the following measurements should ",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "is is a valid charge.\n\n    *   **Option C:** $Q = 4.8 \\times 10^{-19} \\text{ C}$\n        $$n = \\frac{4.8 \\times 10^{-19}}{1.6 \\times 10^{-19}} = \\frac"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Traveling at an initial speed of 1.5 \u00d7 10^6 m/s, a proton enters a region of constant magnetic field",
+          "pred": "D",
+          "gt": "C",
+          "correct": false,
+          "raw_end": " Therefore, final speed $v = 1.5 \\times 10^6 \\text{ m/s}$.\n\n**4. Check for relativistic effects:**\n*   $v = 1.5 \\times 10^6 \\text{ m/s}$.\n*   Speed of"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Which of the following changes to a circuit will always bring about an increase in the current?\n\nOpt",
+          "pred": "A",
+          "gt": "A",
+          "correct": true,
+          "raw_end": "tion C: Increased voltage and decreased resistance.**\n        *   $V \\uparrow$ tends to increase $I$ (numerator increases).\n        *   $R \\downarrow$"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Which of the following concerning uniform circular motion is true?\n\nOptions:\nA. The centrifugal forc",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "owards the Earth. The gravitational force provides the centripetal force required to keep it in a circular path. It is \"falling\" towards the center of"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "It is known that a lab cart is moving east at 25 cm/s at time t1 = 0.10 s, and then moving east at 1",
+          "pred": "C",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "fore, $\\vec{a}$ is directed **West**.\n\n**5. Determine the direction of the net force:**\n*   According to Newton's Second Law ($\\vec{F}_{net} = m \\vec{"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "An elevator is rising. In order to determine the tension in the cables pulling it, which values (for",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "      *   This matches the derived equation $T = m(g + a)$.\n\n5.  **Consider potential nuances:**\n    *   Does \"rising\" imply constant velocity? No, it"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "If two non-zero vectors are added together, and the resultant vector is zero, what must be true of t",
+          "pred": "D",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "sion:**\nFor the resultant of two vectors to be zero, they must be equal in magnitude and opposite in direction.\n\n**Formatting:**\nI need to provide the"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A proton enters a solenoid. Upon entry, the proton is moving in a straight line along the axis of th",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "ion.\n*   Since the proton enters with a constant velocity along the axis and there is no magnetic force to deflect it, and assuming there are no other"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A sound wave with frequency f travels through air at speed v. With what speed will a sound wave with",
+          "pred": ".",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "dium.\n2.  The speed of sound in a specific medium (like air) is a physical property of that medium (determined by factors like temperature and density"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Under what conditions is the net electric flux through a closed surface proportional to the enclosed",
+          "pred": "A",
+          "gt": "A",
+          "correct": true,
+          "raw_end": "t. Symmetry is useful for calculating the field $\\mathbf{E}$ easily, but it is not a condition for the validity of the flux-charge relationship.\n    *"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A beam of monochromatic light entering a glass window pane from the air will experience a change in\n",
+          "pred": "A",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "w$ Frequency is invariant across media boundaries.\n    *   Refractive index determines speed $\\rightarrow$ Speed changes.\n    *   Wave equation $v = f"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Data is collected in an experiment preformed on an ideal gas. In the experiment, temperature (in K) ",
+          "pred": "C",
+          "gt": "B",
+          "correct": false,
+          "raw_end": " a specific experiment.\n    *   $P$ (pressure) is a parameter of the experiment.\n    *   The slope is inversely proportional to $P$ ($m \\propto \\frac{"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A toy car and a toy truck collide. If the toy truck\u2019s mass is double the toy car\u2019s mass, then, compa",
+          "pred": "C",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "ac{F}{m_t}$\n*   **Substitute the mass relationship:**\n    *   We are given $m_t = 2m_c$.\n    *   $a_t = \\frac{F}{2m_c} = \\frac{1}{2} \\left( \\frac{F}{m"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A sphere, a cube, and a cylinder, all of equal mass, are released from rest from the top of a short ",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "$). The acceleration would be $a = \\frac{g \\sin(\\theta)}{1 + I/(mR^2)}$.\n    *   Sphere: $I = \\frac{2}{5}mR^2 \\rightarrow a = \\frac{5}{7}g \\sin(\\theta"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A car starts from rest and uniformly accelerates to a final speed of 20.0 m/s in a time of 15.0 s. H",
+          "pred": "D",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "{v - v_0}{t} = \\frac{20.0 - 0}{15.0} = \\frac{20}{15} = \\frac{4}{3} \\approx 1.33$ m/s$^2$\n\nThen use $x = v_0t + \\frac{1}{2}at^2$:\n$x = 0 \\cdot 15.0 + \\"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "At what angle to the horizontal should an ideal projectile be launched so that its horizontal displa",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "heta)$.\n    $$ 2 \\cos(\\theta) = \\frac{\\sin(\\theta)}{2} $$\n*   Rearrange to find $\\tan(\\theta)$:\n    $$ 4 \\cos(\\theta) = \\sin(\\theta) $$\n    $$ \\frac{\\"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A cannon is mounted on a truck that moves forward at a speed of 5 m/s. The operator wants to launch ",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "2: Determine the ground velocity.**\n    *   $\\vec{v}_g = \\vec{v}_m + \\vec{v}_t$\n    *   $v_{gx} = v_m \\cos(\\theta) + v_t$\n    *   $v_{gy} = v_m \\sin(\\"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Two charged, massive particles are isolated from all influence except those between the particles. T",
+          "pred": "C",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "\n**Evaluating the Options:**\n\n*   **Option A: The particles must have the same sign of charge.**\n    *   Reasoning: Gravity is attractive. For the net"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Which one of the following statements is true concerning the motion of an ideal projectile launched ",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "total speed remains constant during the entire flight.\"\n*   **Speed:** $v = \\sqrt{v_x^2 + v_y^2}$.\n*   **Change:** $v_y$ changes due to gravity. $v_x$"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Two electrically charged balls are separated by a short distance, producing a force of 50 \u03bcN between",
+          "pred": "C",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "on for electric force.\n    *   Mass affects gravitational force ($F_g = G \\frac{m_1 m_2}{r^2}$), but the question asks for the *electric* force.\n    *"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A moving 1.5-kg cart collides with and sticks to a 0.5-kg cart which was initially at rest. Immediat",
+          "pred": "D",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "nsic property.\n    *   $m_1 = 1.5 \\text{ kg}$ and $m_2 = 0.5 \\text{ kg}$.\n    *   They are clearly different.\n    *   So, this is incorrect.\n\n*   **D."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A rock is dropped off a cliff and strikes the ground with an impact velocity of 30 m/s. How high was",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "$$\n$$900 = 19.6 \\cdot h$$\n$$h = \\frac{900}{19.6} \\approx 45.9 \\, \\text{m}$$\n\nLooking at the options:\nA. 20 m\nB. 30 m\nC. 45 m\nD. 60 m\n\nThe value $45 \\,"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A car moving with speed v reaches the foot of an incline of angle \u03b8. The car coasts up the incline w",
+          "pred": "C",
+          "gt": "C",
+          "correct": true,
+          "raw_end": "dicular to incline ($y'$): $m a'' = 0 \\implies a'' = 0$.\n*   **Decompose acceleration into horizontal ($a_x$) and vertical ($a_y$) components:**\n    *"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Which of the following would increase the capacitance of a parallel-plate capacitor?\n\nOptions:\nA. Us",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "ep $C$ constant (assuming the capacitor is isolated or connected to a variable source, but $C$ itself is a constant for a given physical setup).\n    *"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A man stands with his hands to his sides on a frictionless platform that is rotating. Which of the f",
+          "pred": "C",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "omentum of a system. The man exerts a force on his arms, and the arms exert a force on the man. These cancel out in terms of net torque on the system."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A cylinder with a movable piston contains a gas at pressure P = 1 \u00d7 10^5 Pa, volume V = 20 cm^3, and",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "P_1/P_2$, the units of volume cancel out, so I don't need to convert to $\\text{m}^3$.\n*   The units for pressure are in Pa. The answer should be in Pa"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Which of the following types of electromagnetic radiation has the longest wavelength?\n\nOptions:\nA. G",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "ht has a longer wavelength than Ultraviolet, Blue light, and Gamma rays.\n\n4.  **Conclusion:**\n    *   Gamma rays: Shortest.\n    *   Ultraviolet: Short"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "An electric motor has a label on it that reads: Input: 120V AC, 1.0 Amps, 60 Hz - Efficiency - 75%. ",
+          "pred": "",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "text{A} = 120 \\, \\text{W}$$\n\n*   **Step 2: Calculate Output Power.**\n    $$P_{out} = 0.75 \\times 120 \\, \\text{W}$$\n    $$P_{out} = 90 \\, \\text{W}$$\n\n*"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A convex lens of focal length f = 0.2 m is used to examine a small coin lying on a table. During the",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": " object is the coin.\n*   The lens is moved from $0.3 \\text{ m}$ to $0.1 \\text{ m}$ above the coin.\n*   So, the object distance $d_o$ changes from $0.3"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "The Space Shuttle orbits 300 km above Earth\u2019s surface; Earth\u2019s radius is 6,400 km. What is the gravi",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "g = 9.8 \\, \\text{m/s}^2$ (Standard gravity)\n*   Calculate the ratio: $\\left(\\frac{6400}{6700}\\right)^2$\n*   $\\frac{6400}{6700} = \\frac{64}{67} \\approx"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "An astronaut lands on a planet whose mass and radius are each twice that of Earth. If the astronaut ",
+          "pred": "B",
+          "gt": "B",
+          "correct": true,
+          "raw_end": "t \\frac{G \\cdot M_p}{R_p^2}$\n\n**4. Substitute the given relationships:**\n*   $M_p = 2 M_e$\n*   $R_p = 2 R_e$\n\nSubstitute these into the expression for"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Two people, one of mass 100 kg and the other of mass 50 kg, stand facing each other on an ice-covere",
+          "pred": "D",
+          "gt": "D",
+          "correct": true,
+          "raw_end": "\"\n    *   This is ambiguous. \"the person\" usually refers to the subject of the previous clause or the one mentioned last. However, regardless of who \""
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A 30 mF capacitor has 6 millicoulombs of charge on each plate. The energy stored in the capacitor is",
+          "pred": "C",
+          "gt": "C",
+          "correct": true,
+          "raw_end": "J}$$\n$$U = 6 \\times 10^{-4} \\text{ J}$$\n\nWait, let me re-check the calculation.\n$U = \\frac{Q^2}{2C}$\n$Q = 6 \\times 10^{-3}$\n$C = 30 \\times 10^{-3}$\n\n$"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Which configuration of battery and resistors will create a circuit with the greatest current?\n\nOptio",
+          "pred": "A",
+          "gt": "A",
+          "correct": true,
+          "raw_end": "are the options:**\n    *   Comparing A and B: Both have high voltage. B has lower resistance (parallel) than A (series). Therefore, $I_B > I_A$.\n    *"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A rubber ball (mass = 0.08 kg) is dropped from a height of 3.2 m, and after bouncing off the floor, ",
+          "pred": "D",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "t\".\n*   This implies $h_{rebound} \\approx h_{drop}$.\n*   Therefore, the speed just after impact $v_f \\approx v_i$.\n*   Direction: Upward.\n*   So, $v_f"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Two objects, a sphere and a block of the same mass, are released from rest at the top of an inclined",
+          "pred": "B",
+          "gt": "D",
+          "correct": false,
+          "raw_end": " *   $mgh = (\\frac{1}{2} + \\frac{1}{5})mv_s^2 = \\frac{7}{10}mv_s^2$.\n        *   $v_s = \\sqrt{\\frac{10}{7}gh}$.\n    *   Comparing velocities: $v_b = \\"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Which of the following changes to a double-slit interference experiment would increase the widths of",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "emains constant (which it does for a source).\n        *   Since $\\Delta y \\propto \\lambda$, a decrease in $\\lambda$ leads to a decrease in $\\Delta y$."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A stone is thrown vertically upward with an initial speed of 5 m/s. What is the velocity of the ston",
+          "pred": "D",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "ce we defined upward as positive, a negative sign indicates the direction is downward.\n\n**6. Compare with options:**\n*   A. $25 \\text{ m/s}$, upward\n*"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A particle is subjected to a conservative force whose potential energy function is U(x) = (x \u2013 2)3 \u2013",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "t of both sides:\n$x - 2 = \\pm 2$\n\nCase 1: $x - 2 = 2 \\Rightarrow x = 4$\nCase 2: $x - 2 = -2 \\Rightarrow x = 0$\n\nSo, the equilibrium positions are at $"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "An electron (mass = m, charge = -E) is rotated with speed V upwards, in the plane of the page, into ",
+          "pred": "C",
+          "gt": "A",
+          "correct": false,
+          "raw_end": " left.\n*   Imagine the electron at the top of a circle moving right? No, it's moving up.\n*   Let's visualize the circle.\n    *   Velocity is Up.\n    *"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A ball of mass is attached to a string connected to the ceiling, forming a pendulum. When the string",
+          "pred": "D",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "from the horizontal when released:** The angle given is $50^\\circ$. This is the amplitude.\n        *   In the small-angle approximation, the period is"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "What happens to the image formed by a concave mirror as the object is moved from far away to near th",
+          "pred": "A",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "s $\\frac{1}{d_o}$ increases, $\\frac{1}{d_i}$ decreases.\n    *   If $\\frac{1}{d_i}$ decreases (becomes smaller positive number), $d_i$ increases.\n    *"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A disk of radius 0.1 m initially at rest undergoes an angular acceleration of 2.0 rad/s^2. If the di",
+          "pred": "D",
+          "gt": "D",
+          "correct": true,
+          "raw_end": "theta$\n    $s = (0.1 \\text{ m})(16.0 \\text{ rad})$\n    $s = 1.6 \\text{ m}$\n\n**4. Check the options:**\n*   A. 0.4 m\n*   B. 0.8 m\n*   C. 1.2 m\n*   D. 1."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A stone is thrown horizontally with an initial speed of 10 m/s from a bridge. Assuming that air resi",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": " t^2$\n*   $160 = g \\cdot t^2$\n*   $t^2 = \\frac{160}{g}$\n\n**Case 1: Using $g = 9.8$ m/s$^2$**\n*   $t^2 = \\frac{160}{9.8} \\approx 16.32$\n*   $t = \\sqrt{"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Which of the following statements about electric and magnetic fields is FALSE:\n\nOptions:\nA. A charge",
+          "pred": "C",
+          "gt": "C",
+          "correct": true,
+          "raw_end": "e to the field). However, usually, in the context of basic physics questions, this implies the direction of the force/acceleration. Let's look closer."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "The Space Shuttle orbits 300 km above the Earth\u2019s surface; the Earth\u2019s radius is 6400 km. What is th",
+          "pred": "C",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "enter of the Earth)\n    *   $r = 6400 \\text{ km} + 300 \\text{ km} = 6700 \\text{ km}$\n\n**5. Perform the calculation:**\n$$g' = 9.8 \\times \\left(\\frac{64"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A confined ideal gas undergoes a cyclical process in three steps\u2014an isobaric step, followed by an is",
+          "pred": "D",
+          "gt": "D",
+          "correct": true,
+          "raw_end": "ually, in thermodynamics questions, \"change in internal energy\" without a time qualifier refers to the state function change between the start and end"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A sphere starts from rest atop a hill with a constant angle of inclination and is allowed to roll wi",
+          "pred": "D",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "c{N} = 0$.\n    *   **Friction:** Acts at the point of contact.\n        *   Direction: Since the sphere is rolling down, the bottom point tends to slip"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A block is dragged along a table and experiences a frictional force, f, that opposes its movement. T",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "iction implies a contact force with a tangential component.\n    *   Let's check standard physics problem conventions.\n    *   If the question asks for"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A table supports a wooden block placed on the tabletop. Which fundamental force of nature is respons",
+          "pred": "B",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "the block significant enough to balance the Earth's pull (the table's mass is negligible compared to Earth).\n        *   So, the force *from the table"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Which of the following is NOT equal to one tesla?\n\nOptions:\nA. 1 J/(A*m^2)\nB. 1 kg/(C*s)\nC. 1 N/(A*m",
+          "pred": "B",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "3.\n    *   So $B^2 = 2 \\mu_0 u$. Units of $B^2$: (J/m^3) * (T/A) ... wait.\n    *   Let's use the definition $F = I L B \\sin(\\theta)$. $B = F / (I L)$."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A children\u2019s toy consists of a cart whose very light wheels are attached to a rubber band. This rubb",
+          "pred": "A",
+          "gt": "A",
+          "correct": true,
+          "raw_end": "s the wheels rotate, the rubber band winds or unwinds.\n    *   If the rubber band is wound *before* the shove, it has stored elastic potential energy."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "An object is released from rest and falls a distance h during the first second of time. How far will",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "ative method (Ratio of distances):**\n*   For an object starting from rest, the distances covered in successive equal time intervals are in the ratio $"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Two ice skaters are moving on frictionless ice and are about to collide. The 50-kg skater is moving ",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "he Options:**\n\n*   **Option A:** \"The linear momentum of the system is conserved because the net force on the system is nonzero during the collision.\""
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "The mass of the Earth is 5.97 \u00d7 10^24 kg. The Moon, whose center is 3.84 \u00d7 10^8 m from the Earth\u2019s c",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "ow multiply by $G$:\n$G \\times M_E \\times M_M \\approx (6.7 \\times 10^{-11}) \\times (4.4 \\times 10^{47})$\n$6.7 \\times 4.4 \\approx 29.5$\nExponent: $-11 +"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "An object of volume 2 \u00d7 10^-3 m^3 and weight 6 N is placed into a tank of water, where it floats. Wh",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "ems unless specified otherwise.\n$$V_{displaced} = \\frac{6}{1000 \\times 10} = \\frac{6}{10000} = 6 \\times 10^{-4} \\text{ m}^3$$\n\nLet's assume $g = 9.8 \\"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "The position of an object is given by the equations x = 2.0t^3 + 4.0t + 6.25, where x is in meters a",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "   *   $v(t) = 6.0t^2 + 4.0$\n    *   $\\frac{d}{dt}(6.0t^2) = 6.0 \\cdot 2t = 12.0t$\n    *   $\\frac{d}{dt}(4.0) = 0$\n    *   So, $a(t) = 12.0t$.\n\n5.  **"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A man stands in an elevator as it begins to ascend. Does the normal force from the floor do work on ",
+          "pred": "C",
+          "gt": "A",
+          "correct": false,
+          "raw_end": " force ($N$) upwards.\n*   Equation: $N - mg = ma$.\n*   So, $N = m(g + a)$.\n*   Since $a > 0$, $N > mg$.\n*   Regardless of the magnitude, the direction"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "How long would it take a car, starting from rest and accelerating uniformly in a straight line at 5 ",
+          "pred": "",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "eck the calculation.\n$2.5 \\times 9^2 = 2.5 \\times 81 = 202.5 \\text{ m}$.\n$2.5 \\times 8.9^2 = 2.5 \\times 79.21 = 198.025 \\text{ m}$.\n$2.5 \\times 8.94^2"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Which of the following conditions are necessary for an object to be in static equilibrium? I. The ve",
+          "pred": "D",
+          "gt": "D",
+          "correct": true,
+          "raw_end": "findings:**\n    *   I is necessary.\n    *   II is necessary.\n    *   III is not necessary.\n    *   Therefore, the correct combination is I and II.\n\n6."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A student pushes a puck across a table, moving it from position x = 0 to position x = 0.2 m. After h",
+          "pred": "C",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "l net force is the vector sum of horizontal and vertical forces. Since vertical net force is zero, the net force is the horizontal friction force.\n\n**"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Experimenter A uses a very small test charge qo, and experimenter B uses a test charge 2qo to measur",
+          "pred": "A",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "orrect. The electric field is independent of the test charge.\n*   C. less than the field found by B: Incorrect.\n*   D. either greater or less than the"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Two objects, A and B, have equal charge and equal mass. Neither body is in motion because the gravit",
+          "pred": "B",
+          "gt": "D",
+          "correct": false,
+          "raw_end": " m}{r^2} = \\frac{1}{2} G \\frac{m^2}{r^2}$.\n*   New Electrostatic Force: $F_e' = k \\frac{q_A' q_B'}{r^2}$.\n*   Condition for new equilibrium: $F_g' = F"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A 2 \u03bcF capacitor is connected directly to a battery. When the capacitor is fully charged, it stores ",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "rucial Property:** In a series circuit, the charge ($Q$) stored on each capacitor is the same. This is because the charge that leaves one plate of the"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A particle's kinetic energy is changing at a rate of \u20136.0 J/s when its speed is 3.0 m/s. What is the",
+          "pred": "C",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "    *   So, $\\frac{dK}{dt} = -Fv$.\n    *   Therefore, $F = -\\frac{1}{v} \\frac{dK}{dt}$.\n    *   Since we need the magnitude, $F = \\frac{1}{v} \\left| \\"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A car rounds a banked curve of uniform radius. Three forces act on the car: a friction force between",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "fast). Actually, usually, we resolve $N$ and $f$ relative to the horizontal.\n        *   Let's stick to the standard decomposition.\n        *   $N$ is"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A stone is thrown horizontally with an initial speed of 30 m/s from a bridge. Find the stone's total",
+          "pred": "",
+          "gt": "C",
+          "correct": false,
+          "raw_end": " = 9.8 \\text{ m/s}^2$\n        *   $v_y = 9.8 \\times 4 = 39.2 \\text{ m/s}$.\n        *   $v = \\sqrt{30^2 + 39.2^2} = \\sqrt{900 + 1536.64} = \\sqrt{2436.6"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "What happens to the force of gravitational attraction between two small objects if the mass of each ",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "$(2r)^2 = 4 r^2$.\n    *   $F_{final} = G \\frac{4 m_1 m_2}{4 r^2}$.\n\n7.  **Compare $F_{final}$ with $F_{initial}$:**\n    *   $F_{final} = G \\frac{m_1 m"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "How much current does a 60 W light bulb draw if it operates at a voltage of 120 V ?\n\nOptions:\nA. 0.2",
+          "pred": ".",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "wer>`.\n*   Ensure the answer is just the letter.\n\n**Step-by-step reasoning:**\n1.  Identify the knowns: Power ($P$) = 60 Watts, Voltage ($V$) = 120 Vol"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "What happens to the pressure, P, of an ideal gas if the temperature is increased by a factor of 2 an",
+          "pred": "C",
+          "gt": "B",
+          "correct": false,
+          "raw_end": " one-fourth of the initial pressure.\n*   This corresponds to a decrease by a factor of 4.\n\n**7. Check the options:**\n*   A. P decreases by a factor of"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A beam of monochromatic light entering a glass window pane from the air will experience a change in\n",
+          "pred": "D",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "frequency remains constant.\n2.  **Speed:** The speed of light depends on the optical density (refractive index) of the medium. Glass is optically dens"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A rigid, solid container of constant volume holds an ideal gas of volume v1 and temperature T1 and p",
+          "pred": "D",
+          "gt": "D",
+          "correct": true,
+          "raw_end": "efore, the volume does not increase.\n    -   This statement is **False**.\n\n**Conclusion:**\nThe question asks which statement is **NOT true**.\nOption D"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A string of fixed tension and linear mass density is attached to a vibrating speaker. It is observed",
+          "pred": "A",
+          "gt": "A",
+          "correct": true,
+          "raw_end": ")$.\n    *   If $L$ is not an integer multiple of $\\lambda/2$, the wave reflected from the end will not interfere constructively with the incident wave"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A spherical charge distribution varies with the radius r by the equation \u03c1 = ar, where \u03c1 is the volu",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "_{\\text{enc}} = 4\\pi a \\left[ \\frac{r'^4}{4} \\right]_0^r$\n    $Q_{\\text{enc}} = \\pi a r^4$\n\n*   **Calculate Electric Field ($E$):**\n    $E = \\frac{Q_{"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "An alarm whose frequency is 400 Hz is dropped out of a third-floor window. The student who drops it ",
+          "pred": "B",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "e the student is stationary)\n    *   $v_s$: Velocity of source (velocity of the falling alarm)\n*   Since the source is moving *away* from the observer"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Heat is added to a cylindrical aluminum rod of radius Q and length \u2113. The temperature difference bet",
+          "pred": "C",
+          "gt": "C",
+          "correct": true,
+          "raw_end": "$\\ell$ appear in the formula for heat conduction.\n    *   **D. Neither the length nor area:** Incorrect.\n\n5.  **Step-by-step reasoning construction:**"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Optometrists use a linear scale of lens power, measured in diopters, to prescribe corrective lenses.",
+          "pred": "C",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "or real objects.\n    *   $\\frac{1}{f} = \\frac{1}{v} - \\frac{1}{u}$.\n    *   If $u = -\\infty$, then $\\frac{1}{u} = 0$.\n    *   So, $\\frac{1}{f} = \\frac"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A nonconducting sphere is given a nonzero net electric charge, +Q, and then brought close to a neutr",
+          "pred": "C",
+          "gt": "C",
+          "correct": true,
+          "raw_end": "   *Verdict:* False.\n\n*   **Option C: The spheres will experience an electrostatic attraction.**\n    *   The positive charge $+Q$ on the nonconducting"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A charged particle moves through a magnetic field and experiences a force f. New particles are sent ",
+          "pred": "A",
+          "gt": "A",
+          "correct": true,
+          "raw_end": " = 2m$ (This is irrelevant for the force calculation).\n*   New Force: $f' = q'v'B \\sin(\\theta)$\n\nSubstitute the new values into the force equation:\n$$"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "An electric dipole consists of a pair of equal but opposite point charges of magnitude 4.0 nC separa",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "nterest is midway, so it is at $x = 0$.\n*   Distance from each charge to the midpoint: $r = d/2$.\n    *   $d = 2.0 \\text{ cm} = 0.02 \\text{ m}$.\n    *"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Two isolated particles, A and B, are 4 m apart. Particle A has a net charge of 2Q, and B has a net c",
+          "pred": "C",
+          "gt": "C",
+          "correct": true,
+          "raw_end": "io:** The ratio of the magnitude of the force on A to that on B is $F_A : F_B = 1 : 1$.\n\n**4. Check the options:**\n*   A. 4:01\n*   B. 2:01\n*   C. 1:01"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A rock drops onto a pond with a smooth surface. A few moments later, the wave produced by the rock\u2019s",
+          "pred": "D",
+          "gt": "D",
+          "correct": true,
+          "raw_end": "* energy of the pulse is conserved in an ideal non-dissipative medium, just spread out. In a real medium, spreading + damping leads to lower amplitude"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Physics students are checking the constant acceleration equations of kinematics by measuring the vel",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "ystematic error in this context.\n\n*   **B. The acceleration of gravity varies as the ball is falling.**\n    *   Gravity ($g$) varies with height ($h$)"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Mercury orbits the sun in about one-fifth of an Earth year. If 1 AU is defined as the distance from ",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "T_E})^2 = (\\frac{a_M}{a_E})^3$\n    *   $(\\frac{1}{5})^2 = (\\frac{a_M}{1 \\text{ AU}})^3$\n    *   $\\frac{1}{25} = (a_M)^3$\n    *   $a_M = (\\frac{1}{25})"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "The Gravitron is a carnival ride that looks like a large cylinder. People stand inside the cylinder ",
+          "pred": "D",
+          "gt": "D",
+          "correct": true,
+          "raw_end": " Gravity ($mg$) down.\n    *   Condition for not falling: $f \\ge mg$.\n    *   Maximum friction available: $f_{max} = \\mu N$.\n    *   So, we need $\\mu N"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "An artificial satellite orbits Earth just above the atmosphere in a circle with constant speed. A sm",
+          "pred": "C",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "y $\\epsilon' = \\frac{(1.01v)^2}{2} - \\frac{GM}{r} = \\frac{1.0201 v^2}{2} - \\frac{GM}{r}$.\n    *   Since $v^2 = \\frac{GM}{r}$, $\\epsilon' = \\frac{1.020"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The quantum efficiency of a photon detector is 0.1. If 100 photons are sent into the detector, one a",
+          "pred": "C",
+          "gt": "B",
+          "correct": false,
+          "raw_end": " \\sqrt{\\sigma^2}$.\n*   $\\sigma = \\sqrt{9} = 3$.\n\n**5. Compare with the options:**\n*   **Option A:** Average 10, rms deviation $\\approx 4$. (Incorrect)"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "White light is normally incident on a puddle of water (index of refraction 1.33). A thin (500 nm) la",
+          "pred": "C",
+          "gt": "C",
+          "correct": true,
+          "raw_end": "ve interference (maximum reflection) occurs when the total phase difference is an integer multiple of $2\\pi$.\n    *   Condition: $2 n_2 t = (m + \\frac"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Which of the following is true about any system that undergoes a reversible thermodynamic process?\n\n",
+          "pred": "D",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "nd $\\Delta S_{surr} < 0$ such that the sum is zero. The entropy of the system *does* change.\n    *   If the option implies $\\Delta S_{sys} = 0$ and $\\"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The best type of laser with which to do spectroscopy over a range of visible wavelengths is\n\nOptions",
+          "pred": "C",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "range of visible wavelengths, making it the best choice for spectroscopy in this context.\n\n5.  **Format the output:**\n    *   Reasoning section.\n    *"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Excited states of the helium atom can be characterized as para- (antiparallel electron spins) and or",
+          "pred": "A",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "to each other (Ortho, symmetric spatial), the Coulomb repulsion energy is higher.\n    *   If the electrons are kept apart (Para, antisymmetric spatial"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Which of the following gives the total spin quantum number of the electrons in the ground state of n",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "e down), contributing 0 to the total spin.\n    *   So, we only consider the spins of the three $2p$ electrons.\n\n4.  **Calculate the total spin quantum"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Consider three identical, ideal capacitors. The first capacitor is charged to a voltage and then dis",
+          "pred": "B",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "ate of $C_1$ be Node A and the bottom plate be Node B.\n*   The series combination of $C_2$ and $C_3$ is connected between Node A and Node B.\n*   Let's"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Protons used in cancer therapy are typically accelerated to about 0.6c. How much work must be done o",
+          "pred": "C",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "{8} = 1.25$\n\n*   **Step 2: Calculate the Kinetic Energy ($K$).**\n    *   $K = (\\gamma - 1)mc^2$\n    *   $K = (1.25 - 1)mc^2$\n    *   $K = 0.25mc^2$\n\n*"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "De Broglie hypothesized that the linear momentum and wavelength of a free massive particle are relat",
+          "pred": "A",
+          "gt": "A",
+          "correct": true,
+          "raw_end": "$h$ represents the fundamental constant of quantum mechanics.\n5.  This constant is universally known as Planck's constant.\n6.  Comparing this with the"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "If the total energy of a particle of mass m is equal to twice its rest energy, then the magnitude of",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "mc/\\sqrt{2}$\n*   C. $mc$\n*   D. $\\sqrt{3}mc$\n\nThe calculated value is $\\sqrt{3}mc$, which matches Option D.\n\n**6. Double check:**\n*   Rest energy $E_0"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "In the diamond structure of elemental carbon, the nearest neighbors of each C atom lie at the corner",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "stance between neighbors while maintaining equal bond lengths and angles is a regular tetrahedron.\n    *   Therefore, the nearest neighbors lie at the"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The coefficient of static friction between a small coin and the surface of a turntable is 0.30. The ",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "  *   $\\omega = 33.3 \\, \\frac{\\text{rev}}{\\text{min}} \\times \\frac{2\\pi \\, \\text{rad}}{1 \\, \\text{rev}} \\times \\frac{1 \\, \\text{min}}{60 \\, \\text{s}}$"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The sign of the charge carriers in a doped semiconductor can be deduced by measuring which of the fo",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "all coefficient is positive.\n    *   Therefore, measuring the Hall coefficient allows one to deduce the sign of the charge carriers.\n\n6.  **Conclusion"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The primary source of the Sun\u2019s energy is a series of thermonuclear reactions in which the energy pr",
+          "pred": "C",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "s:**\n    *   The Sun is a main-sequence star.\n    *   Main-sequence stars fuse hydrogen into helium.\n    *   The stoichiometry is 4 Hydrogen nuclei $\\"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Electromagnetic radiation provides a means to probe aspects of the physical universe. Which of the f",
+          "pred": "C",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "rared emission, the spectral features (absorption or emission lines/bands) allow identification of chemical composition (e.g., silicates, carbonaceous"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Which of the following statements about bosons and/or fermions is true?\n\nOptions:\nA. Bosons have sym",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "e.\"\n        *   Symmetric wave functions: False (they are antisymmetric).\n        *   Obey Pauli exclusion principle: True.\n        *   Result: False."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Excited states of the helium atom can be characterized as para- (antiparallel electron spins) and or",
+          "pred": "C",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "ns the probability of finding the two electrons close to each other is reduced. This reduces the Coulomb repulsion energy.\n\n4.  **Connect to Energy:**"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "One end of a horizontal, massless spring is attached to a wall. A mass of 0.30 kg is attached to the",
+          "pred": "A",
+          "gt": "A",
+          "correct": true,
+          "raw_end": "\\text{ kg}$\n*   $x_{initial} = 0.030 \\text{ m}$ (This is the amplitude $A$).\n*   $v_{eq} = 0.040 \\text{ m/s}$ (Speed at equilibrium).\n*   $v_{initial}"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A meter stick with a speed of 0.8c moves past an observer. In the observer\u2019s reference frame, how lo",
+          "pred": "C",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "{ m}$\n    *   $L = L_0 \\times 0.6 = 1 \\text{ m} \\times 0.6 = 0.6 \\text{ m}$\n\n*   **Step 3: Calculate the time ($t$).**\n    *   $t = \\frac{L}{v}$\n    *"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Protons used in cancer therapy are typically accelerated to about 0.6c . How much work must be done ",
+          "pred": "A",
+          "gt": "A",
+          "correct": true,
+          "raw_end": " not among the options. The relativistic result should be one of them.\n\n**2. Apply the Work-Energy Theorem:**\n*   The work done on a particle is equal"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Characteristic X rays, appearing as sharp lines on a continuous background, are produced when high-e",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "hes the description in the question perfectly.\n\n    *   **Option D: Electrons combining with protons to form neutrons.**\n        *   This is a nuclear"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "An atom has filled n = 1 and n = 2 levels. How many electrons does the atom have?\n\nOptions:\nA. 2\nB. ",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "*   Final answer inside `<answer>` tags as just the letter.\n\nLet's double-check.\n$n=1$: $l=0$ ($s$ orbital), $m_l=0$, $m_s=\\pm 1/2$. Capacity = 2.\n$n="
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Light from a laser falls on a pair of very narrow slits separated by 0.5 micrometer, and bright frin",
+          "pred": "A",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "al to the slit separation $d$ ($\\Delta y \\propto 1/d$).\n*   $\\Delta y$ is directly proportional to the distance to the screen $L$ ($\\Delta y \\propto L"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Assume that the solar flux at Earth\u2019s surface is 1,000 W/m^2 and that the sunlight is normal to a co",
+          "pred": "C",
+          "gt": "C",
+          "correct": true,
+          "raw_end": "m}^2$\n*   $A = 3 \\text{ m}^2$\n*   $c = 3 \\times 10^8 \\text{ m/s}$\n*   Surface is completely reflecting.\n*   Formula: $F = \\frac{2 \\cdot I \\cdot A}{c}$"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The sign of the charge carriers in a doped semiconductor can be deduced by measuring which of the fo",
+          "pred": "A",
+          "gt": "B",
+          "correct": false,
+          "raw_end": " majority charge carriers.\n\n7.  **Format the output:** The user requested a specific format:\n    <reasoning>\n    [Step-by-step reasoning]\n    </reason"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Which of the following ions CANNOT be used as a dopant in germanium to make an n-type semiconductor?",
+          "pred": "B",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "uestion:** The question asks which ion CANNOT be used to make an n-type semiconductor.\n    *   As -> n-type (Can)\n    *   P -> n-type (Can)\n    *   Sb"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "An astronomer observes a very small moon orbiting a planet and measures the moon\u2019s minimum and maxim",
+          "pred": "C",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "is and apoapsis, velocity is perpendicular to the radius vector.\n        *   $v_{\\text{max}} = \\frac{L}{m r_{\\text{min}}}$\n        *   $v_{\\text{min}}"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A rod measures 1.00 m in its rest system. How fast must an observer move parallel to the rod to meas",
+          "pred": "C",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "uare root of both sides:\n    $\\frac{v}{c} = \\sqrt{0.36}$\n    $\\frac{v}{c} = 0.6$\n*   Therefore, $v = 0.60c$.\n\n**5. Check the options:**\n*   A. 0.50c\n*"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A proton moves in the +z-direction after being accelerated from rest through a potential difference ",
+          "pred": "A",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "   *   $\\hat{k} \\times \\hat{j} = -\\hat{i}$.\n        *   So, $\\vec{v} \\times \\vec{B} = -vB \\hat{i}$.\n    *   Force balance equation: $qE \\hat{i} + q(-v"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A magnetic field is directed perpendicular to the plane of a circular coil of area 0.2 m^2 and 250 t",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "$$\n\n**3. Perform the calculation:**\n*   $N = 250$\n*   $A = 0.2$\n*   $B_f - B_i = 0.06 - 0.01 = 0.05 \\, \\text{T}$\n*   $\\Delta t = 0.25 \\, \\text{s}$\n\n$$"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Light of variable frequency shines on the metal surface of a photoelectric tube. Einstein\u2019s theory o",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "ximum kinetic energy of the emitted electrons, $h$ is Planck's constant, $\\nu$ is the frequency, and $\\Phi$ is the work function.\n*   **Relation to St"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "If the Sun were suddenly replaced by a black hole of the same mass, it would have a Schwarzschild ra",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "x 3000$ m).\n    *   **Gravitational Field:** Since the mass is the same and the distribution is spherically symmetric (both the Sun and the black hole"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "At 20\u00b0C, a pipe open at both ends resonates at a frequency of 440 hertz. At what frequency does the ",
+          "pred": "A",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "1 = 440\\text{ Hz}$\n*   $v_2 = 0.97 v_1$\n*   $\\frac{f_2}{440} = 0.97$\n*   $f_2 = 440 \\times 0.97$\n\nCalculation:\n$440 \\times 0.97 = 440 \\times (1 - 0.03"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The quantum efficiency of a photon detector is 0.1. If 100 photons are sent into the detector, one a",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "$1 - p = 0.9$\n*   $\\sigma^2 = 100 \\cdot 0.1 \\cdot 0.9 = 10 \\cdot 0.9 = 9$.\n*   $\\sigma = \\sqrt{9} = 3$.\n\n**5. Evaluate the options:**\n*   **A. exactly"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A three-dimensional harmonic oscillator is in thermal equilibrium with a temperature reservoir at te",
+          "pred": "D",
+          "gt": "D",
+          "correct": true,
+          "raw_end": "x^2, p_y^2, p_z^2$ (3 terms).\n        *   Potential energy terms: $x^2, y^2, z^2$ (3 terms).\n    *   Total quadratic degrees of freedom = $3 + 3 = 6$."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A student makes 10 one-second measurements of the disintegration of a sample of a long-lived radioac",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "about the *average* rate based on the sample data, or the *future* measurement time required to achieve that precision?\n*   Usually, in these types of"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "By definition, the electric displacement current through a surface S is proportional to the\n\nOptions",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "pto \\frac{d\\Phi_E}{dt}$.\n6.  **Verify the proportionality:** The question asks if it is *proportional to* the rate of change of electric flux. Since $"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The negative muon, mu^-, has properties most similar to which of the following?\n\nOptions:\nA. Electro",
+          "pred": "D",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "*   While the electron is also a fermion, \"Boson\" is a class that the muon does not belong to.\n\n3.  **Compare similarities:**\n    *   The muon and the"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The speed of light inside of a nonmagnetic dielectric material with a dielectric constant of 4.0 is\n",
+          "pred": ".",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "psilon_r \\mu_r} = \\sqrt{4.0 \\times 1} = \\sqrt{4} = 2$$\n*   Calculate speed of light $v$:\n    $$v = \\frac{c}{n}$$\n    $$v = \\frac{3.0 \\times 10^8 \\text"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The energy from electromagnetic waves in equilibrium in a cavity is used to melt ice. If the Kelvin ",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": " Let $m_1$ be the mass melted at temperature $T_1$.\n*   Let $m_2$ be the mass melted at temperature $T_2$.\n*   Given: $T_2 = 2 T_1$.\n*   Relationship:"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A resistor in a circuit dissipates energy at a rate of 1 W. If the voltage across the resistor is do",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "$\n\n**4. Check the options:**\n*   A. 0.25 W\n*   B. 0.5 W\n*   C. 1 W\n*   D. 4 W\n\nThe calculated value matches Option D.\n\n**5. Formulate the reasoning:**"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A gas cell with an optical path length of 10 cm is placed in one arm of a Michelson interferometer. ",
+          "pred": "B",
+          "gt": "B",
+          "correct": true,
+          "raw_end": " of the cell, $L$. Let's look at the wording carefully: \"A gas cell with an optical path length of 10 cm\". This is technically $n \\cdot L_{phys}$. But"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Under certain conditions, a beam of electrons impinging on a crystal surface will diffract and a sca",
+          "pred": "C",
+          "gt": "C",
+          "correct": true,
+          "raw_end": "^{-10} \\text{ m}$\n\n    Alternatively, use the convenient formula for electron wavelength in Angstroms ($\\mathring{A}$) and electron volts (eV):\n    $\\"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A uniform solid disk starts from rest and rolls down an inclined plane without slipping. After some ",
+          "pred": "A",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "}mv^2$$\n*   Now, look at $K_{trans}$:\n    $$K_{trans} = \\frac{1}{2}mv^2$$\n*   Calculate the total kinetic energy:\n    $$K_{total} = K_{trans} + K_{rot"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Blue light of wavelength 480 nanometers is most strongly reflected off a thin film of oil on a glass",
+          "pred": "A",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "} (2 n_{oil} t) + \\Delta \\phi_{reflection}$.\n    *   Here, $\\Delta \\phi_{reflection} = \\pi - \\pi = 0$.\n    *   Wait, let's re-verify the phase shifts."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A heat pump is to extract heat from an outdoor environment at 7\u00b0C and heat the environment indoors t",
+          "pred": "C",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "*Step 1: Calculate the Carnot COP.**\n    *   $T_h = 300\\text{ K}$\n    *   $T_c = 280\\text{ K}$\n    *   $T_h - T_c = 300 - 280 = 20\\text{ K}$\n    *   $"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The driver of a police car hears an echo of the car\u2019s siren from a wall toward which the car is movi",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": " 3.5} \\right)$$\n    *   Calculate the denominator: $350 - 3.5 = 346.5$.\n    *   Calculate the ratio: $350 / 346.5$.\n    *   $f_{wall} = 600 \\times (35"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A particle decays in 2.0 ms in its rest frame. If the same particle moves at v=0.60c in the lab fram",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "e dilated time ($\\Delta t$) in the lab frame.**\n    *   $\\Delta t = \\gamma \\Delta t_0$\n    *   $\\Delta t = 1.25 \\times 2.0 \\text{ ms}$\n    *   $\\Delta"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A tube of water is traveling at 1/2 c relative to the lab frame when a beam of light traveling in th",
+          "pred": "B",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "$S'$): $u' = \\frac{c}{n} = \\frac{c}{4/3} = \\frac{3}{4}c$.\n    *   Note: The light is traveling in the same direction as the tube. So $u'$ is positive."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The rest mass of a particle with total energy 5.0 GeV and momentum 4.9 GeV/c is approximately\n\nOptio",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "an 1.\n$0.995^2 \\approx 0.99$\nSo, $m c^2 \\approx 0.995 \\text{ GeV}$.\n\nWait, let me check the options.\nA. $0.1 \\text{ GeV}/c^2$\nB. $0.2 \\text{ GeV}/c^2$"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A grating spectrometer can just barely resolve two wavelengths of 500 nm and 502 nm, respectively. W",
+          "pred": "D",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "t{ nm}$: $R = \\frac{501}{2} = 250.5$\n\n4.  **Compare with options:**\n    *   A. 2\n    *   B. 250\n    *   C. 5,000\n    *   D. 10,000\n\n    The calculated"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The best type of laser with which to do spectroscopy over a range of visible wavelengths is\n\nOptions",
+          "pred": "A",
+          "gt": "A",
+          "correct": true,
+          "raw_end": "varied (tuned).\n\n5.  **Format the output:**\n    *   Reasoning block.\n    *   Answer block with just the letter.\n\n6.  **Drafting the reasoning:**\n    *"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The eigenvalues of a Hermitian operator are always\n\nOptions:\nA. real\nB. imaginary\nC. degenerate\nD. l",
+          "pred": "A",
+          "gt": "A",
+          "correct": true,
+          "raw_end": "\\rangle$ is a non-zero eigenvector and $\\lambda$ is the eigenvalue.\n3.  Take the inner product with $|\\psi\\rangle$: $\\langle\\psi|\\hat{H}|\\psi\\rangle ="
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A net force F_A acts on object A, and a net force F_B acts on object B. The mass of object B is twic",
+          "pred": "D",
+          "gt": "D",
+          "correct": true,
+          "raw_end": ". Final check:**\n*   Mass B is larger (2x). Force should be larger.\n*   Acceleration B is larger (2x). Force should be larger.\n*   Since both mass and"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Under ideal conditions, the electric and magnetic fields inside a superconductor are zero. Maxwell\u2019s",
+          "pred": "C",
+          "gt": "C",
+          "correct": true,
+          "raw_end": "athbf{B}_1 = 0$ inside the superconductor, $\\mathbf{B}_{1, \\perp} = 0$.\nTherefore, $\\mathbf{B}_{2, \\perp} = 0$.\nThis means the normal component of the"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Two students perform an experiment in which they drop a ball from rest from a known height above the",
+          "pred": "D",
+          "gt": "D",
+          "correct": true,
+          "raw_end": "K} = 2 \\times 0.10 = 0.20$.\n*   Convert to percentage: $0.20 \\times 100\\% = 20\\%$.\n\n**4. Check the options:**\n*   A. 5%\n*   B. 10%\n*   C. 15%\n*   D. 2"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A particle is constrained to move in a circle with a 10-meter radius. At one instant, the particle\u2019s",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": ".\n*   The tangential acceleration vector $\\vec{a}_t$ is parallel to $\\vec{v}$.\n*   The centripetal acceleration vector $\\vec{a}_c$ is perpendicular to"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "If the absolute temperature of a blackbody is increased by a factor of 3, the energy radiated per se",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": " \\times 3 = 81$.\n    *   So, $E_2 = 81 \\cdot \\sigma T_1^4$.\n    *   Since $E_1 = \\sigma T_1^4$, we have $E_2 = 81 E_1$.\n\n4.  **Interpret the result:**"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A magnetic field is directed perpendicular to the plane of a circular coil of area 0.2 m^2 and 250 t",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "hange in magnetic flux ($\\Delta \\Phi$):**\n    Since $A$ is constant and perpendicular to $B$, $\\Delta \\Phi = A \\cdot \\Delta B$.\n    $\\Delta \\Phi = 0.2"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Which of the following is true about any system that undergoes a reversible thermodynamic process?\n\n",
+          "pred": "D",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "dS_{total} = dS_{sys} + dS_{surr} = dS_{sys} - dS_{sys} = 0$.\n    *   So, the *total* entropy of the universe (system + environment) remains unchanged"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The first five harmonics produced by an organ pipe open at both ends are 50 Hz, 100 Hz, 150 Hz, 200 ",
+          "pred": "D",
+          "gt": "D",
+          "correct": true,
+          "raw_end": "e fundamental frequency of the open-open pipe ($f_{open, 1}$) is equal to the second harmonic of the closed-open pipe ($f_{closed, 2}$).\n    *   Let $"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Electromagnetic radiation emitted from a nucleus is most likely to be in the form of\n\nOptions:\nA. ga",
+          "pred": "B",
+          "gt": "A",
+          "correct": false,
+          "raw_end": " is emitted when particles or systems change energy states.\n    *   In an atom, electrons moving between energy levels emit photons (visible, UV, IR)."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "An organ pipe, closed at one end and open at the other, is designed to have a fundamental frequency ",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "s.\n    *   Let's check the options.\n        *   $f_1 = 131$ Hz.\n        *   Next resonant frequency is $f_3 = 3 \\times f_1$.\n        *   $3 \\times 131"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A single-electron atom has the electron in the l = 2 state. The number of allowed values of the quan",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "ption D.\n\n7.  **Format the output:**\n    *   Reasoning section: Explain the relationship between $l$ and $m_l$, list the values, count them, and apply"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Two simple pendulums A and B consist of identical masses suspended from strings of length L_A and L_",
+          "pred": "A",
+          "gt": "A",
+          "correct": true,
+          "raw_end": "r we can just square both sides):\n$$\\sqrt{L_B} = 2 \\sqrt{L_A}$$\n\nSquare both sides to remove the square roots:\n$$L_B = 2^2 \\cdot L_A$$\n$$L_B = 4 L_A$$"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "According to the BCS theory, the attraction between Cooper pairs in a superconductor is due to\n\nOpti",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "ation.\n    *   **D. interactions with the ionic lattice:** As recalled in step 2, the electron-lattice interaction (phonon-mediated attraction) is the"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A rod measures 1.00 m in its rest system. How fast must an observer move parallel to the rod to meas",
+          "pred": "B",
+          "gt": "B",
+          "correct": true,
+          "raw_end": "root of both sides:\n    $\\frac{v}{c} = \\sqrt{0.36}$\n    $\\frac{v}{c} = 0.6$\n*   Therefore, $v = 0.60c$.\n\n**5. Check the options:**\n*   A. 0.50c\n*   B."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The energy required to remove both electrons from the helium atom in its ground state is 79.0 eV. Ho",
+          "pred": "C",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "$E_n = -13.6 \\text{ eV} \\cdot \\frac{Z^2}{n^2}$$\n    For $He^+$, $Z=2$ and $n=1$.\n    $$E_{ground}(He^+) = -13.6 \\text{ eV} \\cdot \\frac{2^2}{1^2} = -13"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "At the present time, the temperature of the universe (i.e., the microwave radiation background) is a",
+          "pred": "A",
+          "gt": "A",
+          "correct": true,
+          "raw_end": "of the universe.\n    *   Therefore, the distance between objects was 1/4 of the distance they are today.\n\n4.  **Evaluate the options:**\n    *   A. one"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "By definition, the electric displacement current through a surface S is proportional to the\n\nOptions",
+          "pred": "C",
+          "gt": "A",
+          "correct": false,
+          "raw_end": " through S:** This would imply $I_d \\propto \\Phi_E$, which is incorrect. It depends on the time derivative.\n    *   **C. time integral of the magnetic"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The suspension cable of a 1,000 kg elevator snaps, sending the elevator moving downward through its ",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": ", the potential energy lost is converted to kinetic energy.\n    *   $KE = PE = 980,000 \\text{ J}$ (or $1,000,000 \\text{ J}$ if $g=10$).\n\n*   **Step 3:"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The hydrogen lines observed in the spectrum of the quasar 3C9 are shifted so far into the red that t",
+          "pred": "C",
+          "gt": "C",
+          "correct": true,
+          "raw_end": "}{\\lambda_{rest}} = 3$\n*   Equation: $3 = \\sqrt{\\frac{1 + \\beta}{1 - \\beta}}$\n\n**4. Solve for $\\beta$:**\n*   Square both sides:\n    $$ 3^2 = \\frac{1 +"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A 10 kg box slides horizontally without friction at a speed of 1 m/s. At one point, a constant force",
+          "pred": "D",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "   $d = 5$ m\n\n*   $F \\cdot 5 = \\frac{1}{2} (10) (2^2) - \\frac{1}{2} (10) (1^2)$\n\n**5. Calculate:**\n*   $F \\cdot 5 = 5 (4) - 5 (1)$\n*   $F \\cdot 5 = 20"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Two spaceships approach Earth with equal speeds, as measured by an observer on Earth, but from oppos",
+          "pred": "B",
+          "gt": "B",
+          "correct": true,
+          "raw_end": "$S_1$.\n\n**3. Step-by-Step Solution:**\n\n*   **Step 1: Determine the relative velocity between the two spaceships.**\n    *   Let the Earth frame be $S$."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The suspension cable of a 1,000 kg elevator snaps, sending the elevator moving downward through its ",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "$\n\n*   **Step 2: Calculate the kinetic energy gained.**\n    *   Since it starts from rest and falls freely (ignoring air resistance for the fall phase"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The mean kinetic energy of the conduction electrons in metals is ordinarily much higher than kT beca",
+          "pred": "C",
+          "gt": "C",
+          "correct": true,
+          "raw_end": "e. Even if they were, the high energy is an intrinsic property of the electron gas at that temperature, not a lack of equilibrium.\n\n    *   **Option C"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A 10 kg box slides horizontally without friction at a speed of 1 m/s. At one point, a constant force",
+          "pred": "D",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "*5. Calculate:**\n*   $KE_i = \\frac{1}{2} \\cdot 10 \\cdot (1)^2 = 5$ J\n*   $KE_f = \\frac{1}{2} \\cdot 10 \\cdot (2)^2 = \\frac{1}{2} \\cdot 10 \\cdot 4 = 20$"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Light of variable frequency shines on the metal surface of a photoelectric tube. Einstein\u2019s theory o",
+          "pred": "B",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "photoelectric equation is $K_{max} = h\\nu - \\Phi$.\n*   **Relationship:** The stopping potential is defined by $e V_s = K_{max}$.\n*   **Substitution:**"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A spring of force constant k is stretched a certain distance. It takes twice as much work to stretch",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "k x^2$.\n*   Divide both sides by $x^2$ (assuming $x \\neq 0$): $\\frac{1}{8} k_2 = k$.\n*   Multiply both sides by 8: $k_2 = 8k$.\n\n**4. Check the options"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "An observer O at rest midway between two sources of light at x = 0 and x = 10 m observes the two sou",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "10)$\n    *   Note: The problem states \"midway between two sources\". Observer O is at $x=5$ m. This position doesn't affect the time coordinates of the"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The surface of the Sun has a temperature close to 6,000 K and it emits a blackbody (Planck) spectrum",
+          "pred": "A",
+          "gt": "A",
+          "correct": true,
+          "raw_end": "erform the calculation:**\n*   **Given:**\n    *   $T_{sun} = 6000 \\text{ K}$\n    *   $\\lambda_{max, sun} = 500 \\text{ nm} = 500 \\times 10^{-9} \\text{ m"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Consider an electron in the n = 4, l = 1 state in hydrogen. Which of the following final states can ",
+          "pred": "D",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "ed).\n            *   $\\Delta l = 0 - 1 = -1$ (Allowed).\n            *   This is an allowed transition ($4p \\to 3s$).\n        *   **Option D:** $n=2, l"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A single-electron atom has the electron in the l = 2 state. The number of allowed values of the quan",
+          "pred": "D",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "e output:**\n    *   Reasoning section: Explain the relationship between $l$ and $m_l$.\n    *   Answer section: Provide the letter corresponding to the"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The driver of a police car hears an echo of the car\u2019s siren from a wall toward which the car is movi",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": ".\n*   **Calculation:**\n    $$f_{\\text{wall}} = 600 \\left( \\frac{350}{350 - 3.5} \\right)$$\n    $$f_{\\text{wall}} = 600 \\left( \\frac{350}{346.5} \\right)"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The emission spectrum of the doubly ionized lithium atom Li++ (Z = 3, A = 7) is identical to that of",
+          "pred": "A",
+          "gt": "A",
+          "correct": true,
+          "raw_end": "   *   Therefore, $\\frac{hc}{\\lambda} = 13.6 \\text{ eV} \\cdot Z^2 \\left( \\frac{1}{n_1^2} - \\frac{1}{n_2^2} \\right)$.\n    *   This implies $\\lambda = \\"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A photon strikes an electron of mass m that is initially at rest, creating an electron-positron pair",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "'s re-read carefully: \"The photon is destroyed and the positron and two electrons move off at equal speeds along the initial direction of the photon.\""
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Which of the following lasers utilizes transitions that involve the energy levels of free atoms?\n\nOp",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "text of laser physics questions, there is a specific distinction often made between bound electrons (in atoms/molecules) and free electrons.\n    Let's"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Unpolarized light is incident on a pair of ideal linear polarizers whose transmission axes make an a",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": " intensity on second polarizer: $I_1 = \\frac{1}{2} I_0$.\n    *   Type of light: Linearly polarized.\n    *   Angle between transmission axes: $\\theta ="
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Sound waves moving at 350 m/s diffract out of a speaker enclosure with an opening that is a long rec",
+          "pred": "C",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "ambda$$\n$$f = \\frac{v}{\\lambda}$$\n\nSubstitute the values:\n*   $v = 350 \\text{ m/s}$\n*   $\\lambda \\approx 0.09899 \\text{ m}$\n\n$$f = \\frac{350}{0.09899}"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The emission spectrum of the doubly ionized lithium atom Li++ (Z = 3, A = 7) is identical to that of",
+          "pred": "C",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "ngth is $\\Delta E = \\frac{hc}{\\lambda}$.\n    *   Therefore, $\\frac{hc}{\\lambda} = 13.6 \\text{ eV} \\cdot Z^2 \\left( \\frac{1}{n_1^2} - \\frac{1}{n_2^2} \\"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A uniform solid disk starts from rest and rolls down an inclined plane without slipping. After some ",
+          "pred": "A",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "}mv^2$$\n*   Now, look at $K_{trans}$:\n    $$K_{trans} = \\frac{1}{2}mv^2$$\n*   Calculate the total kinetic energy:\n    $$K_{total} = K_{trans} + K_{rot"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "The speed of light inside of a nonmagnetic dielectric material with a dielectric constant of 4.0 is\n",
+          "pred": ".",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "t{\\epsilon_r \\mu_r} = \\sqrt{4.0 \\times 1} = \\sqrt{4} = 2$$\n*   Calculate speed of light $v$:\n    $$v = \\frac{c}{n}$$\n    $$v = \\frac{3.0 \\times 10^8 \\"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A 3-microfarad capacitor is connected in series with a 6-microfarad capacitor. When a 300-volt poten",
+          "pred": "C",
+          "gt": "A",
+          "correct": false,
+          "raw_end": " F} $$\n    $$ \\frac{1}{C_{\\text{eq}}} = \\frac{1}{3} + \\frac{1}{6} $$\n    Find a common denominator (6):\n    $$ \\frac{1}{C_{\\text{eq}}} = \\frac{2}{6} +"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Under certain conditions, a beam of electrons impinging on a crystal surface will diffract and a sca",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "\n        *   $1 \\text{ eV} = 1.602 \\times 10^{-19} \\text{ J}$\n    *   Alternatively, use the shortcut formula for electron wavelength in Angstroms ($\\"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Two identical satellites, A and B, are in circular orbits around Earth. The orbital radius of A is t",
+          "pred": "B",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "_B$\n    *   Angular Momentum: $L_A = m \\sqrt{G M r_A} = m \\sqrt{G M (2 r_B)}$\n*   **Satellite B:**\n    *   Mass: $m_B = m$\n    *   Radius: $r_B$\n    *"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "An object is thrown horizontally from the open window of a building. If the initial speed of the obj",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "ction as positive.\n    *   $h = v_{0y}t + \\frac{1}{2}g t^2$\n    *   $h = (0)(2.0) + \\frac{1}{2}(9.8)(2.0)^2$\n\n**4. Perform the calculation:**\n*   $h ="
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "In a nonrelativistic, one-dimensional collision, a particle of mass 2m collides with a particle of m",
+          "pred": "C",
+          "gt": "C",
+          "correct": true,
+          "raw_end": "$v_f = \\frac{2mv}{3m} = \\frac{2}{3}v$$\n\n**4. Calculate Initial Kinetic Energy ($K_i$):**\n$$K_i = \\frac{1}{2} m_1 v_{1i}^2 + \\frac{1}{2} m_2 v_{2i}^2$$"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "White light is normally incident on a puddle of water (index of refraction 1.33). A thin (500 nm) la",
+          "pred": "D",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "ft must correspond to a full wavelength.\n    *   Condition: $2 n_2 t = (m + \\frac{1}{2}) \\lambda$, where $m = 0, 1, 2, \\dots$\n    *   Why $(m + 1/2)$?"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A nonrelativistic particle with a charge twice that of an electron moves through a uniform magnetic ",
+          "pred": "C",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "s 1600 \\text{ Hz}}$$\n\n**5. Perform the calculation:**\n*   Numerator: $2 \\times 1.602 \\times 10^{-19} \\times \\frac{\\pi}{4} = \\frac{2\\pi}{4} \\times 1.60"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "An airplane drops a payload while traveling due north, parallel to the ground, at a constant speed o",
+          "pred": "D",
+          "gt": "B",
+          "correct": false,
+          "raw_end": "ical component ($v_y$):**\n    *   Initial vertical velocity $v_{y, 0} = 0 \\text{ m/s}$.\n    *   Acceleration $a_y = -g$ (downwards). Let's use $g = 10"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "Positronium is an atom formed by an electron and a positron (antielectron). It is similar to the hyd",
+          "pred": "A",
+          "gt": "A",
+          "correct": true,
+          "raw_end": "n^2} = -\\frac{6.8 \\text{ eV}}{n^2}$.\n\n**2. Calculate the transition energy:**\n*   **Initial state:** $n_i = 3$.\n*   **Final state:** $n_f = 1$.\n*   **"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "college_physics",
+          "question": "A satellite of mass m orbits a planet of mass M in a circular orbit of radius R. The time required f",
+          "pred": "D",
+          "gt": "D",
+          "correct": true,
+          "raw_end": "for $T^2$:\n        $$T^2 = \\frac{4\\pi^2 R^3}{GM}$$\n    *   Solve for $T$:\n        $$T = 2\\pi \\sqrt{\\frac{R^3}{GM}}$$\n\n4.  **Evaluate the options based"
+        }
+      ]
+    }
+  ]
+}

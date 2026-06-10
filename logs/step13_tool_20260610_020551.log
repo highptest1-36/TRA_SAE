@@ -1,0 +1,74 @@
+=== step13 tool baselines (LLM-direct vs LLM+Z3/calc, cfg3) → logs/step13_tool_20260610_020551.log ===
+start=02:05:51  z3=4.16.0
+[1] Loading val + model (ckpt=/content/drive/MyDrive/TRA-SAE/checkpoints/qwen35_grpo/final)
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 17084.74it/s]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<02:00,  3.54it/s]Loading weights:   6%|▌         | 26/426 [00:00<00:04, 83.87it/s]Loading weights:  11%|█         | 45/426 [00:00<00:03, 116.69it/s]Loading weights:  15%|█▌        | 66/426 [00:00<00:02, 141.08it/s]Loading weights:  22%|██▏       | 94/426 [00:00<00:01, 177.34it/s]Loading weights:  28%|██▊       | 118/426 [00:00<00:01, 191.78it/s]Loading weights:  33%|███▎      | 141/426 [00:00<00:01, 201.59it/s]Loading weights:  38%|███▊      | 163/426 [00:01<00:01, 200.72it/s]Loading weights:  43%|████▎     | 184/426 [00:01<00:01, 196.76it/s]Loading weights:  48%|████▊     | 206/426 [00:01<00:01, 197.29it/s]Loading weights:  55%|█████▌    | 235/426 [00:01<00:00, 222.38it/s]Loading weights:  61%|██████    | 258/426 [00:01<00:00, 204.64it/s]Loading weights:  67%|██████▋   | 287/426 [00:01<00:00, 223.18it/s]Loading weights:  73%|███████▎  | 310/426 [00:01<00:00, 212.14it/s]Loading weights:  78%|███████▊  | 332/426 [00:01<00:00, 210.66it/s]Loading weights:  84%|████████▍ | 359/426 [00:01<00:00, 219.88it/s]Loading weights:  90%|████████▉ | 383/426 [00:02<00:00, 219.37it/s]Loading weights:  96%|█████████▌| 407/426 [00:02<00:00, 223.36it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 188.26it/s]
+[2] Arm A — LLM direct
+    8/217
+    16/217
+    24/217
+    32/217
+    40/217
+    48/217
+    56/217
+    64/217
+    72/217
+    80/217
+    88/217
+    96/217
+    104/217
+    112/217
+    120/217
+    128/217
+    136/217
+    144/217
+    152/217
+    160/217
+    168/217
+    176/217
+    184/217
+    192/217
+    200/217
+    208/217
+    216/217
+    217/217
+[3] Arm B — LLM + tools (Z3 logic / Python calc physics)
+    8/217  tools={'calc': 4, 'none': 4}
+    16/217  tools={'calc': 5, 'none': 11}
+    24/217  tools={'calc': 8, 'none': 16}
+    32/217  tools={'calc': 11, 'none': 21}
+    40/217  tools={'calc': 11, 'none': 29}
+    48/217  tools={'calc': 13, 'none': 35}
+    56/217  tools={'calc': 18, 'none': 38}
+    64/217  tools={'calc': 22, 'none': 42}
+    72/217  tools={'calc': 24, 'none': 48}
+    80/217  tools={'calc': 27, 'none': 53}
+    88/217  tools={'calc': 29, 'none': 59}
+    96/217  tools={'calc': 32, 'none': 64}
+    104/217  tools={'calc': 32, 'none': 72}
+    112/217  tools={'calc': 35, 'none': 77}
+    120/217  tools={'calc': 35, 'none': 85}
+    128/217  tools={'calc': 36, 'none': 92}
+    136/217  tools={'calc': 38, 'none': 98}
+    144/217  tools={'calc': 40, 'none': 104}
+    152/217  tools={'calc': 42, 'none': 110}
+    160/217  tools={'calc': 46, 'none': 114}
+    168/217  tools={'calc': 49, 'none': 119}
+    176/217  tools={'calc': 51, 'none': 125}
+    184/217  tools={'calc': 54, 'none': 130}
+    192/217  tools={'calc': 57, 'none': 135}
+    200/217  tools={'calc': 59, 'none': 141}
+    208/217  tools={'calc': 61, 'none': 147}
+    216/217  tools={'calc': 62, 'none': 154}
+    217/217  tools={'calc': 62, 'none': 155}
+
+============================================================
+TOOL-AUGMENTED BASELINE
+============================================================
+Arm                 Overall  Physics    Logic
+A: LLM direct        39.63%   49.65%   21.05%
+B: LLM + tools       40.09%   51.06%   19.74%
+Δ overall = +0.46 pp   tool activations: {'calc': 62, 'none': 155}
+Saved → /content/drive/MyDrive/TRA-SAE/logs/tool_baselines_results_latest.json
+=== step13 EXIT: 0 @ 03:30:57 ===

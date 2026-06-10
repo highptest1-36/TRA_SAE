@@ -1,0 +1,16 @@
+GEMINI_MODEL=gemini-2.5-flash-lite  key_len=39
+[16:08:30] ── STEP 3: Baseline Evaluation ──────────────────────────────
+Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+[16:08:31] HF login OK  →  user=CaoPhuc  token=hf_...oIsB
+[16:08:35]  DynamicCache.from_legacy_cache shim applied (transformers compat)
+Only running: ['B8']
+
+[16:08:35] [1] Loading val dataset
+[16:08:35]     Eval samples: 217  (smoke=False)
+[16:08:35]     Resuming — already done (no error): {'B4', 'B5', 'B3', 'B6', 'B2'}
+[16:08:35]     Models to run: ['B8']
+  Gemini via OpenAI-compat: model=gemini-2.5-flash-lite  base_url=https://generativelanguage.googleapis.com/v1beta/openai/
+    1/217  acc=0.0%
+    21/217  acc=14.3%
+    41/217  acc=17.1%
+    61/217  acc=21.3%

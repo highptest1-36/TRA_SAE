@@ -1,0 +1,275 @@
+INFO:     Started server process [18863]
+INFO:     Waiting for application startup.
+[app] Loading model on startup...
+[predict_core] Loading dual-LoRA: ['physics', 'logic'] (device=cuda)
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 17586.18it/s]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:49,  3.87it/s]Loading weights:   6%|▋         | 27/426 [00:00<00:04, 91.19it/s]Loading weights:  11%|█         | 46/426 [00:00<00:03, 122.26it/s]Loading weights:  16%|█▌        | 67/426 [00:00<00:02, 149.59it/s]Loading weights:  22%|██▏       | 93/426 [00:00<00:01, 181.57it/s]Loading weights:  27%|██▋       | 115/426 [00:00<00:01, 189.50it/s]Loading weights:  32%|███▏      | 136/426 [00:00<00:01, 195.52it/s]Loading weights:  37%|███▋      | 157/426 [00:01<00:01, 189.48it/s]Loading weights:  44%|████▎     | 186/426 [00:01<00:01, 211.55it/s]Loading weights:  49%|████▉     | 208/426 [00:01<00:01, 205.81it/s]Loading weights:  56%|█████▌    | 237/426 [00:01<00:00, 227.01it/s]Loading weights:  61%|██████▏   | 261/426 [00:01<00:00, 208.65it/s]Loading weights:  68%|██████▊   | 289/426 [00:01<00:00, 217.85it/s]Loading weights:  73%|███████▎  | 312/426 [00:01<00:00, 207.16it/s]Loading weights:  80%|████████  | 341/426 [00:01<00:00, 228.34it/s]Loading weights:  86%|████████▌ | 365/426 [00:01<00:00, 206.55it/s]Loading weights:  92%|█████████▏| 394/426 [00:02<00:00, 223.79it/s]Loading weights:  98%|█████████▊| 418/426 [00:02<00:00, 206.83it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 191.57it/s]
+[predict_core] Building retriever (cache_path=None)
+[Retriever] Built TF-IDF index: 1945 docs, 6166 features
+[Retriever] Subject distribution: {'physics': 1213, 'logic': 732}
+[predict_core] Router loaded ← /content/drive/MyDrive/TRA-SAE/checkpoints/router.pkl
+[predict_core] Warm-up complete.
+[app] Ready.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:36958 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 34.0s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 7.7s
+INFO:     34.12.125.176:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48596 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 34.1s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     2405:4802:9191:bb30:a8f5:7699:189e:b83c:0 - "GET /docs HTTP/1.1" 200 OK
+INFO:     2405:4802:9191:bb30:a8f5:7699:189e:b83c:0 - "GET /openapi.json HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 26.7s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /docs HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 28.3s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 23.8s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 34.1s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     2405:4802:9191:bb30:a8f5:7699:189e:b83c:0 - "GET /docs HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     2405:4802:9191:bb30:a8f5:7699:189e:b83c:0 - "GET /openapi.json HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 27.5s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 18.7s
+INFO:     34.12.125.176:0 - "POST /predict HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 24.0s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 26.6s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 34.1s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 34.1s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 26.9s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 33.9s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 34.1s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 34.0s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 34.1s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 34.1s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 34.0s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 34.0s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 27.6s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 29.1s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 34.1s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 29.3s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 23.2s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 34.0s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 34.1s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     2405:4802:9191:bb30:a8f5:7699:189e:b83c:0 - "GET /docs HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     2405:4802:9191:bb30:a8f5:7699:189e:b83c:0 - "GET /openapi.json HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 34.0s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 34.0s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 34.0s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 34.0s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 34.0s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 15.3s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 34.1s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 34.0s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 34.0s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+[app] /predict served 1 query(ies) in 33.8s
+INFO:     115.79.37.109:0 - "POST /predict HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     2405:4802:9191:bb30:a8f5:7699:189e:b83c:0 - "GET /docs HTTP/1.1" 200 OK
+INFO:     2405:4802:9191:bb30:a8f5:7699:189e:b83c:0 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     2405:4802:9191:bb30:a8f5:7699:189e:b83c:0 - "GET /docs HTTP/1.1" 200 OK
+INFO:     2405:4802:9191:bb30:a8f5:7699:189e:b83c:0 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     34.12.125.176:0 - "GET /health HTTP/1.1" 200 OK

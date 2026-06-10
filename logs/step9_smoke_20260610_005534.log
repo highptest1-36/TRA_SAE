@@ -1,0 +1,39 @@
+[00:55:38] Loading MMLU physics datasets ...
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'cais/mmlu' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+[00:55:39]   mmlu/high_school_physics: 151 samples
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'cais/mmlu' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+[00:55:40]   mmlu/college_physics: 102 samples
+[00:55:40]   Smoke test: 20 samples
+[00:55:40] Total: 20 samples (HS=20, College=0)
+[00:55:40] Configs to run: ['cfg0']
+
+[00:55:46] ============================================================
+[00:55:46]  Evaluating: Qwen3.5-4B zero-shot (no fine-tuning)
+[00:55:46]  Checkpoint: base model
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 36954.22it/s]
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:54,  3.71it/s]Loading weights:   6%|▌         | 26/426 [00:00<00:04, 84.73it/s]Loading weights:  11%|█         | 45/426 [00:00<00:03, 115.39it/s]Loading weights:  15%|█▌        | 66/426 [00:00<00:02, 138.65it/s]Loading weights:  22%|██▏       | 93/426 [00:00<00:01, 175.22it/s]Loading weights:  27%|██▋       | 114/426 [00:00<00:01, 180.89it/s]Loading weights:  31%|███▏      | 134/426 [00:00<00:01, 176.11it/s]Loading weights:  36%|███▌      | 153/426 [00:01<00:01, 176.67it/s]Loading weights:  42%|████▏     | 180/426 [00:01<00:01, 199.69it/s]Loading weights:  47%|████▋     | 201/426 [00:01<00:01, 198.13it/s]Loading weights:  53%|█████▎    | 224/426 [00:01<00:01, 200.88it/s]Loading weights:  59%|█████▉    | 251/426 [00:01<00:00, 219.86it/s]Loading weights:  64%|██████▍   | 274/426 [00:01<00:00, 213.90it/s]Loading weights:  69%|██████▉   | 296/426 [00:01<00:00, 210.52it/s]Loading weights:  75%|███████▍  | 318/426 [00:01<00:00, 202.61it/s]Loading weights:  81%|████████  | 344/426 [00:01<00:00, 217.23it/s]Loading weights:  86%|████████▌ | 366/426 [00:02<00:00, 201.97it/s]Loading weights:  92%|█████████▏| 393/426 [00:02<00:00, 218.18it/s]Loading weights:  98%|█████████▊| 416/426 [00:02<00:00, 207.81it/s]Loading weights: 100%|██████████| 426/426 [00:02<00:00, 183.60it/s]
+[00:55:52]  Model loaded  VRAM 7.8/79GB
+[00:57:07]  4/20 | acc=25.0% | 1.3min  VRAM 8.9/79GB
+[00:58:20]  8/20 | acc=25.0% | 2.5min  VRAM 9.0/79GB
+[00:59:35]  12/20 | acc=33.3% | 3.7min  VRAM 9.0/79GB
+[01:00:51]  16/20 | acc=43.8% | 5.0min  VRAM 9.0/79GB
+[01:02:08]  20/20 | acc=45.0% | 6.3min  VRAM 9.0/79GB
+[01:02:08]  RESULT: overall=45.0%  per_subject={'hs_physics': 45.0}
+[01:02:08] Saved → /content/drive/MyDrive/TRA-SAE/logs/external_benchmark_results_latest.json
+
+[01:02:08] ╔═════════════════════════════════════════════════════════════════╗
+[01:02:08] ║ MMLU PHYSICS BENCHMARK SUMMARY                                 ║
+[01:02:08] ╠═════════════════════════════════════════════════════════════════╣
+[01:02:08] ║ Config        Overall   HS Phys   College Desc                      ║
+[01:02:08] ╠═════════════════════════════════════════════════════════════════╣
+[01:02:08] ║ cfg0           45.00%    45.00%     0.00% Qwen3.5-4B zero-shot (no  ║
+[01:02:08] ╚═════════════════════════════════════════════════════════════════╝
+
+[01:02:08] NOTE FOR PAPER:
+=== SMOKE EXIT: 0 ===

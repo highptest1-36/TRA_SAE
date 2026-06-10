@@ -1,0 +1,113 @@
+{
+  "ablation": [
+    {
+      "config_id": 0,
+      "config_name": "zero_shot",
+      "description": "Qwen3.5-4B zero-shot (no LoRA)",
+      "accuracy_overall": 36.41,
+      "accuracy_physics": 45.39,
+      "accuracy_logic": 19.74,
+      "n_total": 217,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_correct": 79,
+      "per_retry": {
+        "0": 65,
+        "1": 11,
+        "2": 141
+      },
+      "elapsed_min": 69.7,
+      "seed": 42,
+      "smoke_test": false,
+      "canonical": true
+    },
+    {
+      "config_id": 1,
+      "config_name": "sft_phase1",
+      "description": "+ SFT Phase 1",
+      "accuracy_overall": 48.85,
+      "accuracy_physics": 63.12,
+      "accuracy_logic": 22.37,
+      "n_total": 217,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_correct": 106,
+      "per_retry": {
+        "0": 96,
+        "1": 8,
+        "2": 113
+      },
+      "elapsed_min": 91.1,
+      "seed": 42,
+      "smoke_test": false,
+      "canonical": true
+    },
+    {
+      "config_id": 2,
+      "config_name": "sft_logic",
+      "description": "+ Logic SFT Phase 1.5",
+      "accuracy_overall": 52.07,
+      "accuracy_physics": 65.25,
+      "accuracy_logic": 27.63,
+      "n_total": 217,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_correct": 113,
+      "per_retry": {
+        "0": 100,
+        "1": 8,
+        "2": 109
+      },
+      "elapsed_min": 88.7,
+      "seed": 42,
+      "smoke_test": false,
+      "canonical": true
+    },
+    {
+      "config_id": 3,
+      "config_name": "grpo_mixed",
+      "description": "+ GRPO mixed Phase 2",
+      "accuracy_overall": 54.84,
+      "accuracy_physics": 69.5,
+      "accuracy_logic": 27.63,
+      "n_total": 217,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_correct": 119,
+      "per_retry": {
+        "0": 103,
+        "1": 9,
+        "2": 105
+      },
+      "elapsed_min": 88.3,
+      "seed": 42,
+      "smoke_test": false,
+      "canonical": true
+    },
+    {
+      "config_id": 4,
+      "config_name": "dual_lora_router",
+      "description": "+ Dual LoRA specialists + Router",
+      "accuracy_overall": 50.69,
+      "accuracy_physics": 62.41,
+      "accuracy_logic": 28.95,
+      "n_total": 217,
+      "n_physics": 141,
+      "n_logic": 76,
+      "n_correct": 110,
+      "per_retry": {
+        "0": 95,
+        "1": 12,
+        "2": 110
+      },
+      "elapsed_min": 89.3,
+      "seed": 42,
+      "smoke_test": false,
+      "canonical": true
+    }
+  ],
+  "version": "canonical_partial",
+  "seed": 42,
+  "run_timestamp": "20260608_174123",
+  "smoke_test": false
+}

@@ -80,44 +80,44 @@ else:
 
 stats_results = {}
 
+
+def _acc(cid):
+    arr = per_sample.get(cid, [])
+    return round(sum(arr) / len(arr) * 100, 2) if arr else None
+
+
 if not args.skip_mcnemar and per_sample:
-    print("[2] McNemar test")
+    print("[2] McNemar test (canonical-aware, dynamic best config)")
     comparisons = []
-    keys = sorted(per_sample.keys())
 
-    # cfg3 vs cfg0 (most important)
-    for ref_key in [0, "cfg0", "zero_shot"]:
-        if ref_key in per_sample:
-            ref = per_sample[ref_key]
-            break
-    else:
-        ref = None
+    # Overall accuracy per config + dynamically determined best fine-tuned config
+    accs = {cid: _acc(cid) for cid in per_sample if _acc(cid) is not None}
+    stats_results["accuracy_overall"] = accs
+    finetuned = {cid: a for cid, a in accs.items() if isinstance(cid, int) and cid >= 1}
+    best_cfg = max(finetuned, key=finetuned.get) if finetuned else 3
+    stats_results["best_config_id"] = best_cfg
+    print(f"    Accuracies: {accs}  → best fine-tuned config = cfg{best_cfg}")
 
-    for tgt_key in [3, "cfg3", "grpo_mixed"]:
-        if tgt_key in per_sample:
-            tgt = per_sample[tgt_key]
-            break
-    else:
-        tgt = None
-
-    if ref and tgt:
-        m = mcnemar_test(tgt, ref)
-        entry = {"comparison": "cfg3 vs cfg0", **m}
-        comparisons.append(entry)
-        print(f"    cfg3 vs cfg0: p={m['p_value']:.6f}  {'SIGNIFICANT' if m.get('significant_p05') else 'n.s.'}")
-
-    # cfg1 vs cfg0
-    for k1 in [1, "cfg1", "sft_phase1"]:
-        if k1 in per_sample:
-            c1 = per_sample[k1]
-            break
-    else:
-        c1 = None
-    if ref and c1:
-        m = mcnemar_test(c1, ref)
-        entry = {"comparison": "cfg1 vs cfg0", **m}
-        comparisons.append(entry)
-        print(f"    cfg1 vs cfg0: p={m['p_value']:.6f}  {'SIGNIFICANT' if m.get('significant_p05') else 'n.s.'}")
+    # Reviewer-requested pairwise set (A vs B → does B beat A?)
+    pairs = [
+        (0, best_cfg, f"cfg0 → cfg{best_cfg} (best)"),
+        (0, 1,        "cfg0 → cfg1 (SFT gain)"),
+        (1, 2,        "cfg1 → cfg2 (logic SFT effect)"),
+        (2, 3,        "cfg2 → cfg3 (GRPO over SFT)"),
+        (best_cfg, 5, f"cfg{best_cfg} → cfg5 (self-consistency effect)"),
+    ]
+    seen = set()
+    for a_key, b_key, label in pairs:
+        if a_key == b_key or (a_key, b_key) in seen:
+            continue
+        seen.add((a_key, b_key))
+        if a_key in per_sample and b_key in per_sample:
+            m = mcnemar_test(per_sample[b_key], per_sample[a_key])  # b=B right&A wrong
+            comparisons.append({"comparison": label, **m,
+                                "delta_acc": round((accs.get(b_key, 0) - accs.get(a_key, 0)), 2)})
+            sig = "SIGNIFICANT" if m.get("significant_p05") else "n.s."
+            print(f"    {label}: Δ={accs.get(b_key,0)-accs.get(a_key,0):+.2f}pp  "
+                  f"p={m['p_value']:.6f}  {sig}")
 
     stats_results["mcnemar_tests"] = comparisons
 
@@ -130,17 +130,25 @@ ERROR_TYPES = {
     "E3_arithmetic":           "Numerical arithmetic computation error",
     "E4_logical_fallacy":      "Logical fallacy or quantifier error (logic)",
     "E5_misinterpretation":    "Question misinterpretation or missing context",
+    "E6_extraction":           "Reasoning plausible but answer not extractable (no <answer> tag / wrong format)",
     "E0_unclassified":         "Could not classify from output alone",
 }
 
 # Patterns for heuristic classification
 import re
 
-def _classify_error(question: str, prediction: str, ground_truth: str, subject: str) -> str:
+def _classify_error(question: str, prediction: str, ground_truth: str,
+                    subject: str, raw_output: str = "") -> str:
     """Heuristic error classification from model output."""
     q_low    = question.lower()
     pred_low = prediction.lower() if prediction else ""
     gt_low   = ground_truth.lower() if ground_truth else ""
+
+    # E6: extraction failure — model reasoned but produced no <answer> tag,
+    # so the parser fell back to a last-line that isn't a real answer.
+    if raw_output and "<reasoning>" in raw_output.lower() \
+            and "<answer>" not in raw_output.lower():
+        return "E6_extraction"
 
     if subject == "logic":
         # Logical/quantifier errors
@@ -187,16 +195,15 @@ total_wrong = 0
 
 if RAW_RESULTS_FILE.exists():
     raw_data = _load_jsonl(str(RAW_RESULTS_FILE))
-    # Focus on cfg3 wrong predictions
-    cfg3_key = None
-    for key in [3, "cfg3", "grpo_mixed"]:
-        if any(r.get("config_id") == key or r.get("config") == key for r in raw_data):
-            cfg3_key = key
-            break
+    # Focus on the best fine-tuned config (dynamic; falls back to cfg3)
+    target_cfg = stats_results.get("best_config_id", 3)
+    if not any(r.get("config_id") == target_cfg for r in raw_data):
+        target_cfg = 3
+    print(f"    Error analysis target = cfg{target_cfg}")
 
     for entry in raw_data:
         cid = entry.get("config_id", entry.get("config"))
-        if cid != cfg3_key:
+        if cid != target_cfg:
             continue
         correct = bool(entry.get("correct", True))
         if correct:
@@ -206,7 +213,8 @@ if RAW_RESULTS_FILE.exists():
         pred    = entry.get("prediction", "")
         gt      = entry.get("ground_truth", "")
         subject = entry.get("subject", entry.get("type", ""))
-        etype   = _classify_error(q, pred, gt, subject)
+        raw_out = entry.get("raw_output", "")
+        etype   = _classify_error(q, pred, gt, subject, raw_out)
         error_counts[etype] += 1
         error_samples.append({
             "etype": etype, "subject": subject,
@@ -215,7 +223,7 @@ if RAW_RESULTS_FILE.exists():
             "ground_truth": gt[:40],
         })
 
-    print(f"    Wrong predictions in cfg3: {total_wrong}")
+    print(f"    Wrong predictions in cfg{target_cfg}: {total_wrong}")
     for etype, count in error_counts.items():
         pct = count / total_wrong * 100 if total_wrong else 0
         print(f"    {etype}: {count} ({pct:.1f}%)")

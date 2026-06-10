@@ -1,0 +1,202 @@
+{
+  "run_ts": "20260610_005534",
+  "smoke": true,
+  "dataset": "MMLU high_school_physics + college_physics",
+  "n_samples": 20,
+  "results": [
+    {
+      "config": "cfg0",
+      "name": "cfg0_zero_shot",
+      "desc": "Qwen3.5-4B zero-shot (no fine-tuning)",
+      "n_total": 20,
+      "n_correct": 9,
+      "accuracy_overall": 45.0,
+      "per_subject": {
+        "hs_physics": 45.0
+      },
+      "elapsed_min": 6.3,
+      "per_sample": [
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "The plates of a capacitor are charged to a potential difference of 5 V. If the capacitance is 2 mF, ",
+          "pred": "C",
+          "gt": "B",
+          "correct": false,
+          "raw_end": " mF} = 2 \\times 10^{-3} \\text{ F}$.\n3.  Use the formula relating charge, capacitance, and voltage: $Q = C \\times V$.\n4.  Substitute the values: $Q = ("
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Which of these quantities decreases as the inverse square of distance for distances far from the obj",
+          "pred": "A",
+          "gt": "A",
+          "correct": true,
+          "raw_end": "mu_0 I / (2\\pi r)$. Incorrect.\n\n    The correct option is A.\n\n    Wait, let me double check the wording \"decreases as the inverse square of distance\"."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A solid, metal object is isolated from other charges and has charge distributed on its surface. The ",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "rd result for the field just outside a conductor surface.\n    *   *Conclusion:* Correct.\n\n**4. Final check:**\n*   The object is a metal (conductor).\n*"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Standing waves are produced by a 100-Hz generator in a string of fixed length. The tension in the st",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "ince $v = \\sqrt{T/\\mu}$, increasing $T$ increases $v$.\n    Therefore, increasing $T$ increases $v$.\n    Therefore, increasing $v$ increases $\\lambda$."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Two identical capacitors are hooked in parallel to an external circuit. Which of the following quant",
+          "pred": "D",
+          "gt": "D",
+          "correct": true,
+          "raw_end": ". Formatting:**\n*   Reasoning block.\n*   Answer block with just the letter.\n\nLet's double check if there are any subtleties.\n\"Hooked in parallel to an"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A 1-kg object is released from rest at the top of a rough-surfaced incline. The object slides withou",
+          "pred": "D",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "       *   $W_{net} = W_{gravity} + W_{friction}$.\n        *   $W_{gravity} = PE_{top} - PE_{bottom} = PE_{top}$ (assuming bottom is reference level)."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A student is experimenting with a simple spring-block oscillator of spring constant k and amplitude ",
+          "pred": "D",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "\n*   This eliminates options B and D immediately, as they claim sliding is most likely at equilibrium.\n\n**4. Determine the condition for *not* sliding"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "How much work is required to charge a 10 \u00b5F capacitor to a potential difference of 100 V ?\n\nOptions:",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": " 10^{-2} = 0.1$, but I treated the 10 as just a number.\n$0.5 \\times 10 \\times 10^{-2} = 5 \\times 10^{-2} = 0.05$.\nOkay, the result is definitely $0.05"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A box of mass m slides on a horizontal surface with initial speed v0. It feels no forces other than ",
+          "pred": "D",
+          "gt": "A",
+          "correct": false,
+          "raw_end": "check: If $\\mu$ increases, friction increases, stopping distance should decrease. Formula A: $d \\propto 1/\\mu$. Correct. Formula B: $d \\propto 1/\\mu$."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A soccer ball, at rest on the ground, is kicked with an initial velocity of 10 m/s at a launch angle",
+          "pred": "B",
+          "gt": "B",
+          "correct": true,
+          "raw_end": "   Is the angle correct? Yes, 30 degrees.\n*   Is the velocity correct? Yes, 10 m/s.\n*   Is the logic sound? Yes, standard projectile motion kinematics"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Two identical containers are filled with different gases. Container 1 is filled with hydrogen and co",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "  *   Since $P$, $R$, and $T$ are the same for both (assuming standard filling conditions like \"filled with gas\" often implies atmospheric pressure or"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A girl of mass m and a boy of mass 2m are sitting on opposite sides of a see-saw with its fulcrum in",
+          "pred": "D",
+          "gt": "D",
+          "correct": true,
+          "raw_end": "es towards the boy, the distance from the fulcrum to the girl ($d'_g$) increases.\n    *   Total length of see-saw is $2d$.\n    *   New position of ful"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "When hot water is poured into a beaker containing cold alcohol, the temperature of the mixture will ",
+          "pred": "A",
+          "gt": "D",
+          "correct": false,
+          "raw_end": "thermal equilibrium.\n    *   The prompt asks to consider the \"scale of the size of the molecules\". This implies looking for a microscopic explanation."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A solid sphere (I = 0.06 kg\u00b7m^2) spins freely around an axis through its center at an angular speed ",
+          "pred": "B",
+          "gt": "B",
+          "correct": true,
+          "raw_end": ") = \\text{s}$. Correct.\n\nThe logic holds up.\n\n**Constructing the reasoning text:**\n1.  State the formula for torque: $\\tau = rF$.\n2.  Calculate torque"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "The radius of Mars is about half that of Earth; the mass of Mars is about one-tenth that of Earth. W",
+          "pred": "B",
+          "gt": "B",
+          "correct": true,
+          "raw_end": "stitute the ratios given in the problem.\n*   Calculate the result relative to Earth's gravity.\n*   Select the closest option.\n*   Format as requested."
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "Above an infinitely large plane carrying charge density \u03c3, the electric field points up and is equal",
+          "pred": "A",
+          "gt": "A",
+          "correct": true,
+          "raw_end": "e conductor surface).\n*   Therefore, the magnitude is constant at $\\sigma/2\\epsilon_0$.\n*   The direction is determined by the sign of $\\sigma$. Since"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A beam of electrons has speed 10^7 m/s. It is desired to use the magnetic field of the Earth, 5 \u00d7 10",
+          "pred": "D",
+          "gt": "D",
+          "correct": true,
+          "raw_end": "lue is approximately 1.14 meters. This is closest to Option D (1 m).\n\n**7. Double check calculation:**\n$m = 9.1 \\times 10^{-31}$\n$v = 10^7$\n$q = 1.6 \\"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "An object is placed 100 cm from a plane mirror. How far is the image from the object?\n\nOptions:\nA. 5",
+          "pred": "A",
+          "gt": "C",
+          "correct": false,
+          "raw_end": "is in front of the mirror, and the image is behind the mirror. Therefore, the total distance between them is the sum of the object's distance from the"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "A horse is attached to a cart that is at rest behind it. Which force, or combination of forces, expl",
+          "pred": "C",
+          "gt": "A",
+          "correct": false,
+          "raw_end": " explanation for this classic problem.\n\n    Let's check B again. Action-reaction pairs are equal. $F_{H \\to C} = -F_{C \\to H}$. They cannot be unequal"
+        },
+        {
+          "config": "cfg0",
+          "mmlu_subj": "hs_physics",
+          "question": "In a certain region, the electric field varies with the radius away from origin by the equation Er =",
+          "pred": "D",
+          "gt": "D",
+          "correct": true,
+          "raw_end": "2(0)^2 + 3(0)) \\right)$.\n*   $\\Delta V = - \\left( -2(125) + 2(25) + 15 \\right)$.\n*   $\\Delta V = - \\left( -250 + 50 + 15 \\right)$.\n*   $\\Delta V = - \\"
+        }
+      ]
+    }
+  ]
+}

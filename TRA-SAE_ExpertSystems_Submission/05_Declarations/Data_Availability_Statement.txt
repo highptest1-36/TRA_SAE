@@ -1,0 +1,19 @@
+DATA AVAILABILITY STATEMENT
+
+Manuscript: TRA-SAE: A Low-Cost Retrieval-Augmented Expert Reasoning System for
+Mixed Physics-Logic Question Answering with a 4B Language Model
+Journal: Expert Systems (Wiley)
+
+To support reproducibility, an open repository
+(https://github.com/highptest1-36/TRA_SAE)
+provides the training and evaluation scripts, the trained LoRA adapters, the
+exact 90/10 train/validation split, the raw per-sample single-pass predictions
+for every configuration (cfg0, cfg0-R, cfg1, cfg2, cfg3, cfg4, cfg5), the prompt
+templates and the answer extractor and verifier (including the leakage-audit
+script step10_leakage_check.py), and the compute and cost logs underlying the
+compute-profile table. A permanent, citable archive (OSF or Zenodo) with a DOI
+will be deposited upon acceptance.
+
+The EXACT 2026 competition data are governed by the challenge access policy and
+are not redistributed here. The MMLU and FOLIO benchmarks used for external
+evaluation are publicly available from their original sources.

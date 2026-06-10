@@ -1,20 +1,58 @@
 {
+  "accuracy_overall": {
+    "0": 36.41,
+    "1": 48.85,
+    "2": 52.07,
+    "3": 54.84,
+    "4": 50.69,
+    "5": 52.53
+  },
+  "best_config_id": 3,
   "mcnemar_tests": [
     {
-      "comparison": "cfg3 vs cfg0",
-      "statistic": 7.5,
-      "p_value": 0.00617,
-      "b": 23,
-      "c": 7,
-      "significant_p05": true
+      "comparison": "cfg0 \u2192 cfg3 (best)",
+      "statistic": 31.6875,
+      "p_value": 0.0,
+      "b": 44,
+      "c": 4,
+      "significant_p05": true,
+      "delta_acc": 18.43
     },
     {
-      "comparison": "cfg1 vs cfg0",
-      "statistic": 5.0417,
-      "p_value": 0.024745,
-      "b": 18,
+      "comparison": "cfg0 \u2192 cfg1 (SFT gain)",
+      "statistic": 17.3333,
+      "p_value": 3.1e-05,
+      "b": 33,
       "c": 6,
-      "significant_p05": true
+      "significant_p05": true,
+      "delta_acc": 12.44
+    },
+    {
+      "comparison": "cfg1 \u2192 cfg2 (logic SFT effect)",
+      "statistic": 2.7692,
+      "p_value": 0.096092,
+      "b": 10,
+      "c": 3,
+      "significant_p05": false,
+      "delta_acc": 3.22
+    },
+    {
+      "comparison": "cfg2 \u2192 cfg3 (GRPO over SFT)",
+      "statistic": 1.5625,
+      "p_value": 0.2113,
+      "b": 11,
+      "c": 5,
+      "significant_p05": false,
+      "delta_acc": 2.77
+    },
+    {
+      "comparison": "cfg3 \u2192 cfg5 (self-consistency effect)",
+      "statistic": 1.0667,
+      "p_value": 0.3017,
+      "b": 5,
+      "c": 10,
+      "significant_p05": false,
+      "delta_acc": -2.31
     }
   ],
   "n_val": 217

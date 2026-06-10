@@ -1,0 +1,74 @@
+\documentclass[8pt]{extarticle}
+\usepackage[a4paper,margin=0.5in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{3pt}{1pt}
+\titleformat{\section}{\normalfont\bfseries}{}{0pt}{}
+\setlist{nosep,leftmargin=1.2em}
+\setlength{\parskip}{1.5pt}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\begin{document}
+\begin{center}
+{\Large\textbf{TRA-SAE — Tool-Routed Small-model Expert (EXACT 2026)}}\\[1pt]
+{\small Solution Description}
+\end{center}
+\vspace{-4pt}
+
+\section*{1. Datasets used}
+\begin{itemize}
+\item \textbf{Type 1 — Logic-Based Educational Queries} (EXACT 2026 release):
+411 records ($\sim$800 questions). Each record has shared first-order-logic +
+natural-language premises and 1--2 (question, answer, explanation) tuples.
+Answer space: MCQ option letters and \{Yes, No, Uncertain\}.
+\textit{Sample:} premises \{``If a project is well-structured then it is
+optimized.'', ``All projects are well-structured.''\}; Q ``Are all projects
+optimized?'' $\rightarrow$ ``Yes''.
+\item \textbf{Type 2 — Physics Problems} (EXACT 2026 release): 1{,}755 rows
+(\texttt{id, question, cot, answer, unit}); numeric answer with a physical unit.
+\textit{Sample:} ``Energy stored in C=100\,$\mu$F at U=30\,V'' $\rightarrow$
+answer \texttt{0.045}, unit \texttt{J}.
+\end{itemize}
+These are also the training sets (supervised + GRPO). No external data.
+
+\section*{2. Approach / method}
+A \textbf{single} base model, \textbf{Qwen3.5-4B}, specialised by two
+parameter-efficient \textbf{LoRA} adapters (physics, logic) trained with SFT then
+GRPO (reward = symbolic answer/unit verifier). One shared base hosts both
+adapters and switches per query.
+\begin{itemize}
+\item \textbf{Routing.} \texttt{type1}$\rightarrow$logic adapter,
+\texttt{type2}$\rightarrow$physics adapter (TF-IDF+logistic-regression router as
+fallback if type absent).
+\item \textbf{Reasoning.} One greedy pass in a fixed
+\texttt{<reasoning>/<answer>/<explanation>} format; logic also emits
+\texttt{<premises\_used>} (1-based premise numbers $\rightarrow$ 0-based indices).
+Logic uses 3 TF-IDF few-shots; physics none.
+\item \textbf{Output.} Type 1: extracted label matched exactly to one option;
+\texttt{premises\_used} as 0-based indices. Type 2: parser returns the numeric
+value and an ASCII unit (\texttt{uF, ohm, V/m}) separately.
+\texttt{explanation} always non-empty; \texttt{reasoning} a \{type, steps\}
+object.
+\item \textbf{Latency \& serving.} Single pass, \texttt{max\_new\_tokens=512},
+early-stop + wall-clock watchdog $\Rightarrow$ $<$60\,s/query
+($\sim$17--45\,s on one A100). An OpenAI-compatible host exposes
+\texttt{/v1/models} and \texttt{/v1/chat/completions}; the orchestrator exposes
+\texttt{POST /predict} — all on one public host.
+\end{itemize}
+
+\section*{3. Model size calculation ($\le$8B active)}
+\begin{itemize}
+\item \textbf{Base LLM:} \texttt{Qwen/Qwen3.5-4B} — open-source,
+$\approx$\,4.0\,B parameters.
+\item \textbf{Adapters:} 2 $\times$ LoRA (rank 32) — physics and logic — each
+$\approx$\,0.05\,B params, \emph{applied one at a time} (swapped per query, never
+summed into the active forward pass).
+\item \textbf{Total active parameters at any instant} = base + one adapter
+$\approx$ \textbf{4.05\,B} $<$ 8\,B.  Single 4B-class model active;
+no second LLM runs in parallel.
+\item Router (TF-IDF + logistic regression) and the TF-IDF retriever are
+non-LLM and do not count toward the limit. All components are open-source.
+\end{itemize}
+
+\end{document}
