@@ -14,7 +14,7 @@
 
 Cần một runtime Colab **A100/H100** (GPU ≥ ~10 GB trống). Có 2 cách chạy — chọn 1.
 
-### Cách A — Chạy qua Claude Code / terminal (KHUYẾN NGHỊ)
+### Cách A — Chạy qua terminal (KHUYẾN NGHỊ)
 
 Chạy lần lượt từ gốc repo. **Quan trọng:** `start_colab.sh` phải chạy NỀN (background) và **chỉ chạy 1 lần** (chạy 2 lần song song sẽ tạo 2 tunnel → lỗi `ERR_NGROK_6030`).
 

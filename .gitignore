@@ -64,3 +64,6 @@ paper/**/*.synctex.gz
 
 # ── Redundant whole-package archive (the folder itself is tracked) ────────────
 /TRA-SAE_ExpertSystems_Submission.zip
+
+# Generated figures from experiments/step7_stats_extra.py
+paper/

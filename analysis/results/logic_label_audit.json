@@ -1,0 +1,79 @@
+{
+  "train": {
+    "logic_items": 732,
+    "mcq_items": 329,
+    "mcq_gold_labels": {
+      "Unknown": 256,
+      "B": 14,
+      "A": 48,
+      "D": 4,
+      "C": 7
+    },
+    "non_mcq_gold_labels": {
+      "No": 270,
+      "Yes": 100,
+      "B": 1,
+      "Unknown": 30,
+      "False": 1,
+      "A": 1
+    }
+  },
+  "val": {
+    "logic_items": 76,
+    "mcq_items": 29,
+    "mcq_gold_labels": {
+      "Unknown": 26,
+      "D": 1,
+      "A": 2
+    },
+    "non_mcq_gold_labels": {
+      "No": 37,
+      "Yes": 7,
+      "Unknown": 3
+    }
+  },
+  "val_accuracy_split": {
+    "cfg0": {
+      "mcq_unknown_correct": 0,
+      "mcq_unknown_n": 26,
+      "other_logic_correct": 11,
+      "other_logic_n": 50,
+      "other_logic_acc": 22.0
+    },
+    "cfg0-R": {
+      "mcq_unknown_correct": 1,
+      "mcq_unknown_n": 26,
+      "other_logic_correct": 13,
+      "other_logic_n": 50,
+      "other_logic_acc": 26.0
+    },
+    "cfg1": {
+      "mcq_unknown_correct": 0,
+      "mcq_unknown_n": 26,
+      "other_logic_correct": 14,
+      "other_logic_n": 50,
+      "other_logic_acc": 28.0
+    },
+    "cfg2": {
+      "mcq_unknown_correct": 0,
+      "mcq_unknown_n": 26,
+      "other_logic_correct": 16,
+      "other_logic_n": 50,
+      "other_logic_acc": 32.0
+    },
+    "cfg3": {
+      "mcq_unknown_correct": 0,
+      "mcq_unknown_n": 26,
+      "other_logic_correct": 14,
+      "other_logic_n": 50,
+      "other_logic_acc": 28.0
+    },
+    "cfg4": {
+      "mcq_unknown_correct": 0,
+      "mcq_unknown_n": 26,
+      "other_logic_correct": 17,
+      "other_logic_n": 50,
+      "other_logic_acc": 34.0
+    }
+  }
+}

@@ -1,0 +1,118 @@
+﻿idx,subject,prediction,ground_truth,old_rule_label,recheck_label,stored_output_truncated
+1,physics,100 μC,Do not change,other,P-other,False
+2,logic,A,Unknown,E6,L-mismatch,True
+4,logic,Yes,No,other,L-wrong,False
+5,physics,"*   Magnitudes: $720,000$.",1.152 × 10^7 V/m,E6,NF,True
+7,logic,B,Unknown,E6,L-mismatch,True
+9,physics,"The question asks for the ""electric",32000 V/m,E6,NF,True
+10,logic,D,Unknown,other,L-mismatch,False
+11,logic,A,Unknown,E6,L-mismatch,True
+12,physics,"*   $\vec{r}_{MA} = (-3, -3)$. $\vec{F_1}$ is repulsive from A, so direction is same as $\vec{",0.495 N,E6,NF,True
+14,physics,*   $F = 2 \times 9 \times 10^9 \times \frac{(5 \times 10^{-8})^2}{(0.05)^2} = 18 \times 10^9 \times \frac{25 \times 10^{-16}}{25 \times 10,0.018 N,E6,NF,True
+15,logic,From premise 1: ∃x S(x) — true,Unknown,E6,NF,True
+17,physics,Quadrupled,Increase by 4 times,other,P-other,False
+18,physics,Parabola (or upward-opening curve),upward parabola,other,P-other,False
+23,logic,Yes,No,other,L-wrong,False
+25,physics,\sqrt{\frac{L}{C}},1 / (ωC) Ω,other,P-other,True
+29,physics,</reasoning>,5.76 x 10^4 N/C,E6,NF,True
+30,physics,$F_{mag} = q^2 \times (k/a^2) = 64 \times 10^{-16} \times 4 \times 10^{11} =,3.62*10^-3 N,E6,NF,True
+32,logic,"- Logic: If a student earns a certification, do they participate in a project? The premise says ""If they participate, they earn a certification"". It does not say ""If they earn a certification, they participated in a project"". However, in many",Unknown,E6,NF,True
+33,logic,"- Option A: We know $\forall x F(x)$, so all students complete fundamental courses. Does this mean they are eligible for graduation? Premise 5 says $\neg F(x)",D,E6,NF,True
+34,logic,The question asks which statement can be inferred. Statement,Unknown,E6,NF,True
+36,logic,B. [The rule implies itself,Unknown,E6,NF,True
+37,logic,Yes,No,other,L-wrong,False
+38,physics,0.5 * E_total,Half of the total energy J,other,P-other,False
+39,logic,Yes,No,E6,L-wrong,True
+42,logic,B,Unknown,E6,L-mismatch,True
+44,logic,A,Unknown,E6,L-mismatch,True
+45,logic,A,Unknown,E6,L-mismatch,True
+46,logic,Yes,No,other,L-wrong,True
+50,logic,C,Unknown,E6,L-mismatch,True
+51,physics,75.4 mT,7.54×10⁻³ T,other,P-numeric,False
+55,logic,Yes,No,other,L-wrong,False
+57,logic,D,Unknown,E6,L-mismatch,True
+60,physics,*   $F = \frac{1,0.509*10^-3 N,E6,NF,True
+65,physics,*   $F_{23} = k \frac{|q_2 q_3|}{r_2^2}$,34.56 N,E6,NF,True
+66,physics,$F = \frac,7.23*10^4 mN,E6,NF,True
+67,logic,Yes,No,other,L-wrong,False
+68,logic,*   These two premises together imply that publishing and conducting research are equivalent for all students (,Unknown,E6,NF,True
+69,physics,3.33 V,10/3 V,other,P-notation,True
+70,logic,Yes,No,other,L-wrong,False
+71,logic,A,Unknown,E6,L-mismatch,True
+74,physics,*   **$F_{BA}$**: $q_A$,24.45 × 10^-3 N,E6,NF,True
+75,physics,This would happen if the distance $\ell$ was 3cm and $a/2$ was 4cm (swapped). But the problem states $a=6$ (,2160 V/m,E6,NF,True
+76,logic,Yes,No,E6,L-wrong,True
+77,logic,Yes,No,other,L-wrong,False
+78,logic,Yes,No,E6,L-wrong,True
+81,physics,$,9.6 × 10^2 V/m,E6,NF,True
+83,physics,$|\vec{E}_{total}| = 281.25 \times (\sqrt{2} + 0.5) \approx 281.25 \times (1.414 + 0.5) = 281.25 \times 1.914 \approx 538.3$,538 N/C,E6,NF,True
+89,logic,The question asks,Unknown,E6,NF,True
+93,physics,4.5 × 10^5 V/m,4.5 . 10^5 V/m,E6,P-notation,True
+94,logic,Yes,No,other,L-wrong,False
+96,logic,Yes,No,other,L-wrong,False
+98,physics,W = constant,U = 0.5*L*I_max² J,other,P-other,False
+99,logic,Yes,No,E6,L-wrong,True
+101,logic,Yes,No,other,L-wrong,False
+104,logic,A,Unknown,other,L-mismatch,False
+107,physics,*   The total,100.0 W,E6,NF,True
+110,logic,Yes,No,other,L-wrong,False
+111,physics,"Yes, both forces act in the same direction (from",4.495*10^-3 N,E6,NF,True
+113,physics,*   $\vec{F}_1$ pushes $q$ away from A. A is to,0.4315*10^-3 N,E6,NF,True
+114,physics,38000 V/m,20000 V/m,E6,P-numeric,True
+115,physics,Is,2.646,E6,NF,True
+116,logic,Unknown,No,E6,L-wrong,True
+117,physics,$Q = 4 \mu,2.26.10^4 V/m,E6,NF,True
+118,physics,*   Example 1's answer: $9.8 \times,9.8 . 10^{5} N/C,E6,NF,True
+119,physics,$F = 9 \times 10^{-3}$.,15.588*10^-3 N,E6,NF,True
+120,physics,"*   Let the circuit be A-C-M-B (C in AM, R2+L in MB). Current $I$ flows through",24.0 Ω,E6,NF,True
+122,physics,0.17 N,33.6 × 10^5 V/m,E6,P-numeric,True
+124,physics,57408.10,57.41 × 10^6 V/m,E6,P-numeric,True
+125,logic,Let A = $(\exists,No,E6,NF,True
+126,physics,It becomes large (or increases significantly),Increase and the opposite current direction cause it —,other,P-other,False
+127,physics,*,64.8 N,E6,NF,True
+129,physics,"Z_C ≈ 13.26 Ω, cosφ = 0.30",38.16 Ω and 0.30 —,other,P-other,False
+134,logic,Unknown,No,other,L-wrong,True
+136,logic,Yes,No,E6,L-wrong,True
+137,logic,A,Unknown,E6,L-mismatch,True
+139,physics,0.54 × 10^6 V/m,0.56 × 10^6 V/m,E6,P-numeric,True
+140,physics,1.24*10^7 V/m,2.1*10^6 V/m,E6,P-numeric,True
+142,logic,Yes,No,other,L-wrong,False
+143,physics,"*   Note: The problem statement gives $LC\omega^2=1$, which ensures $X_L = X_C$. The phase condition then determines the specific values relative to R, but since $X_L=X_C$ is already given, the phase condition is just a consistency check or a way to define the circuit if R values weren't fixed. Here, R values are fixed, so the phase condition is satisfied if $X = \sqrt{R_1 R_2}$. Let's verify if the given $LC\omega^2=1$ is sufficient or if we need to calculate X. Actually, the problem states $LC\omega^2",67.5 W,E6,NF,True
+144,physics,34.400 × 10^6 V/m,5.162 × 10⁶ V/m,E6,P-numeric,True
+145,logic,Yes,No,E6,L-wrong,True
+146,physics,I_2f = 60,40 Ω,E6,NF,True
+147,logic,Yes,No,other,L-wrong,False
+150,physics,$$F_{net} = 2 \times \left( \frac{45 \times 10^{-4}}{0.0034} \right) \times \frac{0.05}{\sqrt{0.0034}}$$,2.270 N,E6,NF,True
+153,logic,A,Unknown,other,L-mismatch,True
+154,logic,D,Unknown,E6,L-mismatch,True
+158,logic,C,A,E6,L-wrong,True
+160,logic,"Option C says: ""If there exists an object with property U then if an object lacks",Unknown,E6,NF,True
+164,physics,Let's re-calculate more precisely:,6.02 × 10^7 V/m,E6,NF,True
+166,logic,Yes,No,other,L-wrong,False
+169,logic,Yes,No,other,L-wrong,True
+173,physics,*   Let's verify: $Z_{AB} = Z_{AM,90.0 Ω,E6,NF,True
+175,physics,$E_R^2 = 37521.106^2 + 57062.001^2 + 37521.1,82.49 × 10^6 V/m,E6,NF,True
+176,logic,"So the statement is: $(\forall x, W(x)",No,E6,NF,True
+177,logic,This is a logical statement: (∀x (T(x) → R(x)) → ∃x P,No,E6,NF,True
+181,logic,A,Unknown,E6,L-mismatch,True
+182,physics,"""Calculate UL (voltage across L)"". In a parallel circuit, the voltage",134.16 V,E6,NF,True
+185,logic,C,Unknown,E6,L-mismatch,True
+187,logic,No,Unknown,E6,L-wrong,True
+189,logic,12.,Yes,E6,NF,True
+190,physics,F_net = F1 + F2 = 5.0625 + 5.0625 =,1.0125 N,E6,NF,True
+192,physics,$$E_{net} = \sqrt{\frac{9E,27.51 × 10^6 V/m,E6,NF,True
+194,logic,No,Yes,other,L-wrong,True
+195,physics,The resultant field $\vec{E}_{13}$ is in the direction $-\hat,-2\sqrt{2} x q,E6,NF,True
+196,logic,"But wait, let's re-read the question. The question is asking which statement can be inferred from the premises. Since Premises 1, 2, 3, 4, 5, 6, and 7 are all given as true, we can infer that if there exists someone who attended the midterm exam, then all students attend the course, and if a person did not complete the required attendance, then they did not attend the course. This is captured by answer choice B.",Unknown,E6,NF,True
+199,physics,5,3.51 × 10^5 V/m,E6,P-numeric,True
+200,physics,when the charge on the capacitor is maximum (or when the current is zero),the charge Q reaches its maximum value —,other,P-other,False
+201,logic,This means ∀x H,Unknown,E6,NF,True
+203,logic,A,Unknown,E6,L-mismatch,True
+205,logic,Yes,Unknown,E6,L-wrong,True
+206,logic,Yes,No,E6,L-wrong,True
+208,physics,$F_{net} = 2F \cos(\theta) = 2F \,1.82*10^-3 N,E6,NF,True
+209,physics,$F_2 = (9 \times 10^9) \frac{1,0.734*10^-3 N,E6,NF,True
+210,physics,*   **Field from $q_2$ ($E,1.34 × 10⁷ V/m,E6,NF,True
+211,logic,"Therefore, there cannot be any system that is not eco-friendly (because",No,E6,NF,True
+215,logic,A,Unknown,E6,L-mismatch,True
+216,physics,*   Force $F_1$ (from,6.76 N,E6,NF,True

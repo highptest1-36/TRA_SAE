@@ -39,6 +39,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parent.parent  # /…/TRA-SAE
 LOGS = ROOT / "logs"
 PAPER = ROOT / "paper"
+PAPER.mkdir(exist_ok=True)  # figure output folder (not tracked in git)
 
 PER_SAMPLE_FILE = LOGS / "ablation_per_sample_latest.jsonl"
 ABLATION_V1_FILE = LOGS / "qwen35_ablation.json"

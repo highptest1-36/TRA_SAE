@@ -1,0 +1,541 @@
+{
+  "n": 217,
+  "dup_sets": {
+    "exact": [
+      1,
+      32,
+      95
+    ],
+    "near_char_ge_0.95": [
+      1,
+      32,
+      39,
+      77,
+      95,
+      206
+    ],
+    "near_same_answer": [
+      32,
+      39,
+      77,
+      95,
+      206
+    ],
+    "tfidf_ge_0.90_count": 64,
+    "tfidf_ge_0.95_count": 36
+  },
+  "verify": {
+    "accuracy": {
+      "cfg0": {
+        "overall": 29.95,
+        "physics": 38.3,
+        "logic": 14.47,
+        "k": 65,
+        "wilson95": [
+          24.3,
+          36.4
+        ]
+      },
+      "cfg0-R": {
+        "overall": 39.17,
+        "physics": 50.35,
+        "logic": 18.42,
+        "k": 85,
+        "wilson95": [
+          32.9,
+          45.8
+        ]
+      },
+      "cfg1": {
+        "overall": 44.24,
+        "physics": 58.16,
+        "logic": 18.42,
+        "k": 96,
+        "wilson95": [
+          37.8,
+          50.9
+        ]
+      },
+      "cfg2": {
+        "overall": 46.08,
+        "physics": 59.57,
+        "logic": 21.05,
+        "k": 100,
+        "wilson95": [
+          39.6,
+          52.7
+        ]
+      },
+      "cfg3": {
+        "overall": 47.47,
+        "physics": 63.12,
+        "logic": 18.42,
+        "k": 103,
+        "wilson95": [
+          40.9,
+          54.1
+        ]
+      },
+      "cfg4": {
+        "overall": 43.78,
+        "physics": 55.32,
+        "logic": 22.37,
+        "k": 95,
+        "wilson95": [
+          37.3,
+          50.4
+        ]
+      },
+      "Qwen2.5-Math-7B-Instruct": {
+        "overall": 24.88,
+        "physics": 34.75,
+        "logic": 6.58,
+        "k": 54,
+        "wilson95": [
+          19.6,
+          31.0
+        ]
+      },
+      "Llemma-7B": {
+        "overall": 11.52,
+        "physics": 4.96,
+        "logic": 23.68,
+        "k": 25,
+        "wilson95": [
+          7.9,
+          16.5
+        ]
+      },
+      "Mistral-7B-Instruct-v0.3": {
+        "overall": 16.59,
+        "physics": 13.48,
+        "logic": 22.37,
+        "k": 36,
+        "wilson95": [
+          12.2,
+          22.1
+        ]
+      },
+      "Qwen2-Math-7B-Instruct": {
+        "overall": 29.03,
+        "physics": 35.46,
+        "logic": 17.11,
+        "k": 63,
+        "wilson95": [
+          23.4,
+          35.4
+        ]
+      },
+      "DeepSeek-Math-7B-Instruct": {
+        "overall": 12.44,
+        "physics": 14.89,
+        "logic": 7.89,
+        "k": 27,
+        "wilson95": [
+          8.7,
+          17.5
+        ]
+      }
+    },
+    "mcnemar": {
+      "cfg0->cfg0-R": {
+        "delta": 9.22,
+        "b": 26,
+        "c": 6,
+        "p_cc": 0.0007829382178911184,
+        "p_exact": 0.0005350527353584766
+      },
+      "cfg0-R->cfg1": {
+        "delta": 5.07,
+        "b": 19,
+        "c": 8,
+        "p_cc": 0.054291828366854686,
+        "p_exact": 0.052238985896110535
+      },
+      "cfg0->cfg3": {
+        "delta": 17.51,
+        "b": 43,
+        "c": 5,
+        "p_cc": 9.269569613019149e-08,
+        "p_exact": 1.3680484300948594e-08
+      },
+      "cfg1->cfg2": {
+        "delta": 1.84,
+        "b": 8,
+        "c": 4,
+        "p_cc": 0.3864762307712325,
+        "p_exact": 0.3876953125
+      },
+      "cfg2->cfg3": {
+        "delta": 1.38,
+        "b": 9,
+        "c": 6,
+        "p_cc": 0.6055766163353463,
+        "p_exact": 0.6072387695312499
+      },
+      "cfg3->cfg4": {
+        "delta": -3.69,
+        "b": 7,
+        "c": 15,
+        "p_cc": 0.13559300126630158,
+        "p_exact": 0.13380050659179688
+      },
+      "cfg0->cfg1": {
+        "delta": 14.29,
+        "b": 35,
+        "c": 4,
+        "p_cc": 1.5564763744776358e-06,
+        "p_exact": 3.353161446284503e-07
+      }
+    }
+  },
+  "sensitivity": {
+    "full": {
+      "n": 217,
+      "acc": {
+        "cfg0": 29.95,
+        "cfg0-R": 39.17,
+        "cfg1": 44.24,
+        "cfg2": 46.08,
+        "cfg3": 47.47,
+        "cfg4": 43.78,
+        "Qwen2.5-Math-7B-Instruct": 24.88,
+        "Llemma-7B": 11.52,
+        "Mistral-7B-Instruct-v0.3": 16.59,
+        "Qwen2-Math-7B-Instruct": 29.03,
+        "DeepSeek-Math-7B-Instruct": 12.44
+      },
+      "mcnemar": {
+        "cfg0->cfg0-R": {
+          "b": 26,
+          "c": 6,
+          "p_cc": 0.0007829382178911184
+        },
+        "cfg0-R->cfg1": {
+          "b": 19,
+          "c": 8,
+          "p_cc": 0.054291828366854686
+        },
+        "cfg0->cfg3": {
+          "b": 43,
+          "c": 5,
+          "p_cc": 9.269569613019149e-08
+        },
+        "cfg1->cfg2": {
+          "b": 8,
+          "c": 4,
+          "p_cc": 0.3864762307712325
+        },
+        "cfg2->cfg3": {
+          "b": 9,
+          "c": 6,
+          "p_cc": 0.6055766163353463
+        }
+      },
+      "ordering": [
+        "cfg3",
+        "cfg2",
+        "cfg1",
+        "cfg4",
+        "cfg0-R",
+        "cfg0"
+      ]
+    },
+    "minus_exact3": {
+      "n": 214,
+      "acc": {
+        "cfg0": 29.91,
+        "cfg0-R": 39.25,
+        "cfg1": 44.39,
+        "cfg2": 46.26,
+        "cfg3": 47.66,
+        "cfg4": 43.93,
+        "Qwen2.5-Math-7B-Instruct": 25.23,
+        "Llemma-7B": 11.68,
+        "Mistral-7B-Instruct-v0.3": 16.82,
+        "Qwen2-Math-7B-Instruct": 28.97,
+        "DeepSeek-Math-7B-Instruct": 12.15
+      },
+      "mcnemar": {
+        "cfg0->cfg0-R": {
+          "b": 26,
+          "c": 6,
+          "p_cc": 0.0007829382178911184
+        },
+        "cfg0-R->cfg1": {
+          "b": 19,
+          "c": 8,
+          "p_cc": 0.054291828366854686
+        },
+        "cfg0->cfg3": {
+          "b": 43,
+          "c": 5,
+          "p_cc": 9.269569613019149e-08
+        },
+        "cfg1->cfg2": {
+          "b": 8,
+          "c": 4,
+          "p_cc": 0.3864762307712325
+        },
+        "cfg2->cfg3": {
+          "b": 9,
+          "c": 6,
+          "p_cc": 0.6055766163353463
+        }
+      },
+      "ordering": [
+        "cfg3",
+        "cfg2",
+        "cfg1",
+        "cfg4",
+        "cfg0-R",
+        "cfg0"
+      ]
+    },
+    "minus_near6": {
+      "n": 211,
+      "acc": {
+        "cfg0": 30.33,
+        "cfg0-R": 39.81,
+        "cfg1": 45.02,
+        "cfg2": 46.92,
+        "cfg3": 48.34,
+        "cfg4": 44.55,
+        "Qwen2.5-Math-7B-Instruct": 25.59,
+        "Llemma-7B": 11.85,
+        "Mistral-7B-Instruct-v0.3": 16.59,
+        "Qwen2-Math-7B-Instruct": 28.91,
+        "DeepSeek-Math-7B-Instruct": 12.32
+      },
+      "mcnemar": {
+        "cfg0->cfg0-R": {
+          "b": 26,
+          "c": 6,
+          "p_cc": 0.0007829382178911184
+        },
+        "cfg0-R->cfg1": {
+          "b": 19,
+          "c": 8,
+          "p_cc": 0.054291828366854686
+        },
+        "cfg0->cfg3": {
+          "b": 43,
+          "c": 5,
+          "p_cc": 9.269569613019149e-08
+        },
+        "cfg1->cfg2": {
+          "b": 8,
+          "c": 4,
+          "p_cc": 0.3864762307712325
+        },
+        "cfg2->cfg3": {
+          "b": 9,
+          "c": 6,
+          "p_cc": 0.6055766163353463
+        }
+      },
+      "ordering": [
+        "cfg3",
+        "cfg2",
+        "cfg1",
+        "cfg4",
+        "cfg0-R",
+        "cfg0"
+      ]
+    },
+    "minus_tfidf_ge0.95": {
+      "n": 181,
+      "acc": {
+        "cfg0": 32.04,
+        "cfg0-R": 42.54,
+        "cfg1": 48.62,
+        "cfg2": 49.72,
+        "cfg3": 51.38,
+        "cfg4": 47.51,
+        "Qwen2.5-Math-7B-Instruct": 29.28,
+        "Llemma-7B": 10.5,
+        "Mistral-7B-Instruct-v0.3": 16.57,
+        "Qwen2-Math-7B-Instruct": 31.49,
+        "DeepSeek-Math-7B-Instruct": 13.26
+      },
+      "mcnemar": {
+        "cfg0->cfg0-R": {
+          "b": 24,
+          "c": 5,
+          "p_cc": 0.0008302254277448881
+        },
+        "cfg0-R->cfg1": {
+          "b": 17,
+          "c": 6,
+          "p_cc": 0.03705621856411898
+        },
+        "cfg0->cfg3": {
+          "b": 37,
+          "c": 2,
+          "p_cc": 5.1992785565346994e-08
+        },
+        "cfg1->cfg2": {
+          "b": 5,
+          "c": 3,
+          "p_cc": 0.7236736098317629
+        },
+        "cfg2->cfg3": {
+          "b": 7,
+          "c": 4,
+          "p_cc": 0.5464935954065822
+        }
+      },
+      "ordering": [
+        "cfg3",
+        "cfg2",
+        "cfg1",
+        "cfg4",
+        "cfg0-R",
+        "cfg0"
+      ]
+    },
+    "minus_tfidf_ge0.90": {
+      "n": 153,
+      "acc": {
+        "cfg0": 35.95,
+        "cfg0-R": 46.41,
+        "cfg1": 52.94,
+        "cfg2": 54.25,
+        "cfg3": 56.21,
+        "cfg4": 51.63,
+        "Qwen2.5-Math-7B-Instruct": 33.33,
+        "Llemma-7B": 8.5,
+        "Mistral-7B-Instruct-v0.3": 16.34,
+        "Qwen2-Math-7B-Instruct": 34.64,
+        "DeepSeek-Math-7B-Instruct": 15.03
+      },
+      "mcnemar": {
+        "cfg0->cfg0-R": {
+          "b": 21,
+          "c": 5,
+          "p_cc": 0.0032637169016702335
+        },
+        "cfg0-R->cfg1": {
+          "b": 13,
+          "c": 3,
+          "p_cc": 0.024448945310089332
+        },
+        "cfg0->cfg3": {
+          "b": 32,
+          "c": 1,
+          "p_cc": 1.7668604421878377e-07
+        },
+        "cfg1->cfg2": {
+          "b": 5,
+          "c": 3,
+          "p_cc": 0.7236736098317629
+        },
+        "cfg2->cfg3": {
+          "b": 6,
+          "c": 3,
+          "p_cc": 0.5049850750938457
+        }
+      },
+      "ordering": [
+        "cfg3",
+        "cfg2",
+        "cfg1",
+        "cfg4",
+        "cfg0-R",
+        "cfg0"
+      ]
+    }
+  },
+  "dup_item_correct": {
+    "cfg0": {
+      "exact": [
+        false,
+        false,
+        true
+      ],
+      "near": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    "cfg0-R": {
+      "exact": [
+        false,
+        false,
+        true
+      ],
+      "near": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    "cfg1": {
+      "exact": [
+        false,
+        false,
+        true
+      ],
+      "near": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    "cfg2": {
+      "exact": [
+        false,
+        false,
+        true
+      ],
+      "near": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    "cfg3": {
+      "exact": [
+        false,
+        false,
+        true
+      ],
+      "near": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    "cfg4": {
+      "exact": [
+        false,
+        false,
+        true
+      ],
+      "near": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false
+      ]
+    }
+  }
+}

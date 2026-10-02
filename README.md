@@ -1,260 +1,160 @@
 # TRA-SAE — Thought-Reasoning Agent with Symbolic Analysis and Evaluation
 
-**DAT301m Project · EXACT 2026 Competition**
+Code, logs, and analysis scripts for the paper
 
-> Qwen3.5-4B fine-tuned via multi-phase SFT + GRPO with unit-aware rewards, dual-LoRA specialist routing, Z3 SMT verification, and self-consistency voting — targeting the EXACT 2026 public benchmark.
+> **A Cost-Aware Empirical Study of Retrieval, Supervised Fine-Tuning, and Reinforcement Learning for Physics–Logic Question Answering with a 4B Language Model**
+> C.-P. Ha et al. Submitted to ICCIES 2027.
 
----
-
-## Results
-
-| Config | Description | Overall | Physics | Logic |
-|--------|-------------|---------|---------|-------|
-| 0 | Zero-shot (no LoRA) | 35.48% | 43.97% | 19.74% |
-| 1 | + SFT Phase 1 | 52.53% | 65.25% | 28.95% |
-| 2 | + Logic SFT Phase 1.5 | 51.61% | 65.25% | 26.32% |
-| **3** | **+ GRPO mixed (best)** | **53.92%** | **67.38%** | **28.95%** |
-| 4 | + Dual-LoRA router | 49.77% | 60.28% | 30.26% |
-| 5 | + Self-consistency ×5 | 50.69% | 64.54% | 25.00% |
-
-**EXACT 2026 public baseline: 38.71%** · Best achieved: **53.92%** (+15.21 pp)
-
-Evaluation set: 217 samples (141 physics, 76 logic).
+TRA-SAE is a low-cost pipeline built on **Qwen3.5-4B** with LoRA adapters. It combines TF-IDF exemplar retrieval, a three-tag response format, supervised fine-tuning (SFT), logic-focused SFT, and GRPO with a composite reward. The pipeline serves as a **controlled setting** for measuring what each component contributes on the EXACT 2026 physics–logic data. It is not proposed as a new algorithm.
 
 ---
 
-## Architecture
+## Results reported in the paper
 
-```
-Input Question
-     │
-     ▼
-Subject Router ──────────────────────────────────────────┐
-     │                                                   │
-     ▼ (physics)                         ▼ (logic)       │
-Qwen3.5-4B + Physics LoRA     Qwen3.5-4B + Logic LoRA   │
-     │                                   │               │
-     └──────────────┬────────────────────┘               │
-                    ▼                                    │
-          Self-Consistency (5×)                          │
-                    │                                    │
-                    ▼                                    │
-           Z3 SMT Verifier ◄────────────────────────────┘
-                    │
-                    ▼
-             Final Answer
-```
+All numbers are **single-pass** accuracies on the 217-item validation split (141 physics, 76 logic). The TRA-SAE configurations decode once at temperature 0.1. The evaluation script can retry wrong answers, but retries depend on the answer key and are **not** used. Only the first pass (`retry_count == 0`) is counted.
 
-### Key Components
+| ID | Configuration | Overall | Physics | Logic |
+|----|---------------|--------:|--------:|------:|
+| cfg0 | Zero-shot | 29.95 | 38.30 | 14.47 |
+| cfg0-R | + Retrieval, no fine-tuning (control) | 39.17 | 50.35 | 18.42 |
+| cfg1 | + SFT | 44.24 | 58.16 | 18.42 |
+| cfg2 | + Logic SFT | 46.08 | 59.57 | 21.05 |
+| **cfg3** | **+ GRPO (best)** | **47.47** | **63.12** | 18.42 |
+| cfg4 | Dual-LoRA domain adapters | 43.78 | 55.32 | 22.37 |
 
-| Module | File | Description |
-|--------|------|-------------|
-| Config | `src/config.py` | Paths, model settings, LoRA hyperparams |
-| Reward | `src/reward.py` | GRPO reward: format (0.30) + correctness (0.60) + unit (0.10) |
-| Reward Evaluator | `src/reward_evaluator_keras.py` | TF/Keras self-evaluator for reward signal |
-| Agent Graph | `src/agent_graph.py` | LangGraph-style multi-node inference graph |
-| Agent Nodes | `src/agent_nodes.py` | Individual reasoning/retry/verification nodes |
-| Symbolic Verifier | `src/symbolic_verifier.py` | Answer extraction + exact/fuzzy matching |
-| Z3 Engine | `src/z3_engine.py` | SMT constraint solving for logic problems |
-| Router | `src/router.py` | Physics vs. logic subject classifier |
-| Retriever | `src/retriever.py` | Few-shot example retrieval |
-| Data Utils | `src/data_utils.py` | Dataset loading + preprocessing |
-| Model Loader | `src/model_loader.py` | HuggingFace + PEFT loader (BF16 on A100) |
+The best zero-shot 7B baseline (Qwen2-Math-7B-Instruct, best of three prompt formats) reaches 29.03.
 
----
+Paired McNemar tests (continuity-corrected): retrieval cfg0→cfg0-R p = 7.8e-4; SFT cfg0-R→cfg1 p = 0.054; logic SFT cfg1→cfg2 p = 0.39; GRPO cfg2→cfg3 p = 0.61; Dual-LoRA cfg3→cfg4 p = 0.14; cfg0→cfg3 p = 9.3e-8.
 
-## Training Pipeline
+Training the evaluated configurations takes 293.8 min on one A100-SXM4-80GB, about **US$18** at US$3.67 per GPU-hour. The evaluation runs take a further 750.8 min (US$45.9). Diagnostic experiments (baselines, reward ablation, tools, seeds, transfer) are not included in these figures.
 
-### Environment
+> **Note on older numbers.** Earlier versions of this repository reported higher accuracies (for example 53.92% for cfg3). Those numbers counted answers recovered by the **answer-dependent retry loop** and are not valid single-pass results. The table above supersedes them. The former "cfg5 / self-consistency ×5" row is also removed: self-consistency ran only inside the retry loop, so in the first pass cfg5 is identical to cfg4.
 
-| Component | Version |
-|-----------|---------|
-| GPU | NVIDIA A100-SXM4-80GB |
-| Python | 3.12.13 |
-| PyTorch | 2.10.0+cu128 |
-| Transformers | 5.10.0.dev0 |
-| TRL | 1.4.0 |
-| PEFT | 0.19.1 |
-| Z3-solver | 4.16.0 |
+### Where each number comes from
 
-### Phases
-
-```
-Phase 1   ── SFT on full EXACT train set (1,945 samples)
-              Loss: 0.3085  │  Steps: 366  │  Time: 58.8 min
-
-Phase 1.5 ── Logic-specialist SFT (732 logic samples)
-              Loss: 0.1326  │  Steps: 92   │  Time: 15.7 min
-
-Phase 2   ── GRPO mixed training (unit-aware reward)
-              Loss: 0.0295  │  Steps: 250  │  Time: 79.8 min
-
-Phase 2P  ── GRPO physics specialist
-              Loss: 0.0182  │  Steps: 200  │  Time: 76.6 min
-
-Phase 2L  ── GRPO logic specialist
-              Loss: 0.0703  │  Steps: 150  │  Time: 62.9 min
-
-Phase 3   ── GRPO continued refinement
-Phase 4   ── Agent evaluation + 6-config ablation
-```
-
-### GRPO Reward Breakdown
-
-```
-format_reward        0.30  — all three XML tags present and non-empty
-correctness_reward   0.60  — symbolic answer match
-unit_reward          0.10  — physical unit scale match bonus
-length_penalty      −0.10  — applied when reasoning > 800 tokens
-─────────────────────────────────────────────────────────
-Total score ∈ [−0.10, 1.0]
-```
+| Paper item | Source in this repository |
+|---|---|
+| Main results, McNemar tests, Wilson intervals | `logs/ablation_per_sample_canonical.jsonl` (cfg0–cfg4, first pass = `retry_count == 0`) and `logs/ablation_per_sample_canonical_partB.jsonl` (cfg0-R = config 6), recomputed by `analysis/verify_and_sensitivity.py` |
+| Baselines with and without retrieval | `logs/fair_baselines_results_latest.json`, `logs/fair_baselines_retrieval_results_latest.json` |
+| Seed stability | `logs/cfg3_multiseed_results_latest.json`, `logs/ablation_per_sample_canonical_seed*.jsonl` |
+| Overlap audit | `experiments/step10_leakage_check.py` → `logs/leakage_check_results.json` |
+| Overlap sensitivity analysis | `analysis/verify_and_sensitivity.py` → `analysis/results/sensitivity_results.json` |
+| MMLU physics and FOLIO transfer | `logs/external_benchmark_results_latest.json`, `logs/external_benchmark_logic_results_latest.json` |
+| Tool augmentation | `logs/tool_baselines_results_latest.json` |
+| Reward ablation | `logs/reward_ablation_results_latest.json` |
+| Compute cost | `logs/compute_profile_latest.json` |
+| Error re-classification | `analysis/error_recheck.py` → `analysis/results/error_recheck_cfg3.csv` |
+| Logic label formats | `analysis/logic_label_audit.py` → `analysis/results/logic_label_audit.json` |
 
 ---
 
-## Quick Start
-
-### Prerequisites
-
-```bash
-pip install transformers>=4.40.0 peft trl datasets torch z3-solver
-# Optional: tensorflow (for reward_evaluator_keras.py)
-pip install tensorflow
-```
-
-### Run Full Pipeline
-
-```bash
-# Run all phases sequentially
-python run_all_steps.py
-
-# Or run individual phases:
-python run_phase1_sft.py          # Phase 1: SFT
-python run_phase1_5_logic_sft.py  # Phase 1.5: Logic SFT
-python run_phase2_grpo.py         # Phase 2: GRPO mixed
-python run_phase2_grpo_physics.py # Phase 2P: Physics specialist
-python run_phase2_grpo_logic.py   # Phase 2L: Logic specialist
-python run_phase3_grpo.py         # Phase 3: GRPO refinement
-python run_phase4_v2_agent.py     # Phase 4: Evaluation + ablation
-```
-
-### Evaluation Only
-
-```bash
-# Full ablation (all 6 configs, 217 samples)
-python run_phase4_v2_agent.py
-
-# Quick smoke test (10 samples per config)
-python run_phase4_v2_agent.py --smoke-test
-
-# Single config
-python run_phase4_v2_agent.py --config 3
-```
-
-### Output Format
-
-The model generates structured responses:
-
-```xml
-<reasoning>
-[Step-by-step chain-of-thought]
-</reasoning>
-<answer>
-[Final answer: letter / Yes/No/Unknown / number+unit]
-</answer>
-<explanation>
-[Concise explanation]
-</explanation>
-```
-
----
-
-## Repository Structure
+## Pipeline
 
 ```
-TRA-SAE/
-├── src/                        # Core modules
-│   ├── config.py               # Central configuration
-│   ├── reward.py               # GRPO reward functions
-│   ├── reward_evaluator_keras.py
-│   ├── agent_graph.py          # Multi-node agent graph
-│   ├── agent_nodes.py
-│   ├── symbolic_verifier.py    # Answer extraction + matching
-│   ├── z3_engine.py            # SMT solver integration
-│   ├── router.py               # Subject classifier
-│   ├── retriever.py            # Few-shot retrieval
-│   ├── data_utils.py
-│   └── model_loader.py
-├── experiments/                # Experimental scripts
-│   ├── step1_rerun_cfg0_3.py
-│   ├── step2_multiseed_cfg3.py
-│   ├── step3_baselines.py
-│   ├── step4_stats_and_errors.py
-│   ├── step5_reward_ablation.py
-│   └── step6_latency.py
-├── tests/
-│   └── test_verifier.py
-├── logs/                       # Experiment results (JSON/JSONL)
-├── paper/                      # LaTeX paper + docs
-│   ├── TRA_SAE_final_paper.pdf
-│   ├── TRA_SAE_EXACT2026_paper.tex
-│   ├── references.bib
-│   ├── PAPER_PLAN.md
-│   └── EXACT2026_experiment_record.md
-├── data/                       # EXACT 2026 dataset (original)
-├── processed_data/             # Tokenized HuggingFace datasets
-├── run_phase1_sft.py           # Training entry points
-├── run_phase1_5_logic_sft.py
-├── run_phase2_grpo.py
-├── run_phase2_grpo_physics.py
-├── run_phase2_grpo_logic.py
-├── run_phase3_grpo.py
-├── run_phase4_v2_agent.py
-├── run_all_steps.py
-├── TRA-SAE_Qwen3.5-4B.ipynb   # Colab notebook
-└── kehoach.md                  # Project plan (Vietnamese)
+Training
+  Qwen3.5-4B ─► Stage 1: SFT (1,945 samples) ─► Stage 2: logic SFT (732 samples) ─► Stage 3: GRPO (K = 4)
+                                                       reward = 0.30 format + 0.60 correctness
+                                                              + 0.10 unit − 0.10 if reasoning > 800 tokens
+
+Inference (single pass)
+  query ─► TF-IDF retriever (top-3 same-domain exemplars) ─► fine-tuned 4B model
+        ─► <reasoning> <answer> <explanation> ─► extractor + verifier ─► answer
 ```
+
+* **Retriever** (`src/retriever.py`): TF-IDF cosine similarity, top 3, restricted to the item's domain label.
+* **Dual-LoRA** (cfg4): physics and logic GRPO adapters, selected by the **domain label** of each item. `src/router.py` (TF-IDF + logistic regression) is used only for inputs without a label and is not needed for the EXACT data.
+* **Verifier** (`src/symbolic_verifier.py`): option letters and Yes/No/Unknown labels after normalisation; Z3 for logic items when a formal form can be parsed; numerical answers after SI conversion with a **2% relative tolerance**.
+* **Extractor**: `<answer>` tag, then `\boxed{}`, then the last non-empty line.
+
+| Module | File |
+|---|---|
+| Configuration and hyper-parameters | `src/config.py` |
+| GRPO reward | `src/reward.py` |
+| Answer extraction and verification | `src/symbolic_verifier.py` |
+| Z3 engine | `src/z3_engine.py` |
+| Retriever | `src/retriever.py` |
+| Router (unlabelled inputs only) | `src/router.py` |
+| Data loading | `src/data_utils.py` |
+
+### Hyper-parameters
+
+| Parameter | Value |
+|---|---|
+| LoRA r / α / dropout | 32 / 64 / 0.05, all seven projection matrices |
+| Stage 1 SFT | lr 2e-4, 3 epochs, effective batch 16 (58.8 min) |
+| Stage 2 logic SFT | lr 5e-5, 2 epochs (15.7 min) |
+| Stage 3 GRPO | lr 1e-6, 250 steps, K = 4, β = 0.04 (79.8 min) |
+| Max new tokens / exemplars | 1,024 / 3 |
 
 ---
 
 ## Data
 
-- **Logic_Based_Educational_Queries** — 411 records (multiple-choice logic)
-- **Physics_Problems_Text_Only** — 1,755 rows (numerical physics, free-response)
-- Train split: 1,945 samples · Val/eval split: 217 samples
+The organizers released two training files (snapshot of 2026-05-09):
 
-Dataset source: EXACT 2026 official release (2026-05-09).
+* `Logic_Based_Educational_Queries.json`: 411 records, each with shared premises and one or more questions, giving **808 logic questions**. 329 of them are multiple-choice questions with lettered options.
+* `Physics_Problems_Text_Only.csv`: 1,755 problems. 401 have no gold answer and are dropped, leaving **1,354 physics questions**.
+
+The 2,162 samples are shuffled and split **at random** (not stratified) with seed 42 into **1,945 training** (1,213 physics, 732 logic) and **217 validation** samples (141 physics, 76 logic). See the data cell of `TRA-SAE_Qwen3.5-4B.ipynb` and `src/data_utils.py`.
+
+The EXACT 2026 data are subject to the challenge terms of use.
 
 ---
 
-## Checkpoints
+## Reproducing the analyses (no GPU)
 
-Model checkpoints are **not tracked in git** (multi-GB). Paths defined in `src/config.py`:
+```bash
+pip install numpy scipy scikit-learn pyarrow
+python analysis/verify_and_sensitivity.py . analysis/results/sensitivity_results.json
+python analysis/error_recheck.py . analysis/results/error_recheck_results.json analysis/results/error_recheck_cfg3.csv
+python analysis/logic_label_audit.py . analysis/results/logic_label_audit.json
+```
 
-| Checkpoint | Path |
-|------------|------|
-| SFT (mixed) | `checkpoints/qwen35_sft/final` |
-| SFT (logic) | `checkpoints/qwen35_sft_logic/final` |
-| GRPO (mixed) | `checkpoints/qwen35_grpo/final` |
-| GRPO (physics) | `checkpoints/qwen35_grpo_physics/final` |
-| GRPO (logic) | `checkpoints/qwen35_grpo_logic/final` |
+`analysis/make_annotation_sheet.py` builds a spreadsheet for manual validation of the error categories.
+
+## Training and evaluation
+
+```bash
+python run_phase1_sft.py            # Stage 1
+python run_phase1_5_logic_sft.py    # Stage 2
+python run_phase2_grpo.py           # Stage 3, mixed adapter (cfg3)
+python run_phase2_grpo_physics.py   # cfg4 physics adapter
+python run_phase2_grpo_logic.py     # cfg4 logic adapter
+python experiments/step0_canonical_eval.py --retries 0   # single-pass evaluation (add --config N for one configuration)
+```
+
+Environment: A100-SXM4-80GB, Python 3.12, PyTorch 2.10, Transformers 5.10.dev, TRL 1.4.0, PEFT 0.19.1, z3-solver 4.16.0. LoRA checkpoints are not tracked in git; their paths are set in `src/config.py`.
+
+---
+
+## Repository layout
+
+```
+src/                 core modules (config, reward, verifier, Z3 engine, retriever, router, data loading)
+run_phase*.py        training entry points (SFT, logic SFT, GRPO, specialist adapters)
+experiments/         evaluation, baselines, ablations, statistics, overlap audit
+analysis/            post-hoc analyses for the paper (no GPU) and their results
+logs/                per-sample predictions and result files behind every reported number
+data/                EXACT 2026 training files (release of 2026-05-09)
+processed_data/      train/validation split (HuggingFace Arrow)
+tests/               verifier unit tests
+API_TRA_SAE/         serving layer used for the EXACT 2026 competition
+docs/project_notes/  historical working notes (superseded numbers, see the README in that folder)
+TRA-SAE_Qwen3.5-4B.ipynb   end-to-end Colab notebook
+```
 
 ---
 
 ## Citation
 
-If you use this code or findings, please cite:
-
 ```bibtex
-@misc{trasae2026,
-  title  = {TRA-SAE: Thought-Reasoning Agent with Symbolic Analysis and Evaluation},
+@misc{ha2026trasae,
+  author = {Ha, Cao-Phuc and others},
+  title  = {A Cost-Aware Empirical Study of Retrieval, Supervised Fine-Tuning, and
+            Reinforcement Learning for Physics--Logic Question Answering with a 4B Language Model},
   year   = {2026},
-  note   = {EXACT 2026 Competition, DAT301m}
+  note   = {Code: https://github.com/highptest1-36/TRA_SAE}
 }
 ```
 
----
-
-## License
-
-For academic/research use only. Dataset subject to EXACT 2026 terms of use.
+For academic and research use only.

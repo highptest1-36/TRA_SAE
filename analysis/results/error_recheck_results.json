@@ -1,0 +1,26 @@
+{
+  "n_errors": 117,
+  "recheck_counts": {
+    "P-other": 9,
+    "L-mismatch": 18,
+    "L-wrong": 29,
+    "NF": 51,
+    "P-numeric": 8,
+    "P-notation": 2
+  },
+  "old_E6_breakdown": {
+    "L-mismatch": 15,
+    "NF": 51,
+    "L-wrong": 11,
+    "P-notation": 1,
+    "P-numeric": 7
+  },
+  "old_other_breakdown": {
+    "P-other": 9,
+    "L-wrong": 18,
+    "L-mismatch": 3,
+    "P-numeric": 1,
+    "P-notation": 1
+  },
+  "n_outputs_truncated_in_log": 128
+}
